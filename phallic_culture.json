@@ -1,164 +1,164 @@
 [
     {
         "name":"Khalid Nabi Cemetery",
-        "date":"Paleolithic Period ",
-        "conservation location":"Golestan Province, Iran",
+        "dateCreated":"Paleolithic PeriodÂ ",
+        "locationCreated":"Golestan Province, Iran",
         "author":"",
-        "place":"Gonbad-e Kavous",
-        "art":"Architecture",
-        "religion":"YES"
+        "contentLocation":"Gonbad-e Kavous",
+        "genre":"Architecture",
+        "religiousEvent":"YES"
     },
     {
         "name":"Al-Masala Obelisk",
-        "date":"XX century B.C.",
-        "conservation location":"Heliopolis, Egypt",
+        "dateCreated":"XX century B.C.",
+        "locationCreated":"Heliopolis, Egypt",
         "author":"",
-        "place":"Cairo",
-        "art":"Architecture",
-        "religion":""
+        "contentLocation":"Cairo",
+        "genre":"Architecture",
+        "religiousEvent":""
     },
     {
         "name":"Min at Karnak Temple",
-        "date":"XIX century B.C.",
-        "conservation location":"Luxor, Egypt",
+        "dateCreated":"XIX century B.C.",
+        "locationCreated":"Luxor, Egypt",
         "author":"",
-        "place":"Egypt",
-        "art":"Sculpture",
-        "religion":"YES"
+        "contentLocation":"Egypt",
+        "genre":"Sculpture",
+        "religiousEvent":"YES"
     },
     {
         "name":"Kokopelli",
-        "date":"IX-VIII century B.C.",
-        "conservation location":"New Mexico, United States",
+        "dateCreated":"IX-VIII century B.C.",
+        "locationCreated":"New Mexico, United States",
         "author":"",
-        "place":"USA",
-        "art":"Painting",
-        "religion":"YES"
+        "contentLocation":"USA",
+        "genre":"Painting",
+        "religiousEvent":"YES"
     },
     {
         "name":"Statua di Priapo",
-        "date":"late III century B.C.",
-        "conservation location":"Ephesus Museum, Turkey",
+        "dateCreated":"late III century B.C.",
+        "locationCreated":"Ephesus Museum, Turkey",
         "author":"",
-        "place":"Siracusa",
-        "art":"Sculpture",
-        "religion":"YES"
+        "contentLocation":"Siracusa",
+        "genre":"Sculpture",
+        "religiousEvent":"YES"
     },
     {
         "name":"Ploenulus (\"The Little Carthaginian\")",
-        "date":"II century B.C.",
-        "conservation location":"",
+        "dateCreated":"II century B.C.",
+        "locationCreated":"",
         "author":"Plautus",
-        "place":"Roma",
-        "art":"literary work",
-        "religion":""
+        "contentLocation":"Roma",
+        "genre":"literary work",
+        "religiousEvent":""
     },
     {
-        "name":"Fresco of Priapus ",
-        "date":"I century B.C.",
-        "conservation location":"Pompei, Italy",
+        "name":"Fresco of PriapusÂ ",
+        "dateCreated":"I century B.C.",
+        "locationCreated":"Pompei, Italy",
         "author":"",
-        "place":"Pompei",
-        "art":"Fresco",
-        "religion":"YES"
+        "contentLocation":"Pompei",
+        "genre":"Fresco",
+        "religiousEvent":"YES"
     },
     {
         "name":"Testa di Priapo",
-        "date":"I century BD",
-        "conservation location":"Museo Barracco, Italy",
+        "dateCreated":"I century BD",
+        "locationCreated":"Museo Barracco, Italy",
         "author":"",
-        "place":"Roma",
-        "art":"roman or greek sculpture ",
-        "religion":"YES"
+        "contentLocation":"Roma",
+        "genre":"roman or greek sculptureÂ ",
+        "religiousEvent":"YES"
     },
     {
-        "name":"Laffresco di un Priapo",
-        "date":"NO date ",
-        "conservation location":"Pompei, Italy",
+        "name":"Lâaffresco di un Priapo",
+        "dateCreated":"NO DATEÂ ",
+        "locationCreated":"Pompei, Italy",
         "author":"",
-        "place":"Roma",
-        "art":"Fresco",
-        "religion":"YES"
+        "contentLocation":"Roma",
+        "genre":"Fresco",
+        "religiousEvent":"YES"
     },
     {
         "name":"Tintinnabulum",
-        "date":"I century AD",
-        "conservation location":"Museo Archeologico Nazionale di Napoli, Italy",
+        "dateCreated":"I century AD",
+        "locationCreated":"Museo Archeologico Nazionale di Napoli, Italy",
         "author":"",
-        "place":"Roma",
-        "art":"Little bronze statue with bells",
-        "religion":"YES"
+        "contentLocation":"Roma",
+        "genre":"Little bronze statue with bells",
+        "religiousEvent":"YES"
     },
     {
-        "name":"Venere con Bikini DOro",
-        "date":"I century A.C.",
-        "conservation location":"Museo Archeologico Nazionale di Napoli, Italy",
+        "name":"Venere con Bikini DâOro",
+        "dateCreated":"I century A.C.",
+        "locationCreated":"Museo Archeologico Nazionale di Napoli, Italy",
         "author":"",
-        "place":"Pompei",
-        "art":"Statue ",
-        "religion":"YES"
+        "contentLocation":"Pompei",
+        "genre":"StatueÂ ",
+        "religiousEvent":"YES"
     },
     {
         "name":"Epigram of a Fascinus",
-        "date":"II century A.D.",
-        "conservation location":"Leptis Magna, Libya",
+        "dateCreated":"II century A.D.",
+        "locationCreated":"Leptis Magna, Libya",
         "author":"",
-        "place":"Cartago",
-        "art":"Epigram ",
-        "religion":"YES"
+        "contentLocation":"Cartago",
+        "genre":"EpigramÂ ",
+        "religiousEvent":"YES"
     },
     {
         "name":"Phallic Saints",
-        "date":"Middle Ages",
-        "conservation location":"Engreux, Belgium",
+        "dateCreated":"Middle Ages",
+        "locationCreated":"Engreux, Belgium",
         "author":"",
-        "place":"Europe",
-        "art":"Statue",
-        "religion":"YES"
+        "contentLocation":"Europe",
+        "genre":"Statue",
+        "religiousEvent":"YES"
     },
     {
         "name":"Boccaccio, Biblioteca Medicea Laurenziana, Plut. 33 31 (Carmina Priapea Fragments)",
-        "date":"XIV century",
-        "conservation location":"Biblioteca Medici, Italy",
+        "dateCreated":"XIV century",
+        "locationCreated":"Biblioteca Medici, Italy",
         "author":"Boccaccio",
-        "place":"Roma",
-        "art":"literary work ",
-        "religion":"YES"
+        "contentLocation":"Roma",
+        "genre":"literary workÂ ",
+        "religiousEvent":"YES"
     },
     {
         "name":"La Lisistrata",
-        "date":"XVI century AD",
-        "conservation location":"",
+        "dateCreated":"XVI century AD",
+        "locationCreated":"",
         "author":"Aristophanes",
-        "place":"Greece",
-        "art":"literary work ",
-        "religion":""
+        "contentLocation":"Greece",
+        "genre":"literary workÂ ",
+        "religiousEvent":""
     },
     {
         "name":"Due Amanti davanti il busto di Priapo",
-        "date":"XVIII-XIX century ",
-        "conservation location":"Galleria dei Coronari, Roma",
+        "dateCreated":"XVIII-XIX centuryÂ ",
+        "locationCreated":"Galleria dei Coronari, Roma",
         "author":"Louis Vincent Leon Palliere",
-        "place":"Bordeaux",
-        "art":"Painting",
-        "religion":""
+        "contentLocation":"Bordeaux",
+        "genre":"Painting",
+        "religiousEvent":""
     },
     {
         "name":"Ypsilanti Water Tower",
-        "date":"XIX century ",
-        "conservation location":"Michigan, United States",
+        "dateCreated":"XIX centuryÂ ",
+        "locationCreated":"Michigan, United States",
         "author":"William R. Coats",
-        "place":"Ypsilanti",
-        "art":"Architecture",
-        "religion":""
+        "contentLocation":"Ypsilanti",
+        "genre":"Architecture",
+        "religiousEvent":""
     },
     {
-        "name":"Torre Glòries",
-        "date":"XXI century ",
-        "conservation location":"Cataluña, Spain",
+        "name":"Torre GlÃ²ries",
+        "dateCreated":"XXI centuryÂ ",
+        "locationCreated":"CataluÃ±a, Spain",
         "author":"Jean Nouvel",
-        "place":"Barcelona",
-        "art":"Architecture",
-        "religion":""
+        "contentLocation":"Barcelona",
+        "genre":"Architecture",
+        "religiousEvent":""
     }
 ]
