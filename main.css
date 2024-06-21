@@ -1,0 +1,58 @@
+:root {
+    --cs-nav-height: 4em;
+    --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
+    --cs-foot-height: 7em;
+}
+.layout {
+    height: var(--cs-main-height);
+    border: 2px solid black;
+}
+.navbar {
+    height: var(--cs-nav-height);
+}
+.row {
+    height: 50%;
+}
+.carousel {
+    margin-top: 2em;
+}
+.carousel-inner {
+    height: 0;
+    padding-bottom: 25%;
+}
+.carousel-item {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    height: 100%;
+}
+#footer {
+    height: var(--cs-foot-height);
+}
+#arch {
+    background-color: rgb(133, 92, 117);
+    border: 2px solid black;
+}
+#lit {
+    background-color: rgb(115, 111, 76);
+    border: 2px solid black;
+}
+#sculp {
+    background-color: rgb(217, 175, 107);
+    border: 2px solid black;
+}
+#paint {
+    background-color: rgb(175, 100, 89);
+    border: 2px solid black;
+}
+#fresco {
+    background-color: rgb(82, 106, 132);
+    border: 2px solid black;
+}
