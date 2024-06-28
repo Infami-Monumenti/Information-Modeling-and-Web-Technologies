@@ -56,3 +56,21 @@
     background-color: rgb(82, 106, 132);
     border: 2px solid black;
 }
+
+
+/* Custom CSS to change carousel dimensions */
+#carouselExampleIndicators {
+    width: 90%;  /* Set the desired width */
+    height: 90%; /* Set the desired height */
+    margin: auto; /* Center the carousel */
+} 
+#carouselExampleIndicators .carousel-inner {
+    width: 100%;
+    height: 100%;
+  }
+#carouselExampleIndicators .carousel-item img {
+    width: 100%;
+    height: 100%; /* Make the image fill the entire carousel */
+    object-fit: contain; /* Cover the entire area without stretching */
+  } 
+/* da costum CSS è solo una prova 
