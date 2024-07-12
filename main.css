@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Cormorant+Garamond";
+    font-style: "normal";
+    font-weight: 300;
+    src: url();
+}
 :root {
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
@@ -74,3 +80,23 @@
     object-fit: contain; /* Cover the entire area without stretching */
   } 
 /* da costum CSS è solo una prova 
+
+/*infami monumenti page*/
+#imgCol {
+    background-color: aqua;
+    height: fit-content;
+    margin: 1em 1.5em;
+}
+#infoCol {
+    background-color: blue;
+}
+#dataCol {
+    background-color: aquamarine;
+    height: fit-content;
+    width: fit-content; /*check this later*/
+    margin: 1em 1.5em;
+}
+#imRow {
+    width: 100vw;
+    padding: 0;
+}

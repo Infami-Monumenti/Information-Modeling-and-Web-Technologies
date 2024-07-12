@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Infami monumenti</title>
+        <!--Google fonts-->
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+          </style>
         <!--Bootstrap css-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -47,25 +51,25 @@
             </div>
           </nav>
         </header>
-        <main>
-        <div class="container-fluid d-flex" id="mainContainer">
-            <div class="container flex-start" id="imgContainer">
-                <div class="row" id="imgRow">
-                    <div class="col-md-3" id="imgCol">
-
+        <main id="imMain">
+        <!--<div class="container-fluid d-flex" id="mainContainer">
+            <div class="container d-flex align-self-start justify-content-center" id="imgContainer">
+                <div class="row d-flex" id="imgRow">
+                    <div class="col-3" id="imgCol">
+                      <p>testo a caso</p>
                     </div>
                 </div>
             </div>
-            <div class="container justify-content-center" id="infoContainer">
-                <div class="row" id="infoRow">
-                    <div class="col-md-6" id="infoCol">
-
+            <div class="container d-flex align self-start justify-content-center" id="infoContainer">
+                <div class="row d-flex" id="infoRow">
+                    <div class="col-6" id="infoCol">
+                      <p>testo a caso</p>
                     </div>
                 </div>
             </div>
-            <div class="container flex-end" id="dataContainer">
-                <div class="row" id="dataRow">
-                    <div class="col-md-3" id="dataCol">
+            <div class="container d-flex align-self-end justify-content-center" id="dataContainer">
+                <div class="row d-flex" id="dataRow">
+                    <div class="col-3" id="dataCol">
                         <table class="table table-striped">
                             <thead>
                               <tr>
@@ -99,7 +103,49 @@
                 </div>
             </div>
             </div>
+        </div>-->
+        <div class="container-fluid d-flex" id="mainContainer">
+          <div class="row" id="imRow">
+            <div class="col-2 d-flex align-self-center justify-content-center" id="imgCol">
+                <img src="images\128px-Torre_Agbar_-_Barcelona,_Spain_-_Jan_2007.jpg" alt="Torre Glories" height="80px">
+            </div>
+            <div class="col-6 d-flex align self-start justify-content-center" id="infoCol">
+                <p>testo a caso</p>
+            </div>
+            <div class="col-2 d-flex align-self-center justify-content-center" id="dataCol">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+        <!--ends here-->
         </main>
         <!--Bootstrap js-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
