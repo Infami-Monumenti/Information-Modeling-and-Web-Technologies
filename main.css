@@ -1,9 +1,3 @@
-@font-face {
-    font-family: "Cormorant+Garamond";
-    font-style: "normal";
-    font-weight: 300;
-    src: url();
-}
 :root {
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
@@ -63,7 +57,172 @@
     border: 2px solid black;
 }
 
+/* homepage */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color:#E3DAD0;
+    color: black;
+}
 
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    padding: 10px 0;
+    text-align: center;
+    background-color:#E3DAD0;
+    color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: white;
+    padding: 10px 0;
+}
+nav a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+}
+nav a:hover {
+        background: #555;
+}
+.container {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 40px; /* Spazio tra il titolo e l'immagine */
+    text-align: center;
+}
+
+#icon {
+    color:  #555;
+    text-align: center;
+    padding: 50px;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.image-container img {
+    max-width:30%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.card{
+   width: 325px;
+   background-color: floralwhite;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
+   margin: 20;
+   padding: 7px;
+   transition: transform 0.6s ease;
+}
+.card:hover{
+    transform: translateY(-30px);
+
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-content {
+    padding: 16px;
+}
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}   
+.card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+} 
+.btn{
+    display: inline-block;
+    padding: 5px 10px;
+    width: 50%;
+    text-align: center;
+    background-color: #977060;
+    color:floralwhite;
+    text-decoration: none;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+
+
+
+
+.logo-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    width: 100%;
+    margin: 20px 30px;
+}
+.logo {
+        width: 110px; /* Dimensione della foto */
+        float: left; /* Allinea a sinistra */
+        align-items: left;
+        margin-right: 15px; /* Spazio tra l'immagine e il testo */
+}
+
+a {
+    color:#DBD6C5;
+    text-decoration: none;
+    text: underline offset 0; 
+}
+a:hover {
+    color:black;
+}
+a .footerpages:visited {/* NON VIENE! */
+    color: #CD8635;
+}
+.active a:active {
+    background-color: ; /* Cambia il colore di sfondo del link quando è attivo */
+    color: #977060; /* Cambia il colore del testo del link quando è attivo */
+}
+
+footer {
+    background: #977060;
+    color: #DBD6C5;
+    text-align: center;
+    padding: 100px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    margin: 270px;
+}
+.footerpages { 
+    text-align: left;
+
+}
 /* Custom CSS to change carousel dimensions */
 #carouselExampleIndicators {
     width: 90%;  /* Set the desired width */
@@ -79,24 +238,4 @@
     height: 100%; /* Make the image fill the entire carousel */
     object-fit: contain; /* Cover the entire area without stretching */
   } 
-/* da costum CSS è solo una prova 
-
-/*infami monumenti page*/
-#imgCol {
-    background-color: aqua;
-    height: fit-content;
-    margin: 1em 1.5em;
-}
-#infoCol {
-    background-color: blue;
-}
-#dataCol {
-    background-color: aquamarine;
-    height: fit-content;
-    width: fit-content; /*check this later*/
-    margin: 1em 1.5em;
-}
-#imRow {
-    width: 100vw;
-    padding: 0;
-}
+/* da costum CSS è solo una prova */
