@@ -3,12 +3,11 @@
 
 /* CSS Variables */
 :root {
-    --cs-nav-height: 4em;
-    --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
-    --cs-foot-height: 7em;
+    --navbar-height: 56px; /* Adjust based on your navbar height */
+    --footer-height: 7em; /* Adjust based on your footer height */
 }
 
-/* General styles */
+/* General body styling */
 body {
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
     color: rgb(0, 0, 0); /* #2e0e01 */
@@ -111,17 +110,16 @@ nav a:hover {
     font-style: italic;
 }
 
-/* Sidebar styles */
+/* Adjusted sidebar styling */
 .sidebar {
     background-color: rgb(151, 112, 96); /* #977060 */
     color: rgb(219, 214, 197); /* #DBD6C5 */
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
-    padding-top: 40px;
-    padding-left: 40px;
+    padding-top: calc(var(--navbar-height) + 20px); /* Add top padding to avoid overlapping with navbar */
     font-size: 1rem; /* Increased font size by 20% */
-    height: 100vh; /* Full height sidebar */
+    height: calc(100vh - var(--footer-height)); /* Full height sidebar minus footer height */
     position: fixed; /* Fixes sidebar on the left */
     top: 0;
     left: 0;
@@ -483,9 +481,10 @@ footer {
     border-radius: 5px;
     line-height: 1.4; /* Adjusted line-height for content sections */
     text-align: justify;
-    margin-left: 20px; /* Add margin for better spacing */
+    margin-left: 300px; /* Add margin for better spacing */
     margin-right: 20px; /* Add margin for better spacing */
 }
+
 
 /* Special titles styling */
 .special-title {
