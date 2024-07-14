@@ -37,7 +37,7 @@ h1 {
     text-align: center;
     background-color: #E3DAD0;
     color: black;
-    font-size: 2.5rem; /* Font size for h1 */
+    font-size: 2rem; /* Font size for h1 */
     margin-bottom: 40px; /* Space between title and image */
 }
 
@@ -109,6 +109,7 @@ nav a:hover {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
+    z-index: 1000;
 }
 
 /* Adjusted sidebar styling */
@@ -412,45 +413,7 @@ footer {
     border: 2px solid black;
 }
 
-/* Header image styling */
-.header-image {
-    background-image: url('https://s26162.pcdn.co/wp-content/uploads/2022/11/medieval-knob.jpg');
-    background-size: cover; /* Ensure the image covers the header area */
-    background-position: center; /* Centers the image */
-    height: 300px; /* Adjust the height of the header */
-    position: relative; /* Necessary for positioning the overlay and centering text */
-    display: flex; /* Use flexbox for centering text */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-}
-
-/* Transparent overlay */
-.header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3); /* White overlay with 30% opacity */
-    pointer-events: none; /* Ensure the overlay does not block interactions */
-    z-index: 1; /* Place the overlay behind the text */
-}
-
-/* Header text styling */
-.header-image h1 {
-    color: rgb(46, 14, 1); /* #2e0e01 */
-    text-shadow: 4px 4px 6px rgb(219, 214, 197); /* Optional: Adding shadow for better text visibility */
-    text-align: center; /* Center-align text in header */
-    z-index: 10; /* Ensure the text appears above the overlay */
-    font-size: 2.5rem; /* Adjust the font size */
-}
-
 /* Responsive text styling for smaller screens */
-@media (max-width: 100%) {
-    .header-image h1 {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-    }
-}
 
 @media (max-width: 768px) {
     .sidebar {
@@ -525,4 +488,21 @@ footer {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-style: italic;
+}
+
+/* Style the top-image as a banner */
+.top-image {
+    width: calc(100% - 250px); /* Adjust based on the sidebar width */
+    box-sizing: border-box;
+}
+
+.top-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+main {
+    margin-left: 250px; /* Adjust based on the sidebar width */
+    padding-top: 56px; /* Adjust for the navbar height */
 }
