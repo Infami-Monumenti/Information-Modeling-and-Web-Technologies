@@ -18,6 +18,7 @@ body {
     text-align: justify;
     overflow-y: auto; /* Allow scrolling of the body content */
     width: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -117,14 +118,18 @@ nav a:hover {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
-    padding-top: calc(var(--navbar-height) + 20px); /* Add top padding to avoid overlapping with navbar */
+    padding-top: 20px; /* Add top padding */
     font-size: 1rem; /* Increased font size by 20% */
-    height: calc(100vh - var(--footer-height)); /* Full height sidebar minus footer height */
     position: fixed; /* Fixes sidebar on the left */
-    top: 0;
+    top: var(--navbar-height); /* Start the sidebar below the navbar */
     left: 0;
     width: 280px; /* Sidebar width */
     z-index: 1000; /* Make sure the sidebar is above the main content */
+    min-height: 100%; 
+    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
+    height: 100%; 
+    margin: 0 auto -100px; /*Allow for footer height*/
+    vertical-align:bottom;
 }
 
 .nav-link {
@@ -473,18 +478,47 @@ footer {
     }
 }
 
+/* Footer styling */
+/* Footer styling */
+footer {
+    background: #977060;
+    color: #DBD6C5;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+}
+.content-section {
+    margin-left: 0; /* Remove left margin */
+    margin-right: 0; /* Remove right margin */
+    padding: 20px; /* Adjust padding */
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .content-section {
+        padding: 10px; /* Further adjust padding */
+    }
+}
+
 /* Content section styling */
 .content-section {
-    padding: 40px;
+    padding: 20px;
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
-    margin: 40px 0;
+    margin: 0;
     border-radius: 5px;
     line-height: 1.4; /* Adjusted line-height for content sections */
     text-align: justify;
-    margin-left: 300px; /* Add margin for better spacing */
+    margin-left: 20px; /* Add margin for better spacing */
     margin-right: 20px; /* Add margin for better spacing */
 }
-
 
 /* Special titles styling */
 .special-title {
