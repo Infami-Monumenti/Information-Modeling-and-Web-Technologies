@@ -10,12 +10,17 @@
 
 /* General styles */
 body {
+    background-color: rgb(227, 218, 208); /* #E3DAD0 */
+    color: rgb(0, 0, 0); /* #2e0e01 */
     font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
     font-weight: 300;
+    line-height: 1.4; /* Adjusted line-height for body text */
+    text-align: justify;
+    overflow-y: auto; /* Allow scrolling of the body content */
+    width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #E3DAD0;
-    color: black;
 }
 
 * {
@@ -32,7 +37,25 @@ h1 {
     text-align: center;
     background-color: #E3DAD0;
     color: black;
+    font-size: 2.5rem; /* Font size for h1 */
     margin-bottom: 40px; /* Space between title and image */
+}
+
+h2 {
+    font-size: 1.5rem; /* Font size for h2, smaller than h1 */
+}
+
+h2:after {
+    content: ' ';
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+h3 {
+    font-size: 1rem; /* Font size for h3, smaller than h2 */
 }
 
 a {
@@ -88,11 +111,30 @@ nav a:hover {
     font-style: italic;
 }
 
+/* Sidebar styles */
+.sidebar {
+    background-color: rgb(151, 112, 96); /* #977060 */
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 1rem; /* Increased font size by 20% */
+    height: 100vh; /* Full height sidebar */
+    position: fixed; /* Fixes sidebar on the left */
+    top: 0;
+    left: 0;
+    width: 280px; /* Sidebar width */
+    z-index: 1000; /* Make sure the sidebar is above the main content */
+}
+
 .nav-link {
     color: rgb(219, 214, 197); /* Navbar link text color */
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
+    font-size: 1rem;
 }
 
 /* Active link styling */
@@ -161,7 +203,7 @@ footer {
     margin: 270px 0 20px 0;
 }
 
-.footerpages { 
+.footerpages {
     text-align: left;
 }
 
@@ -314,68 +356,32 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    backface-visibility: hidden;
-    transition: 1.5s;
-    border-radius: 20px;
-    border-color: #977060;
+    border-radius: 8px;
+    transition: transform 0.6s ease;
 }
 
-.acard .front {
+.acard div.front {
+    background-size: cover;
+    background-position: center;
+}
+
+.acard div.back {
     background-color: floralwhite;
-    transform: perspective(500px) rotateY(0deg);
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.acard .back {
-    background-color: #977060;
-    transform: perspective(500px) rotateY(180deg);
+.acard:hover div.front {
+    transform: rotateY(-180deg);
 }
 
-.acard:hover .front {
-    transform: perspective(500px) rotateY(180deg);
+.acard:hover div.back {
+    transform: rotateY(0deg);
 }
 
-.acard:hover .back {
-    transform: perspective(500px) rotateY(360deg);
-}
-
-.acard div img {
-    position: fixed;
-    width: 310px;
-    height: 320px;
-    top: 1px;
-}
-
-.acard div h3 {
-    position: fixed;
-    width: 500px;
-    height: 100px;
-    bottom: -50px;
-    text-align: center;
-}
-
-/* Custom CSS to change carousel dimensions */
-#carouselExampleIndicators {
-    width: 90%;  /* Set the desired width */
-    height: 90%; /* Set the desired height */
-    margin: auto; /* Center the carousel */
-}
-
-#carouselExampleIndicators .carousel-inner {
-    width: 100%;
-    height: 100%;
-}
-
-#carouselExampleIndicators .carousel-item img {
-    width: 100%;
-    height: 100%; /* Make the image fill the entire carousel */
-    object-fit: contain; /* Cover the entire area without stretching */
-}
-
-/* Story Map Container */
 .story-map-container {
-    margin-top: 40px;
-    padding: 40px;
-    background-color: rgb(227, 218, 208);
+    background-color: rgb(227, 218, 208); /* #E3DAD0 */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -401,4 +407,89 @@ footer {
     width: 100%;
     height: 500px;
     border: 2px solid black;
+}
+
+/* Header image styling */
+.header-image {
+    background-image: url('https://s26162.pcdn.co/wp-content/uploads/2022/11/medieval-knob.jpg');
+    background-size: cover; /* Ensure the image covers the header area */
+    background-position: center; /* Centers the image */
+    height: 300px; /* Adjust the height of the header */
+    position: relative; /* Necessary for positioning the overlay and centering text */
+    display: flex; /* Use flexbox for centering text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+/* Transparent overlay */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 30% opacity */
+    pointer-events: none; /* Ensure the overlay does not block interactions */
+    z-index: 1; /* Place the overlay behind the text */
+}
+
+/* Header text styling */
+.header-image h1 {
+    color: rgb(46, 14, 1); /* #2e0e01 */
+    text-shadow: 4px 4px 6px rgb(219, 214, 197); /* Optional: Adding shadow for better text visibility */
+    text-align: center; /* Center-align text in header */
+    z-index: 10; /* Ensure the text appears above the overlay */
+    font-size: 2.5rem; /* Adjust the font size */
+}
+
+/* Responsive text styling for smaller screens */
+@media (max-width: 100%) {
+    .header-image h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Sidebar takes full width */
+        height: auto; /* Adjust height to content */
+        position: relative; /* Position it relative */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .content-section {
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Remove right margin */
+        padding: 20px; /* Adjust padding */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .content-section {
+        padding: 10px; /* Further adjust padding */
+    }
+}
+
+/* Content section styling */
+.content-section {
+    padding: 40px;
+    background-color: rgb(227, 218, 208); /* #E3DAD0 */
+    margin: 40px 0;
+    border-radius: 5px;
+    line-height: 1.4; /* Adjusted line-height for content sections */
+    text-align: justify;
+    margin-left: 20px; /* Add margin for better spacing */
+    margin-right: 20px; /* Add margin for better spacing */
+}
+
+/* Special titles styling */
+.special-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
 }
