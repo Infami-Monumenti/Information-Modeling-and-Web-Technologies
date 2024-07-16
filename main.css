@@ -1,33 +1,84 @@
-/* Importing the required fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
-
-/* CSS Variables */
 :root {
-    --navbar-height: 56px; /* Adjust based on your navbar height */
-    --footer-height: 7em; /* Adjust based on your footer height */
+    --cs-nav-height: 4em;
+    --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
+    --cs-foot-height: 7em;
 }
 
-/* General body styling */
+.layout {
+    height: var(--cs-main-height);
+    border: 2px solid black;
+}
+
+.navbar {
+    height: var(--cs-nav-height);
+}
+
+.row {
+    height: 50%;
+}
+
+.carousel {
+    margin-top: 2em;
+}
+
+.carousel-inner {
+    height: 0;
+    padding-bottom: 25%;
+}
+
+.carousel-item {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+#footer {
+    height: var(--cs-foot-height);
+}
+
+#arch {
+    background-color: rgb(133, 92, 117);
+    border: 2px solid black;
+}
+
+#lit {
+    background-color: rgb(115, 111, 76);
+    border: 2px solid black;
+}
+
+#sculp {
+    background-color: rgb(217, 175, 107);
+    border: 2px solid black;
+}
+
+#paint {
+    background-color: rgb(175, 100, 89);
+    border: 2px solid black;
+}
+
+#fresco {
+    background-color: rgb(82, 106, 132);
+    border: 2px solid black;
+}
+
+/* homepage */
 body {
-    background-color: rgb(227, 218, 208); /* #E3DAD0 */
-    color: rgb(0, 0, 0); /* #2e0e01 */
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
     font-weight: 300;
-    line-height: 1.4; /* Adjusted line-height for body text */
-    text-align: justify;
-    overflow-y: auto; /* Allow scrolling of the body content */
-    width: 100%;
-    min-height: 100%;
     margin: 0;
     padding: 0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    background-color: #E3DAD0;
+    color: black;
+    margin-top: -70px;
 }
 
 h1 {
@@ -37,42 +88,7 @@ h1 {
     text-align: center;
     background-color: #E3DAD0;
     color: black;
-    font-size: 2rem; /* Font size for h1 */
-    margin-bottom: 40px; /* Space between title and image */
-}
-
-h2 {
-    font-size: 1.5rem; /* Font size for h2, smaller than h1 */
-}
-
-h2:after {
-    content: ' ';
-    display: block;
-    border: 1px solid rgb(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-h3 {
-    font-size: 1rem; /* Font size for h3, smaller than h2 */
-}
-
-a {
-    color: #DBD6C5;
-    text-decoration: none;
-}
-
-a:hover {
-    color: black;
-}
-
-a .footerpages:visited {
-    color: #CD8635;
-}
-
-.active a:active {
-    color: #977060;
+    margin-bottom: 40px; /* Combined */
 }
 
 nav {
@@ -94,150 +110,16 @@ nav a:hover {
 
 .container {
     padding: 20px;
-    max-width: 1200px;
-}
-
-.layout {
-    height: var(--cs-main-height);
-    border: 2px solid black;
-}
-
-.navbar {
-    height: var(--cs-nav-height);
-    background-color: rgb(151, 112, 96);
-    color: rgb(219, 214, 197); /* Navbar text color */
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    z-index: 1000;
-}
-
-/* Adjusted sidebar styling */
-.sidebar {
-    background-color: rgb(151, 112, 96); /* #977060 */
-    color: rgb(219, 214, 197); /* #DBD6C5 */
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    padding-top: 20px; /* Add top padding */
-    font-size: 1rem; /* Increased font size by 20% */
-    position: fixed; /* Fixes sidebar on the left */
-    top: var(--navbar-height); /* Start the sidebar below the navbar */
-    left: 0;
-    width: 280px; /* Sidebar width */
-    z-index: 1000; /* Make sure the sidebar is above the main content */
-    min-height: 100%; 
-    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
-    height: 100%; 
-    margin: 0 auto -100px; /*Allow for footer height*/
-    vertical-align:bottom;
-}
-
-.nav-link {
-    color: rgb(219, 214, 197); /* Navbar link text color */
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    font-size: 1rem;
-}
-
-/* Active link styling */
-.nav-link.active {
-    font-weight: 800;
-    color: rgb(219, 214, 197); /* #DBD6C5 */
-}
-
-/* Link color when hovered */
-.nav-link:hover {
-    color: rgb(46, 14, 1); /* #2e0e01 */
-}
-
-/* Link color when visited */
-.nav-link:visited {
-    color: rgb(61, 19, 2); /* #3d1302 */
-}
-
-.row {
-    height: 50%;
-}
-
-/* Carousel styles */
-.carousel {
-    margin-top: 2em;
-    width: 90%;  /* Set the desired width */
-    height: 90%; /* Set the desired height */
-    margin: auto; /* Center the carousel */
-}
-
-.carousel-inner {
-    height: 0;
-    padding-bottom: 25%;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-item {
-    position: absolute !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.carousel-item img {
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    object-fit: contain; /* Cover the entire area without stretching */
-}
-
-/* Footer styles */
-footer {
-    background: #977060;
-    color: #DBD6C5;
-    text-align: center;
-    padding: 100px;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
-    margin: 270px 0 20px 0;
-}
-
-.footerpages {
-    text-align: left;
-}
-
-/* Specific section styles */
-#footer {
-    height: var(--cs-foot-height);
-}
-
-#arch, #lit, #sculp, #paint, #fresco {
-    border: 2px solid black;
-}
-
-#arch {
-    background-color: rgb(133, 92, 117);
-}
-
-#lit {
-    background-color: rgb(115, 111, 76);
-}
-
-#sculp {
-    background-color: rgb(217, 175, 107);
-}
-
-#paint {
-    background-color: rgb(175, 100, 89);
-}
-
-#fresco {
-    background-color: rgb(82, 106, 132);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: #E3DAD0;
+    box-shadow: 0 30px 50px #dbdbdb;
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 #icon {
@@ -262,7 +144,136 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Narratives preview cards */
+/* slider */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide .item {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 40% 40%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.item:nth-child(1),
+.item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.item:nth-child(3) {
+    left: 50%;
+}
+
+.slide .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.item:nth-child(n + 6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: black;
+    transform: translate(0, -50%);
+    font-family: 'Inter', sans-serif;
+    display: none;
+}
+
+.slide .item:nth-child(2) .content {
+    display: block;
+}
+
+.content .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 1px solid #000;
+    transition: 0.3s;
+}
+
+.button button:hover {
+    background: #977060;
+    color: white;
+}
+
+/* separator */
+.separator {
+    background-color: #E3DAD0;
+    margin-top: 800px;
+    margin-bottom: 800px;
+}
+
+/* narratives preview cards */
 .hcard-container {
     display: flex;
     justify-content: center;
@@ -275,7 +286,7 @@ footer {
     background-color: floralwhite;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin: 10px;
     padding: 9px;
     transition: transform 0.6s ease;
@@ -317,28 +328,138 @@ footer {
     margin-top: 10px;
 }
 
-.logo-container {
-    display: flex;
-    align-items: left;
-    justify-content: left;
+/* link styles */
+a {
+    color: #DBD6C5;
+    text-decoration: none;
+    text-underline-offset: 0;
+}
+
+a:hover {
+    color: black;
+}
+
+a.footerpages:visited {
+    color: #CD8635;
+}
+
+.active a:active {
+    color: #977060;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+
+.footer {
+    background-color: #977060;
+    box-sizing: border-box;
     width: 100%;
-    margin: 20px 30px;
+    text-align: left;
+    font: bold 13px sans-serif;
+    padding: 30px 20px 30px 50px;
+    margin-top: 100px;
 }
 
-.logo {
-    width: 110px; /* Dimensione della foto */
-    float: left; /* Allinea a sinistra */
-    align-items: left;
-    margin-right: 15px; /* Spazio tra l'immagine e il testo */
-    padding: 1px;
+.footer-left,
+.footer-center,
+.footer-right {
+    display: inline-block;
+    vertical-align: top;
 }
 
-/* About cards */
+@media (max-height: 800px) {
+    footer {
+        position: static;
+    }
+}
+
+.footer-left {
+    width: 35%;
+}
+
+.footer h4 {
+    color: floralwhite;
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-left img {
+    width: 25%;
+    vertical-align: middle;
+}
+
+.footer-left .logoimg {
+    width: 100%;
+}
+
+.footer-copyright {
+    color: #555;
+    font-size: 14px;
+    margin: 0;
+    padding-top: 2%;
+}
+
+.footer-center {
+    width: 30%;
+    margin-left: 10px;
+}
+
+.footer-center i {
+    background-color: #977060;
+    color: #555;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+.footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.footer-center p {
+    display: inline-block;
+    color: floralwhite;
+    vertical-align: middle;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.footer-center p a {
+    color: floralwhite;
+    text-decoration: none;
+    line-height: 10px;
+}
+
+.footer-right {
+    width: 30%;
+}
+
+.footer .footer-center .li a {
+    display: block;
+    color: floralwhite;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* about cards */
 .acard {
     position: relative;
     width: 300px;
     height: 400px;
     margin: 10px;
+    transition: transform 0.6s ease;
 }
 
 .acard:hover {
@@ -360,137 +481,51 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    transition: transform 0.6s ease;
+    backface-visibility: hidden;
+    transition: 1.5s;
+    border-radius: 20px;
+    border-color: #977060;
 }
 
-.acard div.front {
-    background-size: cover;
-    background-position: center;
-}
-
-.acard div.back {
+.acard .front {
     background-color: floralwhite;
-    transform: rotateY(180deg);
-    padding: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: perspective(500px) rotateY(0deg);
 }
 
-.acard:hover div.front {
-    transform: rotateY(-180deg);
+.acard .back {
+    background-color: #977060;
+    transform: perspective(500px) rotateY(180deg);
 }
 
-.acard:hover div.back {
-    transform: rotateY(0deg);
+.acard:hover .front {
+    transform: perspective(500px) rotateY(180deg);
 }
 
-.story-map-container {
-    background-color: rgb(227, 218, 208); /* #E3DAD0 */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.acard:hover .back {
+    transform: perspective(500px) rotateY(360deg);
 }
 
-.story-map-container h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.75rem;
-    margin-bottom: 10px;
-    color: rgb(0, 0, 0);
+.acard div img {
+    position: fixed;
+    width: 310px;
+    height: 320px;
+    top: 1px;
 }
 
-.story-map-container p {
-    background-color: rgb(227, 218, 208); /* #E3DAD0 */
-    color: rgb(0, 0, 0);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    line-height: 1.4;
-    text-align: justify;
-}
-
-.story-map-iframe {
-    width: 100%;
-    height: 500px;
-    border: 2px solid black;
-}
-
-/* Responsive text styling for smaller screens */
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%; /* Sidebar takes full width */
-        height: auto; /* Adjust height to content */
-        position: relative; /* Position it relative */
-        padding: 20px; /* Adjust padding */
-    }
-
-    .content-section {
-        margin-left: 0; /* Remove left margin */
-        margin-right: 0; /* Remove right margin */
-        padding: 20px; /* Adjust padding */
-    }
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-    .sidebar {
-        padding: 10px; /* Further adjust padding */
-    }
-
-    .content-section {
-        padding: 10px; /* Further adjust padding */
-    }
-}
-
-/* Footer styling */
-/* Footer styling */
-footer {
-    background: #977060;
-    color: #DBD6C5;
+.acard div h3 {
     text-align: center;
     padding: 20px;
-    position: relative;
-    left: 0;
-    bottom: 0;
     width: 100%;
     height: var(--footer-height);
 }
+
 .content-section {
-    margin-left: 0; /* Remove left margin */
-    margin-right: 0; /* Remove right margin */
-    padding: 20px; /* Adjust padding */
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-    .sidebar {
-        padding: 10px; /* Further adjust padding */
-    }
-
-    .content-section {
-        padding: 10px; /* Further adjust padding */
-    }
-}
-
-/* Content section styling */
-.content-section {
-    padding: 20px;
+    margin: 0 20px; /* Adjusted margin */
+    padding: 20px; /* Adjusted padding */
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
-    margin: 0;
     border-radius: 5px;
-    line-height: 1.4; /* Adjusted line-height for content sections */
+    line-height: 1.4;
     text-align: justify;
-    margin-left: 20px; /* Add margin for better spacing */
-    margin-right: 20px; /* Add margin for better spacing */
-}
-
-.content-section a {
-    color: rgb(0, 0, 0); /* Normal link color */
-    text-decoration: underline; /* Optional: underline for links */
-}
-
-.content-section a:hover,
-.content-section a:active {
-    color: rgb(46, 14, 1); /* Color for hover and active states */
 }
 
 /* Special titles styling */
@@ -502,16 +537,23 @@ footer {
 
 /* Style the top-image as a banner */
 .top-image {
+    width: calc(100% - 250px); /* Adjust based on the sidebar width */
     box-sizing: border-box;
 }
 
 .top-image img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%; /* Make the image fill the entire carousel */
+    object-fit: contain; /* Cover the entire area without stretching */
 }
 
-main {
-    margin-left: 250px; /* Adjust based on the sidebar width */
-    padding-top: 56px; /* Adjust for the navbar height */
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
 }
