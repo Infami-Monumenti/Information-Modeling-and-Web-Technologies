@@ -483,6 +483,16 @@ footer {
     margin-right: 20px; /* Add margin for better spacing */
 }
 
+.content-section a {
+    color: rgb(0, 0, 0); /* Normal link color */
+    text-decoration: underline; /* Optional: underline for links */
+}
+
+.content-section a:hover,
+.content-section a:active {
+    color: rgb(46, 14, 1); /* Color for hover and active states */
+}
+
 /* Special titles styling */
 .special-title {
     font-family: 'Cormorant Garamond', serif;
@@ -492,7 +502,6 @@ footer {
 
 /* Style the top-image as a banner */
 .top-image {
-    width: calc(100% - 250px); /* Adjust based on the sidebar width */
     box-sizing: border-box;
 }
 
