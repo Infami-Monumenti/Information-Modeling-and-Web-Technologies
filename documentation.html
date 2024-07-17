@@ -6,6 +6,7 @@
   <title>Infami Monumenti Documentation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="documentation.css"> 
 </head>
 <body>
   <header>
@@ -38,112 +39,152 @@
         </div>
       </div>
     </nav>
-  </header>
+  </header>  
+  
+  <!-- Parallax Section -->
+  <div class="parallax"></div>
   
   <!-- Sidebar -->
-  <div class="col-md-3 col-lg-2 d-md-block sidebar" id="sidebar">
-    <div class="position-sticky pt-3">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#project-menu" role="button" aria-expanded="false" aria-controls="narratives-menu">
-            The project
+  <div class="sidebar-documentation">
+    <div class="col-md-3 col-lg-2 d-md-block sidebar" id="sidebar-documentation">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#project_menu" role="button" aria-expanded="false" aria-controls="project_menu">
+              Project
+            </a>
+            <!-- Collapsible Sub-Menu for Project -->
+            <ul class="nav flex-column ms-3 collapse" id="project_menu">
+              <!-- Sub-Menu Links -->
+              <li class="nav-item">
+                <a class="nav-link sub-menu" href="#layout_project">
+                  Layout
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sub-menu" href="#colors_project">
+                  Colors
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link sub-menu" href="#typography_project">
+                  Typography
+                </a>
+              </li>
+            </ul>
+          <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#museum_menu" role="button" aria-expanded="false" aria-controls="museum_menu">
+            Museum
           </a>
-          <!-- Collapsible Sub-Menu for Project -->
-          <ul class="nav flex-column ms-3 collapse" id="project-menu">
+          <!-- Collapsible Sub-Menu for Museum -->
+          <ul class="nav flex-column ms-3 collapse" id="museum_menu">
             <!-- Sub-Menu Links -->
             <li class="nav-item">
-              <a class="nav-link sub-menu" href="#layout_project">
+              <a class="nav-link sub-menu" href="#layout_museum">
                 Layout
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link sub-menu" href="#colors_project">
+              <a class="nav-link sub-menu" href="#colors_museum">
                 Colors
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link sub-menu" href="#typography_project">
+              <a class="nav-link sub-menu" href="#typography_museum">
                 Typography
               </a>
             </li>
           </ul>
-        <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#museum-menu" role="button" aria-expanded="false" aria-controls="narratives-menu">
-          Museum
-        </a>
-        <!-- Collapsible Sub-Menu for Museum -->
-        <ul class="nav flex-column ms-3 collapse" id="museum-menu">
-          <!-- Sub-Menu Links -->
-          <li class="nav-item">
-            <a class="nav-link sub-menu" href="#layout_museum">
-              Layout
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sub-menu" href="#colors_museum">
-              Colors
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sub-menu" href="#typography_museum">
-              Typography
-            </a>
-          </li>
+          <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#narratives_menu" role="button" aria-expanded="false" aria-controls="narratives-menu">
+            Narratives
+          </a>
+          <!-- Collapsible Sub-Menu for Narratives -->
+          <ul class="nav flex-column ms-3 collapse" id="narratives_menu">
+            <!-- Sub-Menu Links -->
+            <li class="nav-item">
+              <a class="nav-link sub-menu" href="#layout_narratives">
+                Layout
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link sub-menu" href="#colors_narratives">
+                Colors
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link sub-menu" href="#typography_narratives">
+                Typography
+              </a>
+            </li>
+          </ul>
         </ul>
-        <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#narratives-menu" role="button" aria-expanded="false" aria-controls="narratives-menu">
-          Narratives
-        </a>
-        <!-- Collapsible Sub-Menu for Narratives -->
-        <ul class="nav flex-column ms-3 collapse" id="narratives-menu">
-          <!-- Sub-Menu Links -->
-          <li class="nav-item">
-            <a class="nav-link sub-menu" href="#layout_narratives">
-              Layout
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sub-menu" href="#colors_narratives">
-              Colors
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link sub-menu" href="#typography_narratives">
-              Typography
-            </a>
-          </li>
-        </ul>
-      </ul>
+      </div>
     </div>
   </div>
-
-  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main-doc">
     <div class="top-image">
       <img src="/Users/carlamenegat/Downloads/itemsbanner.png" alt="Items images.">
     </div>
     <h1>Infami Monumenti Documentation</h1>
     <div class="content-section" id="project">
-      <h2>The project</h2>
-      <p>blablabla</p>
+      <h2>Project</h2>
+      <br>
+      <p>Infami Monumenti is a project that seeks to present a History of Phallic Culture, thinking of it as the invocation of the phallus the source of an alleged masculine power. To this end, it was designed as a virtual museum with objects that present this culture and its main concepts: power, fertility, fortune and strength.</p>
       <div class="content-section" id="layout_project">
         <h3>Layout</h3>
+        <br>
+        <p>Graphically representing a story of Phallic Culture involved thinking about what the metaphors of this culture are. The verticality of objects that mimic the phallus in different cultures was the first starting point. It also represents, in some of the societies presented here, the notion of fertility, in a clear allusion to the growth of plants, animals and fortunes. To achieve this, the use of sidebars to guarantee access to content was prioritized. Another functionality explored was content scrolling. Although this perception is very clear on small and extra-small screens, it is not completely lost when using large screens.</p>
       </div>
       <div class="content-section" id="colors_project">
         <h3>Colors</h3>
+        <br>
+        <p>As Priapus is the most recurrent Western representation over time of the concept of the phallus as a symbol of power, we chose the most famous image of this deity, the fresco from the Casa dei Vetti in Pompeii as the starting point for the overall color palette of this project. The colors were extracted using palette identification tools through images such as those offered by Canva and Adobe Color. Thinking of the website as a virtual museum, neutral and soft colors were designed for the background. In contrast, the body texts were given bold colors.</p>
+        <div class="main-content">
+          <div class="palette-grid">
+        
+            <div class="palette-headers">
+            </div>
+            <div class="palette palette--grays">
+              <div class="palette__color" style="--bg-color: rgb(227, 218, 208)"></div>
+              <div class="palette__info">
+                <div class="palette__info__hexcode">#E3DAD0</div>
+              </div>
+            </div>
+            <div class="palette palette--grays">
+              <div class="palette__color" style="--bg-color: rgb(219, 214, 197)"></div>
+              <div class="palette__info">
+                <div class="palette__info__hexcode">#DBD6C5</div>
+              </div>
+            </div>
+            <div class="palette palette--grays">
+              <div class="palette__color" style="--bg-color: rgb(151, 112, 96)"></div>
+              <div class="palette__info">
+                <div class="palette__info__hexcode">#977060</div>
+              </div>
+            </div>
+            <div class="palette palette--grays">
+              <div class="palette__color" style="--bg-color: rgb(61, 19, 2)"></div>
+              <div class="palette__info">
+                <div class="palette__info__hexcode">#3d1302</div>
+              </div>
+            </div>
+            <div class="palette palette--grays">
+              <div class="palette__color" style="--bg-color: rgb(85, 85, 85)"></div>
+              <div class="palette__info">
+                <div class="palette__info__hexcode">#555</div>
+              </div>
+            </div>
+            <div class="palette palette--grays">
+              <div class="palette__color" style="--bg-color: rgb(0, 0, 0)"></div>
+              <div class="palette__info">
+                <div class="palette__info__hexcode">#000000</div>
+              </div>
+            </div>
+          </div>
       </div>
       <div class="content-section" id="typography_project">
         <h3>Typography</h3>
-      </div>
-    </div>
-    <div class="content-section" id="narratives">
-      <h2>Narratives</h2>
-      <p>blablabla</p>
-      <div class="content-section" id="layout_narrative">
-        <h3>Layout</h3>
-      </div>
-      <div class="content-section" id="colors_narratives">
-        <h3>Colors</h3>
-      </div>
-      <div class="content-section" id="typography_narrative">
-        <h3>Typography</h3>
+        <br>
+        <p>As the project sought to portray the history of phallic culture in different contexts, the choice was made for a neutral font, avoiding interference in the presentation of the objects. At the same time, this font would have to have flexibility in its styles, allowing for some variation, allowing parts of the text to stand out. The choice fell on the <a href = "https://fonts.google.com/specimen/Inter">Inter font</a>. In the titles, the font has been used in its ExtraBold 800 variation and in the text in Light 300.</p>
       </div>
     </div>
     <div class="content-section" id="museum">
@@ -153,6 +194,19 @@
         <h3>Layout</h3>
         <p>Trying to reproduce the feeling of starting a visit to a museum, we sought a different layout on this page. By placing the museum plan occupying the entire page, the desire was to prevent the user from having any suggestion of what their visit will be like, seeking to reproduce the feeling of the visitor who finds himself at the entrance of a museum. Even though the navbar is available for the user to access objects in another way, the arrangement of the page's main content occupying the entire screen is an invitation for the user to explore a space freely.</p>
         <p>As in many museums, works are presented im rooms according to their type of production: architecture, literary works, paintings, sculptures and frescoes. To achieve this effect, the <q>Museum</q> page was diveded in different columns and rows to replicate the structure of a museum plan. Then, photos of objects of each type were inserted into carousels, allowing the user to have a preview of the objects in each room.</p>
+      </div>
+      <div class="content-section" id="colors_narratives">
+        <h3>Colors</h3>
+      </div>
+      <div class="content-section" id="typography_narrative">
+        <h3>Typography</h3>
+      </div>
+    </div>
+    <div class="content-section" id="narratives">
+      <h2>Narratives</h2>
+      <p>blablabla</p>
+      <div class="content-section" id="layout_narrative">
+        <h3>Layout</h3>
       </div>
       <div class="content-section" id="colors_narratives">
         <h3>Colors</h3>
