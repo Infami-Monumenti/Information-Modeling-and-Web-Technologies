@@ -2,6 +2,98 @@
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
     --cs-foot-height: 7em;
+    --navbar-height: 56px; /* Adjust based on your navbar height */
+    --footer-height: 7em; /* Adjust based on your footer height */
+}
+
+/* General body styling */
+body {
+    background-color: rgb(227, 218, 208); /* #E3DAD0 */
+    color: rgb(0, 0, 0); /* #000000 */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.4; /* Adjusted line-height for body text */
+    text-align: justify;
+    overflow-y: auto; /* Allow scrolling of the body content */
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #E3DAD0;
+    color: black;
+    font-size: 2rem; /* Font size for h1 */
+    margin-bottom: 40px; /* Space between title and image */
+}
+
+h2 {
+    font-size: 1.5rem; /* Font size for h2, smaller than h1 */
+}
+
+h2:after {
+    content: ' ';
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+h3 {
+    font-size: 1rem; /* Font size for h3, smaller than h2 */
+}
+
+a {
+    color: #DBD6C5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+a .footerpages:visited {
+    color: #CD8635;
+}
+
+.active a:active {
+    color: #977060;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: white;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #555;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
 }
 .layout {
     height: var(--cs-main-height);
@@ -9,7 +101,59 @@
 }
 .navbar {
     height: var(--cs-nav-height);
+    background-color: rgb(151, 112, 96);
+    color: rgb(219, 214, 197); /* Navbar text color */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    z-index: 1000;
 }
+
+/* Adjusted sidebar-documentation styling */
+.sidebar-documentation {
+    background-color: rgb(151, 112, 96); /* #977060 */
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    padding-top: 20px; /* Add top padding */
+    font-size: 1rem; /* Increased font size by 20% */
+    position: fixed; /* Fixes sidebar-documentation on the left */
+    top: var(--navbar-height); /* Start the sidebar-documentation below the navbar */
+    left: 0;
+    width: 280px; /* sidebar-documentation width */
+    z-index: 1000; /* Make sure the sidebar-documentation is above the main content */
+    min-height: 100%; 
+    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
+    height: 100%; 
+    margin: 0 auto -100px; /*Allow for footer height*/
+    vertical-align:bottom;
+}
+
+.nav-link {
+    color: rgb(219, 214, 197); /* Navbar link text color */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Active link styling */
+.nav-link.active {
+    font-weight: 800;
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+}
+
+/* Link color when hovered */
+.nav-link:hover {
+    color: rgb(46, 14, 1); /* #2e0e01 */
+}
+
+/* Link color when visited */
+.nav-link:visited {
+    color: rgb(61, 19, 2); /* #3d1302 */
+}
+
 .row {
     height: 50%;
 }
@@ -32,7 +176,28 @@
     object-position: center;
     overflow: hidden;
     height: 100%;
+    width: 100%;
+    object-fit: contain; /* Cover the entire area without stretching */
 }
+
+/* Footer styles */
+footer {
+    background: #977060;
+    color: #DBD6C5;
+    text-align: center;
+    padding: 100px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.footerpages {
+    text-align: left;
+}
+
+/* Specific section styles */
 #footer {
     height: var(--cs-foot-height);
 }
@@ -486,37 +651,202 @@ footer{
     background-color: #977060;
     transform: perspective(500px)rotateY(360deg);
 }
-.aboutcard div img{
-    position: fixed;
-    width: 310px;
-    height: 320px;
-    top: 1px;
-}
-.aboutcard div h3{
-    position: fixed;
-    width: 500px;
-    height: 100px;
-    bottom: -50px;
-    text-align: center;
-}
-div .back p{
-    text-align: center;
-}
 
-
-/* Custom CSS to change carousel dimensions */
-#carouselExampleIndicators {
-    width: 90%;  /* Set the desired width */
-    height: 90%; /* Set the desired height */
-    margin: auto; /* Center the carousel */
-} 
-#carouselExampleIndicators .carousel-inner {
+.story-map-iframe {
     width: 100%;
-    height: 100%;
+    height: 500px;
+    border: 2px solid black;
+}
+
+/* Responsive text styling for smaller screens */
+
+@media (max-width: 768px) {
+    .sidebar-documentation {
+        width: 100%; /* sidebar-documentation takes full width */
+        height: auto; /* Adjust height to content */
+        position: relative; /* Position it relative */
+        padding: 20px; 
+    }
+
+    .main-doc {
+        margin-left: 0; 
+        margin-right: 0; 
+        padding: 20px; 
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar-documentation {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .main.doc {
+        padding: 10px; /* Further adjust padding */
+    }
+}
+
+/* Footer styling */
+/* Footer styling */
+footer {
+    background: #977060;
+    color: #DBD6C5;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar-documentation {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .main.doc {
+        padding: 10px; /* Further adjust padding */
+    }
+}
+
+/* Content section styling documentation */
+.main-doc {
+    margin-left: 280px; /* Adjust based on the sidebar width */
+    padding-top: 56px; /* Adjust for the navbar height */
+    position: relative; /* Ensure main content stays on top of the parallax image */
+}
+
+.main-doc a {
+    color: rgb(0, 0, 0); /* Normal link color */
+    text-decoration: underline; /* Optional: underline for links */
+}
+
+.main-doc a:hover,
+.main-doc a:active {
+    color: rgb(46, 14, 1); /* Color for hover and active states */
+}
+
+/* Style the top-image as a banner */
+.top-image {
+    box-sizing: border-box;
+    padding-top: var(--navbar-height);
+    padding-left: 15px; 
+}
+
+.top-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*Style for palette in documentation*/
+
+.main-content {
+    margin: 0;
+    max-width: 100%;
   }
-#carouselExampleIndicators .carousel-item img {
+  
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 200px auto auto auto;
+    grid-gap: 30px;
+    justify-content: center;
+    padding: 0px;
+  }
+  
+  .palette {
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    padding: 0;
+    box-shadow: 0px 5px 20px rgba(128, 128, 128, 0.1);
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-flow: column;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .palette:hover {
+    top: -5px;
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.12);
+  }
+  .palette--main-color {
+    grid-column: span 6;
+  }
+  .palette--secondary-color {
+    grid-column: span 4;
+  }
+  .palette--grays {
+    grid-column: span 2;
+  }
+  .palette-headers {
+    grid-column: span 12;
+  }
+  
+  .palette__info {
+    color: #333;
+    position: relative;
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 12px;
+    font-family: 'hardingreg';
+    font-weight: bold;
+  }
+  .palette__info__hexcode {
+    margin-top: 3px;
+    font-size: 12px;
+    color: gray;
+  }
+  .palette__colors {
+    flex: 1;
     width: 100%;
-    height: 100%; /* Make the image fill the entire carousel */
-    object-fit: contain; /* Cover the entire area without stretching */
-  } 
-/* da costum CSS è solo una prova */
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+  .palette__color {
+    background: var(--bg-color);
+    height: 100%;
+    flex: 1;
+  }
+  
+  .font-white {
+    color: #fff;
+  }
+
+/* Story Map Container */
+.story-map-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgb(227, 218, 208);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-map-container h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+}
+
+.story-map-container p {
+    background-color: rgb(227, 218, 208); /* #E3DAD0 */
+    color: rgb(0, 0, 0);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.story-map-iframe {
+    width: 100%;
+    height: 500px;
+    border: 2px solid black;
+}
