@@ -5,6 +5,10 @@
 :root {
     --navbar-height: 56px; /* Adjust based on your navbar height */
     --footer-height: 7em; /* Adjust based on your footer height */
+    --img-column-w: 25vw;
+    --data-column-w: 25vw;
+    --info-column-w: calc(100vw - var(--img-column-w) - var(--data-column-w) - 3.5vw);
+    --main-height: calc(var(--navbar-height) - var(--footer-height))
 }
 
 /* General body styling */
@@ -502,7 +506,117 @@ footer {
     display: block;
 }
 
-main {
-    margin-left: 250px; /* Adjust based on the sidebar width */
-    padding-top: 56px; /* Adjust for the navbar height */
+/*main {
+    margin-left: 250px; /* Adjust based on the sidebar width 
+    padding-top: 56px; /* Adjust for the navbar height 
+}*/
+/*infami monumenti page*/
+.navbarIm {
+    position: fixed;
+    width: 100vw;
+}
+#imBody {
+    overflow-x: hidden;
+}
+#imMain {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    height: var(--cs-main-height);
+    position: relative;
+}
+#mainIMContainer {
+    height: 100vh !important;
+    margin: 0;
+    padding: 0;
+}
+#imRow {
+    height: 100vh !important;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+#imgCol, #dataCol {
+    position: fixed;
+    height: 75%;
+    top: 0;
+}
+#imgCol {
+    left: 0;
+    margin-top: 1em;
+    margin-right: 2em;
+    width: var(--img-column-w);
+    margin-top: 6.5em;
+    margin-left: 1em;
+}
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+figcaption {
+    margin-top: 5px;
+}
+.wrapper {
+    width: var(--info-column-w);
+    margin-top: 5em;
+    margin-left: var(--img-column-w);
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding-top: 0;
+}
+/*#infoCol {
+    background-color: blue;
+    overflow-y: auto;
+    width: var(--info-column-w);
+    height:100%;
+    margin-left: 25vw;
+    margin-top: 5em;
+}*/
+.wrapper p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    /*try again with custom properties (check examples) -- For the disclaimer: same dimensions as the info col for the region with the text of the disclaimer*/
+}
+.buttonContainer {
+    margin-top: auto;
+    height: fit-content;
+}
+#dataCol {
+    right: 0;
+    margin-top: 1em;
+    margin-left: 3em;
+    width: var(--data-column-w);
+    margin-top: 6.5em;
+    margin-right: 1em;
+}
+#imTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.discTitle {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+.discLine {
+    width: 50vw;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.discContainer p {
+    margin-top: 1em;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.discLink {
+    color: #977060;
+}
+.discLink:hover {
+    color: black;
+    font-weight: bold;
 }
