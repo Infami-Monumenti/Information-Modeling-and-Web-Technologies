@@ -431,6 +431,7 @@ a .footerpages:visited {/* NON VIENE! */
     background-color: #DBD6C5; /* Cambia il colore di sfondo del link quando è attivo */
     color: #977060; /* Cambia il colore del testo del link quando è attivo */
 }
+
 /* footer */
 *{
     padding: 0;
@@ -492,34 +493,7 @@ footer{
     width: 30%;
     margin-left: 10px;
 }
-.footer-center i{
-    background-color: #977060;
-    color: #555;
-    font-size: 18px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 10px 15px;
-    vertical-align: middle;
-    padding-top: 10px;
-}
-.footer-center i.fa-envelope{
-    font-size: 17px;
-    line-height: 20px;
-}
-.footer-center p{
-    display: inline-block;
-    color: floralwhite;
-    vertical-align: middle;
-    margin: 0px;
-    padding-top: 10px;
-}
-.footer-center p a{
-    color: floralwhite;
-    text-decoration: none;
-    line-height: 10px;
-}
+
 .footer-right{
     width: 30%;
 }
