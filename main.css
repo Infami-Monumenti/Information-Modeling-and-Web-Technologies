@@ -76,11 +76,9 @@ a:hover {
 a .footerpages:visited {
     color: #CD8635;
 }
-
 .active a:active {
     color: #977060;
 }
-
 nav {
     top: 0;
     display: flex;
@@ -88,17 +86,14 @@ nav {
     background: white;
     padding: 10px 0;
 }
-
 nav a {
     color: white;
     padding: 0 15px;
     text-decoration: none;
 }
-
 nav a:hover {
     background: #555;
 }
-
 .container {
     padding: 20px;
     max-width: 1200px;
@@ -108,7 +103,6 @@ nav a:hover {
     border: 2px solid black;
     padding-top: 10em;
 }
-
 .layout a {
     font-family: 'Cormorant Garamont', serif;
     font-weight: 300;
@@ -116,7 +110,6 @@ nav a:hover {
     font-size: 1.2em;
     color:rgb(0, 0, 0);
 }
-
 .navbar {
     height: var(--cs-nav-height);
     background-color: rgb(151, 112, 96);
@@ -126,7 +119,6 @@ nav a:hover {
     font-style: italic;
     z-index: 1000;
 }
-
 /* Adjusted sidebar-documentation styling */
 .sidebar-documentation {
     background-color: rgb(151, 112, 96); /* #977060 */
@@ -147,7 +139,6 @@ nav a:hover {
     margin: 0 auto -100px; /*Allow for footer height*/
     vertical-align:bottom;
 }
-
 .nav-link {
     color: rgb(219, 214, 197); /* Navbar link text color */
     font-family: 'Inter', sans-serif;
@@ -155,27 +146,22 @@ nav a:hover {
     font-style: italic;
     font-size: 1rem;
 }
-
 /* Active link styling */
 .nav-link.active {
     font-weight: 800;
     color: rgb(219, 214, 197); /* #DBD6C5 */
 }
-
 /* Link color when hovered */
 .nav-link:hover {
     color: rgb(46, 14, 1); /* #2e0e01 */
 }
-
 /* Link color when visited */
 .nav-link:visited {
     color: rgb(61, 19, 2); /* #3d1302 */
 }
-
 .row {
     height: 50%;
 }
-
 /* Carousel styles */
 .carousel {
     margin-top: 2em;
@@ -183,14 +169,12 @@ nav a:hover {
     height: 90%; /* Set the desired height */
     margin: auto; /* Center the carousel */
 }
-
 .carousel-inner {
     height: 0;
     padding-bottom: 25%;
     width: 100%;
     height: 100%;
 }
-
 .carousel-item {
     position: absolute !important;
     top: 0;
@@ -198,7 +182,6 @@ nav a:hover {
     bottom: 0;
     left: 0;
 }
-
 .carousel-item img {
     object-fit: cover;
     object-position: center;
@@ -207,25 +190,21 @@ nav a:hover {
     width: 100%;
     object-fit: contain; /* Cover the entire area without stretching */
 }
-
 /* Custom CSS to change carousel dimensions */
 #carouselExampleIndicators {
     width: 90%;  /* Set the desired width */
     height: auto; /* Adjust height to be proportional */
     margin: auto; /* Center the carousel */
 }
-
 #carouselExampleIndicators .carousel-inner {
     width: 100%;
-    height: auto; /* Adjust height to be proportional */
+    height: auto; 
 }
-
 #carouselExampleIndicators .carousel-item img {
     width: 100%;
     height: auto; /* Make the image adjust proportionally */
     object-fit: contain; /* Cover the entire area without stretching */
 }
-
 /* Footer styles */
 footer {
     background: #977060;
@@ -238,11 +217,9 @@ footer {
     width: 100%;
     height: fit-content;
 }
-
 .footerpages {
     text-align: left;
 }
-
 /* Specific section styles */
 #footer {
     height: var(--cs-foot-height);
@@ -267,7 +244,6 @@ footer {
     background-color: rgb(82, 106, 132);
     border: 2px solid black;
 }
-
 /* homepage */
 body {
     font-family: 'Inter', sans-serif;
@@ -277,7 +253,6 @@ body {
     background-color:#E3DAD0;
     color: black;
 }
-
 h1{
     font-family: solid 'Inter', sans-serif;
     font-weight: 800;
@@ -287,7 +262,6 @@ h1{
     color: black;
     margin-bottom: 20px;
 }
-
 nav {
     display: flex;
     justify-content: center;
@@ -485,14 +459,14 @@ body {
     margin-top: 100px;
 }
 .hpcard{
-   width: 325px;
-   background-color: floralwhite;
-   border-radius: 8px;
-   overflow: hidden;
-   box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
-   margin: 10px;
-   padding: 9px;
-   transition: transform 0.6s ease;
+    width: 325px;
+    background-color: floralwhite;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
+    margin: 10px;
+    padding: 9px;
+    transition: transform 0.6s ease;
 }
 .hpcard:hover{
     transform: translateY(-30px);
@@ -787,11 +761,11 @@ footer {
     display: block;
 }
 
-<<<<<<< HEAD
 /*main {
     margin-left: 250px; /* Adjust based on the sidebar width 
     padding-top: 56px; /* Adjust for the navbar height 
 }*/
+
 /*infami monumenti page*/
 .navbarIm {
     position: fixed;
@@ -901,24 +875,21 @@ figcaption {
 .discLink:hover {
     color: black;
     font-weight: bold;
-=======
+}
 /*Style for palette in documentation*/
-
 .main-content {
     margin: 0;
     max-width: 100%;
-  }
-  
-  .palette-grid {
+}
+.palette-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 200px auto auto auto;
     grid-gap: 30px;
     justify-content: center;
     padding: 0px;
-  }
-  
-  .palette {
+}
+.palette {
     background: #fff;
     overflow: hidden;
     position: relative;
@@ -930,25 +901,24 @@ figcaption {
     flex-wrap: wrap;
     flex-flow: column;
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .palette:hover {
+}
+.palette:hover {
     top: -5px;
     box-shadow: 0 8px 20px rgba(128, 128, 128, 0.12);
-  }
-  .palette--main-color {
+}
+.palette--main-color {
     grid-column: span 6;
-  }
-  .palette--secondary-color {
+}
+.palette--secondary-color {
     grid-column: span 4;
-  }
-  .palette--grays {
+}
+.palette--grays {
     grid-column: span 2;
-  }
-  .palette-headers {
+}
+.palette-headers {
     grid-column: span 12;
-  }
-  
-  .palette__info {
+}
+.palette__info {
     color: #333;
     position: relative;
     flex: 0 0 auto;
@@ -956,29 +926,27 @@ figcaption {
     padding: 12px;
     font-family: 'hardingreg';
     font-weight: bold;
-  }
-  .palette__info__hexcode {
+}
+.palette__info__hexcode {
     margin-top: 3px;
     font-size: 12px;
     color: gray;
-  }
-  .palette__colors {
+}
+.palette__colors {
     flex: 1;
     width: 100%;
     position: relative;
     display: flex;
     align-items: stretch;
-  }
-  .palette__color {
+}
+.palette__color {
     background: var(--bg-color);
     height: 100%;
     flex: 1;
-  }
-  
-  .font-white {
+}
+.font-white {
     color: #fff;
-  }
-
+}
 /* Story Map Container */
 .story-map-container {
     margin-top: 40px;
@@ -987,7 +955,6 @@ figcaption {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .story-map-container h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -996,7 +963,6 @@ figcaption {
     color: rgb(0, 0, 0);
     padding-top: 20px;
 }
-
 .story-map-container p {
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
     color: rgb(0, 0, 0);
@@ -1005,10 +971,8 @@ figcaption {
     line-height: 1.4;
     text-align: justify;
 }
-
 .story-map-iframe {
     width: 100%;
     height: 500px;
     border: 2px solid black;
->>>>>>> 5103456c1d706e8aeb34333e3e14a3db48bda2ac
 }
