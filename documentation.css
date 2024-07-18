@@ -1,8 +1,8 @@
 main {
     margin-left: 280px; /* Adjust based on the sidebar width */
-    padding-top: 56px; /* Adjust for the navbar height */
-    position: relative; /* Ensure main content stays on top of the parallax image */
-    z-index: 1; /* Ensure main content is above the parallax image */
+    padding-top: 5em; /* Adjust for the navbar height */
+    position: relative; 
+    z-index: 1; 
 }
 
 .content-section a {

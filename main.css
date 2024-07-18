@@ -79,6 +79,7 @@ a .footerpages:visited {
 }
 
 nav {
+    top: 0;
     display: flex;
     justify-content: center;
     background: white;
