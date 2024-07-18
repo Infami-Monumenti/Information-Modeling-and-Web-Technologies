@@ -6,7 +6,6 @@
   <title>Infami Monumenti Documentation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="documentation.css"> 
 </head>
 <body>
   <header>
@@ -41,11 +40,8 @@
     </nav>
   </header>  
   
-  <!-- Parallax Section -->
-  <div class="parallax"></div>
-  
   <!-- Sidebar -->
-  <div class="sidebar-documentation">
+  <div class="sidebar-doc">
     <div class="col-md-3 col-lg-2 d-md-block sidebar" id="sidebar-documentation">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
@@ -88,8 +84,25 @@
                 Colors
               </a>
             </li>
+          </ul>
+          <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" href="#storymap_menu" role="button" aria-expanded="false" aria-controls="story-menu">
+            StoryMap
+          </a>
+          <!-- Collapsible Sub-Menu for StoryMap -->
+          <ul class="nav flex-column ms-3 collapse" id="storymap_menu">
+            <!-- Sub-Menu Links -->
             <li class="nav-item">
-              <a class="nav-link sub-menu" href="#typography_museum">
+              <a class="nav-link sub-menu" href="#layout_storymap">
+                StoryMap
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link sub-menu" href="#colors_storymap">
+                Colors
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link sub-menu" href="#typography_storymap">
                 Typography
               </a>
             </li>
@@ -120,122 +133,207 @@
       </div>
     </div>
   </div>
-  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main-doc">
-    <div class="top-image">
-      <img src="/Users/carlamenegat/Downloads/itemsbanner.png" alt="Items images.">
-    </div>
-    <h1>Infami Monumenti Documentation</h1>
-    <div class="content-section" id="project">
-      <h2>Project</h2>
-      <br>
-      <p>Infami Monumenti is a project that seeks to present a History of Phallic Culture, thinking of it as the invocation of the phallus the source of an alleged masculine power. To this end, it was designed as a virtual museum with objects that present this culture and its main concepts: power, fertility, fortune and strength.</p>
-      <div class="content-section" id="layout_project">
-        <h3>Layout</h3>
+  <section class="doc-container" id="main">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
+      <h1 class="doc-title">Infami Monumenti Documentation</h1>
+      <hr class="doc-line">
+      <div class="content-section" id="project">
+        <h2>Project</h2>
         <br>
-        <p>Graphically representing a story of Phallic Culture involved thinking about what the metaphors of this culture are. The verticality of objects that mimic the phallus in different cultures was the first starting point. It also represents, in some of the societies presented here, the notion of fertility, in a clear allusion to the growth of plants, animals and fortunes. To achieve this, the use of sidebars to guarantee access to content was prioritized. Another functionality explored was content scrolling. Although this perception is very clear on small and extra-small screens, it is not completely lost when using large screens.</p>
-      </div>
-      <div class="content-section" id="colors_project">
-        <h3>Colors</h3>
+        <p>Infami Monumenti is a project that seeks to present a History of Phallic Culture, thinking of it as the invocation of the phallus the source of an alleged masculine power. Therefore, it was designed as a virtual museum with objects that present this culture and its main concepts: power, fertility, fortune and strength. There are specific settings for the page that presents all the objects, entitled <a href="#museum">Museum</a> and for the presentation of each object within the <a href="#narratives">Narratives</a>.</p>
+        <div class="content-section" id="layout_project">
+          <h3>Layout</h3>
+          <br>
+          <p>Graphically representing a story of Phallic Culture involved thinking about what the metaphors of this culture are. The verticality of objects that mimic the phallus in different cultures was the first starting point. It also represents, in some of the societies presented here, the notion of fertility, in a clear allusion to the growth of plants, animals and fortunes. To achieve this, the use of sidebars to guarantee access to content was prioritized. Another functionality explored was content scrolling. This required the use of wide margins for large screens, and dynamic layout programming that prevents text from being squeezed onto smaller screens.</p>
         <br>
-        <p>As Priapus is the most recurrent Western representation over time of the concept of the phallus as a symbol of power, we chose the most famous image of this deity, the fresco from the Casa dei Vetti in Pompeii as the starting point for the overall color palette of this project. The colors were extracted using palette identification tools through images such as those offered by Canva and Adobe Color. Thinking of the website as a virtual museum, neutral and soft colors were designed for the background. In contrast, the body texts were given bold colors.</p>
-        <div class="main-content">
+        </div>
+        <div class="content-section" id="colors_project">
+          <h3>Colors</h3>
+          <br>
+          <p>As Priapus is the most recurrent Western representation over time of the concept of the phallus as a symbol of power, we chose the most famous image of this deity, the fresco from the Casa dei Vetti in Pompeii as the starting point for the overall color palette of this project. The colors were extracted using palette identification tools through images such as those offered by Canva and Adobe Color. Thinking of the website as a virtual museum, neutral and soft colors were designed for the background. In contrast, the body texts were given bold colors.</p>
+          <br>
           <div class="palette-grid">
-        
+            <div class="palette-headers">
+          </div>
+              <div class="palette palette--grays">
+                <div class="palette__color" style="--bg-color: rgb(227, 218, 208)"></div>
+                <div class="palette__info">
+                  <div class="palette__info__hexcode">#E3DAD0</div>
+                </div>
+              </div>
+              <div class="palette palette--grays">
+                <div class="palette__color" style="--bg-color: rgb(219, 214, 197)"></div>
+                <div class="palette__info">
+                  <div class="palette__info__hexcode">#DBD6C5</div>
+                </div>
+              </div>
+              <div class="palette palette--grays">
+                <div class="palette__color" style="--bg-color: rgb(151, 112, 96)"></div>
+                <div class="palette__info">
+                  <div class="palette__info__hexcode">#977060</div>
+                </div>
+              </div>
+              <div class="palette palette--grays">
+                <div class="palette__color" style="--bg-color: rgb(61, 19, 2)"></div>
+                <div class="palette__info">
+                  <div class="palette__info__hexcode">#3d1302</div>
+                </div>
+              </div>
+              <div class="palette palette--grays">
+                <div class="palette__color" style="--bg-color: rgb(85, 85, 85)"></div>
+                <div class="palette__info">
+                  <div class="palette__info__hexcode">#555</div>
+                </div>
+              </div>
+              <div class="palette palette--grays">
+                <div class="palette__color" style="--bg-color: rgb(0, 0, 0)"></div>
+                <div class="palette__info">
+                  <div class="palette__info__hexcode">#000000</div>
+                </div>
+              </div>
+            </div>
+        <div class="content-section" id="typography_project">
+          <h3>Typography</h3>
+          <br>
+          <p>As the project sought to portray the history of phallic culture in different contexts, the choice was made for a neutral font, avoiding interference in the presentation of the objects. At the same time, this font would have to have flexibility in its styles, allowing for some variation, allowing parts of the text to stand out. The choice fell on the <a href = "https://fonts.google.com/specimen/Inter">Inter font</a>. In the titles, the font has been used in its ExtraBold 800 variation and in the text in Light 300. For texts that need to be highlighted, such as titles and subtitles, we chose a font with similar characteristics (clean and discreet) but serif, <a href = "https://fonts.google.com/specimen/Cormorant+Garamond">Cormorant Garamont</a> with style 300 Light Italic.</p>
+          <br>
+        </div>
+      </div>
+      <div class="content-section" id="museum">
+        <h2>Museum</h2>
+        <br>
+        <p>The organization of items to tell the History of Phallic Culture was thought of as a museum exhibition. One of the inspirations was the <a href="https://mann-napoli.it/gabinetto-segreto/">Gabinetto Segreto of the National Archaeological Museum of Naples</a>. This section of the MAN contains, since the time of the Bourbon sovereigns of Naples, all works considered erotic or obscene, including some of the testimonies of phallic culture that were selected in this project.</p>
+        <br>
+        <div class="content-section" id="layout_museum">
+          <h3>Layout</h3>
+          <br>
+          <p>Trying to reproduce the feeling of starting a visit to a museum, we sought a different layout on this page. By placing the museum plan occupying the entire page, the desire was to prevent the user from having any suggestion of what their visit will be like, seeking to reproduce the feeling of the visitor who finds himself at the entrance of a museum. Even though the navbar is available for the user to access objects in another way, the arrangement of the page's main content occupying the entire screen is an invitation for the user to explore a space freely. As in many museums, works are presented im rooms according to their type of production: architecture, literary works, paintings, sculptures and frescoes. To achieve this effect, the <q>Museum</q> page was diveded in different columns and rows to replicate the structure of a museum plan. For this, a grid was used with columns of different sizes in each row. Then, photos of objects of each type were inserted into carousels, allowing the user to have a preview of the objects in each room. </p>
+          <br>
+        </div>
+        <div class="content-section" id="colors_museum">
+          <h3>Colors</h3>
+          <br>
+          <p>To create the grid that mimics the floor plan of a museum, the color palette was slightly changed. As it was necessary to create a great contrast between each of the rectangles (the rooms), we chose a palette that is present in the excavations of Pompeii and found in different studies on color in statues of the period.</p>
+          <br>
+          <div class="palette-grid">
             <div class="palette-headers">
             </div>
             <div class="palette palette--grays">
-              <div class="palette__color" style="--bg-color: rgb(227, 218, 208)"></div>
+              <div class="palette__color" style="--bg-color: rgb(133, 92, 117)"></div>
               <div class="palette__info">
-                <div class="palette__info__hexcode">#E3DAD0</div>
+                <div class="palette__info__hexcode">​#855c75</div>
               </div>
             </div>
             <div class="palette palette--grays">
-              <div class="palette__color" style="--bg-color: rgb(219, 214, 197)"></div>
+              <div class="palette__color" style="--bg-color: rgb(115, 111, 76)"></div>
               <div class="palette__info">
-                <div class="palette__info__hexcode">#DBD6C5</div>
+                <div class="palette__info__hexcode">​#736f4c</div>
               </div>
             </div>
             <div class="palette palette--grays">
-              <div class="palette__color" style="--bg-color: rgb(151, 112, 96)"></div>
+              <div class="palette__color" style="--bg-color: rgb(217, 175, 107)"></div>
               <div class="palette__info">
-                <div class="palette__info__hexcode">#977060</div>
+                <div class="palette__info__hexcode">​#d9af6b</div>
               </div>
             </div>
             <div class="palette palette--grays">
-              <div class="palette__color" style="--bg-color: rgb(61, 19, 2)"></div>
+              <div class="palette__color" style="--bg-color: rgb(175, 100, 89)"></div>
               <div class="palette__info">
-                <div class="palette__info__hexcode">#3d1302</div>
+                <div class="palette__info__hexcode">​#af6459</div>
               </div>
             </div>
             <div class="palette palette--grays">
-              <div class="palette__color" style="--bg-color: rgb(85, 85, 85)"></div>
+              <div class="palette__color" style="--bg-color: rgb(82, 106, 132)"></div>
               <div class="palette__info">
-                <div class="palette__info__hexcode">#555</div>
+                <div class="palette__info__hexcode">​#526a84</div>
               </div>
             </div>
-            <div class="palette palette--grays">
-              <div class="palette__color" style="--bg-color: rgb(0, 0, 0)"></div>
-              <div class="palette__info">
-                <div class="palette__info__hexcode">#000000</div>
-              </div>
-            </div>
-          </div>
+        </div>
       </div>
-      <div class="content-section" id="typography_project">
-        <h3>Typography</h3>
+      <div class="content-section" id="storymap">
+        <h2>StoryMap</h2>
         <br>
-        <p>As the project sought to portray the history of phallic culture in different contexts, the choice was made for a neutral font, avoiding interference in the presentation of the objects. At the same time, this font would have to have flexibility in its styles, allowing for some variation, allowing parts of the text to stand out. The choice fell on the <a href = "https://fonts.google.com/specimen/Inter">Inter font</a>. In the titles, the font has been used in its ExtraBold 800 variation and in the text in Light 300.</p>
+        <p>blablabla</p>
+        <br>
+        <div class="content-section" id="layout_storymap">
+          <h3>Layout</h3>
+          <br>
+          <p></p>
+          <br>
+        </div>
+        <div class="content-section" id="colors_storymap">
+          <h3>Colors</h3>
+          <br>
+          <p></p>
+          <br>
+        </div>
+        <div class="content-section" id="typography_storymap">
+          <h3>Typography</h3>
+          <br>
+          <p></p>
+          <br>
+        </div>
+      <div class="content-section" id="narratives">
+        <h2>Narratives</h2>
+        <br>
+        <p>blablabla</p>
+        <br>
+        <div class="content-section" id="layout_narratives">
+          <h3>Layout</h3>
+          <br>
+          <p></p>
+          <br>
+        </div>
+        <div class="content-section" id="colors_narratives">
+          <h3>Colors</h3>
+          <br>
+          <p></p>
+          <br>
+        </div>
+        <div class="content-section" id="typography_narrative">
+          <h3>Typography</h3>
+          <br>
+          <p></p>
+          <br>
+        </div>
       </div>
-    </div>
-    <div class="content-section" id="museum">
-      <h2>Museum</h2>
-      <p>The organization of items to tell the History of Phallic Culture was thought of as a museum exhibition. One of the inspirations was the <a href="https://mann-napoli.it/gabinetto-segreto/">Gabinetto Segreto of the National Archaeological Museum of Naples</a>. This section of the MAN contains, since the time of the Bourbon sovereigns of Naples, all works considered erotic or obscene, including some of the testimonies of phallic culture that were selected in this project. </p>
-      <div class="content-section" id="layout_narrative">
-        <h3>Layout</h3>
-        <p>Trying to reproduce the feeling of starting a visit to a museum, we sought a different layout on this page. By placing the museum plan occupying the entire page, the desire was to prevent the user from having any suggestion of what their visit will be like, seeking to reproduce the feeling of the visitor who finds himself at the entrance of a museum. Even though the navbar is available for the user to access objects in another way, the arrangement of the page's main content occupying the entire screen is an invitation for the user to explore a space freely.</p>
-        <p>As in many museums, works are presented im rooms according to their type of production: architecture, literary works, paintings, sculptures and frescoes. To achieve this effect, the <q>Museum</q> page was diveded in different columns and rows to replicate the structure of a museum plan. Then, photos of objects of each type were inserted into carousels, allowing the user to have a preview of the objects in each room.</p>
-      </div>
-      <div class="content-section" id="colors_narratives">
-        <h3>Colors</h3>
-      </div>
-      <div class="content-section" id="typography_narrative">
-        <h3>Typography</h3>
-      </div>
-    </div>
-    <div class="content-section" id="narratives">
-      <h2>Narratives</h2>
-      <p>blablabla</p>
-      <div class="content-section" id="layout_narrative">
-        <h3>Layout</h3>
-      </div>
-      <div class="content-section" id="colors_narratives">
-        <h3>Colors</h3>
-      </div>
-      <div class="content-section" id="typography_narrative">
-        <h3>Typography</h3>
-      </div>
-    </div>
-  </main>
-
+    </main>
+  </section>
   <!-- Footer -->
-  <footer class="container-fluid">
-    <div class="footer-container">
-      <div class="row row-cols-2 row-cols-md-2 g-5">
-        <div class="col">
-          <div class="logo-container">
-            <img class="logo" src="images/logoinfamimonumenti.jpg" alt="logo infami monumenti">
-          </div>
-        </div>
-        <div class="col">
-          <ul class="footer-nav">
-            <div><a href="about.html" class="footerpages">About</a></div>
-            <div><a href="documentation.html" class="footerpages">Documentation</a></div>
-            <div><a href="githublink.html" class="footerpages">GitHub Repository</a></div>
-          </ul>
-        </div>
+  <footer class="footer">
+    <div class="footer-left">
+      <h4>Infami Monumenti</h4>
+      <div class="imglogo">
+        <img src="images/logoinfamimonumenti.jpg" alt="logo infami monumenti"> 
       </div>
+      <p class="footer-copyright">2024@Infamimonumenti</p>
+    </div>
+  
+    <div class="footer-center">
+      <h4>Contacts</h4>
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p>Italy</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>051 987654</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#">infamidocumenti@gmail.com</a></p>
+      </div>
+    </div>
+  
+    <div class="footer-right">
+        <h4>Other secret things</h4>
+        <li><a href="homepage.html">Coverpage</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a></li>
+      </p>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>

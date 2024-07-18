@@ -1,11 +1,18 @@
+/* Importing the required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
+
 :root {
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
     --cs-foot-height: 7em;
     --navbar-height: 56px; /* Adjust based on your navbar height */
     --footer-height: 7em; /* Adjust based on your footer height */
+    --img-column-w: 25vw;
+    --data-column-w: 25vw;
+    --info-column-w: calc(100vw - var(--img-column-w) - var(--data-column-w) - 3.5vw);
+    --main-height: calc(var(--navbar-height) - var(--footer-height));
+    --sidebar-doc: 280px;
 }
-
 /* General body styling */
 body {
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
@@ -21,14 +28,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -41,16 +46,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem; /* Font size for h2, smaller than h1 */
-}
-
-h2:after {
-    content: ' ';
-    display: block;
-    border: 1px solid rgb(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 100%;
+    font-size: 1.5rem; 
 }
 
 h3 {
@@ -69,28 +65,24 @@ a:hover {
 a .footerpages:visited {
     color: #CD8635;
 }
-
 .active a:active {
     color: #977060;
 }
-
 nav {
+    top: 0;
     display: flex;
     justify-content: center;
     background: white;
     padding: 10px 0;
 }
-
 nav a {
     color: white;
     padding: 0 15px;
     text-decoration: none;
 }
-
 nav a:hover {
     background: #555;
 }
-
 .container {
     padding: 20px;
     max-width: 1200px;
@@ -98,6 +90,14 @@ nav a:hover {
 .layout {
     height: var(--cs-main-height);
     border: 2px solid black;
+    padding-top: 10em;
+}
+.layout a {
+    font-family: 'Cormorant Garamont', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.2em;
+    color:rgb(0, 0, 0);
 }
 .navbar {
     height: var(--cs-nav-height);
@@ -108,28 +108,6 @@ nav a:hover {
     font-style: italic;
     z-index: 1000;
 }
-
-/* Adjusted sidebar-documentation styling */
-.sidebar-documentation {
-    background-color: rgb(151, 112, 96); /* #977060 */
-    color: rgb(219, 214, 197); /* #DBD6C5 */
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    padding-top: 20px; /* Add top padding */
-    font-size: 1rem; /* Increased font size by 20% */
-    position: fixed; /* Fixes sidebar-documentation on the left */
-    top: var(--navbar-height); /* Start the sidebar-documentation below the navbar */
-    left: 0;
-    width: 280px; /* sidebar-documentation width */
-    z-index: 1000; /* Make sure the sidebar-documentation is above the main content */
-    min-height: 100%; 
-    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
-    height: 100%; 
-    margin: 0 auto -100px; /*Allow for footer height*/
-    vertical-align:bottom;
-}
-
 .nav-link {
     color: rgb(219, 214, 197); /* Navbar link text color */
     font-family: 'Inter', sans-serif;
@@ -137,32 +115,34 @@ nav a:hover {
     font-style: italic;
     font-size: 1rem;
 }
-
 /* Active link styling */
 .nav-link.active {
     font-weight: 800;
     color: rgb(219, 214, 197); /* #DBD6C5 */
 }
-
 /* Link color when hovered */
 .nav-link:hover {
     color: rgb(46, 14, 1); /* #2e0e01 */
 }
-
 /* Link color when visited */
 .nav-link:visited {
     color: rgb(61, 19, 2); /* #3d1302 */
 }
-
 .row {
     height: 50%;
 }
+/* Carousel styles */
 .carousel {
     margin-top: 2em;
+    width: 90%;  /* Set the desired width */
+    height: 90%; /* Set the desired height */
+    margin: auto; /* Center the carousel */
 }
 .carousel-inner {
     height: 0;
     padding-bottom: 25%;
+    width: 100%;
+    height: 100%;
 }
 .carousel-item {
     position: absolute !important;
@@ -179,7 +159,21 @@ nav a:hover {
     width: 100%;
     object-fit: contain; /* Cover the entire area without stretching */
 }
-
+/* Custom CSS to change carousel dimensions */
+#carouselExampleIndicators {
+    width: 90%;  /* Set the desired width */
+    height: auto; /* Adjust height to be proportional */
+    margin: auto; /* Center the carousel */
+}
+#carouselExampleIndicators .carousel-inner {
+    width: 100%;
+    height: auto; 
+}
+#carouselExampleIndicators .carousel-item img {
+    width: 100%;
+    height: auto; /* Make the image adjust proportionally */
+    object-fit: contain; /* Cover the entire area without stretching */
+}
 /* Footer styles */
 footer {
     background: #977060;
@@ -192,11 +186,9 @@ footer {
     width: 100%;
     height: fit-content;
 }
-
 .footerpages {
     text-align: left;
 }
-
 /* Specific section styles */
 #footer {
     height: var(--cs-foot-height);
@@ -221,7 +213,6 @@ footer {
     background-color: rgb(82, 106, 132);
     border: 2px solid black;
 }
-
 /* homepage */
 body {
     font-family: 'Inter', sans-serif;
@@ -231,7 +222,6 @@ body {
     background-color:#E3DAD0;
     color: black;
 }
-
 h1{
     font-family: solid 'Inter', sans-serif;
     font-weight: 800;
@@ -241,7 +231,6 @@ h1{
     color: black;
     margin-bottom: 20px;
 }
-
 nav {
     display: flex;
     justify-content: center;
@@ -439,14 +428,14 @@ body {
     margin-top: 100px;
 }
 .hpcard{
-   width: 325px;
-   background-color: floralwhite;
-   border-radius: 8px;
-   overflow: hidden;
-   box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
-   margin: 10px;
-   padding: 9px;
-   transition: transform 0.6s ease;
+    width: 325px;
+    background-color: floralwhite;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
+    margin: 10px;
+    padding: 9px;
+    transition: transform 0.6s ease;
 }
 .hpcard:hover{
     transform: translateY(-30px);
@@ -479,8 +468,6 @@ body {
     border-radius: 15px;
     margin-top: 10px;
 }
-
-
 a {
     color:#DBD6C5;
     text-decoration: none;; 
@@ -492,10 +479,9 @@ a .footerpages:visited {/* NON VIENE! */
     color: #CD8635;
 }
 .active a:active {
-    background-color: ; /* Cambia il colore di sfondo del link quando è attivo */
+    background-color: #DBD6C5; /* Cambia il colore di sfondo del link quando è attivo */
     color: #977060; /* Cambia il colore del testo del link quando è attivo */
 }
-
 /* footer */
 *{
     padding: 0;
@@ -657,36 +643,6 @@ footer{
     height: 500px;
     border: 2px solid black;
 }
-
-/* Responsive text styling for smaller screens */
-
-@media (max-width: 768px) {
-    .sidebar-documentation {
-        width: 100%; /* sidebar-documentation takes full width */
-        height: auto; /* Adjust height to content */
-        position: relative; /* Position it relative */
-        padding: 20px; 
-    }
-
-    .main-doc {
-        margin-left: 0; 
-        margin-right: 0; 
-        padding: 20px; 
-    }
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-    .sidebar-documentation {
-        padding: 10px; /* Further adjust padding */
-    }
-
-    .main.doc {
-        padding: 10px; /* Further adjust padding */
-    }
-}
-
-/* Footer styling */
 /* Footer styling */
 footer {
     background: #977060;
@@ -699,65 +655,202 @@ footer {
     width: 100%;
     height: var(--footer-height);
 }
+/*infami monumenti page*/
+.navbarIm {
+    position: fixed;
+    width: 100vw;
+}
+#imBody {
+    overflow-x: hidden;
+}
+#imMain {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    height: var(--cs-main-height);
+    position: relative;
+}
+#mainIMContainer {
+    height: 100vh !important;
+    margin: 0;
+    padding: 0;
+}
+#imRow {
+    height: 100vh !important;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+#imgCol, #dataCol {
+    position: fixed;
+    height: 75%;
+    top: 0;
+}
+#imgCol {
+    left: 0;
+    margin-top: 1em;
+    margin-right: 2em;
+    width: var(--img-column-w);
+    margin-top: 6.5em;
+    margin-left: 1em;
+}
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+figcaption {
+    margin-top: 5px;
+}
+.wrapper {
+    width: var(--info-column-w);
+    margin-top: 5em;
+    margin-left: var(--img-column-w);
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding-top: 0;
+}
+/*#infoCol {
+    background-color: blue;
+    overflow-y: auto;
+    width: var(--info-column-w);
+    height:100%;
+    margin-left: 25vw;
+    margin-top: 5em;
+}*/
+.wrapper p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    /*try again with custom properties (check examples) -- For the disclaimer: same dimensions as the info col for the region with the text of the disclaimer*/
+}
+.buttonContainer {
+    margin-top: auto;
+    height: fit-content;
+}
+#dataCol {
+    right: 0;
+    margin-top: 1em;
+    margin-left: 3em;
+    width: var(--data-column-w);
+    margin-top: 6.5em;
+    margin-right: 1em;
+}
+#imTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.discTitle {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+.discLine {
+    width: 50vw;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.discContainer p {
+    margin-top: 1em;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.discLink {
+    color: #977060;
+}
+.discLink:hover {
+    color: black;
+    font-weight: bold;
+}
+/*Style for documentation page*/
+.doc-container {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1em;
+    padding-top: 10em;
+    position: relative; 
+    z-index: 1; 
+}
+.doc-title{
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+.doc-line {
+    width: var(--container-width);
+    height: var(--container-height);
+}
+.doc-container p {
+    font-weight: 300;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+.doc-container a {
+    color: #977060
+}
+.doc-container a:hover {
+    color: black;
+    font-weight: bold;
+}
+.sidebar-doc {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    background-color: rgb(151, 112, 96); /* #977060 */
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    padding-top: 20px; /* Add top padding */
+    font-size: 1rem; /* Increased font size by 20% */
+    position: fixed; /* Fixes sidebar-doc on the left */
+    top: var(--navbar-height); /* Start the sidebar-doc below the navbar */
+    left: 0;
+    width: 280px; /* sidebar-doc width */
+    z-index: 0; /* Make sure the sidebar-doc is above the main content */
+    min-height: 100%; 
+    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
+    height: 100%; 
+    margin: 0 auto -100px; /*Allow for footer height*/
+    vertical-align:bottom;
+}
+/* Responsive text styling for smaller screens */
+@media (max-width: 768px) {
+    .sidebar-doc {
+        width: 100%; /* sidebar-doc takes full width */
+        height: auto; /* Adjust height to content */
+        position: relative; /* Position it relative */
+        padding: 20px; 
+    }
 
+    .doc-container {
+        margin-left: 0; 
+        margin-right: 0; 
+        padding: 20px; 
+    }
+}
 /* Further adjustments for very small screens */
 @media (max-width: 480px) {
-    .sidebar-documentation {
+    .sidebar-doc {
         padding: 10px; /* Further adjust padding */
     }
 
-    .main.doc {
+    .doc-container {
         padding: 10px; /* Further adjust padding */
     }
 }
-
-/* Content section styling documentation */
-.main-doc {
-    margin-left: 280px; /* Adjust based on the sidebar width */
-    padding-top: 56px; /* Adjust for the navbar height */
-    position: relative; /* Ensure main content stays on top of the parallax image */
-}
-
-.main-doc a {
-    color: rgb(0, 0, 0); /* Normal link color */
-    text-decoration: underline; /* Optional: underline for links */
-}
-
-.main-doc a:hover,
-.main-doc a:active {
-    color: rgb(46, 14, 1); /* Color for hover and active states */
-}
-
-/* Style the top-image as a banner */
-.top-image {
-    box-sizing: border-box;
-    padding-top: var(--navbar-height);
-    padding-left: 15px; 
-}
-
-.top-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 /*Style for palette in documentation*/
-
-.main-content {
-    margin: 0;
-    max-width: 100%;
-  }
-  
-  .palette-grid {
+.palette-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 200px auto auto auto;
-    grid-gap: 30px;
+    grid-template-rows: auto 150px auto auto auto;
+    grid-gap: 10px;
     justify-content: center;
     padding: 0px;
-  }
-  
-  .palette {
+}
+.palette {
     background: #fff;
     overflow: hidden;
     position: relative;
@@ -769,25 +862,24 @@ footer {
     flex-wrap: wrap;
     flex-flow: column;
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .palette:hover {
+}
+.palette:hover {
     top: -5px;
     box-shadow: 0 8px 20px rgba(128, 128, 128, 0.12);
-  }
-  .palette--main-color {
+}
+.palette--main-color {
     grid-column: span 6;
-  }
-  .palette--secondary-color {
+}
+.palette--secondary-color {
     grid-column: span 4;
-  }
-  .palette--grays {
+}
+.palette--grays {
     grid-column: span 2;
-  }
-  .palette-headers {
+}
+.palette-headers {
     grid-column: span 12;
-  }
-  
-  .palette__info {
+}
+.palette__info {
     color: #333;
     position: relative;
     flex: 0 0 auto;
@@ -795,38 +887,35 @@ footer {
     padding: 12px;
     font-family: 'hardingreg';
     font-weight: bold;
-  }
-  .palette__info__hexcode {
+}
+.palette__info__hexcode {
     margin-top: 3px;
     font-size: 12px;
     color: gray;
-  }
-  .palette__colors {
+}
+.palette__colors {
     flex: 1;
     width: 100%;
     position: relative;
     display: flex;
     align-items: stretch;
-  }
-  .palette__color {
+}
+.palette__color {
     background: var(--bg-color);
     height: 100%;
     flex: 1;
-  }
-  
-  .font-white {
+}
+.font-white {
     color: #fff;
-  }
-
-/* Story Map Container */
+}
+/* Story Map Container Page */
 .story-map-container {
     margin-top: 40px;
-    padding: 20px;
+    padding: 60px;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .story-map-container h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -835,7 +924,6 @@ footer {
     color: rgb(0, 0, 0);
     padding-top: 20px;
 }
-
 .story-map-container p {
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
     color: rgb(0, 0, 0);
@@ -844,7 +932,6 @@ footer {
     line-height: 1.4;
     text-align: justify;
 }
-
 .story-map-iframe {
     width: 100%;
     height: 500px;
