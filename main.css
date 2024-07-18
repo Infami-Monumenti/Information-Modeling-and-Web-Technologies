@@ -1,3 +1,6 @@
+/* Importing the required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
+
 :root {
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
@@ -45,7 +48,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem; /* Font size for h2, smaller than h1 */
+    font-size: 1.5rem; 
 }
 
 h2:after {
@@ -103,7 +106,17 @@ nav a:hover {
 .layout {
     height: var(--cs-main-height);
     border: 2px solid black;
+    padding-top: 10em;
 }
+
+.layout a {
+    font-family: 'Cormorant Garamont', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.2em;
+    color:rgb(0, 0, 0);
+}
+
 .navbar {
     height: var(--cs-nav-height);
     background-color: rgb(151, 112, 96);
@@ -162,13 +175,22 @@ nav a:hover {
 .row {
     height: 50%;
 }
+
+/* Carousel styles */
 .carousel {
     margin-top: 2em;
+    width: 90%;  /* Set the desired width */
+    height: 90%; /* Set the desired height */
+    margin: auto; /* Center the carousel */
 }
+
 .carousel-inner {
     height: 0;
     padding-bottom: 25%;
+    width: 100%;
+    height: 100%;
 }
+
 .carousel-item {
     position: absolute !important;
     top: 0;
@@ -176,12 +198,31 @@ nav a:hover {
     bottom: 0;
     left: 0;
 }
+
 .carousel-item img {
     object-fit: cover;
     object-position: center;
     overflow: hidden;
     height: 100%;
     width: 100%;
+    object-fit: contain; /* Cover the entire area without stretching */
+}
+
+/* Custom CSS to change carousel dimensions */
+#carouselExampleIndicators {
+    width: 90%;  /* Set the desired width */
+    height: auto; /* Adjust height to be proportional */
+    margin: auto; /* Center the carousel */
+}
+
+#carouselExampleIndicators .carousel-inner {
+    width: 100%;
+    height: auto; /* Adjust height to be proportional */
+}
+
+#carouselExampleIndicators .carousel-item img {
+    width: 100%;
+    height: auto; /* Make the image adjust proportionally */
     object-fit: contain; /* Cover the entire area without stretching */
 }
 
@@ -673,7 +714,7 @@ footer{
         padding: 20px; 
     }
 
-    .main-doc {
+    .main {
         margin-left: 0; 
         margin-right: 0; 
         padding: 20px; 
@@ -941,7 +982,7 @@ figcaption {
 /* Story Map Container */
 .story-map-container {
     margin-top: 40px;
-    padding: 20px;
+    padding: 60px;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
