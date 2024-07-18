@@ -859,27 +859,11 @@ figcaption {
 }
 /* Story Map Container Page */
 .story-map-container {
-    margin-top: 40px;
+    margin-top: 0px;
     padding: 60px;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.story-map-container h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.75rem;
-    margin-bottom: 10px;
-    color: rgb(0, 0, 0);
-    padding-top: 20px;
-}
-.story-map-container p {
-    background-color: rgb(227, 218, 208); /* #E3DAD0 */
-    color: rgb(0, 0, 0);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    line-height: 1.4;
-    text-align: justify;
 }
 .story-map-iframe {
     width: 100%;
