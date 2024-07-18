@@ -10,9 +10,9 @@
     --img-column-w: 25vw;
     --data-column-w: 25vw;
     --info-column-w: calc(100vw - var(--img-column-w) - var(--data-column-w) - 3.5vw);
-    --main-height: calc(var(--navbar-height) - var(--footer-height))
+    --main-height: calc(var(--navbar-height) - var(--footer-height));
+    --sidebar-doc: 280px;
 }
-
 /* General body styling */
 body {
     background-color: rgb(227, 218, 208); /* #E3DAD0 */
@@ -28,14 +28,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -49,15 +47,6 @@ h1 {
 
 h2 {
     font-size: 1.5rem; 
-}
-
-h2:after {
-    content: ' ';
-    display: block;
-    border: 1px solid rgb(0, 0, 0);
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 100%;
 }
 
 h3 {
@@ -118,26 +107,6 @@ nav a:hover {
     font-weight: 800;
     font-style: italic;
     z-index: 1000;
-}
-/* Adjusted sidebar-documentation styling */
-.sidebar-documentation {
-    background-color: rgb(151, 112, 96); /* #977060 */
-    color: rgb(219, 214, 197); /* #DBD6C5 */
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    padding-top: 20px; /* Add top padding */
-    font-size: 1rem; /* Increased font size by 20% */
-    position: fixed; /* Fixes sidebar-documentation on the left */
-    top: var(--navbar-height); /* Start the sidebar-documentation below the navbar */
-    left: 0;
-    width: 280px; /* sidebar-documentation width */
-    z-index: 1000; /* Make sure the sidebar-documentation is above the main content */
-    min-height: 100%; 
-    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
-    height: 100%; 
-    margin: 0 auto -100px; /*Allow for footer height*/
-    vertical-align:bottom;
 }
 .nav-link {
     color: rgb(219, 214, 197); /* Navbar link text color */
@@ -499,8 +468,6 @@ body {
     border-radius: 15px;
     margin-top: 10px;
 }
-
-
 a {
     color:#DBD6C5;
     text-decoration: none;; 
@@ -512,10 +479,9 @@ a .footerpages:visited {/* NON VIENE! */
     color: #CD8635;
 }
 .active a:active {
-    background-color: ; /* Cambia il colore di sfondo del link quando è attivo */
+    background-color: #DBD6C5; /* Cambia il colore di sfondo del link quando è attivo */
     color: #977060; /* Cambia il colore del testo del link quando è attivo */
 }
-
 /* footer */
 *{
     padding: 0;
@@ -677,36 +643,6 @@ footer{
     height: 500px;
     border: 2px solid black;
 }
-
-/* Responsive text styling for smaller screens */
-
-@media (max-width: 768px) {
-    .sidebar-documentation {
-        width: 100%; /* sidebar-documentation takes full width */
-        height: auto; /* Adjust height to content */
-        position: relative; /* Position it relative */
-        padding: 20px; 
-    }
-
-    .main {
-        margin-left: 0; 
-        margin-right: 0; 
-        padding: 20px; 
-    }
-}
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-    .sidebar-documentation {
-        padding: 10px; /* Further adjust padding */
-    }
-
-    .main.doc {
-        padding: 10px; /* Further adjust padding */
-    }
-}
-
-/* Footer styling */
 /* Footer styling */
 footer {
     background: #977060;
@@ -719,53 +655,6 @@ footer {
     width: 100%;
     height: var(--footer-height);
 }
-
-/* Further adjustments for very small screens */
-@media (max-width: 480px) {
-    .sidebar-documentation {
-        padding: 10px; /* Further adjust padding */
-    }
-
-    .main.doc {
-        padding: 10px; /* Further adjust padding */
-    }
-}
-
-/* Content section styling documentation */
-.main-doc {
-    margin-left: 280px; /* Adjust based on the sidebar width */
-    padding-top: 56px; /* Adjust for the navbar height */
-    position: relative; /* Ensure main content stays on top of the parallax image */
-}
-
-.main-doc a {
-    color: rgb(0, 0, 0); /* Normal link color */
-    text-decoration: underline; /* Optional: underline for links */
-}
-
-.main-doc a:hover,
-.main-doc a:active {
-    color: rgb(46, 14, 1); /* Color for hover and active states */
-}
-
-/* Style the top-image as a banner */
-.top-image {
-    box-sizing: border-box;
-    padding-top: var(--navbar-height);
-    padding-left: 15px; 
-}
-
-.top-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/*main {
-    margin-left: 250px; /* Adjust based on the sidebar width 
-    padding-top: 56px; /* Adjust for the navbar height 
-}*/
-
 /*infami monumenti page*/
 .navbarIm {
     position: fixed;
@@ -876,16 +765,88 @@ figcaption {
     color: black;
     font-weight: bold;
 }
-/*Style for palette in documentation*/
-.main-content {
-    margin: 0;
-    max-width: 100%;
+/*Style for documentation page*/
+.doc-container {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1em;
+    padding-top: 10em;
+    position: relative; 
+    z-index: 1; 
 }
+.doc-title{
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+.doc-line {
+    width: var(--container-width);
+    height: var(--container-height);
+}
+.doc-container p {
+    font-weight: 300;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+.doc-container a {
+    color: #977060
+}
+.doc-container a:hover {
+    color: black;
+    font-weight: bold;
+}
+.sidebar-doc {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    background-color: rgb(151, 112, 96); /* #977060 */
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    padding-top: 20px; /* Add top padding */
+    font-size: 1rem; /* Increased font size by 20% */
+    position: fixed; /* Fixes sidebar-doc on the left */
+    top: var(--navbar-height); /* Start the sidebar-doc below the navbar */
+    left: 0;
+    width: 280px; /* sidebar-doc width */
+    z-index: 0; /* Make sure the sidebar-doc is above the main content */
+    min-height: 100%; 
+    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
+    height: 100%; 
+    margin: 0 auto -100px; /*Allow for footer height*/
+    vertical-align:bottom;
+}
+/* Responsive text styling for smaller screens */
+@media (max-width: 768px) {
+    .sidebar-doc {
+        width: 100%; /* sidebar-doc takes full width */
+        height: auto; /* Adjust height to content */
+        position: relative; /* Position it relative */
+        padding: 20px; 
+    }
+
+    .doc-container {
+        margin-left: 0; 
+        margin-right: 0; 
+        padding: 20px; 
+    }
+}
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar-doc {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .doc-container {
+        padding: 10px; /* Further adjust padding */
+    }
+}
+/*Style for palette in documentation*/
 .palette-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 200px auto auto auto;
-    grid-gap: 30px;
+    grid-template-rows: auto 150px auto auto auto;
+    grid-gap: 10px;
     justify-content: center;
     padding: 0px;
 }
@@ -947,7 +908,7 @@ figcaption {
 .font-white {
     color: #fff;
 }
-/* Story Map Container */
+/* Story Map Container Page */
 .story-map-container {
     margin-top: 40px;
     padding: 60px;
