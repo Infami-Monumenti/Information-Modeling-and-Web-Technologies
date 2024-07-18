@@ -10,39 +10,38 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Infami monumenti</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Infami Monumenti</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="homepage.html">Coverpage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Secret things
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Phallic culture over the years</a></li>
+                <li><a class="dropdown-item" href="#">Phallic culture geographical location</a></li>
+                <li><a class="dropdown-item" href="#">Phallic culture expressions</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
+  
     <main>
         <div class="container-fluid layout">
             <div class="row">
@@ -208,14 +207,39 @@
                 </div>
             </div>
         </div>
-        <div class="story-map-container">
-          <h2>Story Map</h2>
-          <p>Explore the History of Phallic Culture around the world and the time.</p>
-            <iframe src="https://uploads.knightlab.com/storymapjs/336c90b9ae681fd1c12a05bea902e924/history-of-phallic-culture/draft.html" frameborder="0" class="story-map-iframe"></iframe>
-        </div>
     </main>
-    <footer>
-      <div class="container" id="footer"></div>
+    <footer class="footer">
+      <div class="footer-left">
+        <h4>Infami Monumenti</h4>
+        <div class="imglogo">
+          <img src="images/logoinfamimonumenti.jpg" alt="logo infami monumenti"> 
+        </div>
+        <p class="footer-copyright">2024@Infamimonumenti</p>
+      </div>
+    
+      <div class="footer-center">
+        <h4>Contacts</h4>
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p>Italy</p>
+        </div>
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>051 987654</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="#">support@gmail.com</a></p>
+        </div>
+      </div>
+    
+      <div class="footer-right">
+          <h4>Other secret things</h4>
+          <li><a href="about.html"> About</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="githublink.html">GitHub Repository</a></li>
+        </p>
+      </div>
     </footer>
     <!--Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
