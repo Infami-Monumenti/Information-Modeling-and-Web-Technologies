@@ -386,6 +386,7 @@ img:hover{
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 100px;
+    margin-bottom: 300px;
 }
 .hpcard{
     width: 325px;
@@ -543,7 +544,7 @@ footer{
     flex-wrap: wrap;
     margin-top: 100px;
     padding-right: 10px;
-    margin-bottom: 500px;
+    margin-bottom: 300px;
 }
 
 .aboutcard div{
