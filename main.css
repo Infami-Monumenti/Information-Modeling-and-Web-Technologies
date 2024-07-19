@@ -232,6 +232,11 @@ h1{
     color: black;
     margin-bottom: 20px;
 }
+#homepage-title{
+    font-weight: 1800;
+    margin-top: 50px;
+    font-family: solid 'Inter', sans-serif
+}
 nav {
     display: flex;
     justify-content: center;
@@ -248,32 +253,6 @@ nav a:hover {
 }
 .container {
     padding: 20px;
-}
-
-h1 {
-    margin-bottom: 40px; /* Spazio tra il titolo e l'immagine */
-    text-align: center;
-}
-
-#icon {
-    color:  #555;
-    text-align: center;
-    padding: 50px;
-    justify-content: center;
-}
-
-.image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-.image-container img {
-    max-width:30%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* separator*/
@@ -311,7 +290,7 @@ h1 {
         transform: translateX(0);
     }
     100%{
-        transform: translateX(calc(-250px * 17));
+        transform: translateX(calc(-205px * 16));
     }
 }
 
@@ -358,6 +337,31 @@ img:hover{
     padding-right: 0px;
     height: 500px;
     transform: rotateZ(180deg); 
+}
+
+/* icon */
+.icon-container{
+    margin: 2px;
+    height: 2px;
+    inset-inline: 10px;
+}
+
+.homepage-button{
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    padding: 14px 15px;
+    border-radius: 10px;
+    background-color: #977060;
+    color: floralwhite;
+}
+
+.icontext{
+    opacity: 0;
+}
+
+.homepage-button:hover {
+    color: #555;
 }
 
 /* narratives preview cards */
@@ -424,13 +428,7 @@ a {
 a:hover {
     color:black;
 }
-a .footerpages:visited {/* NON VIENE! */
-    color: #CD8635;
-}
-.active a:active {
-    background-color: #DBD6C5; /* Cambia il colore di sfondo del link quando è attivo */
-    color: #977060; /* Cambia il colore del testo del link quando è attivo */
-}
+
 
 /* footer */
 *{
@@ -442,6 +440,9 @@ footer{
     bottom: 0;
     text-align: center;
     background-color: #977060;
+    margin-top: -100px;
+    clear: both;
+    min-height: calc(100svh - 1295.98px);
 }
 .footer{
     background-color: #977060;
