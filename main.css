@@ -357,8 +357,9 @@ img:hover{
     border-radius: 10px;
     background-color: #977060;
     color: floralwhite;
-    
-    margin: 0 auto;
+    margin-left: 50%;
+    margin-right: 50%;
+    position: relative;
 
 
 }
