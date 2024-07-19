@@ -223,15 +223,23 @@ body {
     background-color:#E3DAD0;
     color: black;
 }
+
 h1{
     font-family: solid 'Inter', sans-serif;
     font-weight: 800;
-    padding: 10px 0;
+    padding: 10px 10px;
     text-align: center;
     background-color:#E3DAD0;
     color: black;
-    margin-bottom: 20px;
 }
+
+.homepage-title {
+    font-weight: 1800;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-family: solid 'Inter', sans-serif
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -248,32 +256,6 @@ nav a:hover {
 }
 .container {
     padding: 20px;
-}
-
-h1 {
-    margin-bottom: 40px; /* Spazio tra il titolo e l'immagine */
-    text-align: center;
-}
-
-#icon {
-    color:  #555;
-    text-align: center;
-    padding: 50px;
-    justify-content: center;
-}
-
-.image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-.image-container img {
-    max-width:30%;
-    height: auto;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* separator*/
@@ -311,7 +293,7 @@ h1 {
         transform: translateX(0);
     }
     100%{
-        transform: translateX(calc(-250px * 17));
+        transform: translateX(calc(-205px * 16));
     }
 }
 
@@ -360,6 +342,36 @@ img:hover{
     transform: rotateZ(180deg); 
 }
 
+/* icon */
+.icon-container{
+    margin: 2px;
+    height: 2px;
+    inset-inline: 10px;
+}
+
+.homepage-button{
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: #977060;
+    color: floralwhite;
+    margin-left: 45%;
+    margin-right: 50%;
+    position: relative;
+
+
+}
+
+.icontext{
+    opacity: 0;
+}
+
+.homepage-button:hover {
+    color: #555;
+}
+
 /* narratives preview cards */
 * {
     margin: 0px;
@@ -375,6 +387,7 @@ img:hover{
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 100px;
+    margin-bottom: 300px;
 }
 .hpcard{
     width: 325px;
@@ -424,31 +437,33 @@ a {
 a:hover {
     color:black;
 }
-a .footerpages:visited {/* NON VIENE! */
-    color: #CD8635;
-}
-.active a:active {
-    background-color: #DBD6C5; /* Cambia il colore di sfondo del link quando è attivo */
-    color: #977060; /* Cambia il colore del testo del link quando è attivo */
-}
+
+
 /* footer */
 *{
     padding: 0;
     margin: 0;
 }
+
 footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
+    margin: 0;
     text-align: center;
+    background-color: #977060;
+    margin-top: 300px;
+    margin-bottom: -40px;
 }
+
 .footer{
     background-color: #977060;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     font: bold 13px sans-serif;
-    padding: 30px 20px 30px 50px;
-    margin-top: 100px;
+    padding: 30px 20px 30px 80px;
+    bottom: -40px;
+    margin-top: -100px;
 }
 
 .footer-left,
@@ -460,6 +475,7 @@ footer{
 @media (max-height:800px){
     footer{
         position: static;
+        min-height: calc(100vh - main);
 
     }
 }
@@ -492,34 +508,7 @@ footer{
     width: 30%;
     margin-left: 10px;
 }
-.footer-center i{
-    background-color: #977060;
-    color: #555;
-    font-size: 18px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 10px 15px;
-    vertical-align: middle;
-    padding-top: 10px;
-}
-.footer-center i.fa-envelope{
-    font-size: 17px;
-    line-height: 20px;
-}
-.footer-center p{
-    display: inline-block;
-    color: floralwhite;
-    vertical-align: middle;
-    margin: 0px;
-    padding-top: 10px;
-}
-.footer-center p a{
-    color: floralwhite;
-    text-decoration: none;
-    line-height: 10px;
-}
+
 .footer-right{
     width: 30%;
 }
@@ -556,6 +545,7 @@ footer{
     flex-wrap: wrap;
     margin-top: 100px;
     padding-right: 10px;
+    margin-bottom: 300px;
 }
 
 .aboutcard div{
@@ -586,6 +576,23 @@ footer{
     background-color: #977060;
     transform: perspective(500px)rotateY(360deg);
 }
+.aboutcard div img{
+    position: fixed;
+    width: 310px;
+    height: 320px;
+    top: 1px;
+}
+.aboutcard div h3{
+    position: fixed;
+    width: 500px;
+    height: 100px;
+    bottom: -50px;
+    text-align: center;
+}
+div .back p{
+    text-align: center;
+}
+
 
 .story-map-iframe {
     width: 100%;
