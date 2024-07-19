@@ -347,7 +347,6 @@ img:hover{
     margin: 2px;
     height: 2px;
     inset-inline: 10px;
-    left: -50px;
 }
 
 .homepage-button{
@@ -358,6 +357,7 @@ img:hover{
     border-radius: 10px;
     background-color: #977060;
     color: floralwhite;
+    left: -50px;
 
 }
 
