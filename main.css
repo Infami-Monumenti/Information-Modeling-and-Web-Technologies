@@ -223,20 +223,23 @@ body {
     background-color:#E3DAD0;
     color: black;
 }
+
 h1{
     font-family: solid 'Inter', sans-serif;
     font-weight: 800;
-    padding: 10px 0;
+    padding: 10px 10px;
     text-align: center;
     background-color:#E3DAD0;
     color: black;
-    margin-bottom: 20px;
 }
-#homepage-title{
+
+.homepage-title {
     font-weight: 1800;
-    margin-top: 50px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     font-family: solid 'Inter', sans-serif
 }
+
 nav {
     display: flex;
     justify-content: center;
@@ -446,7 +449,7 @@ footer{
     margin: 0;
     text-align: center;
     background-color: #977060;
-    margin-top: 100px;
+    margin-top: 300px;
     margin-bottom: -40px;
 }
 
@@ -540,6 +543,7 @@ footer{
     flex-wrap: wrap;
     margin-top: 100px;
     padding-right: 10px;
+    margin-bottom: 500px;
 }
 
 .aboutcard div{
