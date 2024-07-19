@@ -435,15 +435,18 @@ a:hover {
     padding: 0;
     margin: 0;
 }
+
 footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
+    margin: 0;
     text-align: center;
     background-color: #977060;
     margin-top: -100px;
     clear: both;
     min-height: calc(100svh - 1295.98px);
 }
+
 .footer{
     background-color: #977060;
     box-sizing: border-box;
@@ -451,7 +454,8 @@ footer{
     text-align: left;
     font: bold 13px sans-serif;
     padding: 30px 20px 30px 50px;
-    margin-top: 100px;
+    bottom: 0;
+    margin-top: -100px;
 }
 
 .footer-left,
@@ -463,6 +467,7 @@ footer{
 @media (max-height:800px){
     footer{
         position: static;
+        min-height: calc(100vh - main);
 
     }
 }
@@ -562,6 +567,23 @@ footer{
     background-color: #977060;
     transform: perspective(500px)rotateY(360deg);
 }
+.aboutcard div img{
+    position: fixed;
+    width: 310px;
+    height: 320px;
+    top: 1px;
+}
+.aboutcard div h3{
+    position: fixed;
+    width: 500px;
+    height: 100px;
+    bottom: -50px;
+    text-align: center;
+}
+div .back p{
+    text-align: center;
+}
+
 
 .story-map-iframe {
     width: 100%;
