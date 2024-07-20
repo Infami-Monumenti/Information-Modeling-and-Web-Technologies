@@ -87,7 +87,8 @@ nav a:hover {
 .layout {
     height: var(--cs-main-height);
     border: 2px solid black;
-    padding-top: 10em;
+    padding-top: 4em;
+    padding-bottom: 4em;
 }
 .layout a {
     font-family: 'Cormorant Garamont', serif;
@@ -711,8 +712,8 @@ figcaption {
 .doc-container {
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 1em;
-    padding-top: 10em;
+    margin-top: 0;
+    padding-top: 5em;
     position: relative; 
     z-index: 1; 
 }
@@ -852,8 +853,8 @@ figcaption {
 }
 /* Story Map Container Page */
 .story-map-container {
-    margin-top: 0px;
-    padding: 60px;
+    margin: 0;
+    padding: 0 0 5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -862,4 +863,11 @@ figcaption {
     width: 100%;
     height: 500px;
     border: 2px solid black;
+}
+.storymap-container .vso-caption,
+.storymap-container .vso-text {
+    font-family: 'Inter', sans-serif !important;
+}
+.storymap-container .vso-title {
+    font-family: 'Cormorant Garamond', serif !important;
 }
