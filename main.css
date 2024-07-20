@@ -174,21 +174,6 @@ nav a:hover {
     height: auto; /* Make the image adjust proportionally */
     object-fit: contain; /* Cover the entire area without stretching */
 }
-/* Footer styles */
-footer {
-    background: #977060;
-    color: #DBD6C5;
-    text-align: center;
-    padding: 100px;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
-}
-.footerpages {
-    text-align: left;
-}
 /* Specific section styles */
 #footer {
     height: var(--cs-foot-height);
