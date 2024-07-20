@@ -173,9 +173,6 @@ nav a:hover {
     object-fit: contain; /* Cover the entire area without stretching */
 }
 /* Specific section styles */
-#footer {
-    height: var(--cs-foot-height);
-}
 #arch {
     background-color: rgb(133, 92, 117);
     border: 2px solid black;
