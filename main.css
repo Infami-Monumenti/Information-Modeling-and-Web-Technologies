@@ -342,7 +342,7 @@ img:hover{
     font-family: solid 'Inter', sans-serif;
 }
 
-.homepage-button{
+.hp-flex .homepage-button{
     font-size: 2rem;
     border: none;
     padding: 15px 15px;
