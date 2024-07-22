@@ -206,7 +206,7 @@ body {
 
 h1{
     font-family: solid 'Inter', sans-serif;
-    font-weight: 800;
+    font-weight: 8000;
     padding: 10px 10px;
     text-align: center;
     background-color:#E3DAD0;
@@ -214,10 +214,10 @@ h1{
 }
 
 .homepage-title {
-    font-weight: 1800;
+    font-weight: 1500;
     margin-top: 150px;
     margin-bottom: 150px;
-    font-family: solid 'Inter', sans-serif
+    font-family: solid bold 'Inter', sans-serif;
 }
 
 nav {
