@@ -323,11 +323,10 @@ img:hover{
 }
 
 /* icon */
-.icon-container{
-    margin: 2px;
-    height: 2px;
-    inset-inline: 10px;
+.titleicon-container{
+    align-items: center;
 }
+
 
 .homepage-button{
     font-size: 2rem;
