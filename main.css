@@ -323,41 +323,24 @@ img:hover{
 }
 
 /* icon */
-.titleicon-container{
-    align-items: center;
-    width: auto;
-    height: 300px;
-    background-color: #E3DAD0;
-}
-.hp-flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.homepage-title {
-    font-weight: 1800;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    font-family: solid 'Inter', sans-serif;
+.icon-container{
+    margin: 2px;
+    height: 2px;
+    inset-inline: 10px;
+    cursor: pointer;
+    color: #555;
 }
 
 .homepage-button{
     font-size: 2rem;
-    padding: 15px 15px;
+    border: none;
+    outline: none;
+    padding: 14px 15px;
     border-radius: 10px;
     background-color: #977060;
     color: floralwhite;
-    width: 100px;
-    height: 100px;
-
-
 }
 
-margin-left: 50%;
-margin-right: 50%;
-width: 100px;
-height: 100px;
 .icontext{
     opacity: 0;
 }
