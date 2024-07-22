@@ -323,12 +323,24 @@ img:hover{
 }
 
 /* icon */
+#titleicon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
 .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     margin: 2px;
     height: 2px;
-    inset-inline: 10px;
+    inset-inline: 5px;
     cursor: pointer;
     color: #555;
+    
 }
 
 .homepage-button{
@@ -348,7 +360,10 @@ img:hover{
 .homepage-button:hover {
     color: #555;
 }
-
+.homepage-button:hover .icontext:hover{
+    color: #555;
+    opacity: 1;
+}
 
 /* narratives preview cards */
 * {
