@@ -363,6 +363,7 @@ img:hover{
 .homepage-button:hover .icontext:hover{
     color: #555;
     opacity: 1;
+    translate: transition 0.5s;
 }
 
 /* narratives preview cards */
