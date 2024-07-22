@@ -348,11 +348,13 @@ img:hover{
     outline: none;
     padding: 15px 15px;
     border-radius: 10px;
-
+   
     background-color: #977060;
     color: floralwhite;
     position: relative;
 }
+margin-left: 45%;
+margin-right: 50%;
 
 .icontext{
     opacity: 0;
