@@ -327,6 +327,12 @@ img:hover{
     align-items: center;
 }
 
+.homepage-title {
+    font-weight: 1800;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-family: solid 'Inter', sans-serif
+}
 
 .homepage-button{
     font-size: 2rem;
