@@ -344,15 +344,16 @@ img:hover{
 
 .homepage-button{
     font-size: 2rem;
-    border: none;
     padding: 15px 15px;
-    outline: none;
     border-radius: 10px;
     background-color: #977060;
     color: floralwhite;
-    margin: 50%;
+    width: 100px;
+    height: 100px;
+
+
 }
-padding: 15px 15px;
+
 margin-left: 50%;
 margin-right: 50%;
 width: 100px;
