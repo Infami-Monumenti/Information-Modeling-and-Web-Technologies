@@ -325,9 +325,9 @@ img:hover{
 /* icon */
 .titleicon-container{
     align-items: center;
-    width: 100%;
+    width: auto;
     height: 300px;
-    background-color:#555 ;
+    background-color: #E3DAD0;
 }
 .hp-flex{
     display: flex;
@@ -339,23 +339,26 @@ img:hover{
     font-weight: 1800;
     margin-top: 150px;
     margin-bottom: 150px;
-    font-family: solid 'Inter', sans-serif
+    font-family: solid 'Inter', sans-serif;
+    width: 100px;
+    height: 100px;
 }
 
 .homepage-button{
     font-size: 2rem;
     border: none;
+    padding: 15px 15px;
     outline: none;
-
     border-radius: 10px;
-
     background-color: #977060;
     color: floralwhite;
     position: relative;
+    width: 100px;
+    height: 100px;
 }
 padding: 15px 15px;
 margin-left: 50%;
-    margin-right: 50%;
+margin-right: 50%;
 .icontext{
     opacity: 0;
 }
