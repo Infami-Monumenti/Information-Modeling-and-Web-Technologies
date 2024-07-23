@@ -365,7 +365,7 @@ img:hover{
 }
 .icon-container .icon-content{
     position: absolute;
-    bottom: -150px;
+    bottom: -400px;
     width: 180px;
     margin-bottom: 12px;
     background-color:#977060;
