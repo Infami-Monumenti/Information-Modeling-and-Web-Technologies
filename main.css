@@ -10,7 +10,7 @@
     --img-column-w: 25vw;
     --data-column-w: 25vw;
     --info-column-w: calc(100vw - var(--img-column-w) - var(--data-column-w) - 3.5vw);
-    --main-height: calc(var(--navbar-height) - var(--footer-height));
+    --main-height: calc(100vh - var(--navbar-height) - var(--footer-height));
     --sidebar-doc: 280px;
 }
 /* General body styling */
@@ -175,7 +175,7 @@ nav a:hover {
     object-fit: contain; /* Cover the entire area without stretching */
 }
 /* Footer styles */
-footer {
+/*footer {
     background: #977060;
     color: #DBD6C5;
     text-align: center;
@@ -188,7 +188,7 @@ footer {
 }
 .footerpages {
     text-align: left;
-}
+}*/
 /* Specific section styles */
 #footer {
     height: var(--cs-foot-height);
@@ -445,7 +445,7 @@ a:hover {
     margin: 0;
 }
 
-footer{
+/*footer{
     position: relative;
     bottom: 0;
     margin: 0;
@@ -471,7 +471,7 @@ footer{
 .footer-right{
     display:inline-block;
     vertical-align: top;
-}
+}*/
 @media (max-height:800px){
     footer{
         position: static;
@@ -600,7 +600,7 @@ div .back p{
     border: 2px solid black;
 }
 /* Footer styling */
-footer {
+/*footer {
     background: #977060;
     color: #DBD6C5;
     text-align: center;
@@ -610,7 +610,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: var(--footer-height);
-}
+}*/
 /*infami monumenti page*/
 .navbarIm {
     position: fixed;
@@ -620,12 +620,20 @@ footer {
     overflow-x: hidden;
 }
 #imMain {
-    display: flex;
-    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     overflow-x: hidden;
     width: 100%;
-    height: var(--cs-main-height);
-    position: relative;
+    height: var(--main-height);
+    height: calc(100vh - var(--navbar-height));
+    position: absolute;
+    bottom: 0;
+}
+.img, .info, .table {
+    background-color: aqua;
+    border: 1px solid black;
+    bottom: 0;
+    margin: 0;
 }
 #mainIMContainer {
     height: 100vh !important;
