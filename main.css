@@ -54,7 +54,7 @@ h3 {
 }
 
 a {
-    color: #dbd65;
+    color: #dbd6;
     text-decoration: none;
 }
 
@@ -345,6 +345,7 @@ img:hover{
 }
 
 .icontext{
+    position: fixed;
     opacity: 0;
 }
 
@@ -352,6 +353,7 @@ img:hover{
     color: #555;
 }
 .homepage-button:hover .icontext:hover{
+    position: absolute;
     color: #555;
     opacity: 1;
     translate: transition 0.5s;
@@ -365,7 +367,7 @@ img:hover{
 }
 .icon-container .icon-content{
     position: absolute;
-    bottom: -90px;
+    bottom: -50px;
     width: 180px;
     margin-bottom: 12px;
     background-color:#977060;
