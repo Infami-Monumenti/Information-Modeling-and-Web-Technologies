@@ -229,6 +229,12 @@ nav a:hover {
     margin-bottom: 40px;
     font-family: solid bold 'Inter', sans-serif;
 }
+.mx-0px-0{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
 
 /* separator*/
 .sldcd-separator{
