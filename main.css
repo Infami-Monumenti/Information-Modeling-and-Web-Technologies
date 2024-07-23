@@ -204,21 +204,6 @@ body {
     color: black;
 }
 
-h1{
-    font-family: solid 'Inter', sans-serif;
-    font-weight: 8000;
-    padding: 10px 10px;
-    text-align: center;
-    background-color:#E3DAD0;
-    color: black;
-}
-
-.homepage-title {
-    font-weight: 1500;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-family: solid bold 'Inter', sans-serif;
-}
 
 nav {
     display: flex;
@@ -236,6 +221,13 @@ nav a:hover {
 }
 .container {
     padding: 20px;
+}
+
+.col-6 > h1{
+    font-weight: 1500;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family: solid bold 'Inter', sans-serif;
 }
 
 /* separator*/
