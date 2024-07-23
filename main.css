@@ -15,7 +15,7 @@
 }
 /* General body styling */
 body {
-    background-color: rgb(227, 218, 208); /* #E3DAD0 */
+    background-color: rgb(219, 214, 197);
     color: rgb(0, 0, 0); /* #000000 */
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
@@ -54,7 +54,7 @@ h3 {
 }
 
 a {
-    color: #DBD6C5;
+    color: #dbd6;
     text-decoration: none;
 }
 
@@ -62,9 +62,6 @@ a:hover {
     color: black;
 }
 
-a .footerpages:visited {
-    color: #CD8635;
-}
 .active a:active {
     color: #977060;
 }
@@ -73,7 +70,7 @@ nav {
     display: flex;
     justify-content: center;
     background: white;
-    padding: 10px 0;
+    padding: 10px 0px;
 }
 nav a {
     color: white;
@@ -90,7 +87,8 @@ nav a:hover {
 .layout {
     height: var(--cs-main-height);
     border: 2px solid black;
-    padding-top: 10em;
+    padding-top: 4em;
+    padding-bottom: 4em;
 }
 .layout a {
     font-family: 'Cormorant Garamont', serif;
@@ -174,25 +172,7 @@ nav a:hover {
     height: auto; /* Make the image adjust proportionally */
     object-fit: contain; /* Cover the entire area without stretching */
 }
-/* Footer styles */
-/*footer {
-    background: #977060;
-    color: #DBD6C5;
-    text-align: center;
-    padding: 100px;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
-}
-.footerpages {
-    text-align: left;
-}*/
 /* Specific section styles */
-#footer {
-    height: var(--cs-foot-height);
-}
 #arch {
     background-color: rgb(133, 92, 117);
     border: 2px solid black;
@@ -224,21 +204,6 @@ body {
     color: black;
 }
 
-h1{
-    font-family: solid 'Inter', sans-serif;
-    font-weight: 800;
-    padding: 10px 10px;
-    text-align: center;
-    background-color:#E3DAD0;
-    color: black;
-}
-
-.homepage-title {
-    font-weight: 1800;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    font-family: solid 'Inter', sans-serif
-}
 
 nav {
     display: flex;
@@ -256,6 +221,19 @@ nav a:hover {
 }
 .container {
     padding: 20px;
+}
+
+.col-6 > h1{
+    font-weight: 1500;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    font-family: solid bold 'Inter', sans-serif;
+}
+.mx-0px-0{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* separator*/
@@ -277,11 +255,12 @@ nav a:hover {
     width: 90%;
     display: grid;
     place-items: center;
+    overflow: hidden;
 }
 
 .slide-track{
     display: flex;
-    width: calc(250px * 18);
+    width: calc(250px * 32);
     animation: scroll 40s linear infinite;
 }
 
@@ -343,33 +322,86 @@ img:hover{
 }
 
 /* icon */
+#titleicon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
 .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     margin: 2px;
     height: 2px;
-    inset-inline: 10px;
+    inset-inline: 5px;
+    cursor: pointer;
+    color: #555;
 }
 
 .homepage-button{
     font-size: 2rem;
     border: none;
     outline: none;
-    padding: 15px 15px;
+    padding: 14px 15px;
     border-radius: 10px;
     background-color: #977060;
     color: floralwhite;
-    margin-left: 45%;
-    margin-right: 50%;
-    position: relative;
-
-
 }
 
 .icontext{
+    position: fixed;
     opacity: 0;
 }
 
 .homepage-button:hover {
     color: #555;
+}
+.homepage-button:hover .icontext:hover{
+    position: absolute;
+    color: #555;
+    opacity: 1;
+    translate: transition 0.5s;
+}
+.icon-content{
+    color: floralwhite;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+   
+}
+.icon-container .icon-content{
+    position: absolute;
+    bottom: -50px;
+    width: 180px;
+    margin-bottom: 12px;
+    background-color:#977060;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(1%) translate(1px);
+}
+.icon-container .icon-content:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    background: #977060;
+    bottom: 0;
+    left: 75px;
+
+    transform: rotate(45deg);
+}
+
+.icon-container:hover .icon-content{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0%) translateY(0px);
 }
 
 /* narratives preview cards */
@@ -437,6 +469,7 @@ a {
 a:hover {
     color:black;
 }
+
 
 
 /* footer */
@@ -518,6 +551,9 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 40px;
+}
+#footer {
+    height: var(--cs-foot-height);
 }
 
 
@@ -731,15 +767,17 @@ figcaption {
 }
 /*Style for documentation page*/
 .doc-container {
+    flex: 1;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 1em;
-    padding-top: 10em;
+    margin-top: 0;
+    padding-top: 5em;
     position: relative; 
     z-index: 1; 
+    min-height: calc(var(--navbar-height) - var(--footer-height));
 }
 .doc-title{
-    margin-top: 0.5em;
+    margin-top: 2em;
     margin-bottom: 0;
 }
 .doc-line {
@@ -748,8 +786,6 @@ figcaption {
 }
 .doc-container p {
     font-weight: 300;
-    margin-top: 1em;
-    margin-bottom: 2em;
 }
 .doc-container a {
     color: #977060
@@ -758,27 +794,47 @@ figcaption {
     color: black;
     font-weight: bold;
 }
+.doc-content{
+    padding-top: 5em;
+}
 .sidebar-doc {
-    position: sticky;
+    position: fixed;
+    padding: 1em 1em 6em 1em;
+    overflow-y: auto;
     top: 0;
     align-self: flex-start;
-    background-color: rgb(151, 112, 96); /* #977060 */
-    color: rgb(219, 214, 197); /* #DBD6C5 */
+    background-color: white; 
+    color: rgb(​219, 214, 197); 
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-style: italic;
-    padding-top: 20px; /* Add top padding */
-    font-size: 1rem; /* Increased font size by 20% */
-    position: fixed; /* Fixes sidebar-doc on the left */
-    top: var(--navbar-height); /* Start the sidebar-doc below the navbar */
+    line-height: 2;
+    font-size: 1rem; 
+    top: var(--navbar-height);
+    bottom: var(--footer-height);
     left: 0;
-    width: 280px; /* sidebar-doc width */
-    z-index: 0; /* Make sure the sidebar-doc is above the main content */
+    width: 280px; 
+    z-index: 0;
     min-height: 100%; 
-    height: auto !important; /*Cause footer to stick to bottom in IE 6*/
-    height: 100%; 
-    margin: 0 auto -100px; /*Allow for footer height*/
-    vertical-align:bottom;
+}
+.side-link {
+    color: rgb (​219, 214, 197); 
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    line-height: 1.4;
+    padding: 2em;
+}
+/* Active link styling */
+.side-link.active {
+    font-weight: 800;
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+}
+/* Link color when hovered */
+.side-link:hover {
+    color: rgb(46, 14, 1); /* #2e0e01 */
+}
+/* Link color when visited */
+.side-link:visited {
+    color: rgb(61, 19, 2); /* #3d1302 */
 }
 /* Responsive text styling for smaller screens */
 @media (max-width: 768px) {
@@ -874,8 +930,8 @@ figcaption {
 }
 /* Story Map Container Page */
 .story-map-container {
-    margin-top: 0px;
-    padding: 60px;
+    margin: 0;
+    padding: 0 0 5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -884,4 +940,11 @@ figcaption {
     width: 100%;
     height: 500px;
     border: 2px solid black;
+}
+.storymap-container .vso-caption,
+.storymap-container .vso-text {
+    font-family: 'Inter', sans-serif !important;
+}
+.storymap-container .vso-title {
+    font-family: 'Cormorant Garamond', serif !important;
 }
