@@ -255,6 +255,7 @@ nav a:hover {
     width: 90%;
     display: grid;
     place-items: center;
+    overflow: hidden;
 }
 
 .slide-track{
@@ -768,7 +769,7 @@ figcaption {
     min-height: calc(var(--navbar-height) - var(--footer-height));
 }
 .doc-title{
-    margin-top: 0.5em;
+    margin-top: 2em;
     margin-bottom: 0;
 }
 .doc-line {
@@ -790,7 +791,7 @@ figcaption {
 }
 .sidebar-doc {
     position: fixed;
-    padding: 1rem;
+    padding: 1em 1em 6em 1em;
     overflow-y: auto;
     top: 0;
     align-self: flex-start;
