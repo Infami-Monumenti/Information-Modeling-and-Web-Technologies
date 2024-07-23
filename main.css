@@ -70,7 +70,7 @@ nav {
     display: flex;
     justify-content: center;
     background: white;
-    padding: 10px 0;
+    padding: 10px 0px;
 }
 nav a {
     color: white;
@@ -225,8 +225,8 @@ nav a:hover {
 
 .col-6 > h1{
     font-weight: 1500;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 70px;
+    margin-bottom: 40px;
     font-family: solid bold 'Inter', sans-serif;
 }
 
@@ -253,7 +253,7 @@ nav a:hover {
 
 .slide-track{
     display: flex;
-    width: calc(250px * 18);
+    width: calc(250px * 32);
     animation: scroll 40s linear infinite;
 }
 
