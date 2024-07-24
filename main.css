@@ -88,7 +88,7 @@ nav a:hover {
     height: var(--cs-main-height);
     border: 2px solid black;
     padding-top: 4em;
-    padding-bottom: 4em;
+    margin: 0;
 }
 .layout a {
     font-family: 'Cormorant Garamont', serif;
