@@ -299,7 +299,7 @@ img:hover{
 
 .slider::before,
 .slider::after{
-    background: linear-gradient(to right,rgb(227, 218, 208,1) 0%,
+    background: linear-gradient(to right,rgb(227, 218, 208,1) -10%,
     rgba(214, 156, 105, 0) 100%);
     content: '';
     height: 100%;
@@ -403,6 +403,7 @@ img:hover{
     opacity: 1;
     transform: translateX(0%) translateY(0px);
 }
+
 
 /* narratives preview cards */
 * {
