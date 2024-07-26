@@ -1,12 +1,12 @@
 {
   "columns": [
     "name",
-    "date",
-    "conservation location",
+    "dateCreated",
+    "containedInPlace",
     "author",
-    "authority",
-    "place",
-    "art",
+    "sameAs",
+    "locationCreated",
+    "genre",
     "religion",
     "image",
     "text 1",
@@ -52,7 +52,7 @@
         "itemIdx": 0,
         "narratives": {
           "Time": "Paleolithic period",
-          "Place": "Iran",
+          "locationCreated": "Iran",
           "Artistic expression": "Architecture"
         },
         "startNarrative": "Time",
