@@ -226,7 +226,7 @@ nav a:hover {
     padding: 20px;
 }
 
-main{
+main .indexmain{
     min-height: calc(100vh - 202.87px);
     margin-bottom: 120px;
 }
