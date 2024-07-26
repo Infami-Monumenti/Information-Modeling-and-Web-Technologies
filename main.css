@@ -15,7 +15,7 @@
 }
 /* General body styling */
 body {
-    background-color: rgb(219, 214, 197);
+    background-color: rgb(227, 218, 208);
     color: rgb(0, 0, 0); /* #000000 */
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
@@ -39,7 +39,7 @@ h1 {
     font-weight: 800;
     padding: 10px 0;
     text-align: center;
-    background-color: #E3DAD0;
+    background-color: rgb(227, 218, 208);
     color: black;
     font-size: 2rem; /* Font size for h1 */
     margin-bottom: 40px; /* Space between title and image */
@@ -99,15 +99,13 @@ nav a:hover {
 }
 .navbar {
     height: var(--cs-nav-height);
-    background-color: rgb(151, 112, 96);
-    color: rgb(219, 214, 197); /* Navbar text color */
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
     z-index: 1000;
 }
 .nav-link {
-    color: rgb(219, 214, 197); /* Navbar link text color */
+    color: rgb(227, 218, 208); /* Navbar link text color */
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
@@ -116,7 +114,7 @@ nav a:hover {
 /* Active link styling */
 .nav-link.active {
     font-weight: 800;
-    color: rgb(219, 214, 197); /* #DBD6C5 */
+    color:rgb(227, 218, 208); 
 }
 /* Link color when hovered */
 .nav-link:hover {
@@ -200,7 +198,7 @@ nav a:hover {
     font-weight: 300px;
     margin: 0;
     padding: 0;
-    background-color:#E3DAD0;
+    background-color:rgb(227, 218, 208);
     color: black;
     margin-bottom: 40px; /* Spazio tra il titolo e l'immagine */
     text-align: center;
@@ -226,7 +224,7 @@ nav a:hover {
     padding: 20px;
 }
 
-main .indexmain{
+main{
     min-height: calc(100vh - 202.87px);
     margin-bottom: 120px;
 }
@@ -237,7 +235,7 @@ h1{
     font-family: solid 'Inter', sans-serif;
     font-weight: 900;
     text-align: center;
-    background-color:#E3DAD0;
+    background-color:rgb(227, 218, 208);
     color: black;
 }
 .indextitle-container{
@@ -441,14 +439,14 @@ img:hover{
 }
 
 .indexcard{
-   width: 325px;
-   background-color: floralwhite;
-   border-radius: 8px;
-   overflow: hidden;
-   box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
-   margin: 10px;
-   padding: 9px;
-   transition: transform 0.6s ease;
+    width: 325px;
+    background-color: floralwhite;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
+    margin: 10px;
+    padding: 9px;
+    transition: transform 0.6s ease;
 }
 .indexcard:hover{
     transform: translateY(-30px);
@@ -486,7 +484,7 @@ img:hover{
 }
 
 a {
-    color:#DBD6C5;
+    color:rgb(227, 218, 208);
     text-decoration: none;; 
 }
 
