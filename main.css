@@ -385,6 +385,43 @@ img:hover{
     opacity: 1;
     translate: transition 0.5s;
 }
+.icon-content{
+    color: floralwhite;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.icon-container .icon-content{
+    position: absolute;
+    bottom: -50px;
+    width: 180px;
+    margin-bottom: 12px;
+    background-color:#977060;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateX(1%) translate(1px);
+}
+.icon-container .icon-content:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    background: #977060;
+    bottom: 0;
+    left: 75px;
+
+    transform: rotate(45deg);
+}
+
+.icon-container:hover .icon-content{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0%) translateY(0px);
+}
 
 
 /* narratives preview cards */
