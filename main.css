@@ -261,7 +261,7 @@ h1{
     overflow-x: hidden;
 }
 
-.slider{
+.indexslider{
     height: 300px;
     margin: auto;
     position: relative;
@@ -270,13 +270,13 @@ h1{
     place-items: center;
 }
 
-.slide-track{
+.indexslide-track{
     display: flex;
     width: calc(250px * 32);
     animation: scroll 40s linear infinite;
 }
 
-.slide-track:hover{
+.indexslide-track:hover{
     animation-play-state: paused;
 }
 @keyframes scroll{
@@ -288,7 +288,7 @@ h1{
     }
 }
 
-.slide{
+.index-slide{
     height: 100px;
     width: 400px;
     display: flex;
@@ -298,7 +298,7 @@ h1{
 }
 
 
-.slider img{
+.indexslider img{
     height: 350px;
     width: 250px;
 
@@ -309,8 +309,8 @@ img:hover{
     transition: transform 1s;
 }
 
-.slider::before,
-.slider::after{
+.indexslider::before,
+.indexslider::after{
     background: linear-gradient(to right,rgb(227, 218, 208,1) 0%,
     rgba(214, 156, 105, 0) 50%);
     content: '';
@@ -322,13 +322,13 @@ img:hover{
 
 }
 
-.slider::before{
+.indexslider::before{
     left: -75px;
     padding-left: 0px;
     height: 500px;
 }
 
-.slider::after{
+.indexslider::after{
     right: -75px;
     padding-right: 0px;
     height: 500px;
