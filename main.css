@@ -400,7 +400,7 @@ img:hover{
     top: 0;
     transform:translateX(-50%);
     background-color: #977060;
-    color: floralwhite;
+    color: #555;
     white-space: nowrap;
     padding: 5px 10px;
     border-radius: 7px;
