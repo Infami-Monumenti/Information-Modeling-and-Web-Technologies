@@ -244,7 +244,6 @@ h1{
 #titletop{
     margin-top: 20px;
 }
-
 .indextitle{
     font-weight: 900;
     margin-top: 100px;
@@ -253,11 +252,11 @@ h1{
     padding-top: 5px;
 }
 
+
 /* slider homepage */
 #hidslide{
     overflow-x: hidden;
 }
-
 .indexslider{
     height: 300px;
     margin: auto;
@@ -266,13 +265,11 @@ h1{
     display: grid;
     place-items: center;
 }
-
 .indexslide-track{
     display: flex;
     width: calc(250px * 32);
     animation: scroll 40s linear infinite;
 }
-
 .indexslide-track:hover{
     animation-play-state: paused;
 }
@@ -284,7 +281,6 @@ h1{
         transform: translateX(calc(-205px * 16));
     }
 }
-
 .index-slide{
     height: 100px;
     width: 400px;
@@ -293,19 +289,15 @@ h1{
     padding: 15px;
     perspective: 100px;
 }
-
-
 .indexslider img{
     height: 350px;
     width: 250px;
 
 }
-
 img:hover{
     transform: translateZ(20px);
     transition: transform 1s;
 }
-
 .indexslider::before,
 .indexslider::after{
     background: linear-gradient(to right,rgb(227, 218, 208,1) 0%,
@@ -318,13 +310,11 @@ img:hover{
     padding: 0px;
 
 }
-
 .indexslider::before{
     left: -75px;
     padding-left: 0px;
     height: 500px;
 }
-
 .indexslider::after{
     right: -75px;
     padding-right: 0px;
@@ -336,89 +326,103 @@ img:hover{
 .container .text-center{
     margin: -100px;
     padding: -100px;
+    position: relative;
 }
 
 
 /* icon */
-#titleicon-container{
-    display: flex;
-    align-items: center;
+.indexincon-container{
     justify-content: center;
-    margin-bottom: 5px;
-}
-
-.icon-container{
-    display: flex;
+    height: 50px;
+    width: 50px;
     align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    margin: 2px;
-    height: 2px;
-    inset-inline: 5px;
-    cursor: pointer;
-    color: #555;
+    position: relative;
 }
-
 .homepage-button{
+    background-color: #977060;
+    color: floralwhite;
+    border-radius: 50%;
+    height: auto;
+    width: auto;
     font-size: 2rem;
     border: none;
     outline: none;
     padding: 14px 15px;
-    border-radius: 10px;
-    background-color: #977060;
-    color: floralwhite;
 }
-
-.icontext{
-    opacity: 0;
-}
-
-.homepage-button:hover {
-    color: #555;
-}
-
-.homepage-button:hover .icontext:hover{
+.homepage-button:hover{
     color: #555;
     opacity: 1;
     translate: transition 0.5s;
 }
-.icon-content{
-    color: floralwhite;
-    text-align: center;
-    justify-content: center;
-    font-weight: 600;
+.fa-building-columns{
+    width: 100px;
+    height: 100px;
 }
-.icon-container .icon-content{
+.fa-solid{
+    max-width: auto;
+}
+.indexicon-container::before,
+.indexicon-container::after {
     position: absolute;
-    bottom: -50px;
-    width: 180px;
-    margin-bottom: 12px;
-    background-color:#977060;
-    padding: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+}
+.indexicon-container:before {
+    content: attr(data-tooltip);
+    color: floralwhite;
+    height: 40px;
+    width: max-content;
+    background: #977060;
+}
+
+
+/* Tooltip container */
+#contenitoreTooltip{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tooltip{
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#tooltipText{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform:translateX(-50%);
+    background-color: #977060;
+    color: floralwhite;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 7px;
     visibility: hidden;
     opacity: 0;
-    transition: 0.5s;
-    transform: translateX(1%) translate(1px);
+    transition: opacity 0.5s ease;
 }
-.icon-container .icon-content:before{
+#tooltipText::before{
     content: '';
     position: absolute;
-    width: 25px;
-    height: 20px;
-    background: #977060;
-    bottom: 0;
-    left: 75px;
-
-    transform: rotate(45deg);
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: #977060 #0000 #0000 #0000;
 }
-
-.icon-container:hover .icon-content{
+#tooltip:hover #tooltipText{
+    top: -65%;
     visibility: visible;
     opacity: 1;
-    transform: translateX(0%) translateY(0px);
 }
+
 
 
 /* narratives preview cards */
