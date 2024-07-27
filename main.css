@@ -390,7 +390,7 @@ img:hover{
 #tooltip{
     position: relative;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     font-family: sans-serif;
 }
@@ -418,7 +418,7 @@ img:hover{
     border-color: #977060 #0000 #0000 #0000;
 }
 #tooltip:hover #tooltipText{
-    top: -65%;
+    top: -60%;
     visibility: visible;
     opacity: 1;
 }
