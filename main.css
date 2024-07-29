@@ -654,13 +654,6 @@ a:hover {
 div .back p{
     text-align: center;
 }
-
-
-.story-map-iframe {
-    width: 100%;
-    height: 500px;
-    border: 2px solid black;
-}
 /* Footer styling */
 /*footer {
     background: #977060;
@@ -891,7 +884,7 @@ figcaption {
     padding: 0px;
 }
 .palette {
-    background: #fff;
+    background: floralwhite;
     overflow: hidden;
     position: relative;
     top: 0;
@@ -950,14 +943,15 @@ figcaption {
 }
 /* Story Map Container Page */
 .story-map-container {
-    margin: 0;
-    padding: 0 0 5em 0;
+    margin: 2.5em 0 2.5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+    min-height: calc(var(--navbar-height) - var(--footer-height));
 }
 .story-map-iframe {
     width: 100%;
+    padding: 4em;
     height: 500px;
     border: 2px solid black;
 }
