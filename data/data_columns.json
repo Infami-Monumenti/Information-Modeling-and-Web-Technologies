@@ -19,7 +19,7 @@
     "16": "Ypsilanti Water Tower",
     "17": "Torre Glòries"
   },
-  "date": {
+  "dateCreated": {
     "0": "Paleolithic Period ",
     "1": "XX century B.C.",
     "2": "XIX century B.C.",
@@ -39,7 +39,7 @@
     "16": "XIX century ",
     "17": "XXI century "
   },
-  "conservation location": {
+  "containedInPlace": {
     "0": "Golestan Province, Iran",
     "1": "Heliopolis, Egypt",
     "2": "Luxor, Egypt",
@@ -79,7 +79,7 @@
     "16": "William R. Coats",
     "17": "Jean Nouvel"
   },
-  "authority": {
+  "sameAs": {
     "0": "https://viaf.org/viaf/1364167445364688860004/#Kha%CC%84led_Nabi",
     "1": "https://viaf.org/viaf/316430063/#Heliopolis_(Cairo,_Egypt",
     "2": "http://id.loc.gov/authorities/classification/BL2450.M55",
@@ -99,7 +99,7 @@
     "16": "https://npgallery.nps.gov/AssetDetail/NRIS/81000318",
     "17": "http://viaf.org/viaf/245866680"
   },
-  "place": {
+  "locationCreated": {
     "0": "Gonbad-e Kavous",
     "1": "Cairo",
     "2": "Egypt",
@@ -119,7 +119,7 @@
     "16": "Ypsilanti",
     "17": "Barcelona"
   },
-  "art": {
+  "genre": {
     "0": "Architecture",
     "1": "Architecture",
     "2": "Sculpture",
@@ -244,7 +244,7 @@
       "itemIdx": 0,
       "narratives": {
         "Time": "Paleolithic period",
-        "Place": "Iran",
+        "locationCreated": "Iran",
         "Artistic expression": "Architecture"
       },
       "startNarrative": "Time",

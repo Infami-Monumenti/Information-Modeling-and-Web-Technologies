@@ -6,75 +6,86 @@
   <title>Infami Monumenti StoryMap</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="footer.css">
   <!--our vaficon-->
   <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
 </head>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Infami Monumenti</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="homepage.html">Coverpage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="disclaimer.html">Disclaimer</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Secret things
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Phallic culture over the years</a></li>
-              <li><a class="dropdown-item" href="#">Phallic culture geographical location</a></li>
-              <li><a class="dropdown-item" href="#">Phallic culture expressions</a></li>
-            </ul>
-          </li>
-        </ul>
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Infami Monumenti</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="homepage.html">Coverpage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Secret things
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="storymap.html">Phallic culture geographical and chronological location</a></li>
+                <li><a class="dropdown-item" href="#">Phallic culture expressions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="story-map-container">
+      <br>
+      <iframe src="https://uploads.knightlab.com/storymapjs/336c90b9ae681fd1c12a05bea902e924/history-of-phallic-culture/index.html" frameborder="0" width="100%" height="700"></iframe>
+  </div>
+  
+
+  <footer> <!--riprendere gli altri colori del logo nel footer-->
+    <div class="container-fluid footer-container">
+      <div class="row footer-row">
+        <div class="col-md-6 footer-col-logo d-flex">
+          <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
+        </div>
+        <!--<div class="col-md-4 footer-col">
+          empty column
+        </div>-->
+        <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
+          <h3>Infami Monumenti</h3>
+            <p>
+            <a href="documentation.html">Project Documentation</a><br>
+            <a href="about.html">About</a><br>
+            <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a><br>
+            </p>
+        </div>
+      <div class="row copyright-row d-flex">
+        <p>2024@Infamimonumenti</p>
+      </div>
       </div>
     </div>
-  </nav>
-<div class="story-map-container">
-    <br>
-    <iframe src="https://uploads.knightlab.com/storymapjs/336c90b9ae681fd1c12a05bea902e924/history-of-phallic-culture/index.html" frameborder="0" width="100%" height="700"></iframe>
-  </div>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-left">
-        <h4>Infami Monumenti</h4>
-        <div class="imglogo">
-          <img src="images/logoinfamimonumenti.jpg" alt="logo infami monumenti"> 
-        </div>
-        <p class="footer-copyright">2024@Infamimonumenti</p>
-      </div>
-    
-      <div class="footer-center"></div>
-    
-      <div class="footer-right">
-          <h4>Other secret things</h4>
-          <li><a href="about.html"> About</a></li>
-          <li><a href="documentation.html">Documentation</a></li>
-          <li><a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a></li>
-        </p>
-      </div>
-    </footer>
-    <script> //CSS for the StoryMap
-      document.querySelector('.storymap-frame').onload = function() {
-        var iframe = document.querySelector('.storymap-frame').contentWindow.document;
-        var style = document.createElement('style');
-        style.type = 'text/css';
-        style.innerHTML = `
-          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;700&display=swap');
-          .caption, .text { font-family: 'Inter', sans-serif !important; }
-          .title { font-family: 'Cormorant Garamond', serif !important; }
-        `;
-        iframe.head.appendChild(style);
-      };
-    </script>    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </footer>        
+      
+  <script> //CSS for the StoryMap
+    document.querySelector('.storymap-frame').onload = function() {
+      var iframe = document.querySelector('.storymap-frame').contentWindow.document;
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      style.innerHTML = `
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;700&display=swap');
+        .caption, .text { font-family: 'Inter', sans-serif !important; }
+        .title { font-family: 'Cormorant Garamond', serif !important; }
+      `;
+      iframe.head.appendChild(style);
+    };
+  </script>    
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

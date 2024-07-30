@@ -6,6 +6,7 @@
   <title>Infami Monumenti Documentation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="footer.css">
   
   <!--our vaficon-->
   <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
@@ -99,9 +100,9 @@
                   </div>
                 </div>
                 <div class="palette palette--grays">
-                  <div class="palette__color" style="--bg-color: rgb(219, 214, 197)"></div>
+                  <div class="palette__color" style="--bg-color: rgb(227, 218, 208)"></div>
                   <div class="palette__info">
-                    <div class="palette__info__hexcode">#​dbd6c5</div>
+                    <div class="palette__info__hexcode">#e3dad0</div>
                   </div>
                 </div>
                 <div class="palette palette--grays">
@@ -272,24 +273,29 @@
       </main>
     </section>
     <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-left">
-      <h4>Infami Monumenti</h4>
-      <div class="imglogo">
-        <img src="images/logoinfamimonumenti.jpg" alt="logo infami monumenti"> 
+    <footer> <!--riprendere gli altri colori del logo nel footer-->
+      <div class="container-fluid footer-container">
+        <div class="row footer-row">
+          <div class="col-md-6 footer-col-logo d-flex">
+            <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
+          </div>
+          <!--<div class="col-md-4 footer-col">
+            empty column
+          </div>-->
+          <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
+            <h3>Infami Monumenti</h3>
+              <p>
+              <a href="documentation.html">Project Documentation</a><br>
+              <a href="about.html">About</a><br>
+              <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a><br>
+              </p>
+          </div>
+        <div class="row copyright-row d-flex">
+          <p>2024@Infamimonumenti</p>
+        </div>
+        </div>
       </div>
-      <p class="footer-copyright">2024@Infamimonumenti</p>
-    </div>
-    
-    <div class="footer-center"></div>
-    
-    <div class="footer-right">
-      <h4>Other secret things</h4>
-      <li><a href="about.html"> About</a></li>
-      <li><a href="documentation.html">Documentation</a></li>
-      <li><a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a></li>
-    </div>
-  </footer>
+    </footer>   
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
