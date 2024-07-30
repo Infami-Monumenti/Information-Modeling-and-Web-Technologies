@@ -115,6 +115,7 @@ function changeNarrative(narrative, value) {
     curVal = value;
     if (curNarrative == "place") {
         $("body").css("background-image", "url(images/prova_bg_place.png)");
+        //$(".narr-ctrl-nav").css("background-image", "url(images/bg_places_ctrl.png)");
     } if (curNarrative == "artistic expression") {
         $("body").css("background-image", "url(images/prova_bg_genre.png)");
     } if (curNarrative == "time") {
