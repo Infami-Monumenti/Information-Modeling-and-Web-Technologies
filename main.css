@@ -497,7 +497,10 @@ a:hover {
     color:black;
 }
 
-
+.previewphoto{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 /* footer */
 *{
