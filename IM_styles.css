@@ -180,12 +180,14 @@ th, td {
     padding: 0 3rem;
     overflow-y: scroll;
     height: 45vh !important;
+    background-color: #e3dad0;
 }
 #infoTitle {
     position: sticky;
     top: 0;
     background-color: #e3dad0;
     margin-bottom: 1rem;
+    text-align: center;
 }
 #tableCol {
     right: 0;
