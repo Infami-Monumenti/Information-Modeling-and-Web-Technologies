@@ -1,0 +1,203 @@
+/* Importing the required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #e3dad0;
+    border-radius: 5px;
+
+   
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #977060;
+    
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6f5247;
+}
+
+:root {
+    --navbar-height: 4em;
+    --narr-control-height: 3.5em;
+    --footer-height: 5em;
+    --main-height: calc(100vh - var(--navbar-height) - var(--narr-control-height) - var(--footer-height)) !important;
+}
+body {
+    position: relative;
+    background-color: #e3dad0;
+    height: calc(var(--narr-control-height) + var(--navbar-height) + var(--main-height) + var(--footer-height)) !important;
+   
+}
+/*.navbarIM {
+    position: relative;
+    z-index: 1;
+}
+.control-narr-nav {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-top: 0.5px solid #977060;
+    border-bottom: 0.5px solid #977060;
+    z-index: 1;
+}
+.narr-title-container {
+    padding-top: 0.5rem;
+}
+#body-im {
+    position: relative;
+    border: 2px solid red;
+    background-color: blueviolet;
+    min-height: 100vh;
+    background-color: #e3dad0;
+}
+
+#header-im {
+    position: sticky;
+    top: 0;
+    height: var(--navbar-height);
+    width: 100%;
+    z-index: 1;
+}
+.control-narr-nav {
+    margin-bottom: 0;
+}
+#main-im {
+    min-height: 100vh;
+}
+#main-container-im {
+    min-height: 100vh;
+}
+.main-row-im {
+    height: 100vh !important;
+}
+#imgCol {
+    position: sticky;
+    top: calc(var(--navbar-height) * 2);
+    top: 8em;
+    margin-top: 6rem;
+    padding-left:2em;
+    max-height: 100%;
+}*/
+/*figure {
+    object-fit: contain;
+    max-height: 100%;
+}
+figure img {
+    max-height: 100%;
+}*/
+/*#infoCol {
+    position: relative;
+    margin-top: 3.5rem;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 0 6rem;
+}
+#tableCol {
+    position: sticky;
+    top: calc(var(--navbar-height) * 2.5);
+    max-height: 70%;
+    margin-top: 3rem;
+}
+.table-responsive {
+    min-height: 100%;
+}
+table {
+    height: 100%;
+    width: 100%;
+}
+table a {
+    color: #977060;
+}
+th, td {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 0.8rem;
+}
+#infoTitle {
+    position: sticky;
+    top: 4em;
+    background-color: #e3dad0 !important;
+    z-index: 1;
+    padding-bottom: 2rem;
+}
+#info-wrapper {
+    position: sticky;
+    top: 10em;
+}*/
+/*---new infami monumenti--- */
+/*#header-im {
+    position: sticky;
+    top: 0;
+    height: calc(var(--navbar-height) - var(--narr-control-height)) !important;
+    width: 100%;
+    z-index: 1;
+}*/
+.control-narr-nav {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    
+    border-top: 0.5px solid #977060;
+    border-bottom: 0.5px solid #977060;
+}
+#nav-ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0.2rem 0;
+}
+.narr-ctrl {
+    list-style-type: none;
+    align-self: center;
+}
+
+#main-container-im {
+    height: var(--main-height) !important;
+}
+#main-row-im {
+    height: var(--main-height) !important;
+}
+#imgCol {
+    left: 0;
+    height: var(--main-height) !important;
+}
+
+
+#infoCol {
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 0 3rem;
+    overflow-y: scroll;
+    height: 45vh !important;
+}
+#infoTitle {
+    position: sticky;
+    top: 0;
+    background-color: #e3dad0;
+    margin-bottom: 1rem;
+}
+#tableCol {
+    right: 0;
+}
+#imgCol, #infoCol, #tableCol {
+    height: var(--main-height) !important;
+    margin-top: 1em;
+}
+#footer-im {
+    position: absolute;
+    bottom: 0;
+}
+.footer-container {
+    bottom: 0;
+}

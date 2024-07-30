@@ -5,6 +5,7 @@
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
     --cs-foot-height: 7em;
+    --narr-control-height: 4em;
     --navbar-height: 56px; /* Adjust based on your navbar height */
     --footer-height: 7em; /* Adjust based on your footer height */
     --img-column-w: 25vw;
@@ -648,7 +649,7 @@ div .back p{
     width: 100%;
     height: var(--footer-height);
 }*/
-/*infami monumenti page*/
+/*infami monumenti page
 .navbarIm {
     position: fixed;
     width: 100vw;
@@ -721,13 +722,12 @@ figcaption {
     margin-left: 25vw;
     margin-top: 5em;
 }*/
-.wrapper p {
+/*.wrapper p {
     text-align: center;
     padding: 0;
     margin: 0;
-    /*try again with custom properties (check examples) -- For the disclaimer: same dimensions as the info col for the region with the text of the disclaimer*/
-}
-.buttonContainer {
+}*/
+/*.buttonContainer {
     margin-top: auto;
     height: fit-content;
 }
@@ -744,7 +744,39 @@ figcaption {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}*/
+
+/*---new infami monumenti--- */
+/*.control-narr-nav {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-top: 0.5px solid #977060;
+    border-bottom: 0.5px solid #977060;
 }
+#header-im {
+    position: sticky;
+    top: 0;
+    height: var(--navbar-height);
+    width: 100%;
+    z-index: 1;
+}
+#main-container-im {
+    height: calc(var(--cs-main-height) - var(--narr-control-height));
+}
+#imgCol {
+    left: 0;
+    height: fit-content;
+}
+#infoCol {
+    margin-top: 3.5rem;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 0 6rem;
+}
+#tableCol {
+    right: 0;
+    height: fit-content;
+}*/
+/*---Disclaimer---*/
 .discTitle {
     margin-top: 0.5em;
     margin-bottom: 0;
