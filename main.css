@@ -998,10 +998,9 @@ figcaption {
     font-family: 'Cormorant Garamond', serif !important;
 }
 .timeline-continer {
-    margin: 2.5em 0 2.5em 0;
+    margin: 0;
     background-color: rgb(227, 218, 208);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+    border-radius: 8px;   
     min-height: calc(var(--navbar-height) - var(--footer-height));
 }
 .timeline-iframe {

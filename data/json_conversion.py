@@ -1,7 +1,7 @@
 import json
 
 # read json file
-with open("data\data.json", mode="r", encoding="utf-8") as file:
+with open("data\phallic_culture_texts.json", mode="r", encoding="utf-8") as file:
     json_object = json.load(file)
     #print(json_object)
     #print(json_object[0])
@@ -68,5 +68,5 @@ new_file = update_structure(json_object)
 # output json
 json_string = json.dumps(new_file)
 
-with open("data\\revised_structure.json", mode="w", encoding="utf-8") as output:
+with open("data\\json_with_schema.json", mode="w", encoding="utf-8") as output:
     json.dump(new_file, output, ensure_ascii=False, indent=4)
