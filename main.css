@@ -463,9 +463,11 @@ img:hover{
 .indexcard img{
     width: 100%;
     height: auto;
+    height: 80%;
 }
 .indexcard-content{
     padding: 16px;
+    margin-bottom: 5px;
 }
 
 .indexcard-content h3{
@@ -489,6 +491,7 @@ img:hover{
     text-decoration: none;
     border-radius: 15px;
     margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 a {
@@ -504,7 +507,14 @@ a:hover {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.indeximgcontainer{
+    justify-content: center;
+    align-items: center;
 
+    height: 200x;
+    width: 200x;
+  
+}
 
 /* footer */
 *{
