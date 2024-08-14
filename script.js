@@ -154,3 +154,4 @@ function prepareNavigationButtons(index) {
     }
     $("#narrative").text(curNarrative + ": " + curVal);
 }
+
