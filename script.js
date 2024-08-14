@@ -36,7 +36,6 @@ function prepareNarratives() {
     //alert("preparing narratives")
     currentSelection = items.filter(i => i.info.narratives[curNarrative] == curVal)
     console.log(JSON.stringify(currentSelection))
-
 currentSelection.sort((i,j) => {
     if (i["iId"] < j["iId"]) return -1;
     if (i["iId"] > j["iId"]) return 1;
@@ -44,7 +43,6 @@ currentSelection.sort((i,j) => {
 });
 if (currentSelection.length==0)
     currentSelection = items
-
 var index = currentSelection.findIndex(i => i["iId"] == curSort) // possible error here. The findIndex function evalutes to -1, so the first item in the array is always displayed
 if (index == -1) index = 0
 showInfo(index)
@@ -60,7 +58,12 @@ function showInfo(index) {
     document.getElementById("img").alt = item.name;
     document.getElementById("item-figcaption").innerHTML = item.name;
     document.getElementById("text2").innerHTML = item.info["text 2"] + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm" onclick="showText3()">Read more</a>';
-    document.getElementById("text3").innerHTML = item.info["text 3"] + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText1()">Back</a>';
+    document.getElementById("text3").innerHTML = item.info["text 3"] + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Back</a>';
+
+    // ensuring text1 is the first to be displayed when the item or the narrative changes
+    if ($("#text1").hasClass("d-none")) {
+        showText1();
+    }
     createInfoTable(item)
 
     prepareNavigationButtons(index)
@@ -71,25 +74,22 @@ function showText1() {
     $("#text1").removeClass("d-none");
     $("#text3").addClass("d-none");
     $("#text2").addClass("d-none");
-    window.scrollTo(0,0)
-
+    $("#infoCol").animate({scrollTop: 0}, "fast")
 }
 
 function showText2() {
     $("#text1").addClass("d-none");
     $("#text3").addClass("d-none");
     $("#text2").removeClass("d-none");
-    window.scrollTo(0,0)
+    $("#infoCol").animate({scrollTop: 0}, "fast")
 }
 
 function showText3() {
     $("#text1").addClass("d-none");
     $("#text2").addClass("d-none");
     $("#text3").removeClass("d-none");
-    window.scrollTo(0,0)
-    
+    $("#infoCol").animate({scrollTop: 0}, "fast")
 }
-
 
 function createInfoTable(item) {
     var table = $("#info");
@@ -109,7 +109,6 @@ function createInfoTable(item) {
         }
     }
 }
-
 function changeNarrative(narrative, value) {
     curNarrative = narrative;
     curVal = value;
@@ -127,12 +126,15 @@ function changeNarrative(narrative, value) {
 function prepareNavigationButtons(index) {
     if (index > 0) {
         $("#prevBtn").removeClass("disabled");
-        $("#prevBtn").click(function() {showInfo(index - 1)});
+        // check use of .off
+        $("#prevBtn").off("click").click(function() {
+            showInfo(index - 1);
+        });
         $("#prevBtn").text(currentSelection[index - 1].name)
     } else {
         $("#prevBtn").addClass("disabled");
         $("#prevBtn").click = null;
-        $("#prevBtn").text("--");
+        $("#prevBtn").text("no item available");
     }
     if (index < currentSelection.length - 1) {
         $("#nextBtn").removeClass("disabled");
@@ -141,7 +143,7 @@ function prepareNavigationButtons(index) {
     } else {
         $("#nextBtn").addClass("disabled");
         $("#nextBtn").click = null;
-        $("#nextBtn").text("--");
+        $("#nextBtn").text("no item available");
     }
     $("#narrative").text(curNarrative+": "+curVal)
 }
