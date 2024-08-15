@@ -23,18 +23,18 @@ document.addEventListener("DOMContentLoaded", async function() {
             curNarrative = data.meta.startNarrative;
             curVal = data.meta.startVal;
 
-            // Verifica se existe um itemId na URL e carrega o item correspondente
+            // check if the there is a itemId in the URL and load the correponding item
             const urlParams = new URLSearchParams(window.location.search);
             const itemId = urlParams.get('itemId');
 
             if (itemId) {
                 const index = items.findIndex(item => item.iId == itemId);
                 if (index !== -1) {
-                    currentSelection = items; // Define currentSelection como todos os itens
+                    currentSelection = items; // Define currentSelection as all items
                     showInfo(index);
                 }
             } else {
-                prepareNarratives(); // Carrega o item inicial caso não haja itemId na URL
+                prepareNarratives(); // Load the initial item if there is no itemId in the URL
             }
         },
         error: function(data) {
