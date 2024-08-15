@@ -30,13 +30,12 @@
 :root {
     --navbar-height: 4em;
     --narr-control-height: 3.5em;
-    --footer-height: 5em;
-    --main-height: calc(100vh - var(--navbar-height) - var(--narr-control-height) - var(--footer-height)) !important;
+    --main-height: calc(100vh - var(--navbar-height) - var(--narr-control-height)) !important;
 }
 body {
     position: relative;
     background-color: #e3dad0;
-    height: calc(var(--narr-control-height) + var(--navbar-height) + var(--main-height) + var(--footer-height)) !important;
+    height: calc(var(--narr-control-height) + var(--navbar-height) + var(--main-height)) !important;
    
 }
 /*.navbarIM {
@@ -168,6 +167,9 @@ th, td {
     border-right: 1px solid #977060;
     border-left: 1px solid #977060;
 }
+.choose-narrative {
+    margin: 0 0.5rem;
+}
 #main-container-im {
     height: var(--main-height) !important;
 }
@@ -187,7 +189,6 @@ th, td {
     padding: 0 1rem;
     margin: 0 auto;
     overflow-y: scroll;
-    height: 45vh !important;
     background-color: rgb(227, 218, 208);
 }
 #infoTitle {
@@ -220,10 +221,15 @@ table a {
     height: var(--main-height) !important;
     margin-top: 1em;
 }
-#footer-im {
-    position: absolute;
-    bottom: 0;
+.narratives-list {
+    max-width: 25%;
+    background-color: rgba(255, 255, 255, 0.8);
 }
-.footer-container {
-    bottom: 0;
+.narratives-list ul > li {
+    margin-top: 0.2rem;
+    text-align: justify;
+    list-style-type: none;
+}
+.narratives-list ul {
+    margin-top: 0.5rem;
 }

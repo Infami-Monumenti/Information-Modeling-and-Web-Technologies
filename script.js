@@ -5,6 +5,9 @@ var curNarrative = "";
 var curVal = "";
 var curSort = "";
 var currentSelection = []; // Definindo currentSelection no escopo global
+var timeList = [];
+var placeList = [];
+var genreList = [];
 
 document.addEventListener("DOMContentLoaded", async function() {
     console.log("Ready to fetch");
@@ -156,3 +159,64 @@ function prepareNavigationButtons(index) {
     }
     $("#narrative").text(curNarrative+": "+curVal)
 }
+
+// offcanvas narratives
+let offCanvasLink = $(".open-option")
+let chooseTime = $(".fa-clock")
+let choosePlace = $(".fa-earth-americas")
+let chooseGenre = $(".fa-paintbrush")
+offCanvasLink.on("click", function() {
+    console.log("click event fired")
+    if ($(this).find(chooseTime).length) {
+        showTimeNarrative()
+        // go on with clickable <li> and item selection
+    }
+    if ($(this).find(choosePlace).length) {
+        showPlaceNarrative()
+        
+    }
+    if ($(this).find(chooseGenre).length) {
+        showGenreNarrative()
+        
+    }
+})
+
+// toggle time narrative
+function showTimeNarrative() {
+    $("#choose-place, #choose-genre").addClass("d-none")
+        $("#choose-time").removeClass("d-none")
+        // clearing the list before appending new items
+        $("#choose-time").empty()
+        items.forEach((item) => timeList.push(item.info.narratives.time))
+        timeList = [... new Set(timeList)]
+        for (let period of timeList) {
+            $("#choose-time").append('<li>' + period + '</li>')   
+        }
+}
+
+// toggle time narrative
+function showPlaceNarrative() {
+    $("#choose-time, #choose-genre").addClass("d-none")
+        $("#choose-place").removeClass("d-none")
+        // clearing the list before appending new items
+        $("#choose-place").empty()
+        items.forEach((item) => placeList.push(item.info.narratives.place))
+        placeList = [... new Set(placeList)]
+        for (let place of placeList) {
+            $("#choose-place").append('<li>' + place + '</li>')   
+        }
+}
+
+// toggle genre narrative
+function showGenreNarrative() {
+$("#choose-time, #choose-place").addClass("d-none")
+        $("#choose-genre").removeClass("d-none")
+        // clearing the list before appending new items
+        $("#choose-genre").empty()
+        items.forEach((item) => genreList.push(item.info.narratives["artistic expression"]))
+        genreList = [... new Set(genreList)]
+        for (let genre of genreList) {
+            $("#choose-genre").append('<li>' + genre + '</li>')   
+        }
+}
+// function for styling the offcanvas
