@@ -169,7 +169,6 @@ offCanvasLink.on("click", function() {
     console.log("click event fired")
     if ($(this).find(chooseTime).length) {
         showTimeNarrative()
-        // go on with clickable <li> and item selection
     }
     if ($(this).find(choosePlace).length) {
         showPlaceNarrative()
@@ -183,40 +182,58 @@ offCanvasLink.on("click", function() {
 
 // toggle time narrative
 function showTimeNarrative() {
-    $("#choose-place, #choose-genre").addClass("d-none")
-        $("#choose-time").removeClass("d-none")
         // clearing the list before appending new items
-        $("#choose-time").empty()
-        items.forEach((item) => timeList.push(item.info.narratives.time))
+        $("#narr-val-list").empty()
+        timeList = items.map((item) => (item.info.narratives.time.trim()))
         timeList = [... new Set(timeList)]
         for (let period of timeList) {
-            $("#choose-time").append('<li>' + period + '</li>')   
+            $("#narr-val-list").append('<li>' + period + '</li>')
+            $("#offcanvas-narrative-title").text("Time")
+            $("#offcanvas-text").text("Click on a time period to browse the items associated to it.")   
         }
+        $("#narr-val-list").on("click", "li", function() {
+            var selectedVal = $(this).text()
+            console.log(selectedVal)
+            var timeNarrative = "time"
+            changeNarrative(timeNarrative, selectedVal)
+        })
 }
 
-// toggle time narrative
+// toggle place narrative
 function showPlaceNarrative() {
-    $("#choose-time, #choose-genre").addClass("d-none")
-        $("#choose-place").removeClass("d-none")
         // clearing the list before appending new items
-        $("#choose-place").empty()
-        items.forEach((item) => placeList.push(item.info.narratives.place))
+        $("#narr-val-list").empty()
+        placeList = items.map((item) => (item.info.narratives.place.trim()))
         placeList = [... new Set(placeList)]
         for (let place of placeList) {
-            $("#choose-place").append('<li>' + place + '</li>')   
+            $("#narr-val-list").append('<li>' + place + '</li>')
+            $("#offcanvas-narrative-title").text("Place")
+            $("#offcanvas-text").text("Click on a place to browse the items associated to it.")  
         }
+        $("#narr-val-list").on("click", "li", function() {
+            var selectedVal = $(this).text()
+            console.log(selectedVal)
+            var placeNarrative = "place"
+            changeNarrative(placeNarrative, selectedVal)
+        })
 }
 
 // toggle genre narrative
 function showGenreNarrative() {
-$("#choose-time, #choose-place").addClass("d-none")
-        $("#choose-genre").removeClass("d-none")
         // clearing the list before appending new items
-        $("#choose-genre").empty()
-        items.forEach((item) => genreList.push(item.info.narratives["artistic expression"]))
+        $("#narr-val-list").empty()
+        genreList = items.map((item) => (item.info.narratives["artistic expression"].trim()))
         genreList = [... new Set(genreList)]
         for (let genre of genreList) {
-            $("#choose-genre").append('<li>' + genre + '</li>')   
+            $("#narr-val-list").append('<li>' + genre + '</li>')
+            $("#offcanvas-narrative-title").text("Genre")
+            $("#offcanvas-text").text("Click on a genre to browse the items associated to it.")   
         }
+        $("#narr-val-list").on("click", "li", function() {
+            var selectedVal = $(this).text()
+            console.log(selectedVal)
+            var genreNarrative = "artistic expression"
+            changeNarrative(genreNarrative, selectedVal)
+        })
 }
 // function for styling the offcanvas
