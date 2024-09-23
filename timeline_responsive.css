@@ -20,12 +20,22 @@ body {
     line-height: 1.5; 
     margin: 0; 
     padding: 0; 
-    overflow-x: hidden; 
+    overflow-y: visible; 
     -webkit-text-size-adjust: 100%;
+}
+
+.timeline-container {
+    margin: 2.5em 0 2.5em 0;
+    padding: 1em 0 5em 0;
+    background-color: rgb(227, 218, 208);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+    min-height: calc(var(--navbar-height) - var(--footer-height));
 }
 
 img {
     max-width: 100%;
+    height: 100%;
 }
 
 p, li {
@@ -144,17 +154,17 @@ h1, h2, h3, h4, h5, h6 {
 } 
 
 .start-point h4 {
-    font-size: 1em; 
-    line-height: 23px; 
+    font-size: 4em; 
+    line-height: 45px; 
     color: rgb(227, 218, 208); 
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     background-color:#3d1302;
     border-radius: 16px;
     display: block; 
     width: auto; 
     text-align: center; 
-    padding: 5px 25px;
+    padding: 25px;
     position: relative;
     margin-bottom: 45px;
     font-family: 'Inter',sans-serif;
@@ -374,7 +384,6 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-row:nth-child(2n+2) .start-point.end-point {
     left: 0;
     transform: translateX(-50%);
-    right: unset;
 }
 
 .timeline-box.img-right .timeline-content-txt {
@@ -447,7 +456,7 @@ h1, h2, h3, h4, h5, h6 {
     .timeline-box.img-right .timeline-content img, 
     .timeline-box.img-left .timeline-content img {
         max-width: 180px;
-        max-height: 190px;
+        max-height: 230px;
     }
 
     .timeline-box h6 {
@@ -700,7 +709,7 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 640px) {
 
     .about-timeline {
-        padding: 50px 0;
+        padding: 50px 0 100px 0;
     }
 
     .timeline-box h6 {
