@@ -408,52 +408,6 @@ img:hover{
   }
 
 
-/* icon */
-.indexincon-container{
-    justify-content: center;
-    height: 50px;
-    width: 50px;
-    align-items: center;
-    position: relative;
-}
-.homepage-button{
-    background-color: #977060;
-    color: floralwhite;
-    border-radius: 50%;
-    height: auto;
-    width: auto;
-    font-size: 2rem;
-    border: none;
-    outline: none;
-    padding: 14px 15px;
-}
-.homepage-button:hover{
-    color: #555;
-    opacity: 1;
-    translate: transition 0.5s;
-}
-.fa-building-columns{
-    width: 100px;
-    height: 100px;
-}
-.fa-solid{
-    max-width: auto;
-}
-.indexicon-container::before,
-.indexicon-container::after {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%);
-}
-.indexicon-container:before {
-    content: attr(data-tooltip);
-    color: floralwhite;
-    height: 40px;
-    width: max-content;
-    background: #977060;
-}
-
-
 /* Tooltip container */
 #contenitoreTooltip{
     margin: 0;
