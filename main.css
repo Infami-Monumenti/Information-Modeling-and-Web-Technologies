@@ -423,6 +423,45 @@ img:hover{
     margin-top: 20px;
 }
 
+
+/* Stili per la disposizione in riga */
+.newindexcontainer {
+    display: flex;
+    justify-content: space-between; /* Distribuisce lo spazio tra i div */
+    gap: 10px; /* Spazio tra i div */
+  }
+  
+  /* Il box grande occuperà più spazio del box piccolo */
+  .box-large {
+    flex: 2; /* Occupa 2/3 della larghezza */
+  }
+  
+  .box-small {
+    flex: 1; /* Occupa 1/3 della larghezza */
+  }
+  
+  /* Stili comuni ai box */
+  .box {
+    padding: 20px;
+    background-color: #977060;
+    text-align: center;
+  }
+  
+  /* Disposizione in colonna per schermi piccoli */
+  @media (max-width: 768px) {
+    .newindexcontainer {
+      flex-direction: column; /* Cambia da riga a colonna */
+    }
+  
+    .box-large, .box-small {
+      width: 100%; /* I div ora occupano il 100% della larghezza */
+    }
+  }
+.frescoimg{
+    width: 300px;
+}
+  
+
 /* Tooltip container */
 #contenitoreTooltip{
     margin: 0;
