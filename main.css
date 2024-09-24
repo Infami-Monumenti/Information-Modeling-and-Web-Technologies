@@ -408,6 +408,7 @@ img:hover{
   }
 
 /*  expo */
+
 #expo{
     background-color: #977060;
     margin-left: 10px;
@@ -420,12 +421,6 @@ img:hover{
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
-}
-.card-img-top{
-
-}
-.cardtext:hover{
-    opacity: 1;
 }
 
 /* Tooltip container */
