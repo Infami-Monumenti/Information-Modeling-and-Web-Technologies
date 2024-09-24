@@ -249,7 +249,7 @@ h1{
     margin-top: 20px;
 }
 .indextitle{
-    font-weight: 900;
+    font-weight: 1000;
     margin-top: 100px;
     margin-bottom: 100px;
     font-family: solid 'Inter', sans-serif;
@@ -407,6 +407,21 @@ img:hover{
     --contrast-color: black;
   }
 
+/*  expo */
+
+#expo{
+    background-color: #977060;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#read{
+    background-color: #977060;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
 
 /* Tooltip container */
 #contenitoreTooltip{
@@ -483,6 +498,7 @@ img:hover{
     margin: 10px;
     padding: 9px;
     transition: transform 0.6s ease;
+    margin-top: 40px;
 }
 .indexcard:hover{
     transform: translateY(-30px);
@@ -642,6 +658,8 @@ a:hover {
     width: 300px;
     height: 400px;
     margin: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 .aboutcard:hover{
     transform: translateY(-30px);
