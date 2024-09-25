@@ -432,11 +432,11 @@ img:hover{
   }
   
   /* Il box grande occuperà più spazio del box piccolo */
-  .box-large {
+.box-large {
     flex: 2; /* Occupa 2/3 della larghezza */
   }
   
-  .box-small {
+.box-small {
     flex: 1; /* Occupa 1/3 della larghezza */
   }
   
@@ -466,8 +466,43 @@ img:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra (opzionale) */
   }
   
+.priapobtn{
+    background-color:antiquewhite; /* Colore di sfondo (verde) */
+    color: #977060; /* Colore del testo */
+    border: none; /* Rimuove i bordi standard */
+    padding: 15px 30px; /* Spaziatura interna */
+    font-size: 16px; /* Dimensione del testo */
+    font-weight: bold; /* Testo in grassetto */
+    border-radius: 40px; /* Bordi arrotondati */
+    cursor: pointer; /* Puntatore per l'interazione */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
+    transition: all 0.3s ease; /* Transizione fluida per gli effetti */
+    margin-bottom: 10px;
+  }
   
-
+.priapobtn:hover {
+    background-color:aliceblue; /* Colore di sfondo quando si passa sopra (hover) */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Aumenta l'ombra */
+    transform: translateY(-3px); /* Solleva leggermente il bottone */
+  }
+  
+.priapobtn:active {
+    transform: translateY(1px); /* Piccolo affossamento quando cliccato */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Riduce l'ombra quando il bottone è premuto */
+  }
+  
+.videotitle{
+    margin-top: 30px;
+    color: antiquewhite;
+    font-size: x-large;
+}
+.videop{
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
 /* Tooltip container */
 #contenitoreTooltip{
     margin: 0;
