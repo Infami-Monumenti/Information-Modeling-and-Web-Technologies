@@ -457,9 +457,15 @@ img:hover{
       width: 100%; /* I div ora occupano il 100% della larghezza */
     }
   }
-.frescoimg{
-    width: 300px;
-}
+  video {
+    width: 100%; /* Il video si adatta alla larghezza del suo contenitore */
+    height: auto; /* Mantiene il rapporto di aspetto */
+    max-width: 800px; /* Limita la larghezza massima */
+    border: 2px solid #ccc; /* Bordo attorno al video */
+    border-radius: 10px; /* Angoli arrotondati (opzionale) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra (opzionale) */
+  }
+  
   
 
 /* Tooltip container */
