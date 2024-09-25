@@ -468,7 +468,7 @@ img:hover{
   
 .priapobtn{
     background-color:antiquewhite; /* Colore di sfondo (verde) */
-    color: #977060; /* Colore del testo */
+    color: #977060;/* Colore del testo */
     border: none; /* Rimuove i bordi standard */
     padding: 15px 30px; /* Spaziatura interna */
     font-size: 16px; /* Dimensione del testo */
@@ -481,7 +481,7 @@ img:hover{
   }
   
 .priapobtn:hover {
-    background-color:aliceblue; /* Colore di sfondo quando si passa sopra (hover) */
+    background-color:white; /* Colore di sfondo quando si passa sopra (hover) */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Aumenta l'ombra */
     transform: translateY(-3px); /* Solleva leggermente il bottone */
   }
@@ -502,6 +502,15 @@ img:hover{
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 30px;
+}
+.exlink{
+    color: #977060;
+    background-color: antiquewhite;
+}
+.exlink:hover{
+    color: #252525;
+    background-color: white;
+
 }
 /* Tooltip container */
 #contenitoreTooltip{
