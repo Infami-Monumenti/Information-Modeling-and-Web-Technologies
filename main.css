@@ -42,7 +42,7 @@ h1 {
     text-align: center;
     background-color: rgb(227, 218, 208);
     color: black;
-    font-size: 2rem; /* Font size for h1 */
+    font-size: 4rem; /* Font size for h1 */
     margin-bottom: 40px; /* Space between title and image */
 }
 
@@ -252,6 +252,7 @@ h1{
     text-align: center;
     background-color:rgb(227, 218, 208);
     color: black;
+    letter-spacing: 0.5em;
 }
 .indextitle-container{
     justify-content: center;
@@ -262,7 +263,7 @@ h1{
 .indextitle{
     font-weight: 1000;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 75px;
     font-family: solid 'Inter', sans-serif;
     padding-top: 5px;
 }
