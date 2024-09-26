@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             alert("Loading error");
         }
     });
+    
 });
 
 function prepareNarratives() {
@@ -68,13 +69,12 @@ function showInfo(index) {
     curSort = item["iId"];
 
     document.getElementById("infoTitle").innerHTML = item.name;
-    document.getElementById("text1").innerHTML = item.info["text 1"] + 
-        '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Read more</a>';
+    document.getElementById("text1").innerHTML = item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Read more</a>';
     document.getElementById("img").src = item.info.image;
     document.getElementById("img").alt = item.name;
     document.getElementById("item-figcaption").innerHTML = item.name;
-    document.getElementById("text2").innerHTML = item.info["text 2"] + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm" onclick="showText3()">Read more</a>';
-    document.getElementById("text3").innerHTML = item.info["text 3"] + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Back</a>';
+    document.getElementById("text2").innerHTML = item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm" onclick="showText3()">Read more</a>';
+    document.getElementById("text3").innerHTML = item.info["text 3"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Back</a>';
 
     // ensuring text1 is the first to be displayed when the item or the narrative changes
     if ($("#text1").hasClass("d-none")) {
@@ -89,21 +89,21 @@ function showText1() {
     $("#text1").removeClass("d-none");
     $("#text3").addClass("d-none");
     $("#text2").addClass("d-none");
-    $("#infoCol").animate({scrollTop: 0}, "fast")
+    $("#info-wrapper").animate({scrollTop: 0}, "fast")
 }
 
 function showText2() {
     $("#text1").addClass("d-none");
     $("#text3").addClass("d-none");
     $("#text2").removeClass("d-none");
-    $("#infoCol").animate({scrollTop: 0}, "fast")
+    $("#info-wrapper").animate({scrollTop: 0}, "fast")
 }
 
 function showText3() {
     $("#text1").addClass("d-none");
     $("#text2").addClass("d-none");
     $("#text3").removeClass("d-none");
-    $("#infoCol").animate({scrollTop: 0}, "fast")
+    $("#info-wrapper").animate({scrollTop: 0}, "fast")
 }
 
 function createInfoTable(item) {
@@ -113,12 +113,20 @@ function createInfoTable(item) {
     for (let i in item.itemMeta) {
         if (item.itemMeta[i]) {
             let val = item.itemMeta[i];
-            if (narratives.includes(item.itemMeta[i])) {
-                val = ('<a class="button" role="button" href="#" onclick="changeNarrative(\'' + i + '\',\'' + val + '\')">' + val + '</a>');
+            // display only non empty values
+            if (item.itemMeta[i] !== "") {
+                if (i === "authority") {
+                    let authority = ('<a class="button" role="button" target="_blank" href=" ' + item.itemMeta[i] + ' " style="color:black;">' + item.name + '</a>');
+                    table.append("<tr><th>" + i + "</th><td>" + authority + "</td></tr>"); 
+                } else {
+                    if (i !== "authority" && narratives.includes(item.itemMeta[i])) {
+                    val = ('<a class="button" role="button" href="#" onclick="changeNarrative(\'' + i + '\',\'' + val + '\')">' + val + '</a>');
+                    }
+                    table.append("<tr><th>" + i + "</th><td>" + val + "</td></tr>");
+                }
+            } else {
+                table.append("<tr><th>" + i + "</th><td>" + item.itemMeta[i] + "</td></tr>");
             }
-            table.append("<tr><th>" + i + "</th><td>" + val + "</td></tr>");
-        } else {
-            table.append("<tr><th>" + i + "</th><td>" + item.itemMeta[i] + "</td></tr>");
         }
     }
 }
@@ -237,3 +245,35 @@ function showGenreNarrative() {
         })
 }
 // function for styling the offcanvas
+
+
+// display table on small screen layout
+const figure = $(".exhibit-figure");
+const figImage = $("#img");
+const infoIcon = $(".see-info-icon");
+const imgCol = $("#imgCol");
+const tableCol = $("#tableCol");
+const mediaQuery = window.matchMedia("(max-width: 900px)");
+
+function handleScreenResize(e) {
+    if (e.matches) {
+        tableCol.removeClass("visible")
+        infoIcon.on("click", function() {
+            tableCol.toggleClass("visible");
+            if (tableCol.hasClass("visible")) {
+                figImage.css("box-shadow", "none");
+            } else {
+                figImage.css("box-shadow", "0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5)");
+            }
+        });
+    } else {
+        infoIcon.off("click");
+        tableCol.removeClass("visible");
+    }
+}
+
+handleScreenResize(mediaQuery);
+
+mediaQuery.addEventListener("change", handleScreenResize);
+
+

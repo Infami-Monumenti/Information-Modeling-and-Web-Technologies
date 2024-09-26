@@ -1,6 +1,61 @@
-/* Importing the required fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
-
+/*media queries*/
+@media screen and (max-width: 900px) {
+    #main-im {
+        display: grid !important;
+        grid-template-columns: 45% 45% !important;
+        grid-template-rows: auto auto !important;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+    #infoCol {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3 !important;
+        max-height: fit-content !important;
+        box-sizing: border-box !important;
+    }
+    #infoCol p {
+        font-size: smaller;
+    }
+    #imgCol {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2 !important;
+    }
+    #tableCol {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2 !important;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        position: relative;
+        z-index: 1;
+    }
+    #tableCol.visible {
+        opacity: 1;
+    }
+    th, td {
+        font-size: small !important;
+    }
+    .see-info-icon {
+        visibility: visible !important;
+        z-index: 20 !important;
+    }
+    figcaption {
+        position: relative; 
+        z-index: 2;
+    }
+    .narratives-list {
+        max-width: 50% !important;
+    }
+}
+@media screen and (max-width: 550px) {
+    #info-wrapper {
+        max-height: 20em !important;
+        box-sizing: border-box !important;
+    }
+    th, td {
+        font-size: x-small !important;
+    }
+}
 /* width */
 ::-webkit-scrollbar {
     width: 3px;
@@ -35,7 +90,8 @@
 body {
     position: relative;
     background-color: #e3dad0;
-    height: calc(var(--narr-control-height) + var(--navbar-height) + var(--main-height)) !important;
+    height: calc(100vh - var(--main-height)) !important;
+    font-family: "Inter", sans-serif;
    
 }
 /*.navbarIM {
@@ -149,7 +205,7 @@ th, td {
 }
 #nav-ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     justify-items: center;
     align-items: center;
     height: 100%;
@@ -170,7 +226,8 @@ th, td {
 .choose-narrative {
     margin: 0 0.5rem;
 }
-#main-container-im {
+/*---old css starts---*/
+/*#main-container-im {
     height: var(--main-height) !important;
 }
 #main-row-im {
@@ -200,6 +257,49 @@ th, td {
 }
 #tableCol {
     right: 0;
+}*/
+/*---old css ends---*/
+
+#main-im {
+    display: grid !important;
+    gap: 1.5rem;
+    grid-template-columns: 25% 30% 25%;
+    grid-template-rows: 45% 45%;
+    margin-top: 1rem;
+    justify-items: center;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+#imgCol {
+    grid-row: span 2;
+}
+.exhibit-figure {
+    position: relative;
+    height: 100%;
+}
+#img {
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
+}
+#tableCol {
+    grid-row: span 2;
+    width: 100% !important;
+}
+#infoTitle {
+    text-align: center;
+}
+#info-wrapper {
+    max-height: 25em;
+    overflow-y: scroll;
+    padding: 0 0.5rem;
+}
+table {
+    position: relative;
+    border-collapse: collapse;
+    height: 100%;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
+}
+th, td {
+    background-color: rgba(255, 255, 255, 0.7) !important;
 }
 /*.table-wrapper {
     flex: 1;
@@ -217,19 +317,40 @@ table a {
     white-space: nowrap;
     text-align: left;
 }*/
-#imgCol, #infoCol, #tableCol {
+/*#imgCol, #infoCol, #tableCol {
     height: var(--main-height) !important;
     margin-top: 1em;
-}
+}*/
 .narratives-list {
-    max-width: 25%;
+    max-width: 33%;
     background-color: rgba(255, 255, 255, 0.8);
 }
 .narratives-list ul > li {
     margin-top: 0.2rem;
     text-align: justify;
     list-style-type: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.narratives-list ul > li:hover {
+    color: #977060
+
+}
+.narratives-list ul > li:visited {
+    color: #977060
+
 }
 .narratives-list ul {
     margin-top: 0.5rem;
+}
+
+.see-info-icon {
+    visibility: hidden;
+    position: absolute;
+    bottom: 3em;
+    right: 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
 }

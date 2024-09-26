@@ -39,18 +39,18 @@ def update_structure(json_object):
                 "text 3": i["text 3"],
                 "image": i["image"],
                 "narratives": {
-                    "time": i["date"],
-                    "place": i["place"],
-                    "artistic expression": i["art"]
+                    "time": i["dateCreated"],
+                    "place": i["locationCreated"],
+                    "artistic expression": i["genre"]
                     }
             },
             "itemMeta": {
-                "date": i["date"],
-                "conservation location": i["conservation location"],
+                "dateCreated": i["dateCreated"],
+                "containedInPlace": i["containedInPlace"],
                 "author": i["author"],
-                "authority": i["authority"],
-                "place": i["place"],
-                "art": i["art"],
+                "sameAs": i["sameAs"],
+                "locationCreated": i["locationCreated"],
+                "genre": i["genre"],
                 "religion": i["religion"],
             },  
         }
