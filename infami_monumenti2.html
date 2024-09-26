@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Infami Monumenti</title>
+        <!--Google fonts-->
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap">
         <!--Bootstrap css-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,7 +18,7 @@
         <!--jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/13fe341790.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/13fe341790.js" crossorigin="anonymous"></script>
     </head>
     <body id="body-im">
         <!--<header id="header-im">-->
@@ -96,12 +99,13 @@
             </div>-->
         <!--</header>-->
         <main id="main-im">
-            <div class="container-fluid" id="main-container-im">
+          <!--old version-->
+            <!--<div class="container-fluid" id="main-container-im">
                 <div class="row" id="main-row-im">
                     <div class="col-md-3" id="imgCol">
                         
                             <figure>
-                                <img src="images\Tintinnabulum.jpg" alt="" id="img" class="img-thumbnail">
+                                <img src="" alt="" id="img" class="img-thumbnail">
                                 <figcaption class="figure-caption text-center" id="item-figcaption"></figcaption>
                             </figure>
                         
@@ -112,11 +116,11 @@
                             <div id="info-wrapper">
                             <p id="text1"></p>
                             <p id="text2" class="d-none"></p>
-                            <p id="text3" class="d-none"></p>
+                            <p id="text3" class="d-none"></p>-->
                             <!--<div id="home-btn">
                                 <button>Button</button>
                             </div>-->
-                            </div>
+                            <!--</div>
                         
                     </div>
                     <div class="col-md-3" id="tabCol">
@@ -127,28 +131,52 @@
                                 </tbody>
                               </table>
                             </div>
-                            <!--<p>This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my contentThis is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is my content This is t</p>-->
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
+            <!--new version-->
+                  <div id="imgCol">
+                      
+                          <figure class="exhibit-figure">
+                              <img src="" alt="" id="img" class="img-fluid">
+                              <i class="fa-regular fa-eye see-info-icon"></i>
+                              <figcaption class="figure-caption text-center" id="item-figcaption"></figcaption>
+                          </figure>
+                      
+                  </div>
+                  <div id="infoCol">
+                      
+                          <h3 id="infoTitle"></h3>
+                          <div id="info-wrapper">
+                          <p id="text1"></p>
+                          <p id="text2" class="d-none"></p>
+                          <p id="text3" class="d-none"></p>
+                          <!--<div id="home-btn">
+                              <button>Button</button>
+                          </div>-->
+                          </div>
+                      
+                  </div>
+                      <div id="tableCol">
+                          <table class="table table-hover">
+                              <tbody id="info">
+                              </tbody>
+                          </table>
+                      </div>
+              </div>
+          </div>
         </main>
         <!--offcanvas 1-->
         <div class="offcanvas offcanvas-start narratives-list" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <h5 class="offcanvas-title" id="offcanvas-narrative-title"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <div>
-              Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.<br/>
-              <ul id="choose-time">
-
-              </ul>
-              <ul id="choose-place">
-
-              </ul>
-              <ul id="choose-genre">
+              <p id="offcanvas-text"></p>
+              <ul id="narr-val-list">
 
               </ul>
             </div>
