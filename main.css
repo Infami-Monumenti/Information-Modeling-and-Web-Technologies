@@ -38,7 +38,6 @@ body {
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    padding: 10px 0;
     text-align: center;
     background-color: rgb(227, 218, 208);
     color: black;
@@ -262,8 +261,8 @@ h1{
 }
 .indextitle{
     font-weight: 1000;
-    margin-top: 100px;
-    margin-bottom: 75px;
+    margin-top: 75px;
+    margin-bottom: 80px;
     font-family: solid 'Inter', sans-serif;
     padding-top: 5px;
 }
