@@ -66,6 +66,17 @@ a:hover {
 .active a:active {
     color: #977060;
 }
+/* PROVA */
+.nav-underline .nav-link.active {
+    color: #007bff; /* Colore del link attivo */
+    border-bottom: 2px solid #007bff; /* Sottolineatura del link attivo */
+  }
+  
+.nav-underline .nav-link:hover {
+    color: #0056b3; /* Colore del link al passaggio del mouse */
+    border-bottom: 2px solid #0056b3; /* Sottolineatura al passaggio del mouse */
+  }
+/* FINE PROVA */
 nav {
     top: 0;
     display: flex;

@@ -237,3 +237,7 @@ function showGenreNarrative() {
         })
 }
 // function for styling the offcanvas
+
+
+
+
