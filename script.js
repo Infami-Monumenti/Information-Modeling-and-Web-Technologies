@@ -277,3 +277,50 @@ handleScreenResize(mediaQuery);
 mediaQuery.addEventListener("change", handleScreenResize);
 
 
+
+
+
+// navbar
+// Seleziona tutti i link nella navbar e nel dropdown
+const navLinks = document.querySelectorAll('.nav-link');
+const dropdownLinks = document.querySelectorAll('.dropdown-item');
+
+// Ottieni il percorso dell'URL corrente
+const currentPath = window.location.pathname.split("/").pop().split("?")[0];  // Estrae l'ultima parte dell'URL senza parametri
+
+// Funzione per rimuovere la classe 'active' da tutti i link
+function removeActiveClass() {
+    navLinks.forEach(link => link.classList.remove('active'));
+    dropdownLinks.forEach(link => link.classList.remove('active'));
+}
+
+// Aggiunge la classe 'active' al link che corrisponde alla pagina corrente
+function setActiveLink() {
+    removeActiveClass();  // Rimuove qualsiasi classe 'active' esistente
+    console.log("Current Path: ", currentPath); 
+    // Controlla i link della navbar
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        
+        // Caso per la home: se currentPath è vuoto o "/" (root), attiva il link per "index.html"
+        if ((currentPath === "" || currentPath === "/") && (linkHref === 'index.html' || linkHref === '/')) {
+            link.classList.add('active');
+        } else if (linkHref === currentPath) {
+            link.classList.add('active');  // Aggiunge la classe 'active' al link corrispondente
+        }
+    });
+
+    // Controlla i link del dropdown
+    dropdownLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');  // Aggiunge la classe 'active' al link del dropdown corrispondente
+        }
+    });
+}
+
+// Esegui la funzione al caricamento della pagina
+window.addEventListener('load', setActiveLink);
+
+
+
+
