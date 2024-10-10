@@ -15,6 +15,17 @@ var schema_items = [];
 var schema_narratives = [];
 var schema_curNarrative = "";
 var schema_curVal = "";
+var schema_curSort = "";
+var schema_currentSelection = [];
+// mapping with schema properties
+var schemaMapping = {
+    "time": "dateCreated",
+    "conservation location": "containedInPlace",
+    "author": "author",
+    "authority": "sameAs",
+    "place": "locationCreated",
+    "artistic expression": "genre",
+}
 
 document.addEventListener("DOMContentLoaded", async function() {
     console.log("Ready to fetch");
@@ -135,6 +146,29 @@ function createInfoTable(item) {
             }
         }
     }
+    // display schema property as popups
+    let firstHeader = table.find("th").first();
+    firstHeader.addClass("schema-popup");
+
+    let tableHeaders = table.find("th")
+    tableHeaders.each(function() {
+        let header = $(this);
+        let headerText = header.text().trim();
+        let mappedText = schemaMapping[headerText];
+
+        if (mappedText) {
+            let span = $(document.createElement("span")).text(mappedText);
+            span.addClass("popuptext");
+            header.addClass("popup");
+            header.append(span);
+
+
+            header.on("click", function() {
+                span.toggleClass("show");
+            });
+            // close popup when another th is clicked
+        }
+    });
 }
 function changeNarrative(narrative, value) {
     curNarrative = narrative;
@@ -287,34 +321,54 @@ handleScreenResize(mediaQuery);
 
 mediaQuery.addEventListener("change", handleScreenResize);
 
-// display schema aligned data
 
-tableCol.on("click", ".see-schema-data", function() {
-    $.ajax({
-        url: "data/json_with_schema.json",
-        method: "get",
-        success: function(schema_data) {
-            schema_items = schema_data.items;
-            console.log("items stored");
+// function for handling modal-background interaction
+let infoModal = $("#info-modal");
+let infoModalBody = $(".modal-body");
+let chooseNarrative = $("#choose-from-offcanvas");
+let title = $(".modal-body > h6");
+let paragraphMapping = {
+    "use-table": "#info",
+    "see-schema": ".schema-popup",
+    "use-offcanvas": "#choose-from-offcanvas"
+}
+function highlightOnScroll() {
+    if (infoModal) {
+        infoModalBody.on("scroll", function() {
+            let scrollTop = infoModalBody.scrollTop();
+            let titleId = "";
+            let paragraphOnScreen = "";
 
-            var schema_startItem = schema_data.meta.startItem;
-            var schema_item = schema_items[schema_startItem];
-            console.log(JSON.stringify(schema_item));
+            for (let t of title) {
+                titleId = t.getAttribute("id");
+                console.log(titleId)
+                let titleOffset = t.offsetTop; 
+                console.log(titleOffset)
 
-            schema_narratives = schema_data.meta.narratives;
-            schema_curNarrative = schema_data.meta.startNarrative;
-            schema_curVal = schema_data.meta.startVal;
+                if (scrollTop >= titleOffset) {
+                    paragraphOnScreen = titleId;
+                    console.log(paragraphOnScreen);
+                }
+            }
 
-            createInfoTable(schema_item)
-            $(".switch-data").text("Go back")
-        },
-        error: function(schema_data) {
-            alert("Loading error");
-        }
+            if (paragraphOnScreen) {
+                let bgElement = $(paragraphMapping[paragraphOnScreen]); 
+                console.log(bgElement);
+                highlightBackground(bgElement);
+            }
+        })
+    }
+}
+
+function highlightBackground(element) {
+    $.each(paragraphMapping, function(key, value) {
+        $(value).removeClass("highlight");
     });
-});
+    element.addClass("highlight");
+    
+}
 
-/*$(".switch-data").on("click", function() {
-    createInfoTable(item)
-});*/
+infoModal.on("shown.bs.modal", function () {
+    highlightOnScroll();
+});
 
