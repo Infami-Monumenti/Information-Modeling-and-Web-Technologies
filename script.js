@@ -420,6 +420,18 @@ function setActiveLink() {
 // Esegui la funzione al caricamento della pagina
 window.addEventListener('load', setActiveLink);
 
+// FOOTER
+function setActiveLink() {
+    var currentPage = window.location.pathname;
+    var footerLinks = document.querySelectorAll('footer a');
 
+    footerLinks.forEach(function(link) {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('footeractive-link');
+      }
+    });
+  }
+
+  window.onload = setActiveLink;
 
 
