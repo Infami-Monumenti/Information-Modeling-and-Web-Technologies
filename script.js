@@ -365,6 +365,10 @@ function highlightBackground(element) {
         $(value).removeClass("highlight");
     });
     element.addClass("highlight");
+
+    if (!infoModal) {
+        element.removeClass("highlight");
+    }
     
 }
 
