@@ -66,6 +66,24 @@ a:hover {
     color: #977060;
 }
 
+.container-fluid-layout {
+    margin-top: 4.5em;
+    height: calc(100vh - var(--navbar-height) - var(--footer-height));
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: -7.5em;
+}
+
+.container-fluid-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.container-fluid-layout .row {
+    height: calc(50% - var(--navbar-height)/2 - var(--footer-height)/2);
+}
 
 /* Carousel styles */
 .carousel {
@@ -523,6 +541,8 @@ img:hover{
     visibility: visible;
     opacity: 1;
 }
+
+
 
 
 
@@ -1060,7 +1080,7 @@ figcaption {
     .doc-container {
         padding: 10px; /* Further adjust padding */
     }
-}
+
 /*Style for palette in documentation*/
 .palette-grid {
     display: grid;
@@ -1162,4 +1182,10 @@ figcaption {
         height: 100%;
         border: none;
     }
+}
+
+.container-fluid-layout {
+    margin-bottom: 0;
+}
+
 }
