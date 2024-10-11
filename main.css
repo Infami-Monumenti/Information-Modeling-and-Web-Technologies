@@ -1,6 +1,21 @@
 /* Importing the required fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
-
+@media screen and (max-width: 900px) {
+    #padlink{
+            margin-top: 8px;
+        }
+    .indextitle{
+        font-size: xx-large !important;
+        font-weight: 800 !important;
+        align-items: center;
+    }
+    .indexcontainer{
+        overflow-x: hidden !important;
+    }
+    .aboutcard-container{
+        overflow-x: hidden !important;
+    }
+}
 :root {
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
@@ -179,18 +194,15 @@ main{
     text-decoration: underline;
     font-weight: bold;
 }
+.dropdown{
+    padding-right: 12px;
+}
 .dropdown-item:hover, .dropdown-item.active {
     background-color: antiquewhite;
     color: #977060 !important;
     font-family: solid 'Inter', sans-serif;
     text-decoration: underline;
     font-weight: bold;
-}
-.thelinks{
-    margin-top: 30px;
-}
-#padlink{
-    margin-top: 8px;
 }
 
   
@@ -207,7 +219,7 @@ h1{
     justify-content: center;
 }
 #titletop{
-    margin-top: 2em;
+    margin-top: 1em;
     padding-top: 2em;
 }
 .indextitle{
@@ -218,6 +230,9 @@ h1{
     padding-top: 5px;
 }
 
+#infamitop{
+    margin-top: 0px;
+}
 
 /* slider homepage */
 #hidslide{
@@ -355,6 +370,7 @@ img:hover{
     color: var(--contrast-color);
     align-items: center;
     margin-left: 200px;
+    color: antiquewhite;
   }
   
   .call-to-action .cta-btn:hover {
