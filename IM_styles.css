@@ -49,7 +49,7 @@
 }
 @media screen and (max-width: 550px) {
     #info-wrapper {
-        max-height: 20em !important;
+        max-height: 18em !important;
         box-sizing: border-box !important;
     }
     th, td {
@@ -265,7 +265,7 @@ th, td {
     gap: 1.5rem;
     grid-template-columns: 25% 30% 25%;
     grid-template-rows: 45% 45%;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     justify-items: center;
     justify-content: space-evenly;
     text-align: justify;
@@ -353,4 +353,22 @@ table a {
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
+}
+.see-schema-data {
+    margin-left: 0.5em;
+    background-color: rgba(151, 112, 96, 0.5);
+    padding: 0.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 40;
+}
+tfoot {
+    height: fit-content;
+}
+.switch-table-data {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.switch-data {
+    cursor: pointer;
 }

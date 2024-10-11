@@ -5,9 +5,16 @@ var curNarrative = "";
 var curVal = "";
 var curSort = "";
 var currentSelection = []; // Definindo currentSelection no escopo global
+// additional variables for offcanvas narratives
 var timeList = [];
 var placeList = [];
 var genreList = [];
+// additional variables for ontology aligned json
+var schema_items = [];
+//var schema_item = {};
+var schema_narratives = [];
+var schema_curNarrative = "";
+var schema_curVal = "";
 
 document.addEventListener("DOMContentLoaded", async function() {
     console.log("Ready to fetch");
@@ -44,7 +51,6 @@ document.addEventListener("DOMContentLoaded", async function() {
             alert("Loading error");
         }
     });
-    
 });
 
 function prepareNarratives() {
@@ -115,11 +121,11 @@ function createInfoTable(item) {
             let val = item.itemMeta[i];
             // display only non empty values
             if (item.itemMeta[i] !== "") {
-                if (i === "authority") {
-                    let authority = ('<a class="button" role="button" target="_blank" href=" ' + item.itemMeta[i] + ' " style="color:black;">' + item.name + '</a>');
-                    table.append("<tr><th>" + i + "</th><td>" + authority + "</td></tr>"); 
+                if (i === "authority" || i == "sameAs") {
+                    let authorityLink = ('<a class="button" role="button" target="_blank" href=" ' + item.itemMeta[i] + ' " style="color:black;">' + item.name + '</a>');
+                    table.append("<tr><th>" + i + "</th><td>" + authorityLink + "</td></tr>"); 
                 } else {
-                    if (i !== "authority" && narratives.includes(item.itemMeta[i])) {
+                    if ((i !== "authority" || i !== "sameAs") && narratives.includes(item.itemMeta[i])) {
                     val = ('<a class="button" role="button" href="#" onclick="changeNarrative(\'' + i + '\',\'' + val + '\')">' + val + '</a>');
                     }
                     table.append("<tr><th>" + i + "</th><td>" + val + "</td></tr>");
@@ -169,6 +175,9 @@ function prepareNavigationButtons(index) {
 }
 
 // offcanvas narratives
+// Initialize offcanvas instance
+let offCanvasElement = document.getElementById('offcanvasExample');
+let offCanvas = new bootstrap.Offcanvas(offCanvasElement);
 let offCanvasLink = $(".open-option")
 let chooseTime = $(".fa-clock")
 let choosePlace = $(".fa-earth-americas")
@@ -204,6 +213,7 @@ function showTimeNarrative() {
             console.log(selectedVal)
             var timeNarrative = "time"
             changeNarrative(timeNarrative, selectedVal)
+            offCanvas.hide()
         })
 }
 
@@ -223,6 +233,7 @@ function showPlaceNarrative() {
             console.log(selectedVal)
             var placeNarrative = "place"
             changeNarrative(placeNarrative, selectedVal)
+            offCanvas.hide()
         })
 }
 
@@ -242,9 +253,9 @@ function showGenreNarrative() {
             console.log(selectedVal)
             var genreNarrative = "artistic expression"
             changeNarrative(genreNarrative, selectedVal)
+            offCanvas.hide()
         })
 }
-// function for styling the offcanvas
 
 
 // display table on small screen layout
@@ -276,6 +287,36 @@ handleScreenResize(mediaQuery);
 
 mediaQuery.addEventListener("change", handleScreenResize);
 
+// display schema aligned data
+
+tableCol.on("click", ".see-schema-data", function() {
+    $.ajax({
+        url: "data/json_with_schema.json",
+        method: "get",
+        success: function(schema_data) {
+            schema_items = schema_data.items;
+            console.log("items stored");
+
+            var schema_startItem = schema_data.meta.startItem;
+            var schema_item = schema_items[schema_startItem];
+            console.log(JSON.stringify(schema_item));
+
+            schema_narratives = schema_data.meta.narratives;
+            schema_curNarrative = schema_data.meta.startNarrative;
+            schema_curVal = schema_data.meta.startVal;
+
+            createInfoTable(schema_item)
+            $(".switch-data").text("Go back")
+        },
+        error: function(schema_data) {
+            alert("Loading error");
+        }
+    });
+});
+
+/*$(".switch-data").on("click", function() {
+    createInfoTable(item)
+});*/
 
 
 
