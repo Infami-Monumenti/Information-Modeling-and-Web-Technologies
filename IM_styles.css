@@ -1,5 +1,8 @@
 /*media queries*/
 @media screen and (max-width: 900px) {
+    /*#body-im {
+        height:fit-content;
+    }*/
     #main-im {
         display: grid !important;
         grid-template-columns: 45% 45% !important;
@@ -12,6 +15,9 @@
         grid-row: 1 / 3 !important;
         max-height: fit-content !important;
         box-sizing: border-box !important;
+    }
+    #infoCol h3 {
+        font-size: medium;
     }
     #infoCol p {
         font-size: smaller;
@@ -28,6 +34,7 @@
         transition: opacity 0.3s ease-out;
         position: relative;
         z-index: 1;
+        backdrop-filter: blur(2px);
     }
     #tableCol.visible {
         opacity: 1;
@@ -46,10 +53,14 @@
     .narratives-list {
         max-width: 50% !important;
     }
+    #info-modal {
+        max-width: 33%;
+        margin-left: 33%;
+    }
 }
 @media screen and (max-width: 550px) {
     #info-wrapper {
-        max-height: 18em !important;
+        max-height: 17em !important;
         box-sizing: border-box !important;
     }
     th, td {
@@ -66,15 +77,12 @@
 /* Track */
 ::-webkit-scrollbar-track {
     background: #e3dad0;
-    border-radius: 5px;
-
-   
+    border-radius: 5px;   
 }
   
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #977060;
-    
 }
   
 /* Handle on hover */
@@ -85,14 +93,16 @@
 :root {
     --navbar-height: 4em;
     --narr-control-height: 3.5em;
-    --main-height: calc(100vh - var(--navbar-height) - var(--narr-control-height)) !important;
+    --main-height: calc(100dvh - var(--navbar-height) - var(--narr-control-height)) !important;
+}
+html {
+    height: 100%;
 }
 body {
     position: relative;
     background-color: #e3dad0;
-    height: calc(100vh - var(--main-height)) !important;
+    height: calc(100dvh - var(--main-height)) !important;
     font-family: "Inter", sans-serif;
-   
 }
 /*.navbarIM {
     position: relative;
@@ -265,7 +275,7 @@ th, td {
     gap: 1.5rem;
     grid-template-columns: 25% 30% 25%;
     grid-template-rows: 45% 45%;
-    margin-top: 2.5rem;
+    margin-top: 1.3rem;
     justify-items: center;
     justify-content: space-evenly;
     text-align: justify;
@@ -286,6 +296,7 @@ th, td {
 }
 #infoTitle {
     text-align: center;
+    font-weight: bold;
 }
 #info-wrapper {
     max-height: 25em;
@@ -300,6 +311,13 @@ table {
 }
 th, td {
     background-color: rgba(255, 255, 255, 0.7) !important;
+    font-size: smaller;
+}
+th {
+    text-align: right;
+}
+td {
+    text-align: left;
 }
 /*.table-wrapper {
     flex: 1;
@@ -310,7 +328,7 @@ table {
     width: 100%;
     table-layout: fixed;
 }*/
-table a {
+table a, #info-modal a {
     color: #977060;
 }
 /*th, td {
@@ -333,12 +351,8 @@ table a {
     cursor: pointer;
 }
 .narratives-list ul > li:hover {
-    color: #977060
-
-}
-.narratives-list ul > li:visited {
-    color: #977060
-
+    color: black;
+    font-weight: bold;
 }
 .narratives-list ul {
     margin-top: 0.5rem;
@@ -354,21 +368,80 @@ table a {
     padding: 0.5rem;
     border-radius: 50%;
 }
-.see-schema-data {
-    margin-left: 0.5em;
-    background-color: rgba(151, 112, 96, 0.5);
-    padding: 0.3rem;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 40;
-}
 tfoot {
     height: fit-content;
 }
-.switch-table-data {
+/*.switch-table-data {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
 .switch-data {
     cursor: pointer;
+}*/
+.popup {
+    position: relative;
+    
+    cursor: pointer;
+}
+.popup .popuptext {
+    visibility: hidden;
+    width: min-content;
+    background-color: rgba(151 112 96 / 0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 2px;
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    right: 0;
+    
+}
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 75%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(151 112 96 / 0.5) transparent transparent transparent;
+    transform: rotate(180deg);
+}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+.offcanvas h5 {
+    font-weight: bold;
+}
+.offcanvas li {
+    color: #977060
+}
+#info-modal {
+    height: 30em;
+}
+#info-modal h1 {
+    font-weight: bold;
+}
+#info-modal h6 {
+    font-weight: bold;
+    color: rgb(151, 112, 96);
+    padding-top: 2rem;
+}
+#info-modal p {
+    padding-bottom: 2rem;
+}
+#info-modal p:last-child {
+    padding-bottom: 10rem;
+}
+.highlight {
+    border: 2px solid rgb(255, 255, 0);
+    background-color: rgba(255, 255, 0, 0.5);
+  }
+.modal-backdrop {
+    opacity: 0.3 !important;
 }

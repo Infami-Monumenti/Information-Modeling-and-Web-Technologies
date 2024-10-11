@@ -56,7 +56,7 @@
           <!--<nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary control-narr-nav">-->
             <div class="container-fluid control-narr-nav">
               <div class="row">
-                <div class="col-xs-12 col-md-2 narr-ctrl-buttons">
+                <div class="col-xs-12 col-md-2 narr-ctrl-buttons" id="choose-from-offcanvas">
                   <a class="btn open-option" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-clock choose-narrative"></i>
                   </a>
                   <a class="btn open-option" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-earth-americas choose-narrative"></i></a>
@@ -78,7 +78,7 @@
                   </ul>
                 </div>
                 <div class="col-xs-12 col-md-2 narr-ctrl-buttons">
-                  <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+                  <a class="btn" data-bs-toggle="modal" data-bs-target="#info-modal"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
                 </div>
                 </div>
@@ -145,7 +145,7 @@
                           </figure>
                       
                   </div>
-                  <div id="infoCol">
+                  <div id="infoCol"> <!--sistemare height colonna e width modal su schermi piccoli-->
                       
                           <h3 id="infoTitle"></h3>
                           <div id="info-wrapper">
@@ -162,13 +162,13 @@
                           <table class="table table-hover">
                               <tbody id="info">
                               </tbody>
-                              <tfoot>
+                              <!--<tfoot>
                                 <tr>
                                   <td class="switch-table-data" colspan="3" style="text-align: left; font-size: small;">
-                                    <p class="switch-data">See Schema aligned properties<i class="fa-solid fa-repeat see-schema-data"></i></p>
+                                    <p class="switch-data"><a class="switch-data-link">See Schema aligned properties</a></p>
                                   </td>
                                 </tr>
-                              </tfoot>
+                              </tfoot>-->
                           </table>
                       </div>
               </div>
@@ -190,15 +190,21 @@
           </div>
         </div>
         <!--Modal-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+        <div class="modal fade" id="info-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Help</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                <p>The application allows to browse different items somehow connected to the various meaning associated to the phallus across different cultures worldwide.</p>
+                <h6 id="use-table">Choose a narrative from the table:</h6>
+                <p>You can select items associated to the same time period, place or artistic genre from links in the table.</p>
+                <h6 id="see-schema">Switch between data:</h6>
+                <p>The same information displayed in the table has been mapped according to properties from <a href="" target="_blank">Schema</a> Ontology. You can switch between table by clicking on the link at the bottom of the table. More information about Schema and the properties we selected can be found in the <a href="documentation.html" target="_blank">project documentation</a>.</p>
+                <h6 id="use-offcanvas">Select a narrative:</h6>
+                <p>In order to make the browsing experience easier, times, places and genres to which the items in our collection are associated can be selected from the icons on the top left.</p>
               </div>
             </div>
           </div>
