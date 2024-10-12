@@ -15,6 +15,9 @@
     .aboutcard-container{
         overflow-x: hidden !important;
     }
+    .aboutcard-container{
+        padding-top: 50px !important;
+    }
 }
 :root {
     --cs-nav-height: 4em;
@@ -221,6 +224,9 @@ main{
     font-family: solid 'Inter', sans-serif;
     text-decoration: underline;
     font-weight: bold;
+}
+.dropdown-item{
+    text-align: right;
 }
 
   
@@ -755,9 +761,12 @@ a:hover {
     width: 300px;
     height: 400px;
     margin: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     margin-top: 40px;
+    padding-top: 10px;
 }
+
+
 .aboutcard:hover{
     transform: translateY(-30px);
 }
@@ -766,10 +775,12 @@ a:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
-    padding-right: 10px;
-    margin-bottom: 300px;
+    margin-top: 15px;
+    padding-right: 20px;
+    margin-bottom: 80px;
+    padding-top: 20px;
 }
+
 
 .aboutcard div{
     position: absolute;
