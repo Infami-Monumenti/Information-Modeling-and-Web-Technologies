@@ -60,7 +60,7 @@
 }
 @media screen and (max-width: 550px) {
     #info-wrapper {
-        max-height: 17em !important;
+        max-height: 15em !important;
         box-sizing: border-box !important;
     }
     th, td {
@@ -69,6 +69,9 @@
     #info-modal {
         margin-top: 30% !important;
         height: 70% !important;
+    }
+    #infoCol, #imgCol, #tableCol {
+        margin-top: 5em;
     }
 }
 /* width */
