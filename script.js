@@ -86,12 +86,12 @@ function showInfo(index) {
     curSort = item["iId"];
 
     document.getElementById("infoTitle").innerHTML = item.name;
-    document.getElementById("text1").innerHTML = item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Read more</a>';
+    document.getElementById("text1").innerHTML = item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>';
     document.getElementById("img").src = item.info.image;
     document.getElementById("img").alt = item.name;
     document.getElementById("item-figcaption").innerHTML = item.name;
-    document.getElementById("text2").innerHTML = item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm" onclick="showText3()">Read more</a>';
-    document.getElementById("text3").innerHTML = item.info["text 3"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm" onclick="showText2()">Back</a>';
+    document.getElementById("text2").innerHTML = item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>';
+    document.getElementById("text3").innerHTML = item.info["text 3"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Back</a>';
 
     // ensuring text1 is the first to be displayed when the item or the narrative changes
     if ($("#text1").hasClass("d-none")) {
@@ -164,9 +164,10 @@ function createInfoTable(item) {
 
 
             header.on("click", function() {
+                // close popup when another th is clicked
+                $(".popuptext.show").not(span).removeClass("show");
                 span.toggleClass("show");
             });
-            // close popup when another th is clicked
         }
     });
 }
@@ -297,23 +298,28 @@ const figure = $(".exhibit-figure");
 const figImage = $("#img");
 const infoIcon = $(".see-info-icon");
 const imgCol = $("#imgCol");
+const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
 const mediaQuery = window.matchMedia("(max-width: 900px)");
 
 function handleScreenResize(e) {
     if (e.matches) {
         tableCol.removeClass("visible")
+        tableCol.css("pointer-events", "none");
         infoIcon.on("click", function() {
             tableCol.toggleClass("visible");
             if (tableCol.hasClass("visible")) {
                 figImage.css("box-shadow", "none");
+                tableCol.css("pointer-events", "auto");
             } else {
                 figImage.css("box-shadow", "0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5)");
+                tableCol.css("pointer-events", "none");
             }
         });
     } else {
         infoIcon.off("click");
         tableCol.removeClass("visible");
+        tableCol.css("pointer-events", "auto");
     }
 }
 
@@ -321,12 +327,30 @@ handleScreenResize(mediaQuery);
 
 mediaQuery.addEventListener("change", handleScreenResize);
 
+// change title position in smaller screen sizes
+function updateTitlePosition() {
+    const infoTitle = document.getElementById("infoTitle");
+    const grid = document.getElementById("main-im");
+
+    if (window.innerWidth <= 900 && infoTitle.parentNode !== document.body) {
+        infoTitle.style.display = "block"
+        infoTitle.style.marginTop = "3em"
+        document.body.insertBefore(infoTitle, grid); // Move title above the grid
+    } else if (window.innerWidth > 900 && infoTitle.parentNode !== grid) {
+        infoTitle.style.marginTop = "1rem"
+        infoCol.prepend(infoTitle); // Move title back inside the grid
+    }
+}
+
+window.addEventListener("DOMContentLoaded", updateTitlePosition);
+window.addEventListener("resize", updateTitlePosition);
 
 // function for handling modal-background interaction
 let infoModal = $("#info-modal");
 let infoModalBody = $(".modal-body");
 let chooseNarrative = $("#choose-from-offcanvas");
 let title = $(".modal-body > h6");
+let modalCloseButton = $(".modal-header > btn-close")
 let paragraphMapping = {
     "use-table": "#info",
     "see-schema": ".schema-popup",
@@ -357,7 +381,7 @@ function highlightOnScroll() {
                 highlightBackground(bgElement);
             }
         })
-    }
+    } 
 }
 
 function highlightBackground(element) {
@@ -365,21 +389,18 @@ function highlightBackground(element) {
         $(value).removeClass("highlight");
     });
     element.addClass("highlight");
-
-    if (!infoModal) {
-        element.removeClass("highlight");
-    }
-    
 }
 
 infoModal.on("shown.bs.modal", function () {
     highlightOnScroll();
 });
 
-/*$(".switch-data").on("click", function() {
-    createInfoTable(item)
-});*/
-
+// Remove highlight when modal is hidden
+infoModal.on("hidden.bs.modal", function () {
+    $.each(paragraphMapping, function(key, value) {
+        $(value).removeClass("highlight");  
+    });
+});
 
 
 

@@ -1,5 +1,19 @@
 /*media queries*/
 @media screen and (max-width: 900px) {
+        #padlink{
+                margin-top: 8px;
+            }
+        .indextitle{
+            font-size: xx-large !important;
+            font-weight: 800 !important;
+            align-items: center;
+        }
+        .indexcontainer{
+            overflow-x: hidden !important;
+        }
+        .aboutcard-container{
+            overflow-x: hidden !important;
+        }
     /*#body-im {
         height:fit-content;
     }*/
@@ -10,6 +24,9 @@
         justify-content: space-evenly;
         height: 100%;
     }
+    #infoCol, #imgCol, #tableCol {
+        margin-top: 3em;
+    }
     #infoCol {
         grid-column: 1 / 2;
         grid-row: 1 / 3 !important;
@@ -19,7 +36,13 @@
     #infoCol h3 {
         font-size: medium;
     }
+    #infoTitle {
+        display: none;
+    }
     #infoCol p {
+        font-size: smaller;
+    }
+    .display-text-btn {
         font-size: smaller;
     }
     #imgCol {
@@ -59,6 +82,12 @@
     }
 }
 @media screen and (max-width: 550px) {
+    .control-narr-nav h6 {
+        font-size: smaller;
+    }
+    .control-narr-nav #prevBtn, .control-narr-nav #nextBtn {
+        font-size: x-small;
+    }
     #info-wrapper {
         max-height: 15em !important;
         box-sizing: border-box !important;
@@ -261,9 +290,6 @@ main{
 .thelinks{
     margin-top: 30px;
 }
-#padlink{
-    margin-top: 8px;
-}
 .control-narr-nav {
     background-color: rgba(255, 255, 255, 0.5) !important;
     
@@ -354,6 +380,7 @@ main{
 #infoTitle {
     text-align: center;
     font-weight: bold;
+    margin-top: 1rem;
 }
 #info-wrapper {
     max-height: 25em;
@@ -496,8 +523,9 @@ tfoot {
     padding-bottom: 10rem;
 }
 .highlight {
-    border: 2px solid rgb(255, 255, 0);
-    background-color: rgba(255, 255, 0, 0.5);
+    border: 1px solid rgb(61, 19, 2);
+    background-color: rgba(61, 19, 2, 0.5);
+    transition: all 0.2s ease-in;
   }
 .modal-backdrop {
     opacity: 0.3 !important;
