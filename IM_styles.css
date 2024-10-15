@@ -324,7 +324,10 @@ main{
     border-left: 1px solid #977060;
 }
 .choose-narrative {
-    margin: 0 0.5rem;
+    margin: 0 0.2rem;
+}
+.info-icons {
+    margin: 0 0.2rem;
 }
 /*---old css starts---*/
 /*#main-container-im {

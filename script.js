@@ -350,7 +350,6 @@ let infoModal = $("#info-modal");
 let infoModalBody = $(".modal-body");
 let chooseNarrative = $("#choose-from-offcanvas");
 let title = $(".modal-body > h6");
-let modalCloseButton = $(".modal-header > btn-close")
 let paragraphMapping = {
     "use-table": "#info",
     "see-schema": ".schema-popup",
@@ -379,6 +378,16 @@ function highlightOnScroll() {
                 let bgElement = $(paragraphMapping[paragraphOnScreen]); 
                 console.log(bgElement);
                 highlightBackground(bgElement);
+
+                // Check if the paragraph on screen corresponds to the table
+                if (paragraphOnScreen === "use-table" || paragraphOnScreen === "see-schema" && mediaQuery.matches) {
+                    tableCol.addClass("visible");
+                    tableCol.css("pointer-events", "auto");
+                } else if (mediaQuery.matches) {
+                    // Hide the table when "use-table" is no longer on screen
+                    tableCol.removeClass("visible");
+                    tableCol.css("pointer-events", "none");
+                }
             }
         })
     } 
@@ -400,6 +409,11 @@ infoModal.on("hidden.bs.modal", function () {
     $.each(paragraphMapping, function(key, value) {
         $(value).removeClass("highlight");  
     });
+    // Hide the table when the modal is closed (on small screens)
+    if (mediaQuery.matches) {
+        tableCol.removeClass("visible");
+        tableCol.css("pointer-events", "none");
+    }
 });
 
 
