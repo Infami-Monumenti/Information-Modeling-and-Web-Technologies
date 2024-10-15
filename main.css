@@ -1277,7 +1277,7 @@ figcaption {
 }
 
 .container-fluid-layout {
-    margin-bottom: 0;
+    margin-bottom: 0.1em;
 }
 
 }
