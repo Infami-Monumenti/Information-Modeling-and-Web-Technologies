@@ -268,24 +268,43 @@
         <div class="doc-content" id="narratives_content">
           <h2>Narratives</h2>
           <br>
-          <p>In order to represent the variety of objects associated to the theme of the exhibition, items were organized according to three main narratives: chronologically, spatially and by genre. The first narrative groups the objects according to the century they were created in, revealing the persistency of symbolic representations associated to fertility and virility throught the years. The spatial narratives, organizes items according to the location responsible for the creation of the content and it is yet another way to observe the widespread cult of the phallus and the meanings associated to it worldwide. Finally, in the last narratives items are presented according to their genre, from visual artifacts - like paintings, frescos and sculptures - to literary works, to more recent experiments in architecture.</p>
+          <p>In order to represent the variety of objects associated to the theme of the exhibition, items were organized according to three main narratives: chronologically, spatially and by genre. The first narrative groups the objects according to the century they were created in, revealing the persistency of symbolic representations associated to fertility and virility throught time. The spatial narrative organizes items according to the location where the creation of the content took place <!--, as well as the culture from which the representation stem,--> and it is yet another way to observe the widespread cult of the phallus and the meanings associated to it worldwide. Finally, in the last narratives items are presented according to their genre, from visual artifacts - like paintings, frescos and sculptures - to literary works, to more recent experiments in architecture.</p>
           <br>
+          <div class="doc-content" id="features_narratives">
+            <h3>Features</h3>
+            <br>
+            <p>Along with the option to switch narratives from the fields in the table, we decided to reintroduce the categories in which the items are organized in an offcanvas element, both to provide the user with an overview of the available options and to make navigation more immediate. The offcanvas can be toggled from a secondary navbar, that also includes a link to a modal window with some information on how to use the app.</p>
+            <div id="offcanvas-modal-screenshot">
+              <figure class="figure doc-figure"><img src="images/offcanvas_screenshot.png" alt="offcanvas screenshot" class="figure-img img-fluid rounded"><figcaption>The offcanvas contains the list of the categories in which items are organized according to the narrative</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/modal_screenshot.png" alt="modal screenshot" class="figure-img img-fluid rounded"><figcaption>The modal window walks the users through the main features available in the application</figcaption></figure>
+            </div>
+            <br>
+            <p>For each item in our exhibition, variables in the table were mapped to properties from <a href="https://schema.org/" target="_blank">Schema Ontology</a>. The best solution for displaying the Schema properties in the application seemed to be using popups, so that the basic properties are always visible, and the Schema properties — which may be of interest only to a specialized audience — can be activated when needed, thus ensuring the ability to view the mapped property without losing sight of the original property. With the premise that the number of properties varies depending on the item (for example, not all objects have an author, and it hasn't always been possible to associate an authority control), the selected properties are listed below, along with a brief description of its meaning and usage.</p>
+            <table class="table table-striped table-bordered">
+              <tr><th>Feature</th><th>Property</th><th>Description</th></tr>
+              <tr><td>Time</td><td>dateCreated</td><td>The property is used in order to express the date of creation of a creative work</td></tr>
+              <tr><td>Conservation location</td><td>Spatial</td><td>This is a general property to be used when more specific ones, like contentLocation or locationCreated, are not appropriate. In this case, we chose the Spatial property to indicate the place where the item is located and preserved</td></tr>
+              <tr><td>Author</td><td>Author</td><td>The property is used to indicate the creator of a creative work</td></tr>
+              <tr><td>Authority</td><td>sameAs</td><td>The property is used to indicate a URL that uniquely identifies the item</td></tr>
+              <tr><td>Place</td><td>locationCreated</td><td>The property indicates the place where the creative work was created</td></tr>
+              <tr><td>Artistic expression</td><td>genre</td><td>This property specifies the genre of a creative work</td></tr>
+            </table>
+            <br>
+          </div>
           <div class="doc-content" id="layout_narratives">
             <h3>Layout</h3>
             <br>
-            <p>VERTICALITY+MONUMENTALITY (MAIN LAYOUT + ADAPTATION ON SMALL SCREEN)</p>
-            <br>
-          </div>
-          <div class="doc-content" id="colors_narratives">
-            <h3>Colors</h3>
-            <br>
-            <p></p>
-            <br>
-          </div>
-          <div class="doc-content" id="typography_narrative">
-            <h3>Typography</h3>
-            <br>
-            <p></p>
+            <p>Starting from the article which inspired the title of the project, we tried to use strategies that could convey a sense of monumentality. Specifically, we organized the exhibition page in well defined horizontal and vertical areas, by meshing up Bootstrap components - such as the main navbar, the modal and the offcanvas elements - and CSS grid. The resulting layout is composed of three columns, one for each content available for the item: an image, some textual content and a table that gathers the main information about the object.</p>
+              <figure class="figure doc-figure">
+                <img src="images/main_layout_screenshot.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+                <figcaption class="figure-caption text-center">A screenshot of the application page on laptop screen sizes</figcaption>
+              </figure>
+            <p>To avoid overcrowding the page and, at the same time, maintain the same design principle, for smaller screens we adopted a two-column layout, where the columns are preceded by the name of the item to which the contents refer. Textual content and image are displayed by default, while the table can be toggled by the user. Concurrently, the width of the offcanvas which controls the narratives selection was adjusted to convey a stronger sense of verticality by splitting the screen in half.</p>
+            <div id="small-layout-screenshot">
+              <figure class="figure doc-figure"><img src="images/smartphone_layout_screenshot.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen">The application page on mobile screen size</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/smartphone_layout_screenshot_table.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot table"><figcaption class="caption-sm-screen">The application page with the table visible</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/smartphone_layout_screenshot_offcanvas.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot offcanvas"><figcaption class="caption-sm-screen">The offcanvas element in mobile screen size</figcaption></figure>
+            </div>
             <br>
           </div>
         </div>

@@ -23,6 +23,7 @@
         grid-template-rows: auto auto !important;
         justify-content: space-evenly;
         height: 100%;
+        gap: 0 !important;
     }
     #infoCol, #imgCol, #tableCol {
         margin-top: 3em;
@@ -38,6 +39,9 @@
     }
     #infoTitle {
         display: none;
+    }
+    #info-wrapper {
+        margin-bottom: 2rem;
     }
     #infoCol p {
         font-size: smaller;
@@ -72,6 +76,9 @@
     figcaption {
         position: relative; 
         z-index: 2;
+    }
+    .fa-solid {
+        font-size: small;
     }
     .narratives-list {
         max-width: 50% !important;
@@ -423,6 +430,9 @@ table a, #info-modal a {
     height: var(--main-height) !important;
     margin-top: 1em;
 }*/
+.fa-solid {
+    color: black;
+}
 .narratives-list {
     max-width: 33%;
     background-color: rgba(255, 255, 255, 0.8);
@@ -441,15 +451,16 @@ table a, #info-modal a {
 .narratives-list ul {
     margin-top: 0.5rem;
 }
-
 .see-info-icon {
     visibility: hidden;
+    font-size: small;
     position: absolute;
     bottom: 3em;
     right: 1em;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.3rem;
+    padding-top: 0.4rem;
     border-radius: 50%;
 }
 tfoot {
