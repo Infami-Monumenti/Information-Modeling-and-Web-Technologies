@@ -191,8 +191,12 @@ nav {
     font-weight: 900;
     color: #977060!important;
 }
-nav a {
-    color: antiquewhite;
+.nav-link{
+    text-decoration: none;
+    color: #977060!important;
+    border-radius: 30px;
+}
+nav a  {
     padding: 0 15px;
     text-decoration: none;
     color: #977060!important;
