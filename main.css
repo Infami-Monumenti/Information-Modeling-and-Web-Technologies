@@ -191,8 +191,12 @@ nav {
     font-weight: 900;
     color: #977060!important;
 }
-nav a {
-    color: antiquewhite;
+.nav-link{
+    text-decoration: none;
+    color: #977060!important;
+    border-radius: 30px;
+}
+nav a  {
     padding: 0 15px;
     text-decoration: none;
     color: #977060!important;
@@ -645,14 +649,15 @@ img:hover{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 70px;
-    margin-bottom: 150px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .indexcard{
     width: 325px;
     background-color: floralwhite;
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
     margin: 10px;
@@ -669,18 +674,20 @@ img:hover{
 .indexcard img{
     width: 100%;
     height: auto;
-    height: 80%;
-    border-radius: 6px;
+    height: 90%;
+    border-radius: 15px;
+    padding-top: 0px;
 
 }
 .indexcard-content{
-    padding: 16px;
+    padding: 2px;
     margin-bottom: 0px;
 }
 
 .indexcard-content h3{
     font-size: 28px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+
 }  
 
 .indexcard-content p{
