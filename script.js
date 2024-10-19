@@ -429,44 +429,44 @@ infoModal.on("hidden.bs.modal", function () {
 
 
 // navbar
-// Seleziona tutti i link nella navbar e nel dropdown
+// select all navbar and dropdown links 
 const navLinks = document.querySelectorAll('.nav-link');
 const dropdownLinks = document.querySelectorAll('.dropdown-item');
 
-// Ottieni il percorso dell'URL corrente
-const currentPath = window.location.pathname.split("/").pop().split("?")[0];  // Estrae l'ultima parte dell'URL senza parametri
+// obtain current URL path
+const currentPath = window.location.pathname.split("/").pop().split("?")[0];  // extract last part of the URL parameters
 
-// Funzione per rimuovere la classe 'active' da tutti i link
+// remove'active' class from all links
 function removeActiveClass() {
     navLinks.forEach(link => link.classList.remove('active'));
     dropdownLinks.forEach(link => link.classList.remove('active'));
 }
 
-// Aggiunge la classe 'active' al link che corrisponde alla pagina corrente
+// add 'active' class to the link that corresponds to the current page
 function setActiveLink() {
-    removeActiveClass();  // Rimuove qualsiasi classe 'active' esistente
+    removeActiveClass();  // remove existing 'active' class 
     console.log("Current Path: ", currentPath); 
-    // Controlla i link della navbar
+    // check navbar links
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         
-        // Caso per la home: se currentPath è vuoto o "/" (root), attiva il link per "index.html"
+        // home: if currentPath is empty or "/" (root), activate link for "index.html"
         if ((currentPath === "" || currentPath === "/") && (linkHref === 'index.html' || linkHref === '/')) {
             link.classList.add('active');
         } else if (linkHref === currentPath) {
-            link.classList.add('active');  // Aggiunge la classe 'active' al link corrispondente
+            link.classList.add('active');  // add 'active' class to the corresponding link
         }
     });
 
-    // Controlla i link del dropdown
+    // check dropdown links
     dropdownLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');  // Aggiunge la classe 'active' al link del dropdown corrispondente
+            link.classList.add('active');  // add'active' class to the corresponding dropdown link
         }
     });
 }
 
-// Esegui la funzione al caricamento della pagina
+// load the page
 window.addEventListener('load', setActiveLink);
 
 // FOOTER
