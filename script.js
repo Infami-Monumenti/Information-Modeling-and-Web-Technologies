@@ -20,7 +20,7 @@ var schema_currentSelection = [];
 // mapping with schema properties
 var schemaMapping = {
     "time": "dateCreated",
-    "conservation location": "containedInPlace",
+    "conservation location": "spatial",
     "author": "author",
     "authority": "sameAs",
     "place": "locationCreated",
@@ -147,6 +147,11 @@ function createInfoTable(item) {
         }
     }
     // display schema property as popups
+    
+    // get height of th element
+    //var thHeight = $('th').innerHeight();
+    //window.alert(thHeight); //103.510333
+
     let firstHeader = table.find("th").first();
     firstHeader.addClass("schema-popup");
 
@@ -347,6 +352,7 @@ window.addEventListener("resize", updateTitlePosition);
 
 // function for handling modal-background interaction
 let infoModal = $("#info-modal");
+let modalSpan = $("#select-narr-pos");
 let infoModalBody = $(".modal-body");
 let chooseNarrative = $("#choose-from-offcanvas");
 let title = $(".modal-body > h6");
@@ -378,6 +384,10 @@ function highlightOnScroll() {
                 let bgElement = $(paragraphMapping[paragraphOnScreen]); 
                 console.log(bgElement);
                 highlightBackground(bgElement);
+
+                if (paragraphOnScreen === "see-schema") {
+                    firstHeader.setAttribute("style", "background-color: rgba(61, 19, 2, 0.5);");
+                }
 
                 // Check if the paragraph on screen corresponds to the table
                 if (paragraphOnScreen === "use-table" || paragraphOnScreen === "see-schema" && mediaQuery.matches) {

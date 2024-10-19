@@ -16,7 +16,7 @@
             },
             "itemMeta": {
                 "dateCreated": "Paleolithic Period",
-                "containedInPlace": "Golestan Province, Iran",
+                "spatial": "Golestan Province, Iran",
                 "author": "",
                 "sameAs": "https://viaf.org/viaf/1364167445364688860004/#Kha%CC%84led_Nabi",
                 "locationCreated": "Iran",
@@ -40,7 +40,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XX century BC",
-                "containedInPlace": "Heliopolis, Egypt",
+                "spatial": "Heliopolis, Egypt",
                 "author": "",
                 "sameAs": "https://viaf.org/viaf/316430063/#Heliopolis_(Cairo,_Egypt)",
                 "locationCreated": "Egypt",
@@ -64,7 +64,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XIX century BC",
-                "containedInPlace": "Luxor, Egypt",
+                "spatial": "Luxor, Egypt",
                 "author": "",
                 "sameAs": "http://id.loc.gov/authorities/classification/BL2450.M55",
                 "locationCreated": "Egypt",
@@ -88,7 +88,7 @@
             },
             "itemMeta": {
                 "dateCreated": "IX-VIII century BC",
-                "containedInPlace": "New Mexico, United States",
+                "spatial": "New Mexico, United States",
                 "author": "",
                 "sameAs": "http://id.loc.gov/authorities/subjects/sh96004950",
                 "locationCreated": "USA",
@@ -112,7 +112,7 @@
             },
             "itemMeta": {
                 "dateCreated": "late III century BC",
-                "containedInPlace": "Ephesus Museum, Turkey",
+                "spatial": "Ephesus Museum, Turkey",
                 "author": "",
                 "sameAs": "https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901000724",
                 "locationCreated": "Siracuse",
@@ -136,7 +136,7 @@
             },
             "itemMeta": {
                 "dateCreated": "II century BC",
-                "containedInPlace": "",
+                "spatial": "",
                 "author": "Plautus",
                 "sameAs": "http://id.loc.gov/authorities/classification/PA6568.P7",
                 "locationCreated": "Rome",
@@ -160,7 +160,7 @@
             },
             "itemMeta": {
                 "dateCreated": "I century AD",
-                "containedInPlace": "House of the Vettii, Pompeii, Italy",
+                "spatial": "House of the Vettii, Pompeii, Italy",
                 "author": "",
                 "sameAs": "https://viaf.org/viaf/234361186/#casa_dei_Vettii",
                 "locationCreated": "Rome",
@@ -184,7 +184,7 @@
             },
             "itemMeta": {
                 "dateCreated": "I century BC",
-                "containedInPlace": "Museo Barracco, Italy",
+                "spatial": "Museo Barracco, Italy",
                 "author": "",
                 "sameAs": "https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901000724",
                 "locationCreated": "Roma",
@@ -208,7 +208,7 @@
             },
             "itemMeta": {
                 "dateCreated": "I century AD",
-                "containedInPlace": "Pompei, Italy",
+                "spatial": "Pompei, Italy",
                 "author": "",
                 "sameAs": "https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901000724",
                 "locationCreated": "Rome",
@@ -232,7 +232,7 @@
             },
             "itemMeta": {
                 "dateCreated": "I century AD",
-                "containedInPlace": "Museo Archeologico Nazionale di Napoli, Italy",
+                "spatial": "Museo Archeologico Nazionale di Napoli, Italy",
                 "author": "",
                 "sameAs": "https://it.m.wikipedia.org/wiki/File:Tintinnabulum_Pompeii_MAN_Napoli_Inv27854.jpg",
                 "locationCreated": "Rome",
@@ -256,7 +256,7 @@
             },
             "itemMeta": {
                 "dateCreated": "I century AD",
-                "containedInPlace": "Museo Archeologico Nazionale di Napoli, Italy",
+                "spatial": "Museo Archeologico Nazionale di Napoli, Italy",
                 "author": "",
                 "sameAs": "http://viaf.org/viaf/187145542649396641799",
                 "locationCreated": "Rome",
@@ -280,7 +280,7 @@
             },
             "itemMeta": {
                 "dateCreated": "II century AD",
-                "containedInPlace": "Leptis Magna, Libya",
+                "spatial": "Leptis Magna, Libya",
                 "author": "",
                 "sameAs": "https://www.wikidata.org/wiki/Q751867",
                 "locationCreated": "Rome",
@@ -304,7 +304,7 @@
             },
             "itemMeta": {
                 "dateCreated": "Middle Ages",
-                "containedInPlace": "Saint Jallet, France",
+                "spatial": "Saint Jallet, France",
                 "author": "",
                 "sameAs": "https://www.wikidata.org/wiki/Q2626893",
                 "locationCreated": "France",
@@ -328,7 +328,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XIV century",
-                "containedInPlace": "Biblioteca Medici, Italy",
+                "spatial": "Biblioteca Medici, Italy",
                 "author": "Boccaccio",
                 "sameAs": "https://viaf.org/viaf/184679300/",
                 "locationCreated": "Rome",
@@ -352,7 +352,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XVI century AD",
-                "containedInPlace": "",
+                "spatial": "",
                 "author": "Aristophanes",
                 "sameAs": "http://viaf.org/viaf/184049002",
                 "locationCreated": "Greece",
@@ -376,7 +376,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XVIII-XIX century",
-                "containedInPlace": "Galleria dei Coronari, Roma",
+                "spatial": "Galleria dei Coronari, Roma",
                 "author": "Louis Vincent Leon Palliere",
                 "sameAs": "http://viaf.org/viaf/95699993",
                 "locationCreated": "France",
@@ -400,7 +400,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XIX century",
-                "containedInPlace": "Michigan, United States",
+                "spatial": "Michigan, United States",
                 "author": "William R. Coats",
                 "sameAs": "https://www.wikidata.org/wiki/Q8059473",
                 "locationCreated": "USA",
@@ -424,7 +424,7 @@
             },
             "itemMeta": {
                 "dateCreated": "XXI century",
-                "containedInPlace": "Cataluña, Spain",
+                "spatial": "Cataluña, Spain",
                 "author": "Jean Nouvel",
                 "sameAs": "http://viaf.org/viaf/245866680",
                 "locationCreated": "Spain",

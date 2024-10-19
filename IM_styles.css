@@ -1,19 +1,19 @@
 /*media queries*/
 @media screen and (max-width: 900px) {
-        #padlink{
-                margin-top: 8px;
-            }
-        .indextitle{
-            font-size: xx-large !important;
-            font-weight: 800 !important;
-            align-items: center;
-        }
-        .indexcontainer{
-            overflow-x: hidden !important;
-        }
-        .aboutcard-container{
-            overflow-x: hidden !important;
-        }
+    #padlink{
+        margin-top: 8px;
+    }
+    .indextitle{
+        font-size: xx-large !important;
+        font-weight: 800 !important;
+        align-items: center;
+    }
+    .indexcontainer{
+        overflow-x: hidden !important;
+    }
+    .aboutcard-container{
+        overflow-x: hidden !important;
+    }
     /*#body-im {
         height:fit-content;
     }*/
@@ -31,8 +31,9 @@
     #infoCol {
         grid-column: 1 / 2;
         grid-row: 1 / 3 !important;
-        max-height: fit-content !important;
+        max-height: 100% !important;
         box-sizing: border-box !important;
+        align-self: center !important;
     }
     #infoCol h3 {
         font-size: medium;
@@ -87,6 +88,9 @@
         max-width: 33%;
         margin-left: 33%;
     }
+    .popup .popuptext {
+        top: 37% !important;
+    }
 }
 @media screen and (max-width: 550px) {
     .control-narr-nav h6 {
@@ -96,7 +100,7 @@
         font-size: x-small;
     }
     #info-wrapper {
-        max-height: 15em !important;
+        max-height: 35% !important;
         box-sizing: border-box !important;
     }
     th, td {
@@ -408,6 +412,7 @@ th, td {
     font-size: smaller;
 }
 th {
+    white-space: nowrap;
     text-align: right;
 }
 td {
@@ -510,8 +515,7 @@ tfoot {
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
     visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
+    transition: all 0.2s ease;
 }
 .offcanvas h5 {
     font-weight: bold;
