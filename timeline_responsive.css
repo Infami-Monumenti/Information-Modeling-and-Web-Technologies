@@ -80,19 +80,11 @@ h1, h2, h3, h4, h5, h6 {
 .end-point {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px; /* Espaçamento acima do botão */
-}
-
-.end-point {
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-    margin-top: 0;
-    position: relative;
+    margin-top: -1em;
+    padding-bottom: 20px;
 }
 
 .museum-button {
@@ -113,15 +105,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #977060;
 }
 
-.end-line {
-    border: 2px solid #3d1302;
-    height: 100px; /* Aumenta a altura para conectar a linha à timeline */
-    background-color: #aaa;
+.horizontal-line-end {
     position: absolute;
-    top: -100px; /* Ajusta para conectar à linha da timeline */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 70px;
+    left: 0;
+    width: calc(100% - 40px);
+    height: 2px;
+    background-color: #3d1302;
 }
+
 
 .timeline-box h6 {
     font-size: 1em; 
@@ -426,142 +418,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-@media screen and (max-width: 1800px) {
-
-    .timeline-box {
-        max-width: 460px;
-    }
-    
-    .timeline-box.img-right .timeline-content img, 
-    .timeline-box.img-left .timeline-content img {
-        max-width: 220px;
-        max-height: 230px;
-    }
-    
-    .timeline-box-wrap .timeline-content img {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 1600px) {
-
-    .timeline-row:first-child .timeline-box:first-child {
-        width: 38%;
-    }
-
-    .timeline-box {
-        max-width: 380px;
-    }
-
-    .timeline-box.img-right .timeline-content img, 
-    .timeline-box.img-left .timeline-content img {
-        max-width: 180px;
-        max-height: 230px;
-    }
-
-    .timeline-box h6 {
-        font-size: 1.4em;
-    }
-
-    .about-timeline {
-        padding: 120px 0 100px;
-    }
-
-    .timeline-box p {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 1440px) {
-
-    .about-timeline {
-        padding: 100px 0 80px;
-    }
-
-    .start-point h4 {
-        font-size: 15px;
-        letter-spacing: 0;
-    }
-
-    .timeline-box h6 {
-        font-size: 1.4em;
-    }
-
-    .timeline-row:first-child .timeline-box:first-child {
-        width: 45%;
-    }
-
-    .timeline-box p {
-        font-size: 15px;
-        line-height: 1.4;
-    }
-
-    .timeline-box {
-        max-width: 300px;
-    }
-
-    .timeline-box.img-right .timeline-content img, 
-    .timeline-box.img-left .timeline-content img {
-        max-width: 140px;
-        max-height: 200px;
-    }
-
-    .timeline-box-wrap .timeline-content img {
-        max-width: 100%;
-    }
-
-    .timeline-row:first-child .timeline-box:nth-child(2) {
-        width: 150px;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-
-    .about-timeline {
-        padding: 90px 0 60px;
-    }
-
-    .timeline-box h6 {
-        font-size: 34px;
-    }
-
-    .timeline-box {
-        max-width: 240px;
-    }
-
-    .timeline-row:first-child {
-        padding: 0 0 0 60px;
-    }
-
-    .timeline-row:first-child .timeline-box:first-child {
-        width: 42%;
-    }
-
-    .timeline-box.img-right .timeline-content, 
-    .timeline-box.img-left .timeline-content {
-        flex-wrap: wrap;
-    }
-
-    .timeline-box.img-right .timeline-content img, 
-    .timeline-box.img-left .timeline-content img {
-        max-width: 180px;
-        max-height: 200px;
-    }
-
-    .top-timeline-arrow.timeline-content-img .timeline-content::after {
-        right: 0;
-    }
-
-    .img-right.timeline-content-img .timeline-content::after {
-        top: -20px;
-        right: -45px;
-    }
-
-    .timeline-box.img-right .timeline-content-txt {
-        width: 90%;
-    }
-}
-
 @media screen and (max-width: 1024px) {
 
     .corner {
@@ -633,7 +489,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .start-point h4 {
-        margin-bottom: 0;
+        font-size: 2em; 
+        line-height: 40px; 
+        padding: 20px;
+        margin-bottom: 35px;
     }
 
     .about-timeline {
@@ -742,5 +601,11 @@ h1, h2, h3, h4, h5, h6 {
     .timeline-box.img-left .timeline-content img {
         max-width: 100%;
         max-height: unset;
+    }
+    .start-point h4 {
+        font-size: 1.5em; 
+        line-height: 35px; 
+        padding: 15px;
+        margin-bottom: 25px;
     }
 }
