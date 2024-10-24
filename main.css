@@ -468,7 +468,12 @@ img:hover{
     margin-left: 200px;
     color: antiquewhite;
   }
-  
+  @media(min-width: 370px){
+    .call-to-action .cta-btn{
+        text-align: center;
+        align-items: center;
+    }
+  }
   .call-to-action .cta-btn:hover {
     background:  #977060;
     border: 2px solid var(--accent-color);
@@ -892,7 +897,7 @@ ul li a {
         padding-bottom: 80px !important;
     }
     .aboutcard-container{
-        padding-bottom: 80px !important;
+        padding-bottom: 100px !important;
     }
     .maindisclaimer{
         padding-bottom: 10px;
