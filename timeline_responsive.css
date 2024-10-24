@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
+:root {
+    --cs-nav-height: 4em;
+    --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
+    --cs-foot-height: 7em;
+    --narr-control-height: 4em;
+    --navbar-height: 56px; /* Adjust based on your navbar height */
+    --footer-height: 7em; /* Adjust based on your footer height */
+    --img-column-w: 25vw;
+    --data-column-w: 25vw;
+    --info-column-w: calc(100vw - var(--img-column-w) - var(--data-column-w) - 3.5vw);
+    --main-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+    --sidebar-doc: 280px;
+}
 * {
     box-sizing: border-box;
-    outline: none !important;
 }
 
 button:focus { 
@@ -55,11 +68,12 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    margin-top: 0px;
+    margin-top: 1em;
     line-height: normal;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.1;
     font-weight: 700;
+    text-align: center;
 }
 
 .wrapper {
@@ -80,10 +94,11 @@ h1, h2, h3, h4, h5, h6 {
 .end-point {
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    margin-top: -1em;
+    margin-top: -2.5em;
+    margin-right: -80%;
     padding-bottom: 20px;
 }
 
@@ -115,12 +130,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.timeline-box h6 {
-    font-size: 1em; 
+.timeline-box h5 {
+    font-size: 1.3em; 
     line-height: 1; 
+    text-align: center;
     color: #3d1302; 
     font-weight: 700; 
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #e3dad0;
     position: relative; 
     z-index: 1; 
@@ -157,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center; 
     padding: 25px;
     position: relative;
-    margin-bottom: 45px;
+    margin: 0;
     font-family: 'Inter',sans-serif;
     letter-spacing: 0.5em;
 } 
@@ -511,7 +527,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 50%;
         text-align: right;
         padding: 0 30px 0 0;
-        margin: 40px 0 0 0;
+        margin: 40px 40px 0 40px;
     }
 
     .timeline-row .timeline-box img {
@@ -563,6 +579,10 @@ h1, h2, h3, h4, h5, h6 {
     .timeline-row:last-child {
         padding-bottom: 70px;
     }
+
+    .end-point {
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -607,5 +627,14 @@ h1, h2, h3, h4, h5, h6 {
         line-height: 35px; 
         padding: 15px;
         margin-bottom: 25px;
+    }
+    .end-point {
+        margin-right: 0;
+    }
+    .museum-button {
+        font-size: 1em;
+    }
+    h6 {
+        margin: 2em;
     }
 }
