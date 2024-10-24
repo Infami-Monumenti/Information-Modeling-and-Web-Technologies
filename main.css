@@ -773,9 +773,13 @@ a:hover {
     footer{
         position: static;
         min-height: calc(100vh - main);
-
     }
+
 }
+
+
+
+
 .footer-left{
     width: 35%;
 }
@@ -826,7 +830,7 @@ a:hover {
     color: #977060;
     padding-left: 5px;
     padding-right: 5px;
-  }
+}
 
 /* about cards */
 *{
@@ -899,7 +903,7 @@ a:hover {
 .aboutcard div h3{
     position: fixed;
     width: 500px;
-    height: 100px;
+    height: 80px;
     bottom: -50px;
     text-align: center;
 }
