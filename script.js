@@ -134,24 +134,19 @@ function createInfoTable(item) {
             if (item.itemMeta[i] !== "") {
                 if (i === "authority" || i == "sameAs") {
                     let authorityLink = ('<a class="button" role="button" target="_blank" href=" ' + item.itemMeta[i] + ' " style="color:black;">' + item.name + '</a>');
-                    table.append("<tr><th>" + i + "</th><td>" + authorityLink + "</td></tr>"); 
+                    table.append("<tr><th><span>" + i + "</span></th><td>" + authorityLink + "</td></tr>"); 
                 } else {
                     if ((i !== "authority" || i !== "sameAs") && narratives.includes(item.itemMeta[i])) {
                     val = ('<a class="button" role="button" href="#" onclick="changeNarrative(\'' + i + '\',\'' + val + '\')">' + val + '</a>');
                     }
-                    table.append("<tr><th>" + i + "</th><td>" + val + "</td></tr>");
+                    table.append("<tr><th><span>" + i + "</span></th><td>" + val + "</td></tr>");
                 }
             } else {
-                table.append("<tr><th>" + i + "</th><td>" + item.itemMeta[i] + "</td></tr>");
+                table.append("<tr><th><span>" + i + "</span></th><td>" + item.itemMeta[i] + "</td></tr>");
             }
         }
     }
     // display schema property as popups
-    
-    // get height of th element
-    //var thHeight = $('th').innerHeight();
-    //window.alert(thHeight); //103.510333
-
     let firstHeader = table.find("th").first();
     firstHeader.addClass("schema-popup");
 
@@ -160,21 +155,33 @@ function createInfoTable(item) {
         let header = $(this);
         let headerText = header.text().trim();
         let mappedText = schemaMapping[headerText];
+        
 
         if (mappedText) {
-            let span = $(document.createElement("span")).text(mappedText);
-            span.addClass("popuptext");
+            let popupSpan = $(document.createElement("span")).text(mappedText);
+            popupSpan.addClass("popuptext");
+            popupSpan.css("top", "calc(thHeight - thSpanHeight)");
             header.addClass("popup");
-            header.append(span);
+            header.append(popupSpan);
 
 
             header.on("click", function() {
                 // close popup when another th is clicked
-                $(".popuptext.show").not(span).removeClass("show");
-                span.toggleClass("show");
+                $(".popuptext.show").not(popupSpan).removeClass("show");
+                popupSpan.toggleClass("show");
             });
         }
     });
+
+    // position the popups
+    // get height of th element
+    /*var thHeight = $('th').innerHeight();
+    window.alert(thHeight); //103.510333
+    var thSpan = $('th > span');
+    var thSpanHeight = thSpan.innerHeight();
+    window.alert(thSpanHeight);*/
+
+
 }
 function changeNarrative(narrative, value) {
     curNarrative = narrative;
