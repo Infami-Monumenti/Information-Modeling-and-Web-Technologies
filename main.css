@@ -1407,7 +1407,6 @@ a:hover {
 }*/
 
 
-
 .footer-left{
     width: 35%;
 }
@@ -1441,7 +1440,7 @@ a:hover {
 .footer-right{
     width: 30%;
 }
-.footer .newfooter-center .li a{
+.footer .footer-center .li a{
     display: block;
     color: floralwhite;
     font-size: 18px;
@@ -1474,10 +1473,9 @@ a:hover {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
-  
 }
 
-@media (min-width: 370px){
+@media (min-width: 360px){
     .indexcard-container{
         padding-bottom: 80px !important;
     }
@@ -1491,7 +1489,7 @@ a:hover {
         padding-bottom: 200px;
     }
     .container-fluid-layout{
-        padding-bottom: 100px;
+        padding-bottom: 50px;
     }
 }
 
@@ -1509,7 +1507,7 @@ a:hover {
         padding-bottom: 100px;
     }
     .container-fluid-layout{
-        padding-bottom: 100px;
+        padding-bottom: 50px;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -1526,7 +1524,7 @@ a:hover {
         padding-bottom: 100px;
     }
     .container-fluid-layout{
-        padding-bottom: 100px;
+        padding-bottom: 50px;
     }
 }
 @media (min-width: 992px){
