@@ -1460,13 +1460,7 @@ a:hover {
     padding-right: 5px;
 }
 
-
-@media (max-height: 800px) {
-    footer {
-        position: relative;
-        min-height: calc(100vh - 400px); 
-    }
-}
+/*media queries footer*/
 @media(max-width: 480px){
     .footer-col-loo{
         width: 50%;
@@ -1475,7 +1469,10 @@ a:hover {
     .footer-col-info{
         width: 100%;
         margin-bottom: 5px;
-    
+    }
+    .container-fluid-layout{
+        padding-bottom: 0px;
+        margin-bottom: 0px;
     }
   
 }
@@ -1494,7 +1491,7 @@ a:hover {
         padding-bottom: 200px;
     }
     .container-fluid-layout{
-        padding-bottom: 120px;
+        padding-bottom: 100px;
     }
 }
 
@@ -1512,7 +1509,7 @@ a:hover {
         padding-bottom: 100px;
     }
     .container-fluid-layout{
-        padding-bottom: 120px;
+        padding-bottom: 100px;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -1923,6 +1920,7 @@ figcaption {
         margin: 0;
         padding: 0;
     }
+
 }
 /* Further adjustments for very small screens */
 @media (max-width: 480px) {
@@ -1938,5 +1936,6 @@ figcaption {
         margin: 0;
         padding: 0;
     }
+
 
 }
