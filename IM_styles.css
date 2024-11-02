@@ -14,9 +14,10 @@
     .aboutcard-container{
         overflow-x: hidden !important;
     }
-    /*#body-im {
+    #body-im {
         height:fit-content;
-    }*/
+        /*overflow-y: hidden;*/
+    }
     #main-im {
         display: grid !important;
         grid-template-columns: 45% 45% !important;
