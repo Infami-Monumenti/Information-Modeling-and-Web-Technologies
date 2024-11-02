@@ -1,5 +1,5 @@
 /*media queries*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (orientation: portrait) {
     #padlink{
         margin-top: 8px;
     }
@@ -93,6 +93,40 @@
         top: 37% !important;
     }
 }
+@media screen and (max-width: 900px) and (orientation: landscape) {     
+    .control-narr-nav h6 {
+        font-size: smaller;
+    }
+    .control-narr-nav i {
+        font-size: smaller;
+    }
+    .control-narr-nav #prevBtn, .control-narr-nav #nextBtn {
+        font-size: x-small;
+    }   
+    #infoTitle {
+        margin-top: 0.5rem !important;
+        font-size: large;
+    }
+    #infoCol p {
+        font-size: smaller;
+    }
+    th, td {
+        font-size: x-small !important;
+    }
+    #main-im {
+        height: var(--grid-ls-height);
+        margin-top: 0.1rem !important;
+    }
+    #infoCol, #imgCol {
+        height: var(--grid-ls-height);
+    }
+    #info-wrapper, figure {
+        height: var(--grid-ls-height);
+    }
+    figure img {
+        aspect-ratio: 0.9;
+    }
+}
 @media screen and (max-width: 550px) {        
     .control-narr-nav h6 {
         font-size: smaller;
@@ -124,6 +158,7 @@
         word-wrap: break-word !important;
     }  
 }
+
 /* width */
 ::-webkit-scrollbar {
     width: 3px;
@@ -150,6 +185,7 @@
     --navbar-height: 4em;
     --narr-control-height: 3.5em;
     --main-height: calc(100dvh - var(--navbar-height) - var(--narr-control-height)) !important;
+    --grid-ls-height: calc(100dvh - var(--navbar-height) - var(--narr-control-height) - 4rem);
 }
 html {
     height: 100%;
@@ -157,7 +193,7 @@ html {
 body {
     position: relative;
     background-color: #e3dad0;
-    height: calc(100dvh - var(--main-height)) !important;
+    /*height: calc(100dvh - var(--main-height)) !important;*/
     font-family: "Inter", sans-serif;
 }
 /*.navbarIM {

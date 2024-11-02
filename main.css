@@ -1787,7 +1787,6 @@ figcaption {
     font-size: 2em;
     letter-spacing: 0.5em;
     margin-top: 2.5em;
-    margin-bottom: 0;
 }
 .discLine {
     width: 70%;
@@ -1798,9 +1797,6 @@ figcaption {
     margin-bottom: 4em;
 }
 .discContainer > .row {
-    margin-bottom: 4em;
-}
-.discContainer > .col-md-6 {
     margin-bottom: 4em;
 }
 .discContainer p {
