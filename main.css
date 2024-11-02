@@ -1933,6 +1933,7 @@ figcaption {
     .story-map-container{
         overflow-y: visible;
         margin-bottom: 170px;
+        margin-top: 37px;
     }
 
 }
