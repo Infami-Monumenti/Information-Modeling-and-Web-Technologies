@@ -222,6 +222,7 @@ nav {
     text-decoration: none;
     color: #977060!important;
     border-radius: 30px;
+    margin-bottom: 5px;
 }
 nav a  {
     padding: 0 15px;
@@ -297,7 +298,7 @@ h1{
     height: 300px;
     margin: auto;
     position: relative;
-    width: 90%;
+    width: 100%;
     display: grid;
     place-items: center;
 }
@@ -326,8 +327,8 @@ h1{
     perspective: 100px;
 }
 .indexslider img{
-    height: 350px;
-    width: 250px;
+    height: 350px !important;
+    width: 100% !important;
 
 }
 img:hover{
@@ -1473,6 +1474,16 @@ a:hover {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
+    .storymapfooter{
+        padding: 200px 0;
+        bottom: 0;
+        width: 100%;
+        position: sticky;
+    }
+    .story-map-container{
+        overflow-y: visible;
+        margin-bottom: 200px;
+    }
 }
 
 @media (min-width: 360px){
@@ -1485,11 +1496,11 @@ a:hover {
     .maindisclaimer{
         padding-bottom: 10px;
     }
-    .story-map-container{
-        padding-bottom: 200px;
-    }
     .container-fluid-layout{
         padding-bottom: 50px;
+    }
+    .storymapfooter{
+        margin-top: 170px;
     }
 }
 
@@ -1503,11 +1514,11 @@ a:hover {
     .maindisclaimer{
         padding-bottom: 10px;
     }
-    .story-map-container{
-        padding-bottom: 100px;
-    }
     .container-fluid-layout{
         padding-bottom: 50px;
+    }
+    .storymapfooter{
+        margin-top: 70px;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -1520,11 +1531,12 @@ a:hover {
     .maindisclaimer{
         padding-bottom: 10px;
     }
-    .story-map-container{
-        padding-bottom: 100px;
-    }
+   
     .container-fluid-layout{
         padding-bottom: 50px;
+    }
+    .storymapfooter{
+        margin-top: 70px;
     }
 }
 @media (min-width: 992px){
@@ -1537,11 +1549,11 @@ a:hover {
     .maindisclaimer{
         padding-bottom: 10px;
     }
-    .story-map-container{
-        padding-bottom: 100px;
-    }
     .container-fluid-layout{
         padding-bottom: 30px;
+    }
+    .storymapfooter{
+        margin-top: 70px;
     }
 }
 
@@ -1917,6 +1929,10 @@ figcaption {
     .story-map-container{
         margin: 0;
         padding: 0;
+    }
+    .story-map-container{
+        overflow-y: visible;
+        margin-bottom: 170px;
     }
 
 }
