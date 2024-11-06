@@ -275,13 +275,13 @@ h1{
     justify-content: center;
 }
 #titletop{
-    margin-top: 1em;
+    margin-top: 2em;
     padding-top: 2em;
 }
 .indextitle{
     font-weight: 1000;
     margin-top: 75px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     font-family: solid 'Inter', sans-serif;
     padding-top: 5px;
 }
@@ -298,13 +298,14 @@ h1{
     height: 300px;
     margin: auto;
     position: relative;
-    width: 100%;
+    width: calc(250px * 5);
+    overflow: hidden; 
     display: grid;
     place-items: center;
 }
 .indexslide-track{
     display: flex;
-    width: calc(250px * 32);
+    width: calc(250px * 42);
     animation: scroll 40s linear infinite;
 }
 .indexslide-track:hover{
@@ -319,7 +320,7 @@ h1{
     }
 }
 .index-slide{
-    height: 100px;
+    height: 300px;
     width: 400px;
     display: flex;
     align-items: center;
@@ -327,8 +328,10 @@ h1{
     perspective: 100px;
 }
 .indexslider img{
-    height: 350px !important;
+    height: 300px !important;
     width: 100% !important;
+    object-fit: cover;
+    
 
 }
 img:hover{
@@ -342,7 +345,7 @@ img:hover{
     content: '';
     height: 100%;
     position: absolute;
-    width: 15%;
+    width: 30%;
     z-index: 2;
     padding: 0px;
 
@@ -1474,12 +1477,6 @@ a:hover {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
-    .storymapfooter{
-        padding: 200px 0;
-        bottom: 0;
-        width: 100%;
-        position: sticky;
-    }
     .story-map-container{
         overflow-y: visible;
         margin-bottom: 200px;
@@ -1943,8 +1940,21 @@ figcaption {
         padding: 10px; /* Further adjust padding */
     }
 
-    .story-map-container{
-        margin: 0;
-        padding: 0;
+    .story-map-container {
+        min-height: calc(100vh - var(--footer-height));
+        margin-bottom: 0;
+        padding-bottom: 0;
+        overflow-y:visible;
+    }
+
+    /* Fixando o footer na parte inferior da tela */
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: var(--footer-height); /* Usa a altura definida na variável */
+        z-index: 10;
     }
 }
+
