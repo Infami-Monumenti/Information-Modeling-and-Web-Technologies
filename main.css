@@ -1477,6 +1477,7 @@ a:hover {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
+
     .story-map-container{
         overflow-y: visible;
         margin-bottom: 200px;
@@ -1940,21 +1941,8 @@ figcaption {
         padding: 10px; /* Further adjust padding */
     }
 
-    .story-map-container {
-        min-height: calc(100vh - var(--footer-height));
-        margin-bottom: 0;
-        padding-bottom: 0;
-        overflow-y:visible;
-    }
-
-    /* Fixando o footer na parte inferior da tela */
-    footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: var(--footer-height); /* Usa a altura definida na variável */
-        z-index: 10;
+    .story-map-container{
+        margin: 0;
+        padding: 0;
     }
 }
-
