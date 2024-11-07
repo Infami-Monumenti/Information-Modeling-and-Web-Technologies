@@ -674,8 +674,8 @@ img:hover{
 /*stylle for timeline*/
 
 .timeline-container {
-    margin: 2.5em 0 2.5em 0;
-    padding: 1em 0 5em 0;
+    margin: 0 0 2.5em 0;
+    padding: 0 0 5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
@@ -749,7 +749,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     border-radius: 16px;
     cursor: pointer;
-    margin-top: 10px; 
+    margin-top: 20px; 
 }
 
 .museum-button:hover {
@@ -1819,10 +1819,12 @@ figcaption {
     position: relative; 
     z-index: 1; 
     min-height: calc(var(--navbar-height) - var(--footer-height));
+    width:auto;
+    overflow: auto;
 }
 .doc-title{
     font-family: solid 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: 800;
     text-align: center;
     background-color:rgb(227, 218, 208);
     color: black;
@@ -1830,6 +1832,7 @@ figcaption {
     letter-spacing: 0.5em;
     margin-top: 2em;
     margin-bottom: 0;
+    max-width: 100%;
 }
 
 .doc-line {
@@ -1916,10 +1919,11 @@ figcaption {
     }
 
     .doc-container {
-        margin-left: 0; 
-        margin-right: 0; 
+        margin-left: 5px; 
+        margin-right: 5px; 
         padding: 20px; 
     }
+    
     .story-map-container{
         margin: 0;
         padding: 0;
@@ -1929,20 +1933,32 @@ figcaption {
         margin-bottom: 170px;
         margin-top: 37px;
     }
+    
+
+    .table td, .table th {
+        font-size: 0.85em;
+        padding: 0.5em;
+    }
 
 }
 /* Further adjustments for very small screens */
 @media (max-width: 480px) {
     .sidebar-doc {
-        padding: 10px; /* Further adjust padding */
+        width: 100%;
     }
 
     .doc-container {
         padding: 10px; /* Further adjust padding */
     }
 
+    .doc-title {
+        font-size: 1.3em; 
+        width: 100%;
+    }
+
     .story-map-container{
         margin: 0;
         padding: 0;
     }
+
 }
