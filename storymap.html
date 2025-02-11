@@ -71,31 +71,26 @@
       .then(response => response.json())
       .then(data => {
         console.log("📌 Data loaded from JSON:", data);
-
-        // Check if 'items' exist and is a valid array
+    
         if (!data.items || !Array.isArray(data.items)) {
           console.error("❌ Error: JSON does not contain a valid 'items' list.");
           return;
         }
-
-        // Iterate over each item in the dataset
-        data.items.forEach(item => {
+    
+        data.items.forEach((item, index) => {  // Ensure each item is properly indexed
           if (item.info.latitude && item.info.longitude) {
             const coordinates = [parseFloat(item.info.longitude), parseFloat(item.info.latitude)];
             console.log(`📌 Adding marker for ${item.name} at ${coordinates}`);
-            
-            // Create a map marker
-            const marker = new mapboxgl.Marker({ color: '#228B22' })
+    
+            const marker = new mapboxgl.Marker({ color: '#977060' })
               .setLngLat(coordinates)
               .addTo(map);
-
-            // Ensure item.iId exists and is valid
-            const itemId = item.iId !== undefined ? item.iId : '0'; // Fallback to '0' if undefined
-
-            // Create a pop-up for the marker
+    
+            // Make sure item.iId exists, or use the index as fallback
+            const itemId = item.iId !== undefined ? item.iId : index; 
+    
             const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
-
-            // Set the content of the pop-up with the correct link
+    
             popup.setHTML(`
               <div class="popup-content">
                 <h4>${item.name}</h4>
@@ -103,23 +98,20 @@
                 <p><strong>Location:</strong> ${item.info.place}</p>
                 <p><strong>Date:</strong> ${item.info.date}</p>
                 <p>${item.info['text 1'].substring(0, 150)}...</p>
-                <p><a href="infami_monumenti2.html?itemId=${itemId}" class="btn btn-sm btn-primary">Learn More</a></p>
+                <p><a href="infami_monumenti2.html?itemId=${itemId}" class="custom-btn-storymap">Learn More</a></p>
               </div>
             `);
-
-            // Attach the pop-up to the marker
+    
             marker.setPopup(popup);
-
-            // Open the pop-up when clicking the marker
+    
             marker.getElement().addEventListener('click', () => {
               popup.addTo(map);
             });
-
-            // Close the pop-up when clicking anywhere else on the map
+    
             map.on('click', (e) => {
               const features = map.queryRenderedFeatures(e.point);
               if (!features.length) {
-                popup.remove(); // Close all open pop-ups
+                popup.remove();
               }
             });
           } else {

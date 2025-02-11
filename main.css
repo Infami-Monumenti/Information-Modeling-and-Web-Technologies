@@ -177,22 +177,18 @@ a:hover {
     min-height: calc(var(--navbar-height) - var(--footer-height));
     overflow-y: hidden;
 }
-.story-map-iframe {
-    width: 100%;
-    padding: 2em;
-    height: 500px;
-    border: 2px solid black;
-}
-.storymap-container .vso-caption,
-.storymap-container .vso-text {
-    font-family: 'Inter', sans-serif !important;
-}
-.storymap-container .vso-title {
-    font-family: 'Cormorant Garamond', serif !important;
+.custom-btn-storymap {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #736f4c; /* Cor personalizada */
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
 }
 
-.container-fluid-layout {
-    margin-bottom: 0.1em;
+.custom-btn-storymap:hover {
+    background-color: #5e5b3a; /* Tom mais escuro ao passar o mouse */
 }
 
 /* INDEX (homepage) */
@@ -1477,11 +1473,6 @@ a:hover {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
-
-    .story-map-container{
-        overflow-y: visible;
-        margin-bottom: 200px;
-    }
 }
 
 @media (min-width: 360px){
@@ -1496,9 +1487,6 @@ a:hover {
     }
     .container-fluid-layout{
         padding-bottom: 50px;
-    }
-    .storymapfooter{
-        margin-top: 170px;
     }
 }
 
@@ -1515,9 +1503,6 @@ a:hover {
     .container-fluid-layout{
         padding-bottom: 50px;
     }
-    .storymapfooter{
-        margin-top: 70px;
-    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .indexcard-container{
@@ -1533,9 +1518,6 @@ a:hover {
     .container-fluid-layout{
         padding-bottom: 50px;
     }
-    .storymapfooter{
-        margin-top: 70px;
-    }
 }
 @media (min-width: 992px){
     .indexcard-container{
@@ -1549,9 +1531,6 @@ a:hover {
     }
     .container-fluid-layout{
         padding-bottom: 30px;
-    }
-    .storymapfooter{
-        margin-top: 70px;
     }
 }
 
@@ -1923,17 +1902,6 @@ figcaption {
         margin-right: 5px; 
         padding: 20px; 
     }
-    
-    .story-map-container{
-        margin: 0;
-        padding: 0;
-    }
-    .story-map-container{
-        overflow-y: visible;
-        margin-bottom: 170px;
-        margin-top: 37px;
-    }
-    
 
     .table td, .table th {
         font-size: 0.85em;
@@ -1955,10 +1923,4 @@ figcaption {
         font-size: 1.3em; 
         width: 100%;
     }
-
-    .story-map-container{
-        margin: 0;
-        padding: 0;
-    }
-
 }
