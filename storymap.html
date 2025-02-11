@@ -73,7 +73,7 @@
                 <li><a class="dropdown-item" href="infami_monumenti2.html"><b>Secret things</b></a></li>
                 <li><a class="dropdown-item" href="timeline.html" target="_blank">Phallic culture over the years</a></li>
                 <li><a class="dropdown-item" href="storymap.html" target="_blank">Phallic culture geographical location</a></li>
-                <li><a class="dropdown-item" href="#" target="_blank">Phallic culture expressions</a></li>
+                <li><a class="dropdown-item" href="museum_layout.html" target="_blank">Phallic culture expressions</a></li>
               </ul>
             </li>
           </ul>
@@ -168,27 +168,12 @@
                 // Adjust the map position dynamically so the pop-up remains visible
                 const markerCoordinates = coordinates;
                 const bounds = map.getBounds();
-                
-                let yOffset = 0;
-                if (markerCoordinates[1] > bounds.getNorth() - 0.1) {
-                    yOffset = -200;
-                } else if (markerCoordinates[1] < bounds.getSouth() + 0.1) {
-                    yOffset = 200;
-                }
-            
-                let xOffset = 0;
-                if (markerCoordinates[0] > bounds.getEast() - 0.1) {
-                    xOffset = -100;
-                } else if (markerCoordinates[0] < bounds.getWest() + 0.1) {
-                    xOffset = 100;
-                }
             
                 // Move the map to keep the pop-up visible
                 map.easeTo({
-                    center: markerCoordinates,
-                    offset: [xOffset, yOffset],
-                    duration: 1000
-                });
+                  center: [markerCoordinates[0], map.getCenter().lat], // Mantém a latitude atual
+                  duration: 1000
+              });
           
                 // Create the pop-up with the correct link
                 popup.setHTML(`

@@ -33,7 +33,7 @@
     --sidebar-doc: 280px;
 }
 /* General body styling */
-body {
+html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -88,22 +88,24 @@ a:hover {
 }
 
 .container-fluid-layout {
-    margin-top: 4.5em;
+    margin-top: var(--navbar-height);
     height: calc(100vh - var(--navbar-height) - var(--footer-height));
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     overflow-y: auto;
-    margin-bottom: -7.5em;
+    margin-bottom: 0;
+    padding-top: 3em;
 }
 
 .container-fluid-layout {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: auto;
     flex: 1;
 }
 
 .container-fluid-layout .row {
-    height: calc(50% - var(--navbar-height)/2 - var(--footer-height)/2);
+    flex: 1;
+    height: auto;
 }
 
 /* Carousel styles */
@@ -173,7 +175,7 @@ a:hover {
 
 /* Story Map Container Page */
 .story-map-container {
-    margin: 2.5em 0 2.5em 0;
+    margin: 5em 0 1.5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
