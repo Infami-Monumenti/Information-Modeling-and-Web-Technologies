@@ -7,87 +7,129 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="footer.css">
-  <!--our vaficon-->
   <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
+  
+  <!-- Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css" rel="stylesheet">
+  <style>
+    #map {
+      width: 100%;
+      height: 600px;
+    }
+    .mapboxgl-popup-content {
+      border: 0.5em solid #977060 !important;
+      background-color: rgb(227, 218, 208) !important;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .mapboxgl-popup-content h4 {
+      font-weight: bold;
+    }
+    .mapboxgl-popup-content p {
+      font-weight: 300;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Infami Monumenti</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" id="padlink" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="disclaimer.html">Disclaimer</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Secret things
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="infami_monumenti2.html">Secret Things</a></li>
-                  <li><a class="dropdown-item" href="timeline.html">Phallic culture over the years</a></li>
-                  <li><a class="dropdown-item active" href="storymap.html">Phallic culture geographical location</a></li>
-                  <li><a class="dropdown-item" href="museum_layout.html">Phallic culture expressions</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-  <div class="story-map-container">
-      <br>
-      <iframe src="https://uploads.knightlab.com/storymapjs/336c90b9ae681fd1c12a05bea902e924/history-of-phallic-culture/index.html" frameborder="0" width="100%" height="700"></iframe>
-  </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Infami Monumenti</a>
+      </div>
+    </nav>
+  </header>
   
+  <div class="story-map-container">
+    <div id="map"></div>
+  </div>
 
-  <footer class="storymapfooter"> <!--riprendere gli altri colori del logo nel footer-->
+  <footer class="storymapfooter">
     <div class="container-fluid footer-container">
       <div class="row footer-row">
-        <div class="col-md-6 footer-col-logo d-flex">
-          <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
-        </div>
-        <!--<div class="col-md-4 footer-col">
-          empty column
-        </div>-->
-        <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
-          <a href="index.html"><h3>Infami Monumenti</h3></a>
-            <p>
-            <a href="documentation.html">Project Documentation</a><br>
-            <a href="about.html">About</a><br>
-            <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a><br>
-            </p>
-        </div>
-      <div class="row copyright-row d-flex">
         <p>2024@Infamimonumenti</p>
-      </div>
       </div>
     </div>
   </footer>        
-      
-  <script> //CSS for the StoryMap
-    document.querySelector('.storymap-frame').onload = function() {
-      var iframe = document.querySelector('.storymap-frame').contentWindow.document;
-      var style = document.createElement('style');
-      style.type = 'text/css';
-      style.innerHTML = `
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;700&display=swap');
-        .caption, .text { font-family: 'Inter', sans-serif !important; }
-        .title { font-family: 'Cormorant Garamond', serif !important; }
-      `;
-      iframe.head.appendChild(style);
-    };
-  </script>    
+  
+  <!-- Mapbox JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWVuZWdhdGNhcmxhIiwiYSI6ImNseTh0dXcyYTBmcHIya3M3OGR1bmdyaDgifQ.xJi0wSrGb1FTd0TRWt-8mQ';
+    
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/menegatcarla/cly8vmelv00hv01pnej7s4ak0',
+      center: [10, 20],
+      zoom: 2
+    });
+    
+    fetch('data/data_map.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log("📌 Data loaded from JSON:", data);
+
+        // Check if 'items' exist and is a valid array
+        if (!data.items || !Array.isArray(data.items)) {
+          console.error("❌ Error: JSON does not contain a valid 'items' list.");
+          return;
+        }
+
+        // Iterate over each item in the dataset
+        data.items.forEach(item => {
+          if (item.info.latitude && item.info.longitude) {
+            const coordinates = [parseFloat(item.info.longitude), parseFloat(item.info.latitude)];
+            console.log(`📌 Adding marker for ${item.name} at ${coordinates}`);
+            
+            // Create a map marker
+            const marker = new mapboxgl.Marker({ color: '#228B22' })
+              .setLngLat(coordinates)
+              .addTo(map);
+
+            // Ensure item.iId exists and is valid
+            const itemId = item.iId !== undefined ? item.iId : '0'; // Fallback to '0' if undefined
+
+            // Create a pop-up for the marker
+            const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
+
+            // Set the content of the pop-up with the correct link
+            popup.setHTML(`
+              <div class="popup-content">
+                <h4>${item.name}</h4>
+                <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover;">
+                <p><strong>Location:</strong> ${item.info.place}</p>
+                <p><strong>Date:</strong> ${item.info.date}</p>
+                <p>${item.info['text 1'].substring(0, 150)}...</p>
+                <p><a href="infami_monumenti2.html?itemId=${itemId}" class="btn btn-sm btn-primary">Learn More</a></p>
+              </div>
+            `);
+
+            // Attach the pop-up to the marker
+            marker.setPopup(popup);
+
+            // Open the pop-up when clicking the marker
+            marker.getElement().addEventListener('click', () => {
+              popup.addTo(map);
+            });
+
+            // Close the pop-up when clicking anywhere else on the map
+            map.on('click', (e) => {
+              const features = map.queryRenderedFeatures(e.point);
+              if (!features.length) {
+                popup.remove(); // Close all open pop-ups
+              }
+            });
+          } else {
+            console.warn(`⚠️ Missing coordinates for: ${item.name}`);
+          }
+        });
+      })
+      .catch(error => console.error('❌ Error loading JSON:', error));
+  </script>
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
