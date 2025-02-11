@@ -34,6 +34,9 @@
 }
 /* General body styling */
 body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(227, 218, 208);
     color: rgb(0, 0, 0); /* #000000 */
     font-family: 'Inter', sans-serif;
@@ -174,21 +177,22 @@ a:hover {
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+    flex-grow: 1;
     min-height: calc(var(--navbar-height) - var(--footer-height));
     overflow-y: hidden;
 }
 .custom-btn-storymap {
     display: inline-block;
-    padding: 8px 12px;
-    background-color: #736f4c; /* Cor personalizada */
+    padding: 4px 8px; /* Reduce padding */
+    font-size: 12px; /* Reduce font size */
+    border-radius: 4px; /* Slightly round corners */
+    background-color: #736f4c; /* Keep the button color */
     color: white;
     text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
 }
 
 .custom-btn-storymap:hover {
-    background-color: #5e5b3a; /* Tom mais escuro ao passar o mouse */
+    background-color: #5e5b3a; /* Darker shade on hover */
 }
 
 /* INDEX (homepage) */

@@ -17,10 +17,24 @@
       height: 600px;
     }
     .mapboxgl-popup-content {
-      border: 0.5em solid #977060 !important;
       background-color: rgb(227, 218, 208) !important;
-      padding: 10px;
-      border-radius: 8px;
+      color: black !important; /* Text color */
+      font-size: 14px; /* Adjust font size */
+      line-height: 1.2; /* Reduce space between lines */
+      padding: 8px; /* Reduce padding */
+      border-radius: 8px; /* Keep rounded corners */
+    }
+
+    .mapboxgl-popup-content h4 {
+      font-size: 16px; /* Reduce heading size */
+      margin-bottom: 5px; /* Reduce space below heading */
+      font-weight: bold;
+      color: black !important; /* Ensure title is black */
+    }
+    
+    .mapboxgl-popup-content p {
+        margin: 2px 0; /* Reduce spacing between paragraphs */
+        color: black !important;
     }
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
     body {
@@ -36,9 +50,34 @@
 </head>
 <body>
   <header>
+    <!--navbar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Infami Monumenti</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="padlink" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Secret things
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="infami_monumenti2.html"><b>Secret things</b></a></li>
+                <li><a class="dropdown-item" href="timeline.html" target="_blank">Phallic culture over the years</a></li>
+                <li><a class="dropdown-item" href="storymap.html" target="_blank">Phallic culture geographical location</a></li>
+                <li><a class="dropdown-item" href="#" target="_blank">Phallic culture expressions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -47,13 +86,29 @@
     <div id="map"></div>
   </div>
 
-  <footer class="storymapfooter">
+  <footer> <!--riprendere gli altri colori del logo nel footer-->
     <div class="container-fluid footer-container">
       <div class="row footer-row">
-        <p>2024@Infamimonumenti</p>
+        <div class="col-md-6 footer-col-logo d-flex">
+          <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
+        </div>
+        <!--<div class="col-md-4 footer-col">
+          empty column
+        </div>-->
+        <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
+          <a href="index.html"><h3>Infami Monumenti</h3></a>
+            <p>
+            <a href="documentation.html">Project Documentation</a><br>
+            <a href="about.html">About</a><br>
+            <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies" target="_blank">GitHub Repository</a><br>
+            </p>
+        </div>
+      <div class="row copyright-row d-flex">
+        <p>2024<i class="fa-light fa-copyright"></i>Infamimonumenti</p>
+      </div>
       </div>
     </div>
-  </footer>        
+  </footer>               
   
   <!-- Mapbox JS -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
@@ -87,26 +142,71 @@
               .addTo(map);
     
             // Make sure item.iId exists, or use the index as fallback
-            const itemId = item.iId !== undefined ? item.iId : index; 
+            const itemId = item.iId; // Garante que sempre usa o ID correto do JSON
     
             const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
     
             popup.setHTML(`
-              <div class="popup-content">
-                <h4>${item.name}</h4>
-                <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover;">
-                <p><strong>Location:</strong> ${item.info.place}</p>
-                <p><strong>Date:</strong> ${item.info.date}</p>
-                <p>${item.info['text 1'].substring(0, 150)}...</p>
-                <p><a href="infami_monumenti2.html?itemId=${itemId}" class="custom-btn-storymap">Learn More</a></p>
-              </div>
+                <div class="popup-content">
+                    <h4 style="margin-bottom: 5px;">${item.name}</h4>
+                    <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
+                    <p style="margin: 2px 0;"><strong>Location:</strong> ${item.info.place}</p>
+                    <p style="margin: 2px 0;"><strong>Date:</strong> ${item.info.date}</p>
+                    <p style="margin: 2px 0;">${item.info['text 1'].substring(0, 150)}...</p>
+                    <p style="margin: 2px 0;">
+                        <a href="infami_monumenti2.html?itemId=${itemId}" class="custom-btn-storymap">Learn More</a>
+                    </p>
+                </div>
             `);
     
             marker.setPopup(popup);
     
             marker.getElement().addEventListener('click', () => {
+                // Get the correct item ID from the JSON
+                const itemId = item.info.iId; 
+            
+                // Adjust the map position dynamically so the pop-up remains visible
+                const markerCoordinates = coordinates;
+                const bounds = map.getBounds();
+                
+                let yOffset = 0;
+                if (markerCoordinates[1] > bounds.getNorth() - 0.1) {
+                    yOffset = -200;
+                } else if (markerCoordinates[1] < bounds.getSouth() + 0.1) {
+                    yOffset = 200;
+                }
+            
+                let xOffset = 0;
+                if (markerCoordinates[0] > bounds.getEast() - 0.1) {
+                    xOffset = -100;
+                } else if (markerCoordinates[0] < bounds.getWest() + 0.1) {
+                    xOffset = 100;
+                }
+            
+                // Move the map to keep the pop-up visible
+                map.easeTo({
+                    center: markerCoordinates,
+                    offset: [xOffset, yOffset],
+                    duration: 1000
+                });
+          
+                // Create the pop-up with the correct link
+                popup.setHTML(`
+                    <div class="popup-content">
+                        <h4>${item.name}</h4>
+                        <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
+                        <p style="margin: 2px 0;"><strong>Location:</strong> ${item.info.place}</p>
+                        <p style="margin: 2px 0;"><strong>Date:</strong> ${item.info.date}</p>
+                        <p style="margin: 2px 0;">${item.info['text 1'].substring(0, 150)}...</p>
+                        <p style="margin: 2px 0;">
+                            <a href="infami_monumenti2.html?itemId=${itemId}" class="custom-btn-storymap">Learn More</a>
+                        </p>
+                    </div>
+                `);
+            
+              // Show the pop-up
               popup.addTo(map);
-            });
+          });
     
             map.on('click', (e) => {
               const features = map.queryRenderedFeatures(e.point);
