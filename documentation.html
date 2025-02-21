@@ -172,8 +172,8 @@
             </figure>
             <div id="small-layout-screenshot">
               <figure class="figure doc-figure"><img src="images/museumlayout_phone.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
-              <figure class="figure doc-figure"><img src="images/museumlayout_phone_1.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot table"><figcaption class="caption-sm-screen"></figcaption>The home page on mobile screen size</figure>
-              <figure class="figure doc-figure"><img src="images/museumlayout_phone2.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot offcanvas"><figcaption class="caption-sm-screen"></figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/museumlayout_phone_1.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption>The home page on mobile screen size</figure>
+              <figure class="figure doc-figure"><img src="images/museumlayout_phone2.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
             </div>
             <br>
           </div>
@@ -222,14 +222,23 @@
         <div class="doc-content" id="storymap_content">
           <h2>StoryMap</h2>
           <br>
-          <p>This interactive map, created with <a href= "https://storymap.knightlab.com/?_gl=1*julg32*_ga*MTY4NTkyMDIxMC4xNzEzODczOTkx*_ga_8F4WPDMPL5*MTcyMTM5MzI2OS4xMC4xLjE3MjEzOTMyNzkuMC4wLjA.">Knight Lab's StoryMap</a>, traces the evolution of phallic culture through time and geography. Each slide highlights significant historical periods and locations, represented by the objects selected for this project. Custom markers and multimedia content enhance the narrative, offering viewers an engaging, educational experience. The choice for this tool between others was determined by the facts that is designed to be user-friendly, easily navigable, and shareable.</p>
+          <p>This interactive map, created with <a href= "https://www.mapbox.com/">Mapbox</a>, traces the evolution of phallic culture through geography. Each pin in the map provide the location of one object selected for this project. Clicking on the pin, the map is centralized in that location and opens a pop-up box with the image of the object, the date and the initial part of the text about the object. The bottom "Learn More" offers the possibility to go to the object page.</p>
           <br>
           <div class="doc-content" id="layout_storymap">
             <h3>Layout</h3>
             <br>
-            <p>StoryMap features a clean, user-friendly layout designed for seamless storytelling. The main screen displays an interactive map alongside a narrative panel. Each "slide" in the story corresponds to a specific location on the map, highlighted as viewers navigate through the slides. The narrative panel contains multimedia content, including text, images, and videos, providing context and enhancing the story. Some media elements need to be programmed in HTML within the tool. Users can easily switch between slides using navigation arrows or a timeline at the bottom.</p>
+            <p>The map is in a container box that is adapted to every size of scream. The functionality of navigating the map in all directions simply by dragging it, and the reproduction of the map from east to west, allows users to have the experience of “traveling” around the world, even in the flat format of screens and the map provided. At the same time, the choice to center the map when an object is selected attempts to focus the user’s attention on the connections from the chosen point, also trying to provide the sensation that there is no central culture, emphasizing an equivalence of objects.</p>
             <br>
           </div>
+          <figure class="figure doc-figure">
+              <img src="images/storymap_desc.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+              <figcaption class="figure-caption text-center">A screenshot of the map page on laptop screen sizes</figcaption>
+            </figure>
+          <div id="small-layout-screenshot">
+              <figure class="figure doc-figure"><img src="images/storymap_cel1.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/storymap_cel.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption>The map page on mobile screen size</figure>
+              <figure class="figure doc-figure"><img src="images/storymap_cel2.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+            </div>
           <div class="doc-content" id="colors_storymap">
             <h3>Colors</h3>
             <br>
@@ -268,12 +277,6 @@
                   <div class="palette__info__hexcode">#555555</div>
                 </div>
               </div>
-          </div>
-          <div class="doc-content" id="typography_storymap">
-            <h3>Typography</h3>
-            <br>
-            <p>While Mapbox offers a wide typographic variety, allowing the use of the same fonts that we use in the rest of the project, StoryMap does not. Despite offering a very extensive API, attempts to change the source proved unsuccessful, and according to Knightlab itself, this is a problem that has not yet been resolved in the tool's JavaScript. However, it was possible to find fonts with similar characteristics to those chosen on the rest of the page: for the titles the font is <a href = "https://fonts.google.com/specimen/Raleway">Raleway</a> and for the other texts <a href="https://fonts.google.com/specimen/Bitter">Bitter</a> was used.</p>
-            <br>
           </div>
           <div class="doc-content" id="timeline_content"></div>
           <h2>Timeline</h2>

@@ -18,22 +18,22 @@
     }
     .mapboxgl-popup-content {
       background-color: rgb(227, 218, 208) !important;
-      color: black !important; /* Text color */
-      font-size: 14px; /* Adjust font size */
-      line-height: 1.2; /* Reduce space between lines */
-      padding: 8px; /* Reduce padding */
-      border-radius: 8px; /* Keep rounded corners */
+      color: black !important; 
+      font-size: 14px;
+      line-height: 1.2; 
+      padding: 8px; 
+      border-radius: 8px; 
     }
 
     .mapboxgl-popup-content h4 {
-      font-size: 16px; /* Reduce heading size */
-      margin-bottom: 5px; /* Reduce space below heading */
+      font-size: 16px; 
+      margin-bottom: 5px; 
       font-weight: bold;
-      color: black !important; /* Ensure title is black */
+      color: black !important; 
     }
     
     .mapboxgl-popup-content p {
-        margin: 2px 0; /* Reduce spacing between paragraphs */
+        margin: 2px 0; 
         color: black !important;
     }
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
@@ -81,6 +81,8 @@
       </div>
     </nav>
   </header>
+
+
   
   <div class="story-map-container">
     <div id="map"></div>
@@ -132,7 +134,7 @@
           return;
         }
     
-        data.items.forEach((item, index) => {  // Ensure each item is properly indexed
+        data.items.forEach((item, index) => {  
           if (item.info.latitude && item.info.longitude) {
             const coordinates = [parseFloat(item.info.longitude), parseFloat(item.info.latitude)];
             console.log(`📌 Adding marker for ${item.name} at ${coordinates}`);
@@ -142,7 +144,7 @@
               .addTo(map);
     
             // Make sure item.iId exists, or use the index as fallback
-            const itemId = item.iId; // Garante que sempre usa o ID correto do JSON
+            const itemId = item.iId;
     
             const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
     
@@ -162,7 +164,6 @@
             marker.setPopup(popup);
     
             marker.getElement().addEventListener('click', () => {
-                // Get the correct item ID from the JSON
                 const itemId = item.info.iId; 
             
                 // Adjust the map position dynamically so the pop-up remains visible
@@ -171,7 +172,7 @@
             
                 // Move the map to keep the pop-up visible
                 map.easeTo({
-                  center: [markerCoordinates[0], map.getCenter().lat], // Mantém a latitude atual
+                  center: [markerCoordinates[0], map.getCenter().lat], 
                   duration: 1000
               });
           
@@ -189,7 +190,6 @@
                     </div>
                 `);
             
-              // Show the pop-up
               popup.addTo(map);
           });
     
