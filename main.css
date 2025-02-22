@@ -40,7 +40,7 @@ html, body {
     background-color: rgb(227, 218, 208);
     color: rgb(0, 0, 0); /* #000000 */
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.4; /* Adjusted line-height for body text */
     text-align: justify;
@@ -71,7 +71,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1rem; /* Font size for h3, smaller than h2 */
+    font-size: 1.2rem;
 }
 
 a {
@@ -1788,8 +1788,6 @@ figcaption {
 }
 .discContainer p {
     margin-top: 1em;
-    margin-left: 15%;
-    margin-right: 15%;
 }
 .discLink {
     color: #977060;
@@ -1801,8 +1799,8 @@ figcaption {
 /*Style for documentation page*/
 .doc-container {
     flex: 1;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 20%;
+    margin-right: 15%;
     margin-top: 0;
     padding-top: 5em;
     position: relative; 
@@ -1828,9 +1826,6 @@ figcaption {
     width: var(--container-width);
     height: var(--container-height);
 }
-.doc-container p {
-    font-weight: 300;
-}
 .doc-container a {
     color: #977060
 }
@@ -1839,20 +1834,20 @@ figcaption {
     font-weight: bold;
 }
 .doc-content{
-    padding-top: 5em;
+    padding-top: 1.5em;
 }
 .sidebar-doc {
     position: fixed;
-    padding: 1em 1em 6em 1em;
+    padding: 6em 1em 1em 1em;
     overflow-y: auto;
     top: 0;
     align-self: flex-start;
     background-color: white; 
-    color: rgb(​219, 214, 197); 
+    opacity: 95%;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     line-height: 2;
-    font-size: 1rem; 
+    font-size: 1.2em; 
     top: var(--navbar-height);
     bottom: var(--footer-height);
     left: 0;
@@ -1861,13 +1856,34 @@ figcaption {
     min-height: 100%; 
 }
 .side-link {
-    color: rgb (​219, 214, 197); 
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    line-height: 1.4;
-    padding: 2em;
+    color: #977060 !important;
+    font-size: 1rem;
+    line-height: 1em;
+    text-decoration: underline !important;
+    padding: 8px 12px;
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
 }
+
+.side-link:hover {
+    color: black !important; 
+    font-weight: bold;
+}
+
 #narratives_content figcaption {
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.caption-sm-screen {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.figure-caption-text-center{
+    text-align: center;
     font-style: italic;
     font-size: small;
     padding: 0 0.5rem;
