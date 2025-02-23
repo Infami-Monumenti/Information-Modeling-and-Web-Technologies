@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <!--our stylesheet-->
         <link rel="stylesheet" type="text/css" href="IM_styles.css">
-        <link rel="stylesheet" type="text/css" href="footer.css">
         <!--our js-->
         <script src="script.js" defer></script>
         <!--jQuery-->
@@ -66,7 +65,7 @@
                 <div class="col-sm-12 col-md-8 narr-ctrl-nav">
                   <ul id="nav-ul">
                   <li class="narr-ctrl">
-                    <button class="btn btn-outline-dark btn-sm disabled navigationButton" id="prevBtn" type="button">Main button</button>
+                    <button class="btn btn-outline-dark btn-sm disabled navigationButton" id="prevBtn" type="button">Previous item</button>
                   </li>
                   <li class="narr-ctrl">
                     <div class="container narr-title-container">
@@ -74,7 +73,7 @@
                     </div>
                   </li>
                   <li class="narr-ctrl">
-                    <button class="btn btn-outline-dark btn-sm disabled navigationButton" id="nextBtn" type="button">Main button</button>
+                    <button class="btn btn-outline-dark btn-sm disabled navigationButton" id="nextBtn" type="button">Next item</button>
                   </li>
                   </ul>
                 </div>
@@ -112,7 +111,7 @@
                       
                   </div>
                       <div id="tableCol">
-                          <table class="table table-hover">
+                          <table class="table table-hover" id="table">
                               <tbody id="info">
                               </tbody>
                               <!--<tfoot>
@@ -127,6 +126,9 @@
               </div>
           </div>
         </main>
+        <!--full article overlay-->
+        <div class="container-fluid d-none" id="fullText"></div>
+
         <!--offcanvas-->
         <div class="offcanvas offcanvas-start narratives-list" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
@@ -157,7 +159,7 @@
                 <h6 id="see-schema">See Schema Ontology properties:</h6>
                 <p>The same information displayed in the table has been mapped according to properties from <a href="" target="_blank">Schema</a> Ontology. You can see the matching Schema property by clicking on the features in the table. More information about Schema and the properties we selected can be found in the <a href="documentation.html" target="_blank">project documentation</a>.</p>
                 <h6 id="use-offcanvas">Select a narrative:</h6>
-                <p>In order to make the browsing experience easier, times, places and genres to which the items in our collection are associated can be selected from the icons on the top.</p>
+                <p>In order to make the browsing experience easier, times, places and genres to which the items in our collection are associated can be selected by clicking on the icons on the top.</p>
               </div>
             </div>
           </div>

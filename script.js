@@ -9,17 +9,10 @@ var currentSelection = []; // Definindo currentSelection no escopo global
 var timeList = [];
 var placeList = [];
 var genreList = [];
-// additional variables for ontology aligned json
-var schema_items = [];
-//var schema_item = {};
-var schema_narratives = [];
-var schema_curNarrative = "";
-var schema_curVal = "";
-var schema_curSort = "";
-var schema_currentSelection = [];
 // mapping with schema properties
 var schemaMapping = {
     "time": "dateCreated",
+    "temporal": "temporalCoverage",
     "conservation location": "spatial",
     "author": "author",
     "authority": "sameAs",
@@ -65,33 +58,49 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 function prepareNarratives() {
-    //alert("preparing narratives")
     currentSelection = items.filter(i => i.info.narratives[curNarrative] == curVal)
     console.log(JSON.stringify(currentSelection))
-currentSelection.sort((i,j) => {
-    if (i["iId"] < j["iId"]) return -1;
-    if (i["iId"] > j["iId"]) return 1;
-    return 0;
-});
-if (currentSelection.length==0)
-    currentSelection = items
-var index = currentSelection.findIndex(i => i["iId"] == curSort) // possible error here. The findIndex function evalutes to -1, so the first item in the array is always displayed
-if (index == -1) index = 0
-showInfo(index)
+    currentSelection.sort((i,j) => {
+        if (i["iId"] < j["iId"]) return -1;
+        if (i["iId"] > j["iId"]) return 1;
+        return 0;
+    });
+    if (currentSelection.length==0)
+        currentSelection = items
+    var index = currentSelection.findIndex(i => i["iId"] == curSort) 
+    if (index == -1) index = 0
+    showInfo(index)
 };
+
+const infoTitle = document.getElementById("infoTitle");
+const shortInfo = $("#text1");
+const figImage = $("#img");
+const figCaption = $("#item-figcaption");
+const longerInfo = $("#text2");
+const fullInfo = $("#text3");
+const infoContainer = $("#info-wrapper")
+const metaTable = $("#table")
 
 function showInfo(index) {
     var item = currentSelection[index];
-    console.log(JSON.stringify(item));
     curSort = item["iId"];
 
-    document.getElementById("infoTitle").innerHTML = item.name;
-    document.getElementById("text1").innerHTML = item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>';
-    document.getElementById("img").src = item.info.image;
-    document.getElementById("img").alt = item.name;
-    document.getElementById("item-figcaption").innerHTML = item.name;
-    document.getElementById("text2").innerHTML = item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>';
-    document.getElementById("text3").innerHTML = item.info["text 3"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Back</a>';
+    infoTitle.innerHTML = item.name;
+    shortInfo.html(item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>');
+    figImage.attr('src', item.info.image);
+    figImage.attr('alt', item.name);
+    figImage.css("aspect-ratio", item.display["aspect ratio"])
+    figCaption.html(item.name);
+    longerInfo.html(item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>');
+    //fullInfo.html(item.info["text 3"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Back</a>');
+    
+    // for full html
+    document.getElementById("fullText").dataset.uri = item.info["text 3"];
+
+    // hide table on small screen when full text is displayed
+    /* if (window.matchMedia("(max-width: 550px)").matches) {
+        metaTable.css("height", item.display.height)
+    } */
 
     // ensuring text1 is the first to be displayed when the item or the narrative changes
     if ($("#text1").hasClass("d-none")) {
@@ -103,24 +112,56 @@ function showInfo(index) {
 }
 
 function showText1() {
-    $("#text1").removeClass("d-none");
-    $("#text3").addClass("d-none");
-    $("#text2").addClass("d-none");
-    $("#info-wrapper").animate({scrollTop: 0}, "fast")
+    shortInfo.removeClass("d-none");
+    fullInfo.addClass("d-none");
+    longerInfo.addClass("d-none");
+    infoContainer.animate({scrollTop: 0}, "fast")
 }
 
+/*function showText2() {
+    shortInfo.addClass("d-none");
+    fullInfo.addClass("d-none");
+    longerInfo.removeClass("d-none");
+    infoContainer.animate({scrollTop: 0}, "fast")
+}*/
+
+// for full html
 function showText2() {
     $("#text1").addClass("d-none");
     $("#text3").addClass("d-none");
     $("#text2").removeClass("d-none");
+    $("#fullText").addClass("d-none");
     $("#info-wrapper").animate({scrollTop: 0}, "fast")
 }
 
+/*function showText3() {
+    shortInfo.addClass("d-none");
+    longerInfo.addClass("d-none");
+    fullInfo.removeClass("d-none");
+    infoContainer.animate({scrollTop: 0}, "fast")
+}*/
+
+// for full html
 function showText3() {
-    $("#text1").addClass("d-none");
-    $("#text2").addClass("d-none");
-    $("#text3").removeClass("d-none");
-    $("#info-wrapper").animate({scrollTop: 0}, "fast")
+    var uri = document.getElementById("fullText").dataset.uri
+    fetch(uri)
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("fullText").innerHTML = data;
+        $("#fullText").removeClass("d-none").fadeIn("slow");
+        $("#text1").addClass("d-none");
+        $("#text2").addClass("d-none");
+        $("#fullText").scrollTo(0,0)
+
+        // hide table on small screen when full text is displayed
+        if (window.matchMedia("(max-width: 900px)") && tableCol.hasClass("visible")) {
+            tableCol.removeClass("visible")
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);  
+        window.alert("Data not fetched");
+    });
 }
 
 function createInfoTable(item) {
@@ -160,7 +201,16 @@ function createInfoTable(item) {
         if (mappedText) {
             let popupSpan = $(document.createElement("span")).text(mappedText);
             popupSpan.addClass("popuptext");
-            popupSpan.css("top", "calc(thHeight - thSpanHeight)");
+
+            // position the popups
+            // get height of th element
+            var thHeight = header.innerHeight();
+           
+            var thSpanHeight = popupSpan.innerHeight();
+            var topPosition = thHeight / 2 - thSpanHeight;
+            
+
+            popupSpan.css({top: `${topPosition}px`});
             header.addClass("popup");
             header.append(popupSpan);
 
@@ -172,16 +222,6 @@ function createInfoTable(item) {
             });
         }
     });
-
-    // position the popups
-    // get height of th element
-    /*var thHeight = $('th').innerHeight();
-    window.alert(thHeight); //103.510333
-    var thSpan = $('th > span');
-    var thSpanHeight = thSpan.innerHeight();
-    window.alert(thSpanHeight);*/
-
-
 }
 function changeNarrative(narrative, value) {
     curNarrative = narrative;
@@ -292,7 +332,7 @@ function showGenreNarrative() {
         genreList = [... new Set(genreList)]
         for (let genre of genreList) {
             $("#narr-val-list").append('<li>' + genre + '</li>')
-            $("#offcanvas-narrative-title").text("Genre")
+            $("#offcanvas-narrative-title").text("Artistic Expression")
             $("#offcanvas-text").text("Click on a genre to browse the items associated to it.")   
         }
         $("#narr-val-list").on("click", "li", function() {
@@ -307,7 +347,6 @@ function showGenreNarrative() {
 
 // display table on small screen layout
 const figure = $(".exhibit-figure");
-const figImage = $("#img");
 const infoIcon = $(".see-info-icon");
 const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
@@ -318,6 +357,7 @@ function handleScreenResize(e) {
     if (e.matches) {
         tableCol.removeClass("visible")
         tableCol.css("pointer-events", "none");
+        //table.css("height", item.display.height)
         infoIcon.on("click", function() {
             tableCol.toggleClass("visible");
             if (tableCol.hasClass("visible")) {
@@ -341,7 +381,6 @@ mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
-    const infoTitle = document.getElementById("infoTitle");
     const grid = document.getElementById("main-im");
 
     if (window.innerWidth <= 900 && infoTitle.parentNode !== document.body) {
