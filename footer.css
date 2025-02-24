@@ -17,7 +17,7 @@ footer {
 }
 .footer-container {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     min-height: var(--footer-height);
     height: fit-content;
     padding: 0;

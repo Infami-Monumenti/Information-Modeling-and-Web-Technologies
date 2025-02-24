@@ -274,8 +274,7 @@ nav a {
     margin-top: 30px;
 }
 .control-narr-nav {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    
+    background-color: rgba(255, 255, 255, 0.3) !important;
     border-top: 0.5px solid #977060;
     border-bottom: 0.5px solid #977060;
 }
@@ -354,13 +353,13 @@ table {
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
 }
 th, td {
-    background-color: rgba(255, 255, 255, 0.7) !important;
     font-size: smaller;
 }
 th {
     white-space: nowrap;
     text-align: right;
 }
+
 td {
     text-align: left;
 }
@@ -474,11 +473,18 @@ tfoot {
 #info-modal p:last-child {
     padding-bottom: 10rem;
 }
+
 .highlight {
     border: 1px solid rgb(61, 19, 2);
-    background-color: rgba(61, 19, 2, 0.5);
+    background-color: rgba(61, 19, 2, 0.3) !important;
     transition: all 0.2s ease-in;
-  }
+}
+th.highlight {
+    border: 1px solid rgb(61, 19, 2);
+    background-color: rgba(61, 19, 2, 0.3) !important;
+    transition: all 0.2s ease-in;
+}
+
 .modal-backdrop {
     opacity: 0.3 !important;
 }

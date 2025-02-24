@@ -456,6 +456,7 @@ function highlightBackground(element) {
     element.addClass("highlight");
 }
 
+
 infoModal.on("shown.bs.modal", function () {
     highlightOnScroll();
 });

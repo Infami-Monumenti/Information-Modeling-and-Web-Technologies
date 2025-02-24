@@ -48,27 +48,27 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#project_content">
+              <a class="side-link" aria-current="page" href="#project_content">
                 Project
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#museum_content">
+              <a class="side-link" aria-current="page" href="#museum_content">
                 Museum
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#storymap_content">
+              <a class="side-link" aria-current="page" href="#storymap_content">
                 StoryMap
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#timeline_content">
+              <a class="side-link" aria-current="page" href="#timeline_content">
                 Timeline
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#narratives_content">
+              <a class="side-link" aria-current="page" href="#narratives_content">
                 Narratives
               </a>
             </li>
@@ -80,17 +80,26 @@
 
     <section class="doc-container" id="main">
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
-        <div class="doc-title">INFAMI MONUMENTI DOCUMENTATION</div>
+        <div class="doc-title">INFAMI MONUMENTI Documentation</div>
         <hr class="doc-line">
         <div class="doc-content" id="project_content">
           <h2>Project</h2>
           <br>
-          <p>Infami Monumenti is a project that seeks to present a History of Phallic Culture, thinking of it as the invocation of the phallus the source of an alleged masculine power. Therefore, it was designed as a virtual museum with objects that present this culture and its main concepts: power, fertility, fortune and strength. There are specific settings for the page that presents all the objects, entitled <a href="#museum">Museum</a> and for the presentation of each object within the <a href="#narratives">Narratives</a>.</p>
+          <p>Infami Monumenti is a project that seeks to present a History of Phallic Culture, thinking of it as the invocation of the phallus the source of an alleged masculine power. Therefore, it was designed as a virtual museum with objects that present this culture and its main concepts: power, fertility, fortune and strength. There are specific settings for the page that presents all the objects, entitled <a href="museum_layout.html">Museum</a> and for the presentation of each object within the <a href="infami_monumenti2.html">Narratives</a>.</p>
           <div class="doc-content" id="layout_project">
             <h3>Layout</h3>
             <br>
             <p>Graphically representing a story of Phallic Culture involved thinking about what the metaphors of this culture are. The verticality of objects that mimic the phallus in different cultures was the first starting point. It also represents, in some of the societies presented here, the notion of fertility, in a clear allusion to the growth of plants, animals and fortunes. To achieve this, the use of sidebars to guarantee access to content was prioritized. Another functionality explored was content scrolling. This required the use of wide margins for large screens, and dynamic layout programming that prevents text from being squeezed onto smaller screens.</p>
-          <br>
+            <figure class="figure doc-figure">
+              <img src="images/home.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+              <figcaption class="figure-caption-text-center">A screenshot of the home page on laptop screen sizes</figcaption>
+            </figure>
+            <div id="small-layout-screenshot">
+              <figure class="figure doc-figure"><img src="images/home_phone.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/home_phone_1.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot table"><figcaption class="caption-sm-screen">The home page on mobile screen size</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/home_phone_2.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot offcanvas"><figcaption class="caption-sm-screen"></figcaption></figure>
+            </div>
+            <br>
           </div>
           <div class="doc-content" id="colors_project">
             <h3>Colors</h3>
@@ -140,7 +149,11 @@
           <div class="doc-content" id="typography_project">
             <h3>Typography</h3>
             <br>
-            <p>As the project sought to portray the history of phallic culture in different contexts, the choice was made for a neutral font, avoiding interference in the presentation of the objects. At the same time, this font would have to have flexibility in its styles, allowing for some variation, allowing parts of the text to stand out. The choice fell on the <a href = "https://fonts.google.com/specimen/Inter">Inter font</a>. In the titles, the font has been used in its ExtraBold 800 variation and in the text in Light 300. For texts that need to be highlighted, such as titles and subtitles, we chose a font with similar characteristics (clean and discreet) but serif, <a href = "https://fonts.google.com/specimen/Cormorant+Garamond">Cormorant Garamont</a> with style 300 Light Italic.</p>
+            <p>As the project sought to portray the history of phallic culture in different contexts, the choice was made for a neutral font, avoiding interference in the presentation of the objects. At the same time, this font would have to have flexibility in its styles, allowing for some variation, allowing parts of the text to stand out. The choice fell on the <a href = "https://fonts.google.com/specimen/Inter">Inter font</a>. In the titles, the font has been used in its ExtraBold 800 variation and in the text in Light 300.</p>
+            <figure class="figure doc-figure">
+              <img src="images/Typography.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+              <figcaption class="figure-caption-text-center">Sample of the font</figcaption>
+            </figure>
             <br>
           </div>
         </div>
@@ -153,6 +166,15 @@
             <h3>Layout</h3>
             <br>
             <p>Trying to reproduce the feeling of starting a visit to a museum, we sought a different layout on this page. By placing the museum plan occupying the entire page, the desire was to prevent the user from having any suggestion of what their visit will be like, seeking to reproduce the feeling of the visitor who finds himself at the entrance of a museum. Even though the navbar is available for the user to access objects in another way, the arrangement of the page's main content occupying the entire screen is an invitation for the user to explore a space freely. As in many museums, works are presented im rooms according to their type of production: architecture, literary works, paintings, sculptures and frescoes. To achieve this effect, the <q>Museum</q> page was diveded in different columns and rows to replicate the structure of a museum plan. For this, a grid was used with columns of different sizes in each row. Then, photos of objects of each type were inserted into carousels, allowing the user to have a preview of the objects in each room. </p>
+            <figure class="figure doc-figure">
+              <img src="images/museumlayout.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+              <figcaption class="figure-caption text-center">A screenshot of the application page on laptop screen sizes</figcaption>
+            </figure>
+            <div id="small-layout-screenshot">
+              <figure class="figure doc-figure"><img src="images/museumlayout_phone.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/museumlayout_phone_1.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen">The home page on mobile screen size</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/museumlayout_phone2.jpeg" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+            </div>
             <br>
           </div>
           <div class="doc-content" id="colors_museum">
@@ -200,14 +222,23 @@
         <div class="doc-content" id="storymap_content">
           <h2>StoryMap</h2>
           <br>
-          <p>This interactive map, created with <a href= "https://storymap.knightlab.com/?_gl=1*julg32*_ga*MTY4NTkyMDIxMC4xNzEzODczOTkx*_ga_8F4WPDMPL5*MTcyMTM5MzI2OS4xMC4xLjE3MjEzOTMyNzkuMC4wLjA.">Knight Lab's StoryMap</a>, traces the evolution of phallic culture through time and geography. Each slide highlights significant historical periods and locations, represented by the objects selected for this project. Custom markers and multimedia content enhance the narrative, offering viewers an engaging, educational experience. The choice for this tool between others was determined by the facts that is designed to be user-friendly, easily navigable, and shareable.</p>
+          <p>This interactive map traces the evolution of phallic culture through geography. Each pin in the map provide the location of one object selected for this project. Clicking on the pin, the map is centralized in that location and opens a pop-up box with information of every object. The bottom "Learn More" offers the possibility to go to the object page. The pop-up boxes, generate with a javascript (as the pins and their locations) that push the data from a JSON file, contain name, date, the beginning of the first text, and a bottom "Learn More" that allows the user to go the page of the object. </p>
           <br>
           <div class="doc-content" id="layout_storymap">
             <h3>Layout</h3>
             <br>
-            <p>StoryMap features a clean, user-friendly layout designed for seamless storytelling. The main screen displays an interactive map alongside a narrative panel. Each "slide" in the story corresponds to a specific location on the map, highlighted as viewers navigate through the slides. The narrative panel contains multimedia content, including text, images, and videos, providing context and enhancing the story. Some media elements need to be programmed in HTML within the tool. Users can easily switch between slides using navigation arrows or a timeline at the bottom.</p>
+            <p>The map is in a responsive container box. The functionality of navigating the map in all directions simply by dragging it, and the reproduction of the map from east to west, allows users to have the experience of “traveling” around the world, even in the flat format of screens and the map provided. At the same time, the choice to center the map when an object is selected attempts to focus the user’s attention on the connections from the chosen point, also trying to provide the sensation that there is no central culture, emphasizing an equivalence of objects. </p>
             <br>
           </div>
+          <figure class="figure doc-figure">
+              <img src="images/storymap_desc.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+              <figcaption class="figure-caption-text-center">A screenshot of the map page on laptop screen sizes</figcaption>
+            </figure>
+          <div id="small-layout-screenshot">
+              <figure class="figure doc-figure"><img src="images/storymap_cel1.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/storymap_cel.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen">The map page on mobile screen size</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/storymap_cel2.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+            </div>
           <div class="doc-content" id="colors_storymap">
             <h3>Colors</h3>
             <br>
@@ -247,12 +278,6 @@
                 </div>
               </div>
           </div>
-          <div class="doc-content" id="typography_storymap">
-            <h3>Typography</h3>
-            <br>
-            <p>While Mapbox offers a wide typographic variety, allowing the use of the same fonts that we use in the rest of the project, StoryMap does not. Despite offering a very extensive API, attempts to change the source proved unsuccessful, and according to Knightlab itself, this is a problem that has not yet been resolved in the tool's JavaScript. However, it was possible to find fonts with similar characteristics to those chosen on the rest of the page: for the titles the font is <a href = "https://fonts.google.com/specimen/Raleway">Raleway</a> and for the other texts <a href="https://fonts.google.com/specimen/Bitter">Bitter</a> was used.</p>
-            <br>
-          </div>
           <div class="doc-content" id="timeline_content"></div>
           <h2>Timeline</h2>
           <br>
@@ -263,6 +288,15 @@
             <br>
             <p>The design inspiration revolves around fertility metaphors, linked to phallic culture, appearing as a tangled branch that occupies in waves the page (for 992 pixels or more screen-sizes) or verticaly (for smaller screens). To produce this effect, the navigation is visually enhanced with horizontal and vertical lines and rounded corners. The objective is emphasizing both historical significance and symbolic representation. The page culminates in a call to action with a button leading to the “Museum” section, which provides a more detailed virtual exploration of phallic cultural artifacts.</p>
             <p>The page uses Bootstrap 5.3 for responsive design, ensuring compatibility across various devices and screen sizes.</p>
+            <figure class="figure doc-figure">
+              <img src="images/timeline.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
+              <figcaption class="figure-caption-text-center">Overview of the timeline in a laptop screen.</figcaption>
+            </figure>
+            <div id="small-layout-screenshot">
+              <figure class="figure doc-figure"><img src="images/timeline_phone.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot"><figcaption class="caption-sm-screen"></figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/timeline_phone_1.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot table"><figcaption class="caption-sm-screen">The home page on mobile screen size</figcaption></figure>
+              <figure class="figure doc-figure"><img src="images/timeline_phone_2.png" class="figure-img img-fluid rounded" alt="smartphone layout screenshot offcanvas"><figcaption class="caption-sm-screen"></figcaption></figure>
+            </div>
             <br>
           </div>
         <div class="doc-content" id="narratives_content">
@@ -297,7 +331,7 @@
             <p>Starting from the article which inspired the title of the project, we tried to use strategies that could convey a sense of monumentality. Specifically, we organized the exhibition page in well defined horizontal and vertical areas, by meshing up Bootstrap components - such as the main navbar, the modal and the offcanvas elements - and CSS grid. The resulting layout is composed of three columns, one for each content available for the item: an image, some textual content and a table that gathers the main information about the object.</p>
               <figure class="figure doc-figure">
                 <img src="images/main_layout_screenshot.png" class="figure-img img-fluid rounded" alt="main layout screenshot">
-                <figcaption class="figure-caption text-center">A screenshot of the application page on laptop screen sizes</figcaption>
+                <figcaption class="figure-caption-text-center">A screenshot of the application page on laptop screen sizes</figcaption>
               </figure>
             <p>To avoid overcrowding the page and, at the same time, maintain the same design principle, for smaller screens we adopted a two-column layout, where the columns are preceded by the name of the item to which the contents refer. Textual content and image are displayed by default, while the table can be toggled by the user. Concurrently, the width of the offcanvas which controls the narratives selection was adjusted to convey a stronger sense of verticality by splitting the screen in half.</p>
             <div id="small-layout-screenshot">
@@ -310,7 +344,6 @@
         </div>
       </main>
     </section>
-    <!-- Footer -->
     <footer> <!--riprendere gli altri colori del logo nel footer-->
       <div class="container-fluid footer-container">
         <div class="row footer-row">
@@ -323,17 +356,17 @@
           <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
             <a href="index.html"><h3>Infami Monumenti</h3></a>
               <p>
-              <a href="documentation.html" class="footeractive-link">Project Documentation</a><br>
+              <a href="documentation.html">Project Documentation</a><br>
               <a href="about.html">About</a><br>
-              <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies">GitHub Repository</a><br>
+              <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies" target="_blank">GitHub Repository</a><br>
               </p>
           </div>
         <div class="row copyright-row d-flex">
-          <p>2024@Infamimonumenti</p>
+          <p>2024<i class="fa-light fa-copyright"></i>Infamimonumenti</p>
         </div>
         </div>
       </div>
-    </footer>   
+    </footer>        
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

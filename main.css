@@ -33,11 +33,14 @@
     --sidebar-doc: 280px;
 }
 /* General body styling */
-body {
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(227, 218, 208);
     color: rgb(0, 0, 0); /* #000000 */
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.4; /* Adjusted line-height for body text */
     text-align: justify;
@@ -68,7 +71,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1rem; /* Font size for h3, smaller than h2 */
+    font-size: 1.2rem;
 }
 
 a {
@@ -85,22 +88,24 @@ a:hover {
 }
 
 .container-fluid-layout {
-    margin-top: 4.5em;
+    margin-top: var(--navbar-height);
     height: calc(100vh - var(--navbar-height) - var(--footer-height));
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     overflow-y: auto;
-    margin-bottom: -7.5em;
+    margin-bottom: 0;
+    padding-top: 3em;
 }
 
 .container-fluid-layout {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: auto;
     flex: 1;
 }
 
 .container-fluid-layout .row {
-    height: calc(50% - var(--navbar-height)/2 - var(--footer-height)/2);
+    flex: 1;
+    height: auto;
 }
 
 /* Carousel styles */
@@ -170,29 +175,26 @@ a:hover {
 
 /* Story Map Container Page */
 .story-map-container {
-    margin: 2.5em 0 2.5em 0;
+    margin: 5em 0 1.5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+    flex-grow: 1;
     min-height: calc(var(--navbar-height) - var(--footer-height));
     overflow-y: hidden;
 }
-.story-map-iframe {
-    width: 100%;
-    padding: 2em;
-    height: 500px;
-    border: 2px solid black;
-}
-.storymap-container .vso-caption,
-.storymap-container .vso-text {
-    font-family: 'Inter', sans-serif !important;
-}
-.storymap-container .vso-title {
-    font-family: 'Cormorant Garamond', serif !important;
+.custom-btn-storymap {
+    display: inline-block;
+    padding: 4px 8px; /* Reduce padding */
+    font-size: 12px; /* Reduce font size */
+    border-radius: 4px; /* Slightly round corners */
+    background-color: #736f4c; /* Keep the button color */
+    color: white;
+    text-decoration: none;
 }
 
-.container-fluid-layout {
-    margin-bottom: 0.1em;
+.custom-btn-storymap:hover {
+    background-color: #5e5b3a; /* Darker shade on hover */
 }
 
 /* INDEX (homepage) */
@@ -261,6 +263,9 @@ main{
     text-align: right;
 }
 
+.navbar-collapse{
+    font-size: 20px;
+}
   
 /* TITLE */
 h1{
@@ -275,13 +280,13 @@ h1{
     justify-content: center;
 }
 #titletop{
-    margin-top: 1em;
+    margin-top: 2em;
     padding-top: 2em;
 }
 .indextitle{
     font-weight: 1000;
     margin-top: 75px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     font-family: solid 'Inter', sans-serif;
     padding-top: 5px;
 }
@@ -295,16 +300,17 @@ h1{
     overflow-x: hidden;
 }
 .indexslider{
-    height: 300px;
+    height: 375px;
     margin: auto;
     position: relative;
-    width: 100%;
+    width: calc(250px * 6,5);
+    overflow: hidden; 
     display: grid;
     place-items: center;
 }
 .indexslide-track{
     display: flex;
-    width: calc(250px * 32);
+    width: calc(250px * 42);
     animation: scroll 40s linear infinite;
 }
 .indexslide-track:hover{
@@ -319,7 +325,7 @@ h1{
     }
 }
 .index-slide{
-    height: 100px;
+    height: 300px;
     width: 400px;
     display: flex;
     align-items: center;
@@ -327,8 +333,10 @@ h1{
     perspective: 100px;
 }
 .indexslider img{
-    height: 350px !important;
+    height: 300px !important;
     width: 100% !important;
+    object-fit: cover;
+    
 
 }
 img:hover{
@@ -342,7 +350,7 @@ img:hover{
     content: '';
     height: 100%;
     position: absolute;
-    width: 15%;
+    width: 30%;
     z-index: 2;
     padding: 0px;
 
@@ -608,6 +616,7 @@ img:hover{
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 30px;
+    font-size: 15px;
 }
 #wyl{
     font-weight: bold;
@@ -671,8 +680,8 @@ img:hover{
 /*stylle for timeline*/
 
 .timeline-container {
-    margin: 2.5em 0 2.5em 0;
-    padding: 1em 0 5em 0;
+    margin: 0 0 2.5em 0;
+    padding: 0 0 5em 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
@@ -746,7 +755,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     border-radius: 16px;
     cursor: pointer;
-    margin-top: 10px; 
+    margin-top: 20px; 
 }
 
 .museum-button:hover {
@@ -1474,16 +1483,6 @@ a:hover {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
-    .storymapfooter{
-        padding: 200px 0;
-        bottom: 0;
-        width: 100%;
-        position: sticky;
-    }
-    .story-map-container{
-        overflow-y: visible;
-        margin-bottom: 200px;
-    }
 }
 
 @media (min-width: 360px){
@@ -1498,9 +1497,6 @@ a:hover {
     }
     .container-fluid-layout{
         padding-bottom: 50px;
-    }
-    .storymapfooter{
-        margin-top: 170px;
     }
 }
 
@@ -1517,9 +1513,6 @@ a:hover {
     .container-fluid-layout{
         padding-bottom: 50px;
     }
-    .storymapfooter{
-        margin-top: 70px;
-    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .indexcard-container{
@@ -1535,9 +1528,6 @@ a:hover {
     .container-fluid-layout{
         padding-bottom: 50px;
     }
-    .storymapfooter{
-        margin-top: 70px;
-    }
 }
 @media (min-width: 992px){
     .indexcard-container{
@@ -1551,9 +1541,6 @@ a:hover {
     }
     .container-fluid-layout{
         padding-bottom: 30px;
-    }
-    .storymapfooter{
-        margin-top: 70px;
     }
 }
 
@@ -1801,8 +1788,6 @@ figcaption {
 }
 .discContainer p {
     margin-top: 1em;
-    margin-left: 15%;
-    margin-right: 15%;
 }
 .discLink {
     color: #977060;
@@ -1814,17 +1799,19 @@ figcaption {
 /*Style for documentation page*/
 .doc-container {
     flex: 1;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 20%;
+    margin-right: 15%;
     margin-top: 0;
     padding-top: 5em;
     position: relative; 
     z-index: 1; 
     min-height: calc(var(--navbar-height) - var(--footer-height));
+    width:auto;
+    overflow: auto;
 }
 .doc-title{
     font-family: solid 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: 800;
     text-align: center;
     background-color:rgb(227, 218, 208);
     color: black;
@@ -1832,14 +1819,12 @@ figcaption {
     letter-spacing: 0.5em;
     margin-top: 2em;
     margin-bottom: 0;
+    max-width: 100%;
 }
 
 .doc-line {
     width: var(--container-width);
     height: var(--container-height);
-}
-.doc-container p {
-    font-weight: 300;
 }
 .doc-container a {
     color: #977060
@@ -1849,20 +1834,20 @@ figcaption {
     font-weight: bold;
 }
 .doc-content{
-    padding-top: 5em;
+    padding-top: 1.5em;
 }
 .sidebar-doc {
     position: fixed;
-    padding: 1em 1em 6em 1em;
+    padding: 6em 1em 1em 1em;
     overflow-y: auto;
     top: 0;
     align-self: flex-start;
     background-color: white; 
-    color: rgb(​219, 214, 197); 
+    opacity: 95%;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     line-height: 2;
-    font-size: 1rem; 
+    font-size: 1.2em; 
     top: var(--navbar-height);
     bottom: var(--footer-height);
     left: 0;
@@ -1871,13 +1856,34 @@ figcaption {
     min-height: 100%; 
 }
 .side-link {
-    color: rgb (​219, 214, 197); 
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    line-height: 1.4;
-    padding: 2em;
+    color: #977060 !important;
+    font-size: 1rem;
+    line-height: 1em;
+    text-decoration: underline !important;
+    padding: 8px 12px;
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
 }
+
+.side-link:hover {
+    color: black !important; 
+    font-weight: bold;
+}
+
 #narratives_content figcaption {
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.caption-sm-screen {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.figure-caption-text-center{
+    text-align: center;
     font-style: italic;
     font-size: small;
     padding: 0 0.5rem;
@@ -1918,35 +1924,29 @@ figcaption {
     }
 
     .doc-container {
-        margin-left: 0; 
-        margin-right: 0; 
+        margin-left: 5px; 
+        margin-right: 5px; 
         padding: 20px; 
     }
-    .story-map-container{
-        margin: 0;
-        padding: 0;
-    }
-    .story-map-container{
-        overflow-y: visible;
-        margin-bottom: 170px;
-        margin-top: 37px;
+
+    .table td, .table th {
+        font-size: 0.85em;
+        padding: 0.5em;
     }
 
 }
 /* Further adjustments for very small screens */
 @media (max-width: 480px) {
     .sidebar-doc {
-        padding: 10px; /* Further adjust padding */
+        width: 100%;
     }
 
     .doc-container {
         padding: 10px; /* Further adjust padding */
     }
 
-    .story-map-container{
-        margin: 0;
-        padding: 0;
+    .doc-title {
+        font-size: 1.3em; 
+        width: 100%;
     }
-
-
 }
