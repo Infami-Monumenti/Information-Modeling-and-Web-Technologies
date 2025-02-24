@@ -130,7 +130,7 @@ function showText3() {
         $("#fullText").removeClass("d-none").fadeIn("slow");
         $("#text1").addClass("d-none");
         $("#text2").addClass("d-none");
-        $("#fullText").scrollTo(0,0)
+        $("#full-container").scrollTo(0,0)
 
         // hide table on small screen when full text is displayed
         if (window.matchMedia("(max-width: 900px)") && tableCol.hasClass("visible")) {
