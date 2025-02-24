@@ -92,7 +92,6 @@ function showInfo(index) {
     figImage.css("aspect-ratio", item.display["aspect ratio"])
     figCaption.html(item.name);
     longerInfo.html(item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>');
-    //fullInfo.html(item.info["text 3"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Back</a>');
     
     // for full html
     document.getElementById("fullText").dataset.uri = item.info["text 3"];
@@ -113,14 +112,6 @@ function showText1() {
     infoContainer.animate({scrollTop: 0}, "fast")
 }
 
-/*function showText2() {
-    shortInfo.addClass("d-none");
-    fullInfo.addClass("d-none");
-    longerInfo.removeClass("d-none");
-    infoContainer.animate({scrollTop: 0}, "fast")
-}*/
-
-// for full html
 function showText2() {
     $("#text1").addClass("d-none");
     $("#text3").addClass("d-none");
@@ -128,13 +119,6 @@ function showText2() {
     $("#fullText").addClass("d-none");
     $("#info-wrapper").animate({scrollTop: 0}, "fast")
 }
-
-/*function showText3() {
-    shortInfo.addClass("d-none");
-    longerInfo.addClass("d-none");
-    fullInfo.removeClass("d-none");
-    infoContainer.animate({scrollTop: 0}, "fast")
-}*/
 
 // for full html
 function showText3() {
@@ -288,7 +272,7 @@ function showTimeNarrative() {
         for (let period of timeList) {
             $("#narr-val-list").append('<li>' + period + '</li>')
             $("#offcanvas-narrative-title").text("Time")
-            $("#offcanvas-text").text("Click on a time period to browse the items associated to it.")   
+            $("#offcanvas-text").text("Click on a time period to discover the items associated to it.")   
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
@@ -308,7 +292,7 @@ function showPlaceNarrative() {
         for (let place of placeList) {
             $("#narr-val-list").append('<li>' + place + '</li>')
             $("#offcanvas-narrative-title").text("Place")
-            $("#offcanvas-text").text("Click on a place to browse the items associated to it.")  
+            $("#offcanvas-text").text("Click on a place to discover the items associated to it.")  
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
@@ -328,7 +312,7 @@ function showGenreNarrative() {
         for (let genre of genreList) {
             $("#narr-val-list").append('<li>' + genre + '</li>')
             $("#offcanvas-narrative-title").text("Artistic Expression")
-            $("#offcanvas-text").text("Click on a genre to browse the items associated to it.")   
+            $("#offcanvas-text").text("Click on a genre to discover the items associated to it.")   
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()

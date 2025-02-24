@@ -198,13 +198,13 @@
                 "text 3": "docs/head_priapus.html",
                 "image": "images/testa_di_priapo.jpg",
                 "narratives": {
-                    "time": "I century BC",
+                    "time": "I century BC-I century AD",
                     "place": "Rome",
                     "artistic expression": "Sculpture"
                 }
             },
             "itemMeta": {
-                "time": "I century BC",
+                "time": "I century BC-I century AD",
                 "conservation location": "Museo Barracco, Italy",
                 "author": "",
                 "authority": "https://www.museobarracco.it/it/opera/testa-di-priapo",
@@ -405,31 +405,6 @@
             "display": {
                 "aspect ratio": "2 / 3",
                 "height": "107%"
-            }
-        },
-        {
-            "name": "Two Lovers in front of the hermes of Priapus",
-            "iId": 15,
-            "info": {
-                "text 1": "\"Due amanti davanti al busto di priapo\" is an oil on canvas painting. It was realized in France between the XVIII-XIX Century by the painter Louis Vincent Léon Pallière.  \n",
-                "text 2": "The painting shows a rare subject that may refer to the sensual arouse of two lovers. The painter belongs to the French neoclassical period and stands out for his amazing composing and drawing capability. \n",
-                "text 3": "Louis Vincent Léon Pallière was born on July 19, 1787 in Bordeaux1. A pupil of François-André Vincent at theÉcole des beaux-arts in Paris, he attempted the Prix de Rome several times: in 1805 with The Death of Demosthenes, then in 1808, 1809 - where he came second -, 1810, 1811, and finally successfully in 1812 with Ulysses and Telemachus Slaughtering the Pretenders. He stayed in Rome at the Villa Medici between 1813 and 1816, where he painted several pictures. He became friends with the painter François-Édouard Picot, with whom he worked on the decorations for the Trinité-des-Monts convent, for which he painted a Flagellation that is still in place.\nHe was highly acclaimed at the Salon of 1819, where several of his Roman paintings were exhibited, and was awarded a first-class medal. He also painted several large religious pictures that adorned Parisian churches: in 1812, he donated a Death of Saint Monica and a Christ on the Cross to thechurch of Saint-Eustache. In 1819, he presented a Saint Pierre guérissant le boiteux (Saint Peter Healing the Limping Man) for thechurch of Saint-Séverin (now in thechurch of Saint-Thomas-d'Aquin), and in 1820 was commissioned to paint a Délivrance de saint Pierre (Deliverance of Saint Peter) for thechurch of Saint-Pierre in Bordeaux. Left unfinished at his death, the composition was finished by his friend Picot and exhibited at the Salon of 1827.\nThe painter died in 1820 of a chest ailment. He had married the painter Françoise Virginie Liégeois, who after remarriage became Fanny Alaux.\n",
-                "image": "images/dueamantipreview.jpg",
-                "narratives": {
-                    "time": "XVIII-XIX century",
-                    "place": "France",
-                    "artistic expression": "Painting"
-                }
-            },
-            "itemMeta": {
-                "time": "XVIII-XIX century",
-                "conservation location": "Galleria dei Coronari, Roma",
-                "author": "Louis Vincent Leon Palliere",
-                "place": "France",
-                "artistic expression": "Painting"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {

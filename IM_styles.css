@@ -329,8 +329,6 @@ nav a {
 }
 #img {
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
-    /* aspect-ratio: 2 / 3;
-    aspect-ratio: 3 / 4; */
 }
 #tableCol {
     grid-row: span 2;
@@ -349,7 +347,7 @@ nav a {
 table {
     position: relative;
     border-collapse: collapse;
-    height: 100%; /*update height in json and set it with javascript*/
+    height: 100%;
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
 }
 th, td {
@@ -363,26 +361,9 @@ th {
 td {
     text-align: left;
 }
-/*.table-wrapper {
-    flex: 1;
-    height: 100%;
-}
-table {
-    height: 100%;
-    width: 100%;
-    table-layout: fixed;
-}*/
 table a, #info-modal a {
     color: #977060;
 }
-/*th, td {
-    white-space: nowrap;
-    text-align: left;
-}*/
-/*#imgCol, #infoCol, #tableCol {
-    height: var(--main-height) !important;
-    margin-top: 1em;
-}*/
 .fa-solid {
     color: black;
 }
@@ -419,13 +400,6 @@ table a, #info-modal a {
 tfoot {
     height: fit-content;
 }
-/*.switch-table-data {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-.switch-data {
-    cursor: pointer;
-}*/
 .popup {
     position: relative;
     cursor: pointer;
@@ -443,7 +417,6 @@ tfoot {
     z-index: 1;
     /*bottom: 1px;*/
     right: 0;
-    
 }
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
