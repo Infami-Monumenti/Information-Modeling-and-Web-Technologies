@@ -69,6 +69,7 @@
     }
     #tableCol.visible {
         opacity: 1;
+        background-color: rgba(255, 255, 255, 0.5) !important;
     }
     th, td {
         font-size: small !important;
@@ -327,7 +328,7 @@ nav a {
     position: relative;
     height: inherit;
 }
-#img {
+#img-wrapper, table {
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
 }
 #tableCol {
@@ -348,7 +349,6 @@ table {
     position: relative;
     border-collapse: collapse;
     height: 100%;
-    box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
 }
 th, td {
     font-size: smaller;
