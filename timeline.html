@@ -1,376 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infami Monumenti Timeline</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="footer.css">
-    <!--our vaficon-->
-    <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
-</head>
-<body>
-    <header>
-        <!--navbar-->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary navbarIM">
-            <div class="container-fluid">
-            <a class="navbar-brand">Infami Monumenti</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" id="padlink" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="disclaimer.html">Disclaimer</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Secret Things
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="infami_monumenti2.html">Secret Things</a></li>
-                    <li><a class="dropdown-item" href="timeline.html">Phallic culture over the years</a></li>
-                    <li><a class="dropdown-item" href="storymap.html">Phallic culture geographical location</a></li>
-                    <li><a class="dropdown-item" href="museum_layout.html">Phallic culture expressions</a></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Infami Monumenti Timeline</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="timeline.css">
+        <link rel="stylesheet" href="footer.css">
+        <!--our vaficon-->
+        <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
+    </head>
+    <body>
+        <header>
+            <!--navbar-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary navbarIM">
+                <div class="container-fluid">
+                <a class="navbar-brand">Infami Monumenti</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="padlink" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Secret Things
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="infami_monumenti2.html">Secret Things</a></li>
+                        <li><a class="dropdown-item" href="timeline.html">Phallic culture over the years</a></li>
+                        <li><a class="dropdown-item" href="storymap.html">Phallic culture geographical location</a></li>
+                        <li><a class="dropdown-item" href="museum_layout.html">Phallic culture expressions</a></li>
+                        </ul>
                     </ul>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                </div>
+            </nav>
+        </header>
 
-    <div class="timeline-container">
-        <section class="about-timeline">
-            <div class="wrapper inner-wrapper-padding ">
+        <div class="timeline-container">
+            <div class="timeline">
+                <a href="index.html" class="start-button">Infami Monumenti</a>
                 
-                <div class="start-point">
-                    <h4>Infami Monumenti Timeline</h4>
-                    <div class="corner bl"></div>
+                <div class="timeline-item" onclick="openModal('images/KhalidNabiCemetery.jpg', 'Khalid Nabi Cemetery', 'infami_monumenti2.html?itemId=3')">
+                    <span class="century">Paleolitic Times</span>
+                    <span class="point"></span>
+                    <span class="title">Khaled Nabi Cemetery</span>
                 </div>
+                <div class="timeline-item" onclick="openModal('images/Al-MasalaObelisk.jpg', 'Al-Masala Obelisk', 'infami_monumenti2.html?itemId=0')">
+                    <span class="century">XX Century B.C.</span>
+                    <span class="point"></span>
+                    <span class="title">Al-Masala Obelisk</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/min_at_karnak.jpg', 'Min at Karnak Temple', 'infami_monumenti2.html?itemId=1')">
+                    <span class="century">XIX century B.C.</span>
+                    <span class="point"></span>
+                    <span class="title">Min at Karnak Temple</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('image3.jpg', 'images/Kokopelli_1.jpg', 'infami_monumenti2.html?itemId=2')">
+                    <span class="century">VI Century B.C.</span>
+                    <span class="point"></span>
+                    <span class="title">Kokopelli</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/StatuadiPriapo.jpg', 'Statue of Priapus in Ephesus', 'infami_monumenti2.html?itemId=4')">
+                    <span class="century">II century B.C.</span>
+                    <span class="point"></span>
+                    <span class="title">Statue of Priapus in Ephesus</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/priapofresco.jpg', 'Fresco of Priapus, House of Vetti', 'infami_monumenti2.html?itemId=7')">
+                    <span class="century">I century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Fresco of Priapus, House of Vetti</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/testa_di_priapo.jpg', 'Head of Priapus', 'infami_monumenti2.html?itemId=6')">
+                    <span class="century">I century B.C.</span>
+                    <span class="point"></span>
+                    <span class="title">Head of Priapus</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/L’affrescodiunPriapo.jpg', 'Fesco of Priapo, Regio V', 'infami_monumenti2.html?itemId=8')">
+                    <span class="century">I century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Fesco of Priapo, Regio V</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/Tintinnabulum.jpg', 'Tintinnabulum', 'infami_monumenti2.html?itemId=9')">
+                    <span class="century">I century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Tintinnabulum</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/venerebikinidoro.jpg', 'Venus in a gold bikini', 'infami_monumenti2.html?itemId=10')">
+                    <span class="century">I century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Venus in a gold bikini</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/fascinus.jpg', 'Epigram of a Fascinus', 'infami_monumenti2.html?itemId=11')">
+                    <span class="century">II century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Epigram of a Fascinus</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/literarytextboccaccio.jpg', 'Boccaccio, Carmina Priapea', 'infami_monumenti2.html?itemId=13')">
+                    <span class="century">XIV century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Boccaccio, Carmina Priapea</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/Lysistrata.jpg', 'Lysistrata', 'infami_monumenti2.html?itemId=14')">
+                    <span class="century">XVI century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Lysistrata</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/dueamantipreview.jpg', 'Two Lovers in front of the hermes of Priapus', 'infami_monumenti2.html?itemId=15')">
+                    <span class="century">XIX century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Two Lovers in front of the hermes of Priapus</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/YpsilantiWaterTower.jpeg', 'Ypsilanti Water Tower', 'infami_monumenti2.html?itemId=16')">
+                    <span class="century">XIX century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Ypsilanti Water Tower</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/Poenulus.jpg', 'Poenulus', 'infami_monumenti2.html?itemId=5')">
+                    <span class="century">XIX century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Poenulus</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/PhallicSaints.jpg', 'Phallic Saints', 'infami_monumenti2.html?itemId=12')">
+                    <span class="century">XX century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Phallic Saints</span>
+                </div>
+                <div class="timeline-item" onclick="openModal('images/torreglories.jpg', 'Torre Glòries', 'infami_monumenti2.html?itemId=17')">
+                    <span class="century">XXI century A.D.</span>
+                    <span class="point"></span>
+                    <span class="title">Torre Glòries</span>
+                </div>
+                <!-- Adicione mais objetos conforme necessário até completar 18 -->
+                
+                <a href="museum_layout.html" class="end-button">Museum</a>
+            </div>
+        </div>
 
-                <div class="timeline-main">
-                    <div class="timeline-row">
-                        <div class="timeline-box img-left timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>Paleothic Times</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=3">
-                                        <img src="images/KhalidNabiCemetery.jpg" alt="Khalid Nabi Cemetery">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                    <p>Khalid Nabi Cemetery</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box timeline-content-img logo-timeline-arrow">
-                            <div class="timeline-box-wrap">
-                                <h5>XX Century B.C.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=0">
-                                        <img src="images/Al-MasalaObelisk.jpg" alt="Al-Masala Obelisk">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Al-Masala Obelisk</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
-                    </div>
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="">
+                <h3 id="modalTitle"></h3>
+                <a id="modalLink" href="#" class="explore-btn">Explore</a>
+            </div>
+        </div>
 
-                    <div class="timeline-row">
-                        <div class="timeline-box timeline-content-img logo-timeline-arrow">
-                            <div class="timeline-box-wrap">
-                                <h5>XIX century B.C.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=1">
-                                        <img src="images/min_at_karnak.jpg" alt="Min at Karnak Temple">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Min at Karnak Temple</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>VI Century B.C.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=2">
-                                        <img src="images/Kokopelli_1.jpg" alt="Kokopelli">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Kokopelli</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>II century B.C.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=4">
-                                        <img src="images/StatuadiPriapo.jpg" alt="Statua di Priapo">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Statue of Priapus in Ephesus</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
+        <footer class="thefooter"> <!--riprendere gli altri colori del logo nel footer-->
+            <div class="container-fluid footer-container">
+                <div class="row footer-row">
+                    <div class="col-md-6 footer-col-logo d-flex">
+                        <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
                     </div>
-
-                    <div class="timeline-row">
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>II century B.C.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=5">
-                                        <img src="images/Poenulus.jpg" alt="Poenulus">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Poenulus ("The Little Carthaginian")</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box img-left timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>I Century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=7">
-                                        <img src="images/priapofresco.jpg" alt="Fresco of Priapus, House of Vetti">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Fresco of Priapus, House of Vetti</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>I Century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=6">
-                                        <img src="images/testa_di_priapo.jpg" alt="Head of Priapus">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Head of Priapus</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
+                <!--<div class="col-md-4 footer-col">
+                empty column
+                </div>-->
+                    <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
+                        <a href="index.html"><h3>Infami Monumenti</h3></a>
+                        <p>
+                        <a href="documentation.html" target="_blank">Project Documentation</a><br>
+                        <a href="about.html">About</a><br>
+                        <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies"target="_blank">GitHub Repository</a><br>
+                        </p>
                     </div>
-
-                    <div class="timeline-row">
-                    <div class="timeline-box timeline-content-img">
-                        <div class="timeline-box-wrap">
-                            <h5>I Century A.D.</h5>
-                            <div class="timeline-content">
-                                <a href="infami_monumenti2.html?itemId=8">
-                                    <img src="images/L’affrescodiunPriapo.jpg" alt="Fresco of Priapus Regio V">
-                                </a>
-                                <div class="timeline-content-txt">
-                                    <p>Fresco of Priapus Regio V</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-box img-left timeline-content-img">
-                        <div class="timeline-box-wrap">
-                            <h5>I century A.D.</h5>
-                            <div class="timeline-content">
-                                <a href="infami_monumenti2.html?itemId=9">
-                                    <img src="images/Tintinnabulum.jpg" alt="Tintinnabulum">
-                                </a>
-                                <div class="timeline-content-txt">
-                                    <p>Tintinnabulum</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            <div class="timeline-box timeline-content-img">
-                <div class="timeline-box-wrap">
-                    <h5>I Century A.D.</h5>
-                    <div class="timeline-content">
-                        <a href="infami_monumenti2.html?itemId=10">
-                            <img src="images/venerebikinidoro.jpg" alt="Venus in a Gold Bikini">
-                        </a>
-                        <div class="timeline-content-txt">
-                            <p>Venus in a Gold Bikini</p>
-                        </div>
+                    <div class="row copyright-row d-flex">
+                        <p>2024@Infamimonumenti</p>
                     </div>
                 </div>
             </div>
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
-                    </div>
-                    <div class="timeline-row">
-                    <div class="timeline-box timeline-content-img">
-                        <div class="timeline-box-wrap">
-                            <h5>II century A.D.</h5>
-                            <div class="timeline-content">
-                                <a href="infami_monumenti2.html?itemId=11">
-                                    <img src="images/fascinus.jpg" alt="Epigram of a Fascinus">
-                                </a>
-                                <div class="timeline-content-txt">
-                                    <p>Epigram of a Fascinus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>Middle Ages</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=12">
-                                        <img src="images/PhallicSaints.jpg" alt="Phallic Saints">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Phallic Saints</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>XIV century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=13">
-                                        <img src="images/literarytextboccaccio.jpg" alt="Boccaccio, Biblioteca Medicea Laurenziana, Plut. 33 31">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Boccaccio, Carmina Priapea</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
-                    </div>
+        </footer> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-                    
-                    <div class="timeline-row">
-                        <div class="timeline-box timeline-content-img logo-timeline-arrow">
-                            <div class="timeline-box-wrap">
-                                <h5>XVI Century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=14">
-                                        <img src="images/Lysistrata.jpg" alt="Lysistrata">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Lysistrata</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box img-left timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>XIX Century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=15">
-                                        <img src="images/TwoLoversinfrontofthehermesofPriapus.jpg" alt="Two Lovers in front of the hermes of Priapus">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Two Lovers in front of the hermes of Priapus</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>XIX century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=16">
-                                        <img src="images/YpsilantiWaterTower.jpeg" alt="Ypsilanti Water Tower">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Ypsilanti Water Tower</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
-                    </div>
+        <script>
+            function openModal(imageSrc, title, linkUrl) {
+                const modal = document.getElementById('imageModal');
+                document.getElementById('modalImage').src = imageSrc;
+                document.getElementById('modalTitle').innerText = title;
+                document.getElementById('modalLink').href = linkUrl; // Define o link para o botão Explore
+                
+                modal.classList.add('show'); // Aplica a classe para animação
+                modal.style.display = 'flex';
+                
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                    modal.style.transform = 'scale(1)';
+                }, 10);
+            }
+        
+            function closeModal() {
+                const modal = document.getElementById('imageModal');
+                modal.style.opacity = '0';
+                modal.style.transform = 'scale(0.8)';
+                
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    modal.classList.remove('show');
+                }, 300);
+            }
+        
+            // Fechar ao clicar fora do modal
+            window.onclick = function(event) {
+                const modal = document.getElementById('imageModal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            }
+        </script>
+        
 
-                    <div class="timeline-row">
-                        <div class="timeline-box timeline-content-img">
-                            <div class="timeline-box-wrap">
-                                <h5>XXI century A.D.</h5>
-                                <div class="timeline-content">
-                                    <a href="infami_monumenti2.html?itemId=17">
-                                        <img src="images/torre glories.JPG" alt="Torre Glòries">
-                                    </a>
-                                    <div class="timeline-content-txt">
-                                        <p>Torre Glòries</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="horizontal-line"></div>
-                        <div class="verticle-line"></div>
-                        <div class="corner top"></div>
-                        <div class="corner bottom"></div>
-                    </div>
-                    <div class="end-point">
-                        <a href="museum_layout.html" target="_blank">
-                            <button class="museum-button">Museum</button>
-                        </a>
-                    </div>
-        </section>      
-    </div>
-<footer> <!--riprendere gli altri colori del logo nel footer-->
-    <div class="container-fluid footer-container">
-      <div class="row footer-row">
-        <div class="col-md-6 footer-col-logo d-flex">
-          <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
-        </div>
-        <!--<div class="col-md-4 footer-col">
-          empty column
-        </div>-->
-        <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
-          <a href="index.html"><h3>Infami Monumenti</h3></a>
-            <p>
-            <a href="documentation.html" target="_blank">Project Documentation</a><br>
-            <a href="about.html">About</a><br>
-            <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies" target="_blank">GitHub Repository</a><br>
-            </p>
-        </div>
-      <div class="row copyright-row d-flex">
-        <p>2024@Infamimonumenti</p>
-      </div>
-      </div>
-    </div>
-  </footer>   
-       
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    </body>
 </html>
