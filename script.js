@@ -97,11 +97,6 @@ function showInfo(index) {
     // for full html
     document.getElementById("fullText").dataset.uri = item.info["text 3"];
 
-    // hide table on small screen when full text is displayed
-    /* if (window.matchMedia("(max-width: 550px)").matches) {
-        metaTable.css("height", item.display.height)
-    } */
-
     // ensuring text1 is the first to be displayed when the item or the narrative changes
     if ($("#text1").hasClass("d-none")) {
         showText1();
