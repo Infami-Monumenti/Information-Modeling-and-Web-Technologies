@@ -139,7 +139,6 @@ function showText3() {
     })
     .catch(error => {
         console.error('Error fetching data:', error);  
-        window.alert("Data not fetched");
     });
 }
 
