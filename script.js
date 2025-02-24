@@ -94,7 +94,7 @@ function showInfo(index) {
     longerInfo.html(item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>');
     
     // for full html
-    document.getElementById("fullText").dataset.uri = item.info["text 3"];
+    document.getElementById("fullText").dataset.path = item.info["text 3"];
 
     // ensuring text1 is the first to be displayed when the item or the narrative changes
     if ($("#text1").hasClass("d-none")) {
@@ -122,8 +122,8 @@ function showText2() {
 
 // for full html
 function showText3() {
-    var uri = document.getElementById("fullText").dataset.uri
-    fetch(uri)
+    var path = document.getElementById("fullText").dataset.path
+    fetch(path)
     .then(response => response.text())
     .then(data => {
         document.getElementById("fullText").innerHTML = data;
