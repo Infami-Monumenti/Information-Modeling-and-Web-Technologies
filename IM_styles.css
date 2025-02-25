@@ -236,7 +236,7 @@ nav {
     padding: 10px 0;
 }
 .navbar-brand {
-    font-family: solid 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
     font-weight: 900;
     color: #977060!important;
 }
@@ -248,21 +248,24 @@ nav a {
     border-radius: 30px;
 }
 .navbar a, .navbar li {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
 }
 .nav-link:hover,.nav-link.active {
     background-color: antiquewhite;
     padding-left: 10px;
     padding-right: 10px;
     color: #977060 !important;
-    font-family: solid 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
     text-decoration: underline;
     font-weight: bold;
+}
+.dropdown-item{
+    text-align: right;
 }
 .dropdown-item:hover, .dropdown-item.active {
     background-color: antiquewhite;
     color: #977060 !important;
-    font-family: solid 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
     text-decoration: underline;
     font-weight: bold;
 }

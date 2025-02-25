@@ -132,6 +132,10 @@ a:hover {
     height: auto;
 }
 
+.mlfont{
+    font-family: 'Noticia+Text';
+}
+
 /* Carousel styles */
 .carousel {
     margin-top: 2em;
@@ -879,7 +883,7 @@ a:hover {
     font-family: 'Inter', sans-serif;
 }
 .about-title {
-    font-family: solid 'Inter', sans-serif;
+    font-family:'Noticia+Text';
     font-weight: 800;
     text-align: center;
     background-color: rgb(227, 218, 208);
@@ -1101,7 +1105,7 @@ figcaption {
 }*/
 /*---Disclaimer---*/
 .discTitle {
-    font-family: solid 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
     font-weight: 900;
     text-align: center;
     background-color:rgb(227, 218, 208);
