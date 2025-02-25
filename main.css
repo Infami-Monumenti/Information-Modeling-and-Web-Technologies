@@ -879,6 +879,10 @@ a:hover {
     font-family: 'Inter', sans-serif;
 }
 
+.doc-title{
+    font-family: 'Noticia+Text';
+}
+
 .aboutcard{
     position: relative;
     width: 300px;
@@ -888,7 +892,6 @@ a:hover {
     margin-top: 40px;
     padding-top: 10px;
 }
-
 
 .aboutcard:hover{
     transform: translateY(-30px);
@@ -902,6 +905,7 @@ a:hover {
     padding-right: 20px;
     margin-bottom: 80px;
     padding-top: 20px;
+    font-family: 'Noticia+Text';
 }
 
 
