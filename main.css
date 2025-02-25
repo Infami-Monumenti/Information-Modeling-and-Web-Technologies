@@ -1127,6 +1127,7 @@ figcaption {
 }
 .discContainer p {
     margin-top: 1em;
+    margin-bottom: 0 !important;
 }
 .discLink {
     color: #977060;
@@ -1134,4 +1135,170 @@ figcaption {
 .discLink:hover {
     color: black;
     font-weight: bold;
+}
+.maindisclaimer #accordion-texts, .maindisclaimer #accordion-images {
+    padding: 1rem 1rem;
+    padding-bottom: 0;
+}
+.maindisclaimer .accordion-button {
+    background-color: rgba(115, 111, 76, 0.9);
+    color: rgb(227, 218, 208);
+}
+.main-disclaimer #texts-acc-body {
+    overflow-y: scroll;
+    background-color: rgb(227, 218, 208) !important;
+}
+/*Style for documentation page*/
+.doc-container {
+    flex: 1;
+    margin-left: 20%;
+    margin-right: 15%;
+    margin-top: 0;
+    padding-top: 5em;
+    position: relative; 
+    z-index: 1; 
+    min-height: calc(var(--navbar-height) - var(--footer-height));
+    width:auto;
+    overflow: auto;
+}
+.doc-title{
+    font-family: solid 'Inter', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    background-color:rgb(227, 218, 208);
+    color: black;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 0;
+    max-width: 100%;
+}
+
+.doc-line {
+    width: var(--container-width);
+    height: var(--container-height);
+}
+.doc-container a {
+    color: #977060
+}
+.doc-container a:hover {
+    color: black;
+    font-weight: bold;
+}
+.doc-content{
+    padding-top: 1.5em;
+}
+.sidebar-doc {
+    position: fixed;
+    padding: 6em 1em 1em 1em;
+    overflow-y: auto;
+    top: 0;
+    align-self: flex-start;
+    background-color: white; 
+    opacity: 95%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    line-height: 2;
+    font-size: 1.2em; 
+    top: var(--navbar-height);
+    bottom: var(--footer-height);
+    left: 0;
+    width: 280px; 
+    z-index: 0;
+    min-height: 100%; 
+}
+.side-link {
+    color: #977060 !important;
+    font-size: 1rem;
+    line-height: 1em;
+    text-decoration: underline !important;
+    padding: 8px 12px;
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.side-link:hover {
+    color: black !important; 
+    font-weight: bold;
+}
+
+#narratives_content figcaption {
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.caption-sm-screen {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.figure-caption-text-center{
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    padding: 0 0.5rem;
+}
+.doc-figure {
+    filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+    margin: 1.5rem 1.5rem;
+}
+#offcanvas-modal-screenshot {
+    display: flex;
+}
+#offcanvas-modal-screenshot figure {
+    margin: 0.3rem;
+}
+#small-layout-screenshot {
+    display: flex;
+}
+/* Active link styling */
+.side-link.active {
+    font-weight: 800;
+    color: rgb(219, 214, 197); /* #DBD6C5 */
+}
+/* Link color when hovered */
+.side-link:hover {
+    color: rgb(46, 14, 1); /* #2e0e01 */
+}
+/* Link color when visited */
+.side-link:visited {
+    color: rgb(61, 19, 2); /* #3d1302 */
+}
+/* Responsive text styling for smaller screens */
+@media (max-width: 768px) {
+    .sidebar-doc {
+        width: 100%; /* sidebar-doc takes full width */
+        height: auto; /* Adjust height to content */
+        position: relative; /* Position it relative */
+        padding: 20px; 
+    }
+
+    .doc-container {
+        margin-left: 5px; 
+        margin-right: 5px; 
+        padding: 20px; 
+    }
+
+    .table td, .table th {
+        font-size: 0.85em;
+        padding: 0.5em;
+    }
+
+}
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .sidebar-doc {
+        width: 100%;
+    }
+
+    .doc-container {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .doc-title {
+        font-size: 1.3em; 
+        width: 100%;
+    }
 }
