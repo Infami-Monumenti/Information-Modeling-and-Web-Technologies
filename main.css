@@ -173,30 +173,6 @@ a:hover {
     border: 2px solid black;
 }
 
-/* Story Map Container Page */
-.story-map-container {
-    margin: 5em 0 1.5em 0;
-    background-color: rgb(227, 218, 208);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
-    flex-grow: 1;
-    min-height: calc(var(--navbar-height) - var(--footer-height));
-    overflow-y: hidden;
-}
-.custom-btn-storymap {
-    display: inline-block;
-    padding: 4px 8px; /* Reduce padding */
-    font-size: 12px; /* Reduce font size */
-    border-radius: 4px; /* Slightly round corners */
-    background-color: #736f4c; /* Keep the button color */
-    color: white;
-    text-decoration: none;
-}
-
-.custom-btn-storymap:hover {
-    background-color: #5e5b3a; /* Darker shade on hover */
-}
-
 /* INDEX (homepage) */
 .indexcontainer {
     font-family: 'Inter', sans-serif;
