@@ -165,8 +165,8 @@ function createInfoTable(item) {
             }
         }
     }
-    // display schema property as popups
-    let firstHeader = table.find("th").first();
+    // display schema property 
+    let firstHeader = table.find("th").first(); // retrieve first header for modal instructions
     firstHeader.addClass("schema-popup");
 
     let tableHeaders = table.find("th")
@@ -177,26 +177,13 @@ function createInfoTable(item) {
         
 
         if (mappedText) {
-            let popupSpan = $(document.createElement("span")).text(mappedText);
-            popupSpan.addClass("popuptext");
-
-            // position the popups
-            // get height of th element
-            var thHeight = header.innerHeight();
-           
-            var thSpanHeight = popupSpan.innerHeight();
-            var topPosition = thHeight / 2 - thSpanHeight;
-            
-
-            popupSpan.css({top: `${topPosition}px`});
-            header.addClass("popup");
-            header.append(popupSpan);
-
 
             header.on("click", function() {
-                // close popup when another th is clicked
-                $(".popuptext.show").not(popupSpan).removeClass("show");
-                popupSpan.toggleClass("show");
+                if (header.text() == headerText) {
+                    header.html(mappedText)
+                } else {
+                    header.html(headerText)
+                }
             });
         }
     });

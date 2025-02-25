@@ -191,9 +191,6 @@
         white-space: normal !important;
         word-wrap: break-word !important;
     }
-    .popup .popuptext {
-        font-size: xx-small;
-    }
 }
 
 /* width */
@@ -327,7 +324,7 @@ nav a {
     position: relative;
     height: inherit;
 }
-#img-wrapper, table {
+#img-wrapper, #table {
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
 }
 #tableCol {
@@ -349,6 +346,7 @@ nav a {
     border-collapse: collapse;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
 }
 th, td {
     font-size: smaller;
@@ -356,6 +354,7 @@ th, td {
 th {
     white-space: nowrap;
     text-align: right;
+    padding-right: 1rem;
 }
 
 td {
@@ -399,29 +398,6 @@ table a, #info-modal a {
 }
 tfoot {
     height: fit-content;
-}
-.popup {
-    position: relative;
-    cursor: pointer;
-}
-.popup .popuptext {
-    visibility: hidden;
-    max-height: min-content;
-    max-width: min-content;
-    background-color: rgba(151 112 96 / 0.5);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 2px 2px;
-    position: absolute;
-    z-index: 1;
-    /*bottom: 1px;*/
-    right: 0;
-}
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-    visibility: visible;
-    transition: all 0.2s ease;
 }
 .offcanvas h5 {
     font-weight: bold;
