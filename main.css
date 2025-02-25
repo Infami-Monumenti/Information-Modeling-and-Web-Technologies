@@ -878,9 +878,17 @@ a:hover {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-
-.doc-title{
-    font-family: 'Noticia+Text';
+.about-title {
+    font-family: solid 'Inter', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    background-color: rgb(227, 218, 208);
+    color: black;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 0;
+    max-width: 100%;
 }
 
 .aboutcard{
@@ -905,19 +913,6 @@ a:hover {
     padding-right: 20px;
     margin-bottom: 80px;
     padding-top: 20px;
-    font-family: 'Noticia+Text';
-}
-.about-title {
-    font-family: solid 'Inter', sans-serif;
-    font-weight: 800;
-    text-align: center;
-    background-color: rgb(227, 218, 208);
-    color: black;
-    font-size: 2em;
-    letter-spacing: 0.5em;
-    margin-top: 2em;
-    margin-bottom: 0;
-    max-width: 100%;
 }
 
 .aboutcard div{
