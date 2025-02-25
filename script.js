@@ -14,7 +14,7 @@ var schemaMapping = {
     "time": "dateCreated",
     "temporal": "temporalCoverage",
     "conservation location": "spatial",
-    "author": "author",
+    "author": "creator",
     "authority": "sameAs",
     "place": "locationCreated",
     "artistic expression": "genre",
@@ -180,9 +180,9 @@ function createInfoTable(item) {
 
             header.on("click", function() {
                 if (header.text() == headerText) {
-                    header.html(mappedText)
+                    header.html(mappedText).css("color", "olive")
                 } else {
-                    header.html(headerText)
+                    header.html(headerText).css("color", "black")
                 }
             });
         }
