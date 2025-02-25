@@ -9,7 +9,7 @@
     z-index: 1; 
     min-height: calc(var(--navbar-height) - var(--footer-height));
     width: auto;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .doc-title {

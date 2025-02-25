@@ -7,7 +7,7 @@ body {
 footer {
     box-sizing: border-box;
     width: 100%;
-    position: relative;
+    position: absolute;
     min-height: var(--footer-height);
     height: fit-content;
     bottom: 0;
