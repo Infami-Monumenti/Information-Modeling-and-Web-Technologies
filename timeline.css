@@ -8,6 +8,7 @@
     max-width: 100%;
     position: relative;
     margin-top: var(--navbar-height);
+    margin-bottom: 10em;
     height: var(--main-height);
     overflow-y: auto;
 }
