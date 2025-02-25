@@ -233,7 +233,6 @@ body {
 /* navbar */
 nav {
     justify-content: center;
-    background: antiquewhite;
     padding: 10px 0;
 }
 .navbar-brand {
@@ -335,6 +334,7 @@ nav a {
     text-align: center;
     font-weight: bold;
     margin-top: 1rem;
+    font-family:'Noticia+Text';
 }
 #info-wrapper {
     max-height: 25em;
