@@ -1117,6 +1117,7 @@ figcaption {
 }
 .discContainer {
     margin-bottom: 4em;
+    overflow-y: scroll;
 }
 .discContainer > .row {
     margin-bottom: 4em;
