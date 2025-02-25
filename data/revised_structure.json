@@ -267,7 +267,7 @@
                 "text 1": "This sculptural group is a roman copy of an Hellenistic original and yet another example of the spreading of Priapus' variegated representations in II century BC Pompeii. The sculpture is peculiar for the golden decoration on Venus' body - the golden bikini - realized with gold flakes on the marble of the statue. The item shows Venus leaning on Priapus with Eros at her feet, while she attempts to untie her sandal.",
                 "text 2": "The sculpture was originally part of the House of the Venus with the Golden Bikini - named after the statue due to its retrieval within the building in 1954 - which dates back to II century BC and was re-discovered during the excavations promoted in 1913. While the paternity of Priapus is uncertain, shifting from Dionysus, to Zeus, to Mercury, all the variants of the myth present Aphrodite/Venus as the mother of Priapus. The unfortunate aspect of the god is a punishment coming from Hera, in one version for her jealousy towards Aphrodite's victory in the contest between Hera herself, Aphrodite and Athena, in another for the relation between Zeus and the goddess of love. As explained by the director of the Museo Archeologico Nazionale di Napoli, which currently holds the work in the Secret Cabinet collection, the sculpture has a strong erotic tension, stressed by the action of untying the laces of the sandal and conveyed by the presence of figures related to love and erotism as Venus herself, Priapus and Eros. ",
                 "text 3": "docs/venus.html",
-                "image": "images/venerebikinidoro.jpg",
+                "image": "images/venus_mann.jpg",
                 "narratives": {
                     "time": "I century AD",
                     "place": "Rome",
@@ -283,7 +283,7 @@
                 "artistic expression": "Sculpture"
             },
             "display": {
-                "aspect ratio": "3 / 4"
+                "aspect ratio": "auto"
             }
         },
         {
