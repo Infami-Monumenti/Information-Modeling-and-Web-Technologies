@@ -180,3 +180,11 @@
 .nav-buttons {
     display: none;
 }
+
+@media (max-width: 480px) { 
+        .timeline-container{
+            padding-bottom: 7em;
+        }
+        
+    
+}
