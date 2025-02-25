@@ -321,13 +321,13 @@
                 "text 3": "docs/phallic_saints.html",
                 "image": "images/PhallicSaints.jpg",
                 "narratives": {
-                    "time": "Middle Ages",
+                    "time": "XX century A.D.",
                     "place": "France",
                     "artistic expression": "Sculpture"
                 }
             },
             "itemMeta": {
-                "time": "Middle Ages",
+                "time": "XX century A.D.",
                 "conservation location": "Saint Jallet, France",
                 "author": "",
                 "authority": "https://www.wikidata.org/wiki/Q2626893",
