@@ -19,6 +19,27 @@
         padding-top: 50px !important;
     }
 }
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;  
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #e3dad0;
+    border-radius: 5px;   
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #977060;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6f5247;
+}
 :root {
     --cs-nav-height: 4em;
     --cs-main-height: calc(100vh - var(--cs-nav-height) - var(--cs-foot-height));
@@ -188,7 +209,6 @@ a:hover {
 /* navbar */
 nav {
     justify-content: center;
-    background: antiquewhite;
     padding: 10px 0;
 }
 .navbar-brand{
@@ -225,9 +245,6 @@ main{
     font-family: solid 'Inter', sans-serif;
     text-decoration: underline;
     font-weight: bold;
-}
-.dropdown{
-    padding-right: 12px;
 }
 .dropdown-item:hover, .dropdown-item.active {
     background-color: antiquewhite;
