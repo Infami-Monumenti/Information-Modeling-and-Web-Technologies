@@ -1,4 +1,6 @@
 /* Styles specific to the documentation page */
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Prata&display=swap');
+
 .doc-container {
     flex: 1;
     margin-left: 20%;
@@ -12,8 +14,16 @@
     overflow-y: auto;
 }
 
+h2{
+    font-family: 'Noticia+Text';
+}
+
+h3{
+    font-family: 'Noticia+Text';
+}
+
 .doc-title {
-    font-family: solid 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
     font-weight: 800;
     text-align: center;
     background-color: rgb(227, 218, 208);
@@ -41,6 +51,7 @@
 
 .doc-content {
     padding-top: 1.5em;
+    font-family: 'Noticia+Text';
 }
 
 .sidebar-doc {
@@ -51,7 +62,7 @@
     align-self: flex-start;
     background-color: white; 
     opacity: 95%;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noticia+Text';
     font-weight: 800;
     line-height: 2;
     font-size: 1.2em; 
