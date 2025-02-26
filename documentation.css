@@ -1,5 +1,5 @@
 /* Styles specific to the documentation page */
-@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Judson:ital,wght@0,400;0,700;1,400&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
 ::-webkit-scrollbar {
     width: 2px;
@@ -42,20 +42,20 @@
 }
 
 h2{
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
 }
 
 h3{
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
 }
 
 .doc-title {
-    font-family: 'Noticia+Text';
-    font-weight: 800;
+    font-family: 'Judson';
+    font-weight: 900;
     text-align: center;
     background-color: rgb(227, 218, 208);
     color: black;
-    font-size: 2em;
+    font-size: 3.5em;
     letter-spacing: 0.5em;
     max-width: 100%;
 }
@@ -76,7 +76,7 @@ h3{
 
 .doc-content {
     padding-top: 1.5em;
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
 }
 
 .palette-grid {
