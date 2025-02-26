@@ -1,7 +1,17 @@
 /* Importing the required fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Judson:ital,wght@0,400;0,700;1,400&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Prata&display=swap');
+
+.roboto-serif-headings {
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "GRAD" 0;
+  }
 
 @media screen and (max-width: 900px) {
     #padlink{
@@ -140,7 +150,7 @@ a:hover {
 }
 
 .mlfont{
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
 }
 
 /* MUSEUM LAYOUT Carousel styles */
@@ -227,13 +237,13 @@ nav {
     padding: 10px 0;
 }
 .navbar-brand{
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     font-size: x-large;
     font-weight: 1000;
     color: #977060!important;
 }
 .nav-link{
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     text-decoration: none;
     color: #977060!important;
     border-radius: 30px;
@@ -242,7 +252,7 @@ nav {
     font-size: 16px;
 }
 nav a  {
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     padding: 0 15px;
     text-decoration: none;
     color: #977060!important;
@@ -261,14 +271,14 @@ main{
     padding-left: 10px;
     padding-right: 10px;
     color: #977060 !important;
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     text-decoration: underline;
     font-weight: bold;
 }
 .dropdown-item:hover, .dropdown-item.active {
     background-color: antiquewhite;
     color: #977060 !important;
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     text-decoration: underline;
     font-weight: bold;
 }
@@ -287,7 +297,7 @@ h1{
     text-align: center;
     background-color:rgb(227, 218, 208);
     color: black;
-    letter-spacing: 0.5em;
+    /* letter-spacing: 0.5em; */
 }
 .indextitle-container{
     justify-content: center;
@@ -300,7 +310,7 @@ h1{
     font-weight: 11000;
     margin-top: 75px;
     margin-bottom: 100px;
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     padding-top: 5px;
 }
 
@@ -901,7 +911,7 @@ footer a:hover {
     font-family: 'Inter', sans-serif;
 }
 .about-title {
-    font-family:'Noticia+Text';
+    font-family:'Judson';
     font-weight: 800;
     text-align: center;
     background-color: rgb(227, 218, 208);
@@ -1123,20 +1133,19 @@ figcaption {
 }*/
 /*---Disclaimer---*/
 .discTitle {
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
     font-weight: 900;
     text-align: center;
     background-color:rgb(227, 218, 208);
     color: black;
-    font-size: 2em;
-    letter-spacing: 0.5em;
+    font-size: 3.5em;
     margin-top: 2.5em;
 }
-.discLine {
+/* .discLine {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
-}
+} */
 .discContainer {
     margin-bottom: 4em;
 }

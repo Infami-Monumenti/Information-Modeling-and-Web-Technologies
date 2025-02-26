@@ -112,13 +112,13 @@
                 "text 3": "docs/priapus_statue.html",
                 "image": "images/StatuadiPriapo.jpg",
                 "narratives": {
-                    "time": "late III century BC",
+                    "time": "II century AD",
                     "place": "Siracuse",
                     "artistic expression": "Sculpture"
                 }
             },
             "itemMeta": {
-                "time": "late III century BC",
+                "time": "II century AD",
                 "conservation location": "Ephesus Museum, Turkey",
                 "author": "",
                 "authority": "https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901000724",
@@ -138,14 +138,14 @@
                 "text 3": "docs/poenulus.html",
                 "image": "images/poenulus_geppert.jpg",
                 "narratives": {
-                    "time": "XIX century",
+                    "time": "II century BC",
                     "place": "Rome",
                     "artistic expression": "Literary work"
                 }
             },
             "itemMeta": {
-                "time": "XIX century",
-                "temporal": "II century BC",
+                "time": "II century BC",
+                "production": "XIX century BC",
                 "conservation location": "",
                 "author": "Plautus",
                 "authority": "http://id.loc.gov/authorities/classification/PA6568.P7",
@@ -321,13 +321,14 @@
                 "text 3": "docs/phallic_saints.html",
                 "image": "images/PhallicSaints.jpg",
                 "narratives": {
-                    "time": "XX century A.D.",
+                    "time": "XIV-XV century",
                     "place": "France",
                     "artistic expression": "Sculpture"
                 }
             },
             "itemMeta": {
-                "time": "XX century A.D.",
+                "time": "XIV-XV century",
+                "production": "XX century",
                 "conservation location": "Saint Jallet, France",
                 "author": "",
                 "authority": "https://www.wikidata.org/wiki/Q2626893",
@@ -347,14 +348,14 @@
                 "text 3": "docs/priapea.html",
                 "image": "https://www.enteboccaccio.it/files/large/2710/plut_3331.jpg",
                 "narratives": {
-                    "time": "XIV century",
+                    "time": "I century AD",
                     "place": "Rome",
                     "artistic expression": "Literary work"
                 }
             },
             "itemMeta": {
-                "time": "XIV century",
-                "temporal": "I century AD",
+                "time": "I century AD",
+                "production": "XIV century",
                 "conservation location": "Biblioteca Medici, Italy",
                 "author": "Boccaccio",
                 "authority": "https://viaf.org/viaf/184679300/",
@@ -374,14 +375,14 @@
                 "text 3": "docs/lysistrata.html",
                 "image": "images/Lysistrata.jpg",
                 "narratives": {
-                    "time": "XVI century",
+                    "time": "V century BC",
                     "place": "Greece",
                     "artistic expression": "Literary work"
                 }
             },
             "itemMeta": {
-                "time": "XVI century",
-                "temporal": "V century BC",
+                "time": "V century BC",
+                "production": "XVI century BC",
                 "conservation location": "",
                 "author": "Aristophanes",
                 "authority": "http://viaf.org/viaf/184049002",
@@ -447,7 +448,7 @@
     ],
     "meta": {
         "startItem": 1,
-        "narratives": ["XX century BC", "XIX century BC", "IX-VIII century BC", "VI century BC", "late III century BC", "II century BC", "I century BC", "I century AD", "II century AD", "XIV century", "XVI century", "XVIII-XIX century", "XIX century", "XXI century", "Iran", "Egypt", "USA", "Siracuse", "Rome", "France", "Greece", "Architecture", "Painting", "Sculpture", "Fresco", "Literary work"],
+        "narratives": ["XX century BC", "XIX century BC", "IX-VIII century BC", "VI century BC", "V century BC", "II century BC", "I century BC-I century AD", "I century AD", "II century AD", "XIV-XV century", "XIX century", "XXI century", "Iran", "Egypt", "USA", "Siracuse", "Rome", "France", "Greece", "Architecture", "Painting", "Sculpture", "Fresco", "Literary work"],
         "startNarrative": "time",
         "startVal": "XX century BC"
     }
