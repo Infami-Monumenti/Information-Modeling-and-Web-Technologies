@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Prata&display=swap');
 
 .timeline-container {
     background: ​#e3dad0;
@@ -44,14 +44,14 @@
 }
 
 .start-button {
-    margin-bottom: 5em; /* Move o botão Home 5em para cima */
+    margin-bottom: 5em;
 }
 
 .timeline::before {
     content: "";
     position: absolute;
-    top: 50px; /* Ajusta para começar abaixo do botão Home */
-    bottom: 50px; /* Ajusta para terminar acima do botão Museum */
+    top: 50px; 
+    bottom: 50px; 
     left: 50%;
     width: 4px;
     background-color: #785830; 
@@ -179,4 +179,12 @@
 
 .nav-buttons {
     display: none;
+}
+
+@media (max-width: 480px) { 
+        .timeline-container{
+            padding-bottom: 7em;
+        }
+        
+    
 }
