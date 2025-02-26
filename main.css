@@ -70,7 +70,6 @@ html{
     height: 100%;
 }
 body {
-
     display: flex;
     flex-direction: column;
     background-color: rgb(227, 218, 208);
@@ -82,7 +81,7 @@ body {
     text-align: justify;
     overflow-y: auto; /* Allow scrolling of the body content */
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     margin: 0;
     padding: 0;
 }
@@ -753,7 +752,6 @@ footer{
     height: var(--cs-foot-height);
     height: 20px;   
     margin-left:-8px;
-    margin-top: 100%;
     padding-top: 0;
 }
 .thefooter{
