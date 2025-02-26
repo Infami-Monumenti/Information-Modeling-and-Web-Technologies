@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Judson:ital,wght@0,400;0,700;1,400&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 /*media queries*/
 @media screen and (max-width: 900px) and (orientation: portrait) {
     #padlink{
@@ -236,7 +237,7 @@ nav {
     padding: 10px 0;
 }
 .navbar-brand {
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
     font-weight: 900;
     color: #977060!important;
 }
@@ -248,14 +249,14 @@ nav a {
     border-radius: 30px;
 }
 .navbar a, .navbar li {
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
 }
 .nav-link:hover,.nav-link.active {
     background-color: antiquewhite;
     padding-left: 10px;
     padding-right: 10px;
     color: #977060 !important;
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
     text-decoration: underline;
     font-weight: bold;
 }
@@ -265,7 +266,7 @@ nav a {
 .dropdown-item:hover, .dropdown-item.active {
     background-color: antiquewhite;
     color: #977060 !important;
-    font-family: 'Noticia+Text';
+    font-family: 'Judson';
     text-decoration: underline;
     font-weight: bold;
 }
@@ -326,9 +327,6 @@ nav a {
     position: relative;
     height: inherit;
 }
-#img-wrapper, #table {
-    box-shadow: 0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5);
-}
 #tableCol {
     grid-row: span 2;
     width: 100% !important;
@@ -337,6 +335,9 @@ nav a {
     text-align: center;
     font-weight: bold;
     margin-top: 1rem;
+    font-family: 'Judson';
+    font-weight: 800;
+    font-size: xx-large;
 }
 #info-wrapper {
     max-height: 25em;
