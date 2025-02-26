@@ -118,7 +118,7 @@
         {
             "name": "Poenulus (\"The Little Carthaginian\")",
             "info": {
-                "date": "II century BC",
+                "date": "II century B.C.",
                 "conservation location": "Bavarian State Library",
                 "author": "Plautus",
                 "authority": "https://www.digitale-sammlungen.de/view/bsb10242642?page=1",
@@ -132,7 +132,7 @@
                 "latitude": "48.5,",
                 "longitude": "11.5",
                 "narratives": {
-                    "time": "II century BC",
+                    "time": "II century B.C.",
                     "place": "Rome",
                     "artistic expression": "literary work"
                 }
@@ -302,7 +302,7 @@
         {
             "name": "Boccaccio, Biblioteca Medicea Laurenziana, Plut. 33 31 (Carmina Priapea Fragments)",
             "info": {
-                "date": "XIV century",
+                "date": "I century A.D.",
                 "conservation location": "Biblioteca Medici, Italy",
                 "author": "Boccaccio",
                 "authority": "https://viaf.org/viaf/184679300/",
@@ -316,7 +316,7 @@
                 "latitude": "43.7745",
                 "longitude": "11.2534", 
                 "narratives": {
-                    "time": "XIV century",
+                    "time": "I century A.D.",
                     "place": "Rome",
                     "artistic expression": "literary work "
                 }
@@ -325,7 +325,7 @@
         {
             "name": "Lysistrata",
             "info": {
-                "date": "XVI century",
+                "date": "V century B.C:",
                 "conservation location": "Bavarian State Library",
                 "author": "Aristophanes",
                 "authority": "http://viaf.org/viaf/184049002",
@@ -339,7 +339,7 @@
                 "latitude": "48.1474",
                 "longitude": "11.5806", 
                 "narratives": {
-                    "time": "XVI century",
+                    "time": "V century B.C.",
                     "place": "Greece",
                     "artistic expression": "literary work"
                 }
