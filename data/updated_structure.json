@@ -279,7 +279,7 @@
         {
             "name": "Phallic Saints",
             "info": {
-                "date": "XX century AD",
+                "date": "XIV - XV century AD",
                 "conservation location": "Saint Jallet, France",
                 "author": "",
                 "authority": "http://dbpedia.org/resource/St._Priapus_Church",
@@ -293,7 +293,7 @@
                 "latitude": "46.4571",
                 "longitude": "1.6712", 
                 "narratives": {
-                    "time": "XX century AD",
+                    "time": "XIV - XV century AD",
                     "place": "France",
                     "artistic expression": "Sculpture"
                 }
