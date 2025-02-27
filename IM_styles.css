@@ -193,6 +193,14 @@
         word-wrap: break-word !important;
     }
 }
+@media screen and (max-width: 390px) {
+    #info-wrapper {
+        height: 50% !important;
+    }
+    #imgCol, #tableCol {
+        height: 40% !important;
+    }
+}
 
 /* width */
 ::-webkit-scrollbar {
