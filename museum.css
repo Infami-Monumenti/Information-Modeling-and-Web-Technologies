@@ -190,6 +190,27 @@ main {
     text-decoration: underline;
 }
 
+#mpc{
+    color: #af6459;
+    font-weight: bold ;
+}
+#msc{
+    color: #d9af6b;
+    font-weight: bold ;
+}
+#mac{
+    color: #855c75;
+    font-weight: bold ;
+}
+#mlc{
+    color: #736f4c;
+    font-weight: bold ;
+}
+#mfc{
+   color: #526a84;
+   font-weight: bold ;
+}
+
 @media (max-width: 600px) {
     .marker {
         width: 20px;
