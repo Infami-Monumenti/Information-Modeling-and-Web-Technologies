@@ -87,76 +87,55 @@
       center: [10, 20],
       zoom: 2
     });
-    
+
     fetch('data/revised_structure.json')
       .then(response => response.json())
       .then(data => {
-        console.log("📌 Data loaded from JSON:", data);
-    
+        console.log("📌 JSON Data Loaded:", data);
+
         if (!data.items || !Array.isArray(data.items)) {
           console.error("❌ Error: JSON does not contain a valid 'items' list.");
           return;
         }
-    
+
         data.items.forEach((item, index) => {  
           if (item.info.latitude && item.info.longitude) {
             const coordinates = [parseFloat(item.info.longitude), parseFloat(item.info.latitude)];
             console.log(`📌 Adding marker for ${item.name} at ${coordinates}`);
-    
+
             const marker = new mapboxgl.Marker({ color: '#977060' })
               .setLngLat(coordinates)
               .addTo(map);
-    
-            // Make sure item.iId exists, or use the index as fallback
-            const itemId = item.iId;
-    
+
+            const itemId = item.iId ? item.iId : index;  // Ensure itemId is always defined
+            console.log(`🔍 Assigned itemId for ${item.name}:`, itemId);
+
             const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
-    
+
             popup.setHTML(`
                 <div class="popup-content">
-                    <h4 style="margin-bottom: 5px;">${item.name}</h4>
+                    <h4>${item.name}</h4>
                     <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
-                    <p style="margin: 2px 0;"><strong>Location:</strong> ${item.info.place}</p>
-                    <p style="margin: 2px 0;"><strong>Date:</strong> ${item.info.date}</p>
-                    <p style="margin: 2px 0;">${item.info['text 1'].substring(0, 150)}...</p>
-                    <p style="margin: 2px 0;">
-                        <a href="infami_monumenti2.html?itemId=${itemId}" class="custom-btn-storymap">Learn More</a>
+                    <p><strong>Location:</strong> ${item.info.narratives.place ? item.info.narratives.place : 'Not available'}</p>
+                    <p><strong>Date:</strong> ${item.itemMeta.time ? item.itemMeta.time : 'Not available'}</p>
+                    <p>${item.info['text 1'].substring(0, 50)}...</p>
+                    <p>
+                        <a href="infami_monumenti2.html?itemId=${encodeURIComponent(item.iId)}" class="custom-btn-storymap">Learn More</a>
                     </p>
                 </div>
             `);
-    
+
             marker.setPopup(popup);
-    
+
             marker.getElement().addEventListener('click', () => {
-                const itemId = item.info.iId; 
-            
-                // Adjust the map position dynamically so the pop-up remains visible
-                const markerCoordinates = coordinates;
-                const bounds = map.getBounds();
-            
-                // Move the map to keep the pop-up visible
+                console.log(`📌 Clicked marker for ${item.name}, itemId: ${itemId}`);
                 map.easeTo({
-                  center: [markerCoordinates[0], map.getCenter().lat], 
+                  center: [coordinates[0], map.getCenter().lat], 
                   duration: 1000
-              });
-          
-                // Create the pop-up with the correct link
-                popup.setHTML(`
-                    <div class="popup-content">
-                        <h4>${item.name}</h4>
-                        <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
-                        <p style="margin: 2px 0;"><strong>Location:</strong> ${item.info.place}</p>
-                        <p style="margin: 2px 0;"><strong>Date:</strong> ${item.info.date}</p>
-                        <p style="margin: 2px 0;">${item.info['text 1'].substring(0, 150)}...</p>
-                        <p style="margin: 2px 0;">
-                            <a href="infami_monumenti2.html?itemId=${itemId}" class="custom-btn-storymap">Learn More</a>
-                        </p>
-                    </div>
-                `);
-            
-              popup.addTo(map);
-          });
-    
+                });
+                popup.addTo(map);
+            });
+
             map.on('click', (e) => {
               const features = map.queryRenderedFeatures(e.point);
               if (!features.length) {
@@ -169,8 +148,7 @@
         });
       })
       .catch(error => console.error('❌ Error loading JSON:', error));
-  </script>
-  
+  </script>  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>

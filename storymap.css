@@ -1,31 +1,29 @@
-/* Story Map Container Page */
 .story-map-container {
-    margin: 5em 0 1.5em 0;
+    margin: 0;
     background-color: rgb(227, 218, 208);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
     flex-grow: 1;
-    min-height: calc(var(--navbar-height) - var(--footer-height));
     overflow-y: hidden;
 }
 
 .custom-btn-storymap {
     display: inline-block;
-    padding: 4px 8px; /* Reduce padding */
-    font-size: 12px; /* Reduce font size */
-    border-radius: 4px; /* Slightly round corners */
-    background-color: #736f4c; /* Keep the button color */
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #736f4c;
     color: white;
     text-decoration: none;
 }
 
 .custom-btn-storymap:hover {
-    background-color: #5e5b3a; /* Darker shade on hover */
+    background-color: #5e5b3a;
 }
 
 #map {
     width: 100%;
-    height: 600px;
+    height: 80vh;
 }
 
 .mapboxgl-popup-content {
@@ -35,11 +33,21 @@
     line-height: 1.4;
     padding: 8px;
     border-radius: 8px;
+    max-height: 66vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content {
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
 .popup-content img {
     max-width: 100%;
-    height: auto;
+    height: 80px;
     object-fit: contain;
     display: block;
     margin: 10px auto;
@@ -55,9 +63,22 @@
 }
 
 .popup-content p {
-    margin: 8px 0; /* More spacing between text blocks */
+    margin: 8px 0;
 }
 
 .mapboxgl-popup-close-button {
     display: none !important;
+}
+
+.popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
 }
