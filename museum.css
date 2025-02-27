@@ -15,7 +15,6 @@ main {
 .title{
     font-weight: 11000;
     margin-top: 60px;
-    margin-bottom: 20px;
     font-family:'Judson';
     padding-top: 5px;
 }
@@ -26,6 +25,50 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.legend {
+    display: flex;
+    justify-content: right;
+    gap: 15px;
+    margin-right: 90px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.legend-color.category-arch {
+    background-color: #855c75;
+}
+
+.legend-color.category-sculp {
+    background-color: #d9af6b;
+}
+
+.legend-color.category-paint {
+    background-color: #af6459;
+}
+
+.legend-color.category-lit {
+    background-color: #736f4c;
+}
+
+.legend-color.category-fresc {
+    background-color: #526a84;
 }
 
 .map-list-wrapper {
@@ -121,52 +164,6 @@ main {
     background-color: #526a84; 
 }
 
-.legend {
-    display: flex;
-    justify-content: right;
-    gap: 15px;
-    margin-top: -40px;
-    margin-right: 80px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-}
-
-.legend-color {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.legend-color.category-arch {
-    background-color: #855c75;
-}
-
-.legend-color.category-sculp {
-    background-color: #d9af6b;
-}
-
-.legend-color.category-paint {
-    background-color: #af6459;
-}
-
-.legend-color.category-lit {
-    background-color: #736f4c;
-}
-
-.legend-color.category-fresc {
-    background-color: #526a84;
-}
-
 .description-text {
     max-width: 90%;
     margin: 60px auto;
@@ -199,6 +196,14 @@ main {
         height: 20px;
         font-size: 12px;
     }
+    .legend-item {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte */
+    }
+
+    .legend-color {
+        width: 15px; /* Reduz o tamanho do círculo de cor */
+        height: 15px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -206,5 +211,45 @@ main {
         max-width: 90%;
         padding: 10px;
         font-size: 0.9rem;
+    }
+}
+
+/* Adjusting the elements in small screens*/
+@media (max-width: 768px) {
+    .map-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .map-container {
+        width: 100%;
+        text-align: center;
+        margin-left: -10%;
+    }
+
+    .artwork-list {
+        width: 90%;
+        max-width: 500px;
+        margin: 20px auto;
+        text-align: left;
+    }
+
+    .description-text {
+        width: 90%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 1rem;
     }
 }

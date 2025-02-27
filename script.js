@@ -326,10 +326,8 @@ function handleScreenResize(e) {
         infoIcon.on("click", function() {
             tableCol.toggleClass("visible");
             if (tableCol.hasClass("visible")) {
-                figImage.css("box-shadow", "none");
                 tableCol.css("pointer-events", "auto");
             } else {
-                figImage.css("box-shadow", "0.1rem 0.1rem 0.1rem rgba(151 112 96 / 0.5)");
                 tableCol.css("pointer-events", "none");
             }
         });
@@ -342,7 +340,7 @@ function handleScreenResize(e) {
 
 handleScreenResize(mediaQuery);
 
-mediaQuery.addEventListener("change", handleScreenResize);
+//mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
