@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="museum.css">
-    <link rel="stylesheet" href="footer.css">
     <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg">
 </head>
 <body>
@@ -91,26 +90,27 @@
       <p>Once visitors reach the museum’s themed bar, they have the unique opportunity to uncover further artistic and historical insights on the subject simply by engaging with the map. Visitors can personalize their experience by choosing from our alternative narratives, such as the chronological, the geographical, or the typological (painting, sculpture, architecture, literary work, and fresco) exploration.</p>
     </div>
   </main>
-    <footer>
-        <div class="container-fluid footer-container">
-            <div class="row footer-row">
-                <div class="col-md-6 footer-col-logo d-flex">
-                    <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
-                </div>
-                <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
-                    <a href="index.html"><h3>Infami Monumenti</h3></a>
-                    <p>
-                        <a href="documentation.html" target="_blank">Project Documentation</a><br>
-                        <a href="about.html" class="footeractive-link">About</a><br>
-                        <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies" target="_blank">GitHub Repository</a><br>
-                    </p>
-                </div>
-            </div>
-            <div class="row copyright-row d-flex">
-                <p>2024@Infamimonumenti</p>
-            </div>
+  <footer class="thefooter"> 
+    <div class="footer-container">
+      <div class="row footer-row">
+        <div class="col-md-6 footer-col-logo d-flex">
+          <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
         </div>
-    </footer>
+        <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
+            <a href="index.html"><h3>Infami Monumenti</h3></a>
+            <p>
+            <a href="documentation.html" target="_blank">Project Documentation</a><br>
+           <a href="about.html">About</a><br>
+           <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies"target="_blank">GitHub Repository</a><br>
+           </p>
+        </div>
+      <div class="row copyright-row d-flex">
+        <p>2024@Infamimonumenti</p>
+      </div>
+    </div>
+      
+  </footer>
+
     <script>
       const artworks = [
           { name: "Obra 1", x: 50.0, y: 91, link: "infami_monumenti2.html?itemId=0", category: "arch" },

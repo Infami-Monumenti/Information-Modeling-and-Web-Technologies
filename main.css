@@ -757,6 +757,7 @@ footer{
 .thefooter{
     margin: 0;
     padding: 0;
+    right: 0;
 }
 .footer-container{
     padding: 0px;
@@ -775,7 +776,6 @@ footer{
 .footer-row {
     height: fit-content;
     box-sizing: border-box;
-    width: 100vw;
     background-color: #977060;
     margin-top: auto;
 }
@@ -799,7 +799,6 @@ footer{
     font-size: smaller;
 }
 .copyright-row {
-    width: 100vw;
     margin: 0;
     padding: 0;
     background-color: #977060;
