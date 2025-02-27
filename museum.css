@@ -14,8 +14,9 @@ main {
 
 .title{
     font-weight: 1000;
-    margin-top: 2.5em;
+    margin-top: 1.5em;
     font-family:'Judson';
+    font-size: 3.5rem;
     padding-top: 5px;
 }
 
