@@ -184,7 +184,10 @@ h3{
 #small-layout-screenshot {
     display: flex;
 }
-
+.mapped-property {
+    color: #736f4c !important;
+    font-weight: 400 !important;
+}
 /* Responsive text styling for smaller screens */
 @media (max-width: 768px) {
     .doc-container {

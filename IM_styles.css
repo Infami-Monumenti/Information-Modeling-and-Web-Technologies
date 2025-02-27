@@ -490,7 +490,7 @@ th.highlight {
     color: black;
     font-weight: 800;
     text-align: center;
-    transition: all 0.3s ease-in;
+    font-family: 'Judson';
 }
 #fullText img {
     padding: 1.5rem;
