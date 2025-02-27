@@ -180,7 +180,7 @@ function createInfoTable(item) {
 
             header.on("click", function() {
                 if (header.text() == headerText) {
-                    header.html(mappedText).css("color", "olive")
+                    header.html(mappedText).css("color", "#736f4c")
                 } else {
                     header.html(headerText).css("color", "black")
                 }

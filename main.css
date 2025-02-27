@@ -301,10 +301,6 @@ h1{
 .indextitle-container{
     justify-content: center;
 }
-#titletop{
-    margin-top: 2em;
-    padding-top: 2em;
-}
 .indextitle{
   
     margin-top: 50px;
@@ -797,6 +793,7 @@ footer{
 }
 .footer-col-info h3 {
     color: rgb(227, 218, 208);
+    font-family: 'Judson';
 }
 .footer-col-info p {
     font-size: smaller;
@@ -848,6 +845,9 @@ footer a:hover {
     .container-fluid-layout{
         padding-bottom: 0px;
         margin-bottom: 0px;
+    }
+    .discTitle {
+        font-size: xx-large !important;
     }
 }
 
@@ -920,13 +920,12 @@ footer a:hover {
 }
 .about-title {
     font-family:'Judson';
-    font-weight: 800;
+    font-weight: 900;
     text-align: center;
     background-color: rgb(227, 218, 208);
     color: black;
-    font-size: 2em;
-    letter-spacing: 0.5em;
-    margin-top: 2em;
+    font-size: 3.5em;
+    margin-top: 1.5em;
     margin-bottom: 0;
     max-width: 100%;
 }
@@ -1147,7 +1146,7 @@ figcaption {
     background-color:rgb(227, 218, 208);
     color: black;
     font-size: 3.5em;
-    margin-top: 2.5em;
+    margin-top: 1.5em;
 }
 /* .discLine {
     width: 70%;
@@ -1156,6 +1155,7 @@ figcaption {
 } */
 .discContainer {
     margin-bottom: 4em;
+    padding: 0 1rem;
 }
 .discContainer > .row {
     margin-bottom: 4em;
@@ -1178,6 +1178,7 @@ figcaption {
 .maindisclaimer .accordion-button {
     background-color: rgba(115, 111, 76, 0.9);
     color: rgb(227, 218, 208);
+    font-weight: 400;
 }
 .main-disclaimer #texts-acc-body {
     overflow-y: scroll;

@@ -249,7 +249,8 @@ nav {
 }
 .navbar-brand {
     font-family: 'Judson';
-    font-weight: 900;
+    font-weight: 1000;
+    font-size: x-large;
     color: #977060!important;
 }
 nav a {
@@ -369,6 +370,7 @@ th {
     white-space: nowrap;
     text-align: right;
     padding-right: 1rem;
+    cursor: pointer;
 }
 
 td {
