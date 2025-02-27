@@ -92,6 +92,9 @@ main {
 .map-container img {
     width: 100%;
     height: auto;
+    margin: 0;
+    padding: 0;
+    border: #e3dad0;
 }
 
 .map-list-container {
@@ -182,7 +185,7 @@ main {
 }
 
 .description-text a {
-    color: #3d1302;
+    color: #977060;
     text-decoration: none;
 }
 
