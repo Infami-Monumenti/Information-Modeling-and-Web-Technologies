@@ -200,6 +200,9 @@
     #imgCol, #tableCol {
         height: 40% !important;
     }
+    #infoTitle {
+        margin-top: 1em !important;
+    }
 }
 
 /* width */
