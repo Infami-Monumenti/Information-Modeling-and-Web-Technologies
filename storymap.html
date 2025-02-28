@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="storymap.css">
   <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
-  
-  <!-- Mapbox CSS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css" rel="stylesheet">
 </head>
 <body>
@@ -45,22 +43,17 @@
       </div>
     </nav>
   </header>
-
-
-  
-  <div class="story-map-container">
-    <div id="map"></div>
-  </div>
-
-  <footer class="thefooter"> <!--riprendere gli altri colori del logo nel footer-->
+  <section>
+    <div class="story-map-container">
+      <div id="map"></div>
+    </div>
+  </section>
+  <footer class="thefooter"> 
     <div class="container-fluid footer-container">
       <div class="row footer-row">
         <div class="col-md-6 footer-col-logo d-flex">
           <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
         </div>
-        <!--<div class="col-md-4 footer-col">
-          empty column
-        </div>-->
         <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
           <a href="index.html"><h3>Infami Monumenti</h3></a>
             <p>
@@ -69,14 +62,13 @@
             <a href="https://github.com/Gabinetto-Segreto/Information-Modeling-and-Web-Technologies" target="_blank">GitHub Repository</a><br>
             </p>
         </div>
-      <div class="row copyright-row d-flex">
-        <p>2024<i class="fa-light fa-copyright"></i>Infamimonumenti</p>
-      </div>
+        <div class="row copyright-row d-flex">
+          <p>2024<i class="fa-light fa-copyright"></i>Infamimonumenti</p>
+        </div>
       </div>
     </div>
   </footer>               
   
-  <!-- Mapbox JS -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWVuZWdhdGNhcmxhIiwiYSI6ImNseTh0dXcyYTBmcHIya3M3OGR1bmdyaDgifQ.xJi0wSrGb1FTd0TRWt-8mQ';
@@ -113,27 +105,27 @@
             const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
 
             popup.setHTML(`
-                <div class="popup-content">
-                    <h4>${item.name}</h4>
-                    <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
-                    <p><strong>Location:</strong> ${item.info.narratives.place ? item.info.narratives.place : 'Not available'}</p>
-                    <p><strong>Date:</strong> ${item.itemMeta.time ? item.itemMeta.time : 'Not available'}</p>
-                    <p>${item.info['text 1'].substring(0, 50)}...</p>
-                    <p>
-                        <a href="infami_monumenti2.html?itemId=${encodeURIComponent(item.iId)}" class="custom-btn-storymap">Learn More</a>
-                    </p>
-                </div>
+              <div class="popup-content">
+                <h4>${item.name}</h4>
+                <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
+                <p><strong>Location:</strong> ${item.info.narratives.place ? item.info.narratives.place : 'Not available'}</p>
+                <p><strong>Date:</strong> ${item.itemMeta.time ? item.itemMeta.time : 'Not available'}</p>
+                <p>${item.info['text 1'].substring(0, 50)}...</p>
+                <p>
+                  <a href="infami_monumenti2.html?itemId=${encodeURIComponent(item.iId)}" class="custom-btn-storymap">Learn More</a>
+                </p>
+              </div>
             `);
 
             marker.setPopup(popup);
 
             marker.getElement().addEventListener('click', () => {
-                console.log(`📌 Clicked marker for ${item.name}, itemId: ${itemId}`);
-                map.easeTo({
-                  center: [coordinates[0], map.getCenter().lat], 
-                  duration: 1000
-                });
-                popup.addTo(map);
+              console.log(`📌 Clicked marker for ${item.name}, itemId: ${itemId}`);
+              map.easeTo({
+                center: [coordinates[0], map.getCenter().lat], 
+                duration: 1000
+              });
+              popup.addTo(map);
             });
 
             map.on('click', (e) => {

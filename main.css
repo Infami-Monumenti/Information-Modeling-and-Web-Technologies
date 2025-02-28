@@ -9,9 +9,9 @@
     font-weight: 100;
     font-style: normal;
     font-variation-settings:
-      "wdth" 100,
-      "GRAD" 0;
-  }
+    "wdth" 100,
+    "GRAD" 0;
+}
 
 @media screen and (max-width: 900px) {
     #padlink{
@@ -37,18 +37,18 @@
     width: 3px;
     height: 3px;  
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
     background: #e3dad0;
     border-radius: 5px;   
 }
-  
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #977060;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #6f5247;
@@ -89,11 +89,7 @@ html, body {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-.indexmain{
-    width: 100%;
-    min-height: 100%;
-    bottom: 0;
-}
+
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -125,98 +121,12 @@ a:hover {
     color: #977060;
 }
 
-.container-fluid-layout {
-    margin-top: var(--navbar-height);
-    height: calc(100vh - var(--navbar-height) - var(--footer-height));
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 0;
-    padding-top: 3em;
-}
-
-.container-fluid-layout {
-    height: auto;
-    flex: 1;
-}
-
-.container-fluid-layout .row {
-    flex: 1;
-    height: auto;
-}
-
-.mlfont{
-    font-family: 'Judson';
-}
-
-/* MUSEUM LAYOUT Carousel styles */
-.carousel {
-    margin-top: 2em;
-    width: 90%;  /* Set the desired width */
-    height: 90%; /* Set the desired height */
-    margin: auto; /* Center the carousel */
-}
-.carousel-inner {
-    height: 0;
-    padding-bottom: 25%;
-    width: 100%;
-    height: 100%;
-}
-.carousel-item {
-    position: absolute !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.carousel-item img {
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    object-fit: contain; /* Cover the entire area without stretching */
-}
-/* Custom CSS to change carousel dimensions */
-#carouselExampleIndicators {
-    width: 90%;  /* Set the desired width */
-    height: auto; /* Adjust height to be proportional */
-    margin: auto; /* Center the carousel */
-}
-#carouselExampleIndicators .carousel-inner {
-    width: 100%;
-    height: auto; 
-}
-#carouselExampleIndicators .carousel-item img {
-    width: 100%;
-    height: auto; /* Make the image adjust proportionally */
-    object-fit: contain; /* Cover the entire area without stretching */
-}
-/* Specific section styles */
-#arch {
-    background-color: rgb(133, 92, 117);
-    border: 2px solid black;
-}
-#lit {
-    background-color: rgb(115, 111, 76);
-    border: 2px solid black;
-}
-#sculp {
-    background-color: rgb(217, 175, 107);
-    border: 2px solid black;
-}
-#paint {
-    background-color: rgb(175, 100, 89);
-    border: 2px solid black;
-}
-#fresco {
-    background-color: rgb(82, 106, 132);
-    border: 2px solid black;
-}
-/* END MUSEUM LAYOUT Carousel styles */
-
 /* HOMEPAGE INDEX */
+.indexmain{
+    width: 100%;
+    min-height: 100%;
+    bottom: 0;
+}
 .indexcontainer {
     font-family: 'Inter', sans-serif;
     font-weight: 300px;
@@ -299,13 +209,14 @@ h1{
 .indextitle-container{
     justify-content: center;
 }
+
 .indextitle{
-  
     margin-top: 50px;
     margin-bottom: 20px;
     font-family:'Judson';
     padding-top: 5px;
 }
+
 #monumid{
     margin-top: 21px;
     padding-bottom: 80px;
@@ -402,9 +313,9 @@ img:hover{
     padding: 200px 0;
     position: relative;
     clip-path: inset(0);
-  }
-  
-  .call-to-action img {
+}
+
+.call-to-action img {
     position: fixed;
     top: 0;
     left: 0;
@@ -413,37 +324,37 @@ img:hover{
     height: 100%;
     object-fit: cover;
     z-index: 1;
-  }
-  
-  .call-to-action:before {
+}
+
+.call-to-action:before {
     content: "";
     background: color-mix(in srgb, var(--background-color), transparent 50%);
     position: absolute;
     inset: 0;
     z-index: 2;
-  }
-  
-  .call-to-action .container {
+}
+
+.call-to-action .container {
     position: center;
     z-index: 3;
     justify-content: center;
-  }
-  
-  .call-to-action h3 {
+}
+
+.call-to-action h3 {
     color: antiquewhite;
     font-size: 28px;
     font-weight: 700;
     text-align: center;
     justify-content: center;
     margin-left: 200px;
-  }
-  
-  .call-to-action p {
+}
+
+.call-to-action p {
     color: antiquewhite;
     margin-left: 200px;
-  }
-  
-  .call-to-action .cta-btn {
+}
+
+.call-to-action .cta-btn {
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -457,8 +368,8 @@ img:hover{
     align-items: center;
     margin-left: 200px;
     color: antiquewhite;
-  }
-  @media(min-width: 370px){
+}
+@media(min-width: 370px){
     .call-to-action .cta-btn{
         text-align: center;
         align-items: center;
@@ -498,17 +409,17 @@ img:hover{
     display: flex;
     justify-content: space-between; /* Distribuisce lo spazio tra i div */
     gap: 10px; /* Spazio tra i div */
-  }
-  
+}
+
   /* Il box grande occuperà più spazio del box piccolo */
 .box-large {
     flex: 2; /* Occupa 2/3 della larghezza */
-  }
-  
+}
+
 .box-small {
     flex: 1; /* Occupa 1/3 della larghezza */
-  }
-  
+}
+
   /* Stili comuni ai box */
 .box {
     padding: 20px;
@@ -517,24 +428,24 @@ img:hover{
 }
 
   /* Disposizione in colonna per schermi piccoli */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .newindexcontainer {
       flex-direction: column; /* Cambia da riga a colonna */
     }
-  
+
     .box-large, .box-small {
       width: 100%; /* I div ora occupano il 100% della larghezza */
     }
-  }
-  video {
+    } 
+    video {
     width: 100%; /* Il video si adatta alla larghezza del suo contenitore */
     height: auto; /* Mantiene il rapporto di aspetto */
     max-width: 800px; /* Limita la larghezza massima */
     border: 2px solid #ccc; /* Bordo attorno al video */
     border-radius: 10px; /* Angoli arrotondati (opzionale) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra (opzionale) */
-  }
-  
+    }
+
 .priapobtn{
     background-color:antiquewhite; /* Colore di sfondo (verde) */
     color: #977060;/* Colore del testo */
@@ -547,19 +458,19 @@ img:hover{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
     transition: all 0.3s ease; /* Transizione fluida per gli effetti */
     margin-bottom: 10px;
-  }
-  
+}
+
 .priapobtn:hover {
     background-color:white; /* Colore di sfondo quando si passa sopra (hover) */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Aumenta l'ombra */
     transform: translateY(-3px); /* Solleva leggermente il bottone */
-  }
-  
+}
+
 .priapobtn:active {
     transform: translateY(1px); /* Piccolo affossamento quando cliccato */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Riduce l'ombra quando il bottone è premuto */
-  }
-  
+}
+
 .videotitle{
     margin-top: 30px;
     color: antiquewhite;
@@ -738,7 +649,7 @@ a:hover {
     margin: 0;
 }
 
-/*FOOTER VECCHIO*/
+/*FOOTER*/
 footer{
     box-sizing: border-box;
     min-height: fit-content;
@@ -766,8 +677,6 @@ footer{
     display:inline-block;
     vertical-align: top;
 }
-
-/* FOOTER */
 
 .footer-row {
     height: fit-content;
@@ -887,7 +796,7 @@ footer a:hover {
     .maindisclaimer{
         padding-bottom: 10px;
     }
-   
+
     .container-fluid-layout{
         padding-bottom: 50px;
     }
@@ -1003,139 +912,7 @@ div .back p{
     font-weight: bold;
     text-align: center;
 }
-/* Footer styling */
-/*footer {
-    background: #977060;
-    color: #DBD6C5;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: var(--footer-height);
-}*/
-/*infami monumenti page
-.navbarIm {
-    position: fixed;
-    width: 100vw;
-}
-#imBody {
-    overflow-x: hidden;
-}
-#imMain {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    overflow-x: hidden;
-    width: 100%;
-    height: var(--main-height);
-    height: calc(100vh - var(--navbar-height));
-    position: absolute;
-    bottom: 0;
-}
-#mainIMContainer {
-    height: 100vh !important;
-    margin: 0;
-    padding: 0;
-}
-#imRow {
-    height: 100vh !important;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-#imgCol, #dataCol {
-    position: fixed;
-    height: 75%;
-    top: 0;
-}
-#imgCol {
-    left: 0;
-    margin-top: 1em;
-    margin-right: 2em;
-    width: var(--img-column-w);
-    margin-top: 6.5em;
-    margin-left: 1em;
-}
-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-figcaption {
-    margin-top: 5px;
-}
-.wrapper {
-    width: var(--info-column-w);
-    margin-top: 5em;
-    margin-left: var(--img-column-w);
-    box-sizing: border-box;
-    border: 1px solid black;
-    padding-top: 0;
-}
-/*#infoCol {
-    background-color: blue;
-    overflow-y: auto;
-    width: var(--info-column-w);
-    height:100%;
-    margin-left: 25vw;
-    margin-top: 5em;
-}*/
-/*.wrapper p {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}*/
-/*.buttonContainer {
-    margin-top: auto;
-    height: fit-content;
-}
-#dataCol {
-    right: 0;
-    margin-top: 1em;
-    margin-left: 3em;
-    width: var(--data-column-w);
-    margin-top: 6.5em;
-    margin-right: 1em;
-}
-#imTable {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}*/
 
-/*---new infami monumenti--- */
-/*.control-narr-nav {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    border-top: 0.5px solid #977060;
-    border-bottom: 0.5px solid #977060;
-}
-#header-im {
-    position: sticky;
-    top: 0;
-    height: var(--navbar-height);
-    width: 100%;
-    z-index: 1;
-}
-#main-container-im {
-    height: calc(var(--cs-main-height) - var(--narr-control-height));
-}
-#imgCol {
-    left: 0;
-    height: fit-content;
-}
-#infoCol {
-    margin-top: 3.5rem;
-    font-size: 1.1em;
-    text-align: justify;
-    padding: 0 6rem;
-}
-#tableCol {
-    right: 0;
-    height: fit-content;
-}*/
 /*---Disclaimer---*/
 .discTitle {
     font-family: 'Judson';
