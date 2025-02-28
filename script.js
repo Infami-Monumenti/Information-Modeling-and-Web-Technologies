@@ -20,12 +20,15 @@ var schemaMapping = {
     "artistic expression": "genre",
 }
 
-document.addEventListener("DOMContentLoaded", async function() {
-    console.log("Ready to fetch");
+$(document).ready(function() {
+    console.log("jQuery è pronto!");
+
     $.ajax({
         url: "data/revised_structure.json",
         method: "get",
         success: function(data) {
+            console.log("Dati ricevuti:", data);
+            
             items = data.items;
             console.log("items stored");
 
@@ -37,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             curNarrative = data.meta.startNarrative;
             curVal = data.meta.startVal;
 
-            // check if the there is a itemId in the URL and load the correponding item
+            // Controlla se c'è un itemId nell'URL
             const urlParams = new URLSearchParams(window.location.search);
             const itemId = urlParams.get('itemId');
 
@@ -48,14 +51,16 @@ document.addEventListener("DOMContentLoaded", async function() {
                     showInfo(index);
                 }
             } else {
-                prepareNarratives(); // Load the initial item if there is no itemId in the URL
+                prepareNarratives(); // Carica l'elemento iniziale se non c'è itemId
             }
         },
-        error: function(data) {
-            alert("Loading error");
+        error: function() {
+            alert("Errore nel caricamento dei dati");
         }
     });
 });
+
+
 
 function prepareNarratives() {
     currentSelection = items.filter(i => i.info.narratives[curNarrative] == curVal)
