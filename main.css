@@ -643,13 +643,11 @@ a:hover {
 }
 
 
-/* footer */
+/*FOOTER*/
 *{
     padding: 0;
     margin: 0;
 }
-
-/*FOOTER*/
 footer{
     box-sizing: border-box;
     min-height: fit-content;
@@ -738,7 +736,7 @@ footer a:hover {
     font-weight: bold ;
 }
 
-/*media queries footer*/
+/*MEDIA QUERIES FOOTER*/
 @media(max-width: 480px){
     .footer-col-loo{
         width: 50%;
@@ -816,13 +814,11 @@ footer a:hover {
     }
 }
 
-
-/* about cards */
+/* ABOUT */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 
 .about-title {
@@ -837,6 +833,7 @@ footer a:hover {
     max-width: 100%;
 }
 
+/* about cards */
 .aboutcard{
     position: relative;
     width: 300px;
@@ -846,11 +843,9 @@ footer a:hover {
     margin-top: 40px;
     padding-top: 10px;
 }
-
 .aboutcard:hover{
     transform: translateY(-30px);
 }
-
 .aboutcard-container{
     display: flex;
     justify-content: center;
@@ -860,7 +855,6 @@ footer a:hover {
     margin-bottom: 80px;
     padding-top: 20px;
 }
-
 .aboutcard div{
     position: absolute;
     width: 100%;
