@@ -9,40 +9,38 @@
         
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="timeline.css">
-        <!--our vaficon-->
         <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
     </head>
     <body>
         <header>
-            <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">Infami Monumenti</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" id="padlink" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="disclaimer.html">Disclaimer</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle active" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Narratives
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="infami_monumenti2.html">Narratives</a></li>
-                        <li><a class="dropdown-item active" href="timeline.html">Phallic culture over the years</a></li>
-                        <li><a class="dropdown-item" href="storymap.html" target="_blank">Phallic culture geographical location</a></li>
-                        <li><a class="dropdown-item" href="museum.html" target="_blank">Phallic culture expressions</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Infami Monumenti</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                            <a class="nav-link" id="padlink" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Narratives
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="infami_monumenti2.html">Narratives</a></li>
+                                <li><a class="dropdown-item active" href="timeline.html">Phallic culture over the years</a></li>
+                                <li><a class="dropdown-item" href="storymap.html" target="_blank">Phallic culture geographical location</a></li>
+                                <li><a class="dropdown-item" href="museum.html" target="_blank">Phallic culture expressions</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </nav>
         </header>
 
@@ -134,8 +132,6 @@
                     <span class="point"></span>
                     <span class="title">Torre Glòries</span>
                 </div>
-                <!-- Adicione mais objetos conforme necessário até completar 18 -->
-                
                 <a href="museum.html" class="end-button">Museum</a>
             </div>
         </div>
@@ -149,15 +145,12 @@
             </div>
         </div>
 
-        <footer class="thefooter"> <!--riprendere gli altri colori del logo nel footer-->
+        <footer class="thefooter"> 
             <div class="container-fluid footer-container">
                 <div class="row footer-row">
                     <div class="col-md-6 footer-col-logo d-flex">
                         <img src="images/logoinfamimonumenti.jpg" alt="website logo">  
                     </div>
-                <!--<div class="col-md-4 footer-col">
-                empty column
-                </div>-->
                     <div class="col-md-6 footer-col-info mt-2 d-flex flex-column">
                         <a href="index.html"><h3>Infami Monumenti</h3></a>
                         <p>
@@ -201,7 +194,6 @@
                 }, 300);
             }
         
-            // Fechar ao clicar fora do modal
             window.onclick = function(event) {
                 const modal = document.getElementById('imageModal');
                 if (event.target === modal) {
