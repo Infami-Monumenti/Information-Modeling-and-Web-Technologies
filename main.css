@@ -83,6 +83,13 @@ html, body {
     padding: 0;
     overflow-x: hidden;
 }
+html {
+    scroll-behavior: smooth;
+}
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
 * {
     margin: 0;
     padding: 0;
