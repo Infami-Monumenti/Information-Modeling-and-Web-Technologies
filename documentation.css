@@ -215,4 +215,8 @@ h3{
         width: 100%;
     }
 }
-
+@media (max-width: 390px) {
+    .doc-figure {
+        margin: 1.5rem 1rem;
+    }
+}
