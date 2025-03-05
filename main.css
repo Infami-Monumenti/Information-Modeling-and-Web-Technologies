@@ -220,7 +220,6 @@ h1{
     text-align: center;
     background-color:rgb(227, 218, 208);
     color: black;
-    letter-spacing: 0.5em;
 }
 .indextitle{
     margin-top: 50px;
@@ -230,10 +229,12 @@ h1{
 }
 #infamiid{
     margin-top: 50px;
+    letter-spacing: 0.5em;
 }
 #monumid{
     margin-top: 21px;
     padding-bottom: 80px;
+    letter-spacing: 0.5em;
 }
 
 /* homepage Slider */
