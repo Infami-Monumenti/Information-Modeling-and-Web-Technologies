@@ -362,17 +362,23 @@ nav a {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
+    border: 1px solid rgb(151, 112, 96);
+}
+#table tr {
+    border-bottom: 1px solid rgb(151, 112, 96);
 }
 th, td {
     font-size: smaller;
 }
 th {
-    white-space: nowrap;
     text-align: right;
     padding-right: 1rem;
+    padding-left: 0.5rem;
     cursor: pointer;
 }
-
+th:hover {
+    text-decoration: underline;
+}
 td {
     text-align: left;
 }
