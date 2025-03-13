@@ -496,6 +496,6 @@ function setActiveLink() {
     });
   }
 
-  window.onload = setActiveLink;
+
 
 

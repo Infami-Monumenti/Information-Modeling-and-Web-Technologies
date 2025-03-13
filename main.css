@@ -201,7 +201,7 @@ main{
 }
 .indexcontainer {
     font-family: 'Inter', sans-serif;
-    font-weight: 300px;
+    font-weight: 300;
     margin: 0;
     padding: 0;
     background-color:rgb(227, 218, 208);
@@ -215,7 +215,7 @@ main{
     justify-content: center;
 }
 h1{
-    font-family: solid 'Inter', sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight: 900;
     text-align: center;
     background-color:rgb(227, 218, 208);
@@ -306,7 +306,6 @@ img:hover{
 
 .container .text-center{
     margin: -100px;
-    padding: -100px;
     position: relative;
     text-align: center;
 }
@@ -584,8 +583,6 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ritaglia l'immagine in modo che si adatti al contenitore */
-    padding-top: -30%;
-    padding-bottom: -30%;
 }
 
 
@@ -595,7 +592,6 @@ footer{
     min-height: fit-content;
     width: 100%;
     position: static !important;
-    bottom:0 !important;
     padding-bottom: 0 !important;
     height: 20px;   
     margin-left:-8px;
