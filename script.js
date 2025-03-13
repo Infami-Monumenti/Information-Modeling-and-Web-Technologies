@@ -34,7 +34,7 @@ $(document).ready(function() {
 
             var startItem = data.meta.startItem;
             var item = items[startItem];
-            console.log(JSON.stringify(item));
+            console.log("The items:", JSON.stringify(item));
 
             narratives = data.meta.narratives;
             curNarrative = data.meta.startNarrative;
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 function prepareNarratives() {
     currentSelection = items.filter(i => i.info.narratives[curNarrative] == curVal)
-    console.log(JSON.stringify(currentSelection))
+    console.log("This is the current selection in the prepareNarratives function:", JSON.stringify(currentSelection))
     currentSelection.sort((i,j) => {
         if (i["iId"] < j["iId"]) return -1;
         if (i["iId"] > j["iId"]) return 1;
@@ -87,27 +87,33 @@ const infoContainer = $("#info-wrapper")
 const metaTable = $("#table")
 
 function showInfo(index) {
-    var item = currentSelection[index];
-    curSort = item["iId"];
-
-    infoTitle.innerHTML = item.name;
-    shortInfo.html(item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>');
-    figImage.attr('src', item.info.image);
-    figImage.attr('alt', item.name);
-    figImage.css("aspect-ratio", item.display["aspect ratio"])
-    figCaption.html(item.name);
-    longerInfo.html(item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>');
+    try {
+        var item = currentSelection[index];
+        console.log("This is the item in the showInfo function:", item)
+        curSort = item["iId"];
+        console.log("This is the item id:", curSort)
     
-    // for full html
-    document.getElementById("fullText").dataset.path = item.info["text 3"];
-
-    // ensuring text1 is the first to be displayed when the item or the narrative changes
-    if ($("#text1").hasClass("d-none")) {
-        showText1();
+        infoTitle.innerHTML = item.name;
+        shortInfo.html(item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>');
+        figImage.attr('src', item.info.image);
+        figImage.attr('alt', item.name);
+        figImage.css("aspect-ratio", item.display["aspect ratio"])
+        figCaption.html(item.name);
+        longerInfo.html(item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>');
+        
+        // for full html
+        document.getElementById("fullText").dataset.path = item.info["text 3"];
+    
+        // ensuring text1 is the first to be displayed when the item or the narrative changes
+        if ($("#text1").hasClass("d-none")) {
+            showText1();
+        }
+        createInfoTable(item)
+    
+        prepareNavigationButtons(index);
+    } catch(error) {
+        console.log("item is not defined")
     }
-    createInfoTable(item)
-
-    prepareNavigationButtons(index);
 }
 
 function showText1() {
@@ -240,7 +246,7 @@ let chooseTime = $(".fa-clock")
 let choosePlace = $(".fa-earth-americas")
 let chooseGenre = $(".fa-paintbrush")
 offCanvasLink.on("click", function() {
-    console.log("click event fired")
+    console.log("click on offcanvas event fired")
     if ($(this).find(chooseTime).length) {
         showTimeNarrative()
     }
@@ -254,12 +260,32 @@ offCanvasLink.on("click", function() {
     }
 })
 
+// time order mapping
+centuries_order = {
+    "XX century BC": 0,
+    "XIX century BC": 1,
+    "IX-VIII century BC": 2,
+    "VI century BC": 3,
+    "V century BC": 4,
+    "II century BC": 5,
+    "I century BC-I century AD": 6,
+    "I century AD": 7,
+    "II century AD": 8,
+    "XIV-XV century": 9,
+    "XIX century": 10,
+    "XXI century": 11
+}
+
 // toggle time narrative
 function showTimeNarrative() {
         // clearing the list before appending new items
         $("#narr-val-list").empty()
         timeList = items.map((item) => (item.info.narratives.time.trim()))
         timeList = [... new Set(timeList)]
+        // sort array chronologically
+        timeList.sort((a, b) => {
+            return centuries_order[a] - centuries_order[b]
+        })
         for (let period of timeList) {
             $("#narr-val-list").append('<li>' + period + '</li>')
             $("#offcanvas-narrative-title").text("Time")
@@ -267,7 +293,7 @@ function showTimeNarrative() {
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
-            console.log(selectedVal)
+            console.log("Selected value from time offcanvas", selectedVal)
             var timeNarrative = "time"
             changeNarrative(timeNarrative, selectedVal)
             offCanvas.hide()
@@ -279,7 +305,7 @@ function showPlaceNarrative() {
         // clearing the list before appending new items
         $("#narr-val-list").empty()
         placeList = items.map((item) => (item.info.narratives.place.trim()))
-        placeList = [... new Set(placeList)]
+        placeList = [... new Set(placeList)].sort()
         for (let place of placeList) {
             $("#narr-val-list").append('<li>' + place + '</li>')
             $("#offcanvas-narrative-title").text("Place")
@@ -287,7 +313,7 @@ function showPlaceNarrative() {
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
-            console.log(selectedVal)
+            console.log("Selected value from place offcanvas", selectedVal)
             var placeNarrative = "place"
             changeNarrative(placeNarrative, selectedVal)
             offCanvas.hide()
@@ -299,7 +325,7 @@ function showGenreNarrative() {
         // clearing the list before appending new items
         $("#narr-val-list").empty()
         genreList = items.map((item) => (item.info.narratives["artistic expression"].trim()))
-        genreList = [... new Set(genreList)]
+        genreList = [... new Set(genreList)].sort()
         for (let genre of genreList) {
             $("#narr-val-list").append('<li>' + genre + '</li>')
             $("#offcanvas-narrative-title").text("Artistic Expression")
@@ -307,7 +333,7 @@ function showGenreNarrative() {
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
-            console.log(selectedVal)
+            console.log("Selected value from genre offcanvas", selectedVal)
             var genreNarrative = "artistic expression"
             changeNarrative(genreNarrative, selectedVal)
             offCanvas.hide()
@@ -384,19 +410,19 @@ function highlightOnScroll() {
 
             for (let t of title) {
                 titleId = t.getAttribute("id");
-                console.log(titleId)
+                //console.log(titleId)
                 let titleOffset = t.offsetTop; 
-                console.log(titleOffset)
+                //console.log(titleOffset)
 
                 if (scrollTop >= titleOffset) {
                     paragraphOnScreen = titleId;
-                    console.log(paragraphOnScreen);
+                    //console.log(paragraphOnScreen);
                 }
             }
 
             if (paragraphOnScreen) {
                 let bgElement = $(paragraphMapping[paragraphOnScreen]); 
-                console.log(bgElement);
+                //console.log(bgElement);
                 highlightBackground(bgElement);
 
                 if (paragraphOnScreen === "see-schema") {
