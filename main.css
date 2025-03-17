@@ -241,7 +241,7 @@ h1{
 .indexslider{
     height: 385px;
     position: relative;
-    width: calc(250px * 6,5);
+    width: calc(250px * 6.5);
     overflow: hidden; 
     display: grid;
     place-items: center;
