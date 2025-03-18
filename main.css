@@ -261,7 +261,7 @@ h1{
         transform: translateX(0);
     }
     100%{
-        transform: translateX(calc(-205px * 16));
+        transform: translateX(calc(-205px * 17));
     }
 }
 .index-slide{
@@ -411,8 +411,8 @@ video {
     height: auto; /* Mantiene il rapporto di aspetto */
     max-width: 800px; /* Limita la larghezza massima */
     border: 2px solid #ccc; /* Bordo attorno al video */
-    border-radius: 10px; /* Angoli arrotondati (opzionale) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra (opzionale) */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
  }
 .priapobtn{
     background-color:antiquewhite; /* Colore di sfondo (verde) */
