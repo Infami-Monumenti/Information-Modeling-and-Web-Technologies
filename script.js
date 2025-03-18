@@ -30,11 +30,11 @@ $(document).ready(function() {
             console.log("Dati ricevuti:", data);
             
             items = data.items;
-            console.log("items stored");
+            //console.log("items stored");
 
             var startItem = data.meta.startItem;
             var item = items[startItem];
-            console.log("The items:", JSON.stringify(item));
+            //console.log("The items:", JSON.stringify(item));
 
             narratives = data.meta.narratives;
             curNarrative = data.meta.startNarrative;
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 function prepareNarratives() {
     currentSelection = items.filter(i => i.info.narratives[curNarrative] == curVal)
-    console.log("This is the current selection in the prepareNarratives function:", JSON.stringify(currentSelection))
+    //console.log("This is the current selection in the prepareNarratives function:", JSON.stringify(currentSelection))
     currentSelection.sort((i,j) => {
         if (i["iId"] < j["iId"]) return -1;
         if (i["iId"] > j["iId"]) return 1;
@@ -89,9 +89,9 @@ const metaTable = $("#table")
 function showInfo(index) {
     try {
         var item = currentSelection[index];
-        console.log("This is the item in the showInfo function:", item)
+        //console.log("This is the item in the showInfo function:", item)
         curSort = item["iId"];
-        console.log("This is the item id:", curSort)
+        //console.log("This is the item id:", curSort)
     
         infoTitle.innerHTML = item.name;
         shortInfo.html(item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>');
@@ -112,7 +112,7 @@ function showInfo(index) {
     
         prepareNavigationButtons(index);
     } catch(error) {
-        console.log("item is not defined")
+        return "item is not defined"
     }
 }
 
@@ -246,7 +246,7 @@ let chooseTime = $(".fa-clock")
 let choosePlace = $(".fa-earth-americas")
 let chooseGenre = $(".fa-paintbrush")
 offCanvasLink.on("click", function() {
-    console.log("click on offcanvas event fired")
+    //console.log("click on offcanvas event fired")
     if ($(this).find(chooseTime).length) {
         showTimeNarrative()
     }
@@ -293,7 +293,7 @@ function showTimeNarrative() {
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
-            console.log("Selected value from time offcanvas", selectedVal)
+            //console.log("Selected value from time offcanvas", selectedVal)
             var timeNarrative = "time"
             changeNarrative(timeNarrative, selectedVal)
             offCanvas.hide()
@@ -313,7 +313,7 @@ function showPlaceNarrative() {
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
-            console.log("Selected value from place offcanvas", selectedVal)
+            //console.log("Selected value from place offcanvas", selectedVal)
             var placeNarrative = "place"
             changeNarrative(placeNarrative, selectedVal)
             offCanvas.hide()
@@ -333,7 +333,7 @@ function showGenreNarrative() {
         }
         $("#narr-val-list").on("click", "li", function() {
             var selectedVal = $(this).text()
-            console.log("Selected value from genre offcanvas", selectedVal)
+            //console.log("Selected value from genre offcanvas", selectedVal)
             var genreNarrative = "artistic expression"
             changeNarrative(genreNarrative, selectedVal)
             offCanvas.hide()
