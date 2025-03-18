@@ -12,7 +12,7 @@ var genreList = [];
 // mapping with schema properties
 var schemaMapping = {
     "time": "temporalCoverage",
-    "production": "dateCreated",
+    "date of production": "dateCreated",
     "conservation location": "spatial",
     "author": "creator",
     "authority": "sameAs",
