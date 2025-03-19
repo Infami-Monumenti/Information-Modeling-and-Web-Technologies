@@ -43,17 +43,23 @@
 /* Track */
 ::-webkit-scrollbar-track {
     background: #e3dad0;
-    border-radius: 5px;   
+    border-radius: 5px;
+    overflow-y: auto; /* Garantisce che la scrollbar sia visibile */
+    scrollbar-width: thin; /* Per Firefox */   
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #977060;
+    overflow-y: auto; /* Garantisce che la scrollbar sia visibile */
+    scrollbar-width: thin; /* Per Firefox */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #6f5247;
+    overflow-y: auto; /* Garantisce che la scrollbar sia visibile */
+    scrollbar-width: thin; /* Per Firefox */
 }
 :root {
     --cs-nav-height: 4em;
