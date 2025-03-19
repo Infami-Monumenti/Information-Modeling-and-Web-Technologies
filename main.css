@@ -239,18 +239,20 @@ h1{
 
 /* homepage Slider */
 .indexslider{
-    height: 385px;
+    height: 420px;
     position: relative;
-    width: calc(250px * 6.5);
     overflow: hidden; 
-    display: grid;
+    margin: 0;
+    padding: 0;
     place-items: center;
-    padding-top: 25px;
-    padding-bottom: 20px;
+    display: flex;
+    width: max-content; /* Adatta la larghezza in base al contenuto */
+    min-width: 100vw; /* Impedisce che sia più piccolo della finestra */
+
 }
 .indexslide-track{
     display: flex;
-    width: calc(250px * 42);
+    width: calc(250px * 40);
     animation: scroll 40s linear infinite;
 }
 .indexslide-track:hover{
@@ -261,19 +263,19 @@ h1{
         transform: translateX(0);
     }
     100%{
-        transform: translateX(calc(-205px * 17));
+        transform: translateX(calc(-250px * 10));
     }
 }
 .index-slide{
-    height: 300px;
-    width: 400px;
+    height: 280px;
+    width: 380px;
     display: flex;
     align-items: center;
     padding: 15px;
     perspective: 100px;
 }
 .indexslider img{
-    height: 300px !important;
+    height: 280px !important;
     width: 100% !important;
     object-fit: cover;
 }
@@ -281,6 +283,7 @@ img:hover{
     transform: translateZ(20px);
     transition: transform 1s;
 }
+/* left and right shadows
 .indexslider::before,
 .indexslider::after{
     background: linear-gradient(to right,rgb(227, 218, 208,1) 0%,
@@ -288,22 +291,15 @@ img:hover{
     content: '';
     height: 100%;
     position: absolute;
-    width: 30%;
+    width: 10%;
     z-index: 2;
-    padding: 0px;
 }
 .indexslider::before{
-    left: -75px;
+    left: 0;
     padding-left: 0px;
-    height: 500px;
+    height: 400px;
 }
-.indexslider::after{
-    right: -75px;
-    padding-right: 0px;
-    height: 500px;
-    transform: rotateZ(180deg); 
-}
-
+*/
 .container .text-center{
     margin: -100px;
     position: relative;
