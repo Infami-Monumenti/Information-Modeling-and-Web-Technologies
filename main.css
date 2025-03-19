@@ -44,18 +44,21 @@
     background: #e3dad0;
     border-radius: 5px;
     overflow: visible; /* Evita scrollbar extra */
+    overflow-x: clip;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #977060;
     overflow: visible; /* Evita scrollbar extra */
+    overflow-x: clip;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #6f5247;
     overflow: visible; /* Evita scrollbar extra */
+    overflow-x: clip;
 }
 
 :root {
@@ -81,13 +84,14 @@ html, body {
     font-weight: 300;
     line-height: 1.4; /* Adjusted line-height for body text */
     text-align: justify;
-    overflow-y: auto; /* Allow scrolling of the body content */
+    overflow-y: auto !important; /* Allow scrolling of the body content */
     width: 100%;
     max-width: 100vw;
     min-height: auto;
     margin: 0;
     padding: 0;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
+    overflow: visible;
     position: relative;
 }
 html {
@@ -195,19 +199,14 @@ main{
 
 /* HOMEPAGE*/
 #hidslide{
-    overflow-x: hidden;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     width: content; /* Adatta la larghezza in base al contenuto */
     max-width: content; /* Impedisce che sia più piccolo della finestra */
     overflow: visible !important;
+}
 
-}
-.indexwrapper{
-    max-width: min-content !important;
-    overflow-x: hidden !important;
-}
 .indexmain{
     width: 100%;
     min-height: 100%;
@@ -261,8 +260,10 @@ h1{
     margin-right: 0;
     place-items: center;
     display: flex;
+    margin-top: 50px;
     width: content; /* Adatta la larghezza in base al contenuto */
     min-width: 100%; /* Impedisce che sia più piccolo della finestra */
+    overflow: clip;
 }
 .indexslide-track{
     display: flex;
@@ -291,7 +292,6 @@ h1{
 .indexslider img{
     height: 280px !important;
     width: 100% !important;
-    object-fit: cover;
 }
 img:hover{
     transform: translateZ(20px);
@@ -335,6 +335,7 @@ img:hover{
     height: 100%;
     object-fit: cover;
     z-index: 1;
+
 }
 .call-to-action:before {
     content: "";
@@ -421,7 +422,7 @@ video {
     height: auto; /* Mantiene il rapporto di aspetto */
     max-width: 800px; /* Limita la larghezza massima */
     border: 2px solid #ccc; /* Bordo attorno al video */
-    border-radius: 10px; /* Angoli arrotondati */
+    border-radius: 10px !important; /* Angoli arrotondati */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
  }
 .priapobtn{
@@ -531,11 +532,11 @@ video {
 .indexcard{
     width: 325px;
     background-color: floralwhite;
-    border-radius: 15px;
+    border-radius: 15px !important;
     overflow: hidden;
     box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
-    margin: 10px;
-    padding: 9px;
+    margin: 10px !important;
+    padding: 9px !important;
     transition: transform 0.6s ease;
     margin-top: 40px;
     padding-top: 0%;
@@ -761,6 +762,16 @@ footer a:hover {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+.thescroll{
+    overflow-x: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: content; /* Adatta la larghezza in base al contenuto */
+    max-width: content; /* Impedisce che sia più piccolo della finestra */
+    overflow: visible !important;
 }
 
 .about-title {
