@@ -24,7 +24,6 @@
         grid-template-columns: 45% 45% !important;
         grid-template-rows: auto auto !important;
         justify-content: space-evenly;
-        height: 100%;
         gap: 0 !important;
     }
     #infoCol, #imgCol, #tableCol {
@@ -33,9 +32,7 @@
     #infoCol {
         grid-column: 1 / 2;
         grid-row: 1 / 1 !important;
-        /*max-height: 100% !important;*/
         box-sizing: border-box !important;
-        /*align-self: center !important;*/
     }
     #infoCol h3 {
         font-size: medium;
@@ -112,7 +109,7 @@
     }   
     #infoTitle {
         margin-top: 0.5rem !important;
-        font-size: large;
+        font-size: 2em;
     }
     #infoCol p {
         font-size: x-small;
@@ -193,7 +190,7 @@
         word-wrap: break-word !important;
     }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 390px) and (orientation: portrait) {
     #info-wrapper {
         height: 50% !important;
     }
@@ -231,7 +228,7 @@
     --navbar-height: 4em;
     --narr-control-height: 3.5em;
     --main-height: calc(100dvh - var(--navbar-height) - var(--narr-control-height)) !important;
-    --grid-ls-height: calc(100dvh - var(--navbar-height) - var(--narr-control-height) - 4rem);
+    --grid-ls-height: calc(100dvh - var(--navbar-height) - var(--narr-control-height) - 3.5em);
 }
 html {
     height: 100%;
