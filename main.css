@@ -82,6 +82,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow: visible; /* Evita scrollbar extra */
 }
 html {
     scroll-behavior: smooth;
@@ -188,6 +189,23 @@ main{
 }
 
 /* HOMEPAGE*/
+.indexmain-wrapper {
+    overflow-y: auto; /* Garantisce che la scrollbar sia visibile */
+    scrollbar-width: thin; /* Per Firefox */
+}
+
+.indexmain-wrapper::-webkit-scrollbar {
+    width: 10px;
+}
+
+.indexmanin-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.indexmain-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 #hidslide{
     overflow-x: hidden;
     min-height: 100%;
