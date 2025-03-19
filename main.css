@@ -36,6 +36,8 @@
 ::-webkit-scrollbar {
     width: 3px;
     height: 3px;  
+    overflow-y: auto; /* Garantisce che la scrollbar sia visibile */
+    scrollbar-width: thin; /* Per Firefox */
 }
 
 /* Track */
@@ -189,23 +191,6 @@ main{
 }
 
 /* HOMEPAGE*/
-.indexmain-wrapper {
-    overflow-y: auto; /* Garantisce che la scrollbar sia visibile */
-    scrollbar-width: thin; /* Per Firefox */
-}
-
-.indexmain-wrapper::-webkit-scrollbar {
-    width: 10px;
-}
-
-.indexmanin-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-}
-
-.indexmain-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
 #hidslide{
     overflow-x: hidden;
     min-height: 100%;
