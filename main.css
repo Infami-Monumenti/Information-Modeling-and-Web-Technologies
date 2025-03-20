@@ -861,6 +861,10 @@ div .back p{
     color: black;
     font-weight: bold;
 }
+.maindisclaimer .accordion-body {
+    max-height: 10em;
+    overflow-y: scroll;
+}
 .maindisclaimer #accordion-texts, .maindisclaimer #accordion-images {
     padding: 1rem 1rem;
     padding-bottom: 0;
@@ -871,7 +875,6 @@ div .back p{
     font-weight: 400;
 }
 .main-disclaimer #texts-acc-body {
-    overflow-y: scroll;
     background-color: rgb(227, 218, 208) !important;
 }
 

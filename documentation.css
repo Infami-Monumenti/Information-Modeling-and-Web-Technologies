@@ -122,7 +122,7 @@ h3{
     position: relative;
     flex: 0 0 auto;
     font-size: 14px;
-    padding: 12px;
+    padding: 12px 5px;
     font-family: 'hardingreg';
     font-weight: bold;
 }
@@ -199,6 +199,9 @@ h3{
     .table td, .table th {
         font-size: 0.85em;
         padding: 0.5em;
+    }
+    .palette__info__hexcode {
+        font-size: xx-small !important;
     }
 }
 
