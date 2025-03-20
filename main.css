@@ -36,7 +36,6 @@
 ::-webkit-scrollbar {
     width: 3px;
     height: 3px;  
-    overflow: visible !important;
 }
 
 /* Track */
@@ -44,21 +43,18 @@
     background: #e3dad0;
     border-radius: 5px;
     overflow: visible; /* Evita scrollbar extra */
-    overflow-x: clip;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #977060;
     overflow: visible; /* Evita scrollbar extra */
-    overflow-x: clip;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #6f5247;
     overflow: visible; /* Evita scrollbar extra */
-    overflow-x: clip;
 }
 
 :root {
@@ -82,16 +78,15 @@ html, body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 300;
-    line-height: 1.4; /* Adjusted line-height for body text */
+    line-height: 1.4;
     text-align: justify;
-    overflow-y: auto !important; /* Allow scrolling of the body content */
     width: 100%;
     max-width: 100vw;
-    min-height: auto;
+    min-height: 100vh; /* Ensures full height */
     margin: 0;
     padding: 0;
-    overflow-x: clip !important;
-    overflow: visible;
+    overflow-y: auto !important; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
     position: relative;
 }
 html {
@@ -142,6 +137,7 @@ a:hover {
 /* NAVBAR */
 nav {
     justify-content: center;
+    display: flex;
     padding: 10px 0;
 }
 .navbar-brand{
@@ -202,15 +198,16 @@ main{
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    width: content; /* Adatta la larghezza in base al contenuto */
-    max-width: content; /* Impedisce che sia più piccolo della finestra */
-    overflow: visible !important;
+    width: auto; /* Adatta la larghezza in base al contenuto */
+    max-width: auto; /* Impedisce che sia più piccolo della finestra */
+    overflow: clip !important;
 }
 
 .indexmain{
     width: 100%;
     min-height: 100%;
-    bottom: 0;
+    position: relative; 
+    bottom: 0px;
 }
 .indexcontainer {
     font-family: 'Inter', sans-serif;
@@ -472,54 +469,6 @@ video {
     background-color: white;
 }
 
-/* Tooltip container
-#contenitoreTooltip{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#tooltip{
-    position: relative;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-#tooltipText{
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform:translateX(-50%);
-    background-color: #977060;
-    color: #555;
-    white-space: nowrap;
-    padding: 5px 10px;
-    border-radius: 7px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-#tooltipText::before{
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    border: 15px solid;
-    border-color: #977060 #0000 #0000 #0000;
-}
-#tooltip:hover #tooltipText{
-    top: -60%;
-    visibility: visible;
-    opacity: 1;
-}
-*/
-
 /* homepage Narratives Preview Cards */
 .indexcard-container {
     display: flex;
@@ -535,14 +484,14 @@ video {
     border-radius: 15px !important;
     overflow: hidden;
     box-shadow: 0px, 2px, 4px rgba(0,0,0,0.2);
-    margin: 10px !important;
+    margin: 12px !important;
     padding: 9px !important;
     transition: transform 0.6s ease;
     margin-top: 40px;
     padding-top: 0%;
 }
 .indexcard:hover{
-    transform: translateY(-30px);
+    transform: translateY(-20px);
 }
 .indeximgcontainer {
     display: flex;
@@ -609,6 +558,7 @@ footer{
     padding-top: 0;
 }
 .thefooter{
+    min-height: 150px;
     margin: 0;
     padding: 0;
 }
@@ -683,6 +633,9 @@ footer a:hover {
 }
 /*media queries footer*/
 @media(max-width: 480px){
+    .thefooter{
+        min-height: 280px;
+    }
     .footer-col-loo{
         width: 50%;
         margin-bottom: 0px;
@@ -700,6 +653,9 @@ footer a:hover {
     }
 }
 @media (min-width: 360px){
+    .thefooter{
+        min-height: 250px;
+    }
     .indexcard-container{
         padding-bottom: 80px !important;
     }
@@ -714,6 +670,9 @@ footer a:hover {
     }
 }
 @media (max-width: 767px){
+    .thefooter{
+        min-height: 250px;
+    }
     .indexcard-container{
         padding-bottom: 40px !important;
     }
@@ -728,6 +687,12 @@ footer a:hover {
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
+    .thefooter{
+        min-height: 250px;
+    }
+    .thefooter{
+        min-height: 160px;
+    }
     .indexcard-container{
         padding-bottom: 40px !important;
     }
@@ -743,6 +708,9 @@ footer a:hover {
     }
 }
 @media (min-width: 992px){
+    .thefooter{
+        min-height: 160px;
+    }
     .indexcard-container{
         padding-bottom: 40px !important;
     }
