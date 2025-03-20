@@ -6,8 +6,8 @@
     <title>Interactive Map of the Exposition</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="museum.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/museum.css">
     <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg">
 </head>
   <body>
@@ -27,11 +27,11 @@
                 <a class="nav-link" href="disclaimer.html">Disclaimer</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="infami_monumenti2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle active" href="narratives.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Narratives
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="infami_monumenti2.html">Narratives</a></li>
+                  <li><a class="dropdown-item" href="narratives.html">Narratives</a></li>
                   <li><a class="dropdown-item" href="timeline.html">Phallic culture over the years</a></li>
                   <li><a class="dropdown-item" href="storymap.html">Phallic culture geographical location</a></li>
                   <li><a class="dropdown-item active" href="museum.html">Phallic culture expressions</a></li>
@@ -109,23 +109,23 @@
 
     <script>
       const artworks = [
-        { name: "Obra 1", x: 50.0, y: 91, link: "infami_monumenti2.html?itemId=0", category: "arch" },
-        { name: "Obra 2", x: 72.92, y: 60.19, link: "infami_monumenti2.html?itemId=1", category: "sculp" },
-        { name: "Obra 3", x: 80.12, y: 91, link: "infami_monumenti2.html?itemId=2", category: "paint" },
-        { name: "Obra 4", x: 41.67, y: 65.81, link: "infami_monumenti2.html?itemId=3", category: "arch" },
-        { name: "Obra 5", x: 20.20, y: 18.52, link: "infami_monumenti2.html?itemId=14", category: "lit" },
-        { name: "Obra 6", x: 57.92, y: 14.52, link: "infami_monumenti2.html?itemId=5", category: "lit" },
-        { name: "Obra 7", x: 90.25, y: 46.3, link: "infami_monumenti2.html?itemId=6", category: "sculp" },
-        { name: "Obra 8", x: 90.25, y: 23.15, link: "infami_monumenti2.html?itemId=7", category: "fresc" },
-        { name: "Obra 9", x: 78.12, y: 7.19, link: "infami_monumenti2.html?itemId=8", category: "fresc" },
-        { name: "Obra 10", x: 67.71, y: 37.04, link: "infami_monumenti2.html?itemId=9", category: "sculp" },
-        { name: "Obra 11", x: 49.48, y: 57.56, link: "infami_monumenti2.html?itemId=10", category: "sculp" },
-        { name: "Obra 12", x: 38.88, y: 7.19, link: "infami_monumenti2.html?itemId=13", category: "lit" },
-        { name: "Obra 13", x: 46.88, y: 37.04, link: "infami_monumenti2.html?itemId=4", category: "sculp" },
-        { name: "Obra 14", x: 23.88, y: 37.04, link: "infami_monumenti2.html?itemId=11", category: "sculp" },
-        { name: "Obra 15", x: 20.20, y: 56.03, link: "infami_monumenti2.html?itemId=11", category: "sculp" },
-        { name: "Obra 16", x: 20.20, y: 74.07, link: "infami_monumenti2.html?itemId=16", category: "arch" },
-        { name: "Obra 17", x: 26.04, y: 91, link: "infami_monumenti2.html?itemId=17", category: "arch" }
+        { name: "Obra 1", x: 50.0, y: 91, link: "narratives.html?itemId=0", category: "arch" },
+        { name: "Obra 2", x: 72.92, y: 60.19, link: "narratives.html?itemId=1", category: "sculp" },
+        { name: "Obra 3", x: 80.12, y: 91, link: "narratives.html?itemId=2", category: "paint" },
+        { name: "Obra 4", x: 41.67, y: 65.81, link: "narratives.html?itemId=3", category: "arch" },
+        { name: "Obra 5", x: 20.20, y: 18.52, link: "narratives.html?itemId=4", category: "lit" },
+        { name: "Obra 6", x: 57.92, y: 14.52, link: "narratives.html?itemId=5", category: "lit" },
+        { name: "Obra 7", x: 90.25, y: 46.3, link: "narratives.html?itemId=6", category: "sculp" },
+        { name: "Obra 8", x: 90.25, y: 23.15, link: "narratives.html?itemId=7", category: "fresc" },
+        { name: "Obra 9", x: 78.12, y: 7.19, link: "narratives.html?itemId=8", category: "fresc" },
+        { name: "Obra 10", x: 67.71, y: 37.04, link: "narratives.html?itemId=9", category: "sculp" },
+        { name: "Obra 11", x: 49.48, y: 57.56, link: "narratives.html?itemId=10", category: "sculp" },
+        { name: "Obra 12", x: 38.88, y: 7.19, link: "narratives.html?itemId=11", category: "lit" },
+        { name: "Obra 13", x: 46.88, y: 37.04, link: "narratives.html?itemId=12", category: "sculp" },
+        { name: "Obra 14", x: 23.88, y: 37.04, link: "narratives.html?itemId=13", category: "sculp" },
+        { name: "Obra 15", x: 20.20, y: 56.03, link: "narratives.html?itemId=14", category: "sculp" },
+        { name: "Obra 16", x: 20.20, y: 74.07, link: "narratives.html?itemId=15", category: "arch" },
+        { name: "Obra 17", x: 26.04, y: 91, link: "narratives.html?itemId=16", category: "arch" }
       ];
     
       const markersContainer = document.getElementById("markers");
