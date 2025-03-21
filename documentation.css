@@ -1,28 +1,29 @@
 /* Styles specific to the documentation page */
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Judson:ital,wght@0,400;0,700;1,400&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
+/* width */
 ::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;  
 }
 
+/* Track */
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #e3dad0;
     border-radius: 5px;
+    overflow: visible; /* Evita scrollbar extra */
 }
 
+/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(151, 112, 96, 0.5);
-    border-radius: 5px;
+    background: #977060;
+    overflow: visible; /* Evita scrollbar extra */
 }
 
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(151, 112, 96, 0.7);
-}
-
-* {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(151, 112, 96, 0.5) transparent;
+    background: #6f5247;
+    overflow: visible; /* Evita scrollbar extra */
 }
 
 .doc-container {

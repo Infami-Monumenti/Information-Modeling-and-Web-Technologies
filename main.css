@@ -18,43 +18,41 @@
             margin-top: 8px;
         }
     .indextitle{
-        font-size: xx-large !important;
-        font-weight: 800 !important;
+        font-size: xx-large;
+        font-weight: 800;
         align-items: center;
     }
     .indexcontainer{
-        overflow-x: hidden !important;
+        overflow-x: hidden;
     }
     .aboutcard-container{
-        overflow-x: hidden !important;
+        overflow-x: hidden;
     }
     .aboutcard-container{
-        padding-top: 50px !important;
+        padding-top: 50px;
     }
 }
+
 /* width */
 ::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;  
+    width: 3px !important;
+    height: 3px !important;  
 }
-
+  
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #e3dad0;
-    border-radius: 5px;
-    overflow: visible; /* Evita scrollbar extra */
+    background: #e3dad0 !important;
+    border-radius: 5px !important;   
 }
-
+  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #977060;
-    overflow: visible; /* Evita scrollbar extra */
+    background: #977060 !important;
 }
-
+  
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #6f5247;
-    overflow: visible; /* Evita scrollbar extra */
+    background: #6f5247 !important;
 }
 
 :root {
@@ -91,6 +89,7 @@ html, body {
 }
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll !important;
 }
 body {
     -webkit-overflow-scrolling: touch;
@@ -222,6 +221,7 @@ main{
 
 /* homepage Title */
 .indextitle-container{
+    display: flex;
     justify-content: center;
 }
 h1{
@@ -255,10 +255,9 @@ h1{
     margin: 0;
     padding: 0;
     margin-right: 0;
-    place-items: center;
     display: flex;
     margin-top: 50px;
-    width: content; /* Adatta la larghezza in base al contenuto */
+    width: auto; /* Adatta la larghezza in base al contenuto */
     min-width: 100%; /* Impedisce che sia più piccolo della finestra */
     overflow: clip;
 }
@@ -342,9 +341,8 @@ img:hover{
     z-index: 2;
 }
 .call-to-action .container {
-    position: center;
+    text-align: center;
     z-index: 3;
-    justify-content: center;
 }
 .call-to-action h3 {
     color: antiquewhite;
@@ -634,7 +632,7 @@ footer a:hover {
 /*media queries footer*/
 @media(max-width: 480px){
     .thefooter{
-        min-height: 280px;
+        min-height: 270px;
     }
     .footer-col-loo{
         width: 50%;
@@ -731,15 +729,6 @@ footer a:hover {
     padding: 0;
     box-sizing: border-box;
 
-}
-.thescroll{
-    overflow-x: hidden;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: content; /* Adatta la larghezza in base al contenuto */
-    max-width: content; /* Impedisce che sia più piccolo della finestra */
-    overflow: visible !important;
 }
 
 .about-title {
