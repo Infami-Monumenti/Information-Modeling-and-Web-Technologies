@@ -654,7 +654,7 @@ footer a:hover {
 }
 @media (min-width: 360px){
     .thefooter{
-        min-height: 250px;
+        min-height: 245px;
     }
     .indexcard-container{
         padding-bottom: 80px !important;
@@ -671,7 +671,7 @@ footer a:hover {
 }
 @media (max-width: 767px){
     .thefooter{
-        min-height: 250px;
+        min-height: 245px;
     }
     .indexcard-container{
         padding-bottom: 40px !important;
@@ -688,7 +688,7 @@ footer a:hover {
 }
 @media (min-width: 768px) and (max-width: 991px){
     .thefooter{
-        min-height: 250px;
+        min-height: 240px;
     }
     .thefooter{
         min-height: 160px;
@@ -709,7 +709,7 @@ footer a:hover {
 }
 @media (min-width: 992px){
     .thefooter{
-        min-height: 157px;
+        min-height: 155px;
     }
     .indexcard-container{
         padding-bottom: 40px !important;
