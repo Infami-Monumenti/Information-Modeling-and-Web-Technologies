@@ -249,14 +249,14 @@ h1{
 
 /* homepage Slider */
 .indexslider{
-    height: 400px;
+    height: 390px;
     position: relative;
     overflow-x: hidden; 
     padding-top: 20px;
     margin: 0;
     padding: 0;
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     width: auto; /* Adatta la larghezza in base al contenuto */
     min-width: 100%; /* Impedisce che sia più piccolo della finestra */
     overflow: clip;
