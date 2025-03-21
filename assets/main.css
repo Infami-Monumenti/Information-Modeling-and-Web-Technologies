@@ -249,7 +249,7 @@ h1{
 
 /* homepage Slider */
 .indexslider{
-    height: 430px;
+    height: 400px;
     position: relative;
     overflow-x: hidden; 
     padding-top: 20px;
@@ -257,7 +257,6 @@ h1{
     padding: 0;
     display: flex;
     margin-top: 20px;
-    margin-bottom: 0px;
     width: auto; /* Adatta la larghezza in base al contenuto */
     min-width: 100%; /* Impedisce che sia più piccolo della finestra */
     overflow: clip;
@@ -268,7 +267,6 @@ h1{
     animation: scroll 40s linear infinite;
     height: fit-content;
     padding-top: 50px;
-    padding-bottom: 0;
 }
 .indexslide-track:hover{
     animation-play-state: paused;
@@ -711,7 +709,7 @@ footer a:hover {
 }
 @media (min-width: 992px){
     .thefooter{
-        min-height: 160px;
+        min-height: 157px;
     }
     .indexcard-container{
         padding-bottom: 40px !important;
