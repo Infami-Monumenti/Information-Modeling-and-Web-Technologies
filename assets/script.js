@@ -142,7 +142,7 @@ function showText3() {
         infoContainer.scrollTo(0,0)
 
         // hide table on small screen when full text is displayed
-        if (window.matchMedia("(max-width: 900px)") && tableCol.hasClass("visible")) {
+        if (window.matchMedia("(max-width: 1089px)") && tableCol.hasClass("visible")) {
             tableCol.removeClass("visible")
         }
     })
@@ -349,7 +349,7 @@ const infoIcon = $(".see-info-icon");
 const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
-const mediaQuery = window.matchMedia("(max-width: 900px)");
+const mediaQuery = window.matchMedia("(max-width: 1089px)");
 
 function handleScreenResize(e) {
     if (e.matches) {
@@ -373,17 +373,17 @@ function handleScreenResize(e) {
 
 handleScreenResize(mediaQuery);
 
-//mediaQuery.addEventListener("change", handleScreenResize);
+mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
     const grid = document.getElementById("main-im");
 
-    if (window.innerWidth <= 900 && infoTitle.parentNode !== document.body) {
+    if (window.innerWidth <= 1089 && infoTitle.parentNode !== document.body) {
         infoTitle.style.display = "block"
         infoTitle.style.marginTop = "3em"
         document.body.insertBefore(infoTitle, grid); // Move title above the grid
-    } else if (window.innerWidth > 900 && infoTitle.parentNode !== grid) {
+    } else if (window.innerWidth > 1089 && infoTitle.parentNode !== grid) {
         infoTitle.style.marginTop = "1rem"
         infoCol.prepend(infoTitle); // Move title back inside the grid
     }
