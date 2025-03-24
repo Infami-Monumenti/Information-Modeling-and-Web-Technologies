@@ -157,7 +157,7 @@
             },
             "itemMeta": {
                 "time": "II century BC",
-                "production": "XIX century BC",
+                "date of production": "XIX century BC",
                 "conservation location": "",
                 "author": "Plautus",
                 "authority": "http://id.loc.gov/authorities/classification/PA6568.P7",
@@ -354,7 +354,7 @@
             },
             "itemMeta": {
                 "time": "XIV-XV century",
-                "production": "XX century",
+                "date of production": "XX century",
                 "conservation location": "Saint Jallet, France",
                 "author": "",
                 "authority": "https://www.wikidata.org/wiki/Q2626893",
@@ -383,7 +383,7 @@
             },
             "itemMeta": {
                 "time": "I century AD",
-                "production": "XIV century",
+                "date of production": "XIV century",
                 "conservation location": "Biblioteca Medici, Italy",
                 "author": "Boccaccio",
                 "authority": "https://viaf.org/viaf/184679300/",
@@ -412,7 +412,7 @@
             },
             "itemMeta": {
                 "time": "V century BC",
-                "production": "XVI century BC",
+                "date of production": "XVI century BC",
                 "conservation location": "",
                 "author": "Aristophanes",
                 "authority": "http://viaf.org/viaf/184049002",

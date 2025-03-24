@@ -77,12 +77,12 @@ function prepareNarratives() {
     showInfo(index)
 };
 
-const infoTitle = document.getElementById("infoTitle");
+const infoTitle = $("#infoTitle");
 const shortInfo = $("#text1");
 const figImage = $("#img");
 const figCaption = $("#item-figcaption");
 const longerInfo = $("#text2");
-const fullInfo = $("#text3");
+const fullText = $("#fullText");
 const infoContainer = $("#info-wrapper")
 const metaTable = $("#table")
 
@@ -93,7 +93,7 @@ function showInfo(index) {
         curSort = item["iId"];
         //console.log("This is the item id:", curSort)
     
-        infoTitle.innerHTML = item.name;
+        infoTitle.html(item.name);
         shortInfo.html(item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>');
         figImage.attr('src', item.info.image);
         figImage.attr('alt', item.name);
@@ -105,7 +105,7 @@ function showInfo(index) {
         document.getElementById("fullText").dataset.path = item.info["text 3"];
     
         // ensuring text1 is the first to be displayed when the item or the narrative changes
-        if ($("#text1").hasClass("d-none")) {
+        if (shortInfo.hasClass("d-none")) {
             showText1();
         }
         createInfoTable(item)
@@ -118,17 +118,15 @@ function showInfo(index) {
 
 function showText1() {
     shortInfo.removeClass("d-none");
-    fullInfo.addClass("d-none");
     longerInfo.addClass("d-none");
     infoContainer.animate({scrollTop: 0}, "fast")
 }
 
 function showText2() {
-    $("#text1").addClass("d-none");
-    $("#text3").addClass("d-none");
-    $("#text2").removeClass("d-none");
-    $("#fullText").addClass("d-none");
-    $("#info-wrapper").animate({scrollTop: 0}, "fast")
+    shortInfo.addClass("d-none");
+    longerInfo.removeClass("d-none");
+    fullText.addClass("d-none");
+    infoContainer.animate({scrollTop: 0}, "fast")
 }
 
 // for full html
@@ -138,13 +136,13 @@ function showText3() {
     .then(response => response.text())
     .then(data => {
         document.getElementById("fullText").innerHTML = data;
-        $("#fullText").removeClass("d-none").fadeIn("slow");
-        $("#text1").addClass("d-none");
-        $("#text2").addClass("d-none");
-        $("#full-container").scrollTo(0,0)
+        fullText.removeClass("d-none").fadeIn("slow");
+        shortInfo.addClass("d-none");
+        longerInfo.addClass("d-none");
+        infoContainer.scrollTo(0,0)
 
         // hide table on small screen when full text is displayed
-        if (window.matchMedia("(max-width: 900px)") && tableCol.hasClass("visible")) {
+        if (window.matchMedia("(max-width: 1089px)") && tableCol.hasClass("visible")) {
             tableCol.removeClass("visible")
         }
     })
@@ -242,9 +240,13 @@ function prepareNavigationButtons(index) {
 let offCanvasElement = document.getElementById('offcanvasExample');
 let offCanvas = new bootstrap.Offcanvas(offCanvasElement);
 let offCanvasLink = $(".open-option")
+
 let chooseTime = $(".fa-clock")
 let choosePlace = $(".fa-earth-americas")
 let chooseGenre = $(".fa-paintbrush")
+let offcanvasUl = $("#narr-val-list")
+let offcanvasTitle = $("#offcanvas-narrative-title")
+let offcanvasText = $("#offcanvas-text")
 offCanvasLink.on("click", function() {
     //console.log("click on offcanvas event fired")
     if ($(this).find(chooseTime).length) {
@@ -279,7 +281,7 @@ centuries_order = {
 // toggle time narrative
 function showTimeNarrative() {
         // clearing the list before appending new items
-        $("#narr-val-list").empty()
+        offcanvasUl.empty()
         timeList = items.map((item) => (item.info.narratives.time.trim()))
         timeList = [... new Set(timeList)]
         // sort array chronologically
@@ -287,11 +289,11 @@ function showTimeNarrative() {
             return centuries_order[a] - centuries_order[b]
         })
         for (let period of timeList) {
-            $("#narr-val-list").append('<li>' + period + '</li>')
-            $("#offcanvas-narrative-title").text("Time")
-            $("#offcanvas-text").text("Click on a time period to discover the items associated to it.")   
+            offcanvasUl.append('<li>' + period + '</li>')
+            offcanvasTitle.text("Time")
+            offcanvasText.text("Click on a time period to discover the items associated to it.")   
         }
-        $("#narr-val-list").on("click", "li", function() {
+        offcanvasUl.on("click", "li", function() {
             var selectedVal = $(this).text()
             //console.log("Selected value from time offcanvas", selectedVal)
             var timeNarrative = "time"
@@ -303,15 +305,15 @@ function showTimeNarrative() {
 // toggle place narrative
 function showPlaceNarrative() {
         // clearing the list before appending new items
-        $("#narr-val-list").empty()
+        offcanvasUl.empty()
         placeList = items.map((item) => (item.info.narratives.place.trim()))
         placeList = [... new Set(placeList)].sort()
         for (let place of placeList) {
-            $("#narr-val-list").append('<li>' + place + '</li>')
-            $("#offcanvas-narrative-title").text("Place")
-            $("#offcanvas-text").text("Click on a place to discover the items associated to it.")  
+            offcanvasUl.append('<li>' + place + '</li>')
+            offcanvasTitle.text("Place")
+            offcanvasText.text("Click on a place to discover the items associated to it.")  
         }
-        $("#narr-val-list").on("click", "li", function() {
+        offcanvasUl.on("click", "li", function() {
             var selectedVal = $(this).text()
             //console.log("Selected value from place offcanvas", selectedVal)
             var placeNarrative = "place"
@@ -323,15 +325,15 @@ function showPlaceNarrative() {
 // toggle genre narrative
 function showGenreNarrative() {
         // clearing the list before appending new items
-        $("#narr-val-list").empty()
+        offcanvasUl.empty()
         genreList = items.map((item) => (item.info.narratives["artistic expression"].trim()))
         genreList = [... new Set(genreList)].sort()
         for (let genre of genreList) {
-            $("#narr-val-list").append('<li>' + genre + '</li>')
-            $("#offcanvas-narrative-title").text("Artistic Expression")
-            $("#offcanvas-text").text("Click on a genre to discover the items associated to it.")   
+            offcanvasUl.append('<li>' + genre + '</li>')
+            offcanvasTitle.text("Artistic Expression")
+            offcanvasText.text("Click on a genre to discover the items associated to it.")   
         }
-        $("#narr-val-list").on("click", "li", function() {
+        offcanvasUl.on("click", "li", function() {
             var selectedVal = $(this).text()
             //console.log("Selected value from genre offcanvas", selectedVal)
             var genreNarrative = "artistic expression"
@@ -347,7 +349,7 @@ const infoIcon = $(".see-info-icon");
 const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
-const mediaQuery = window.matchMedia("(max-width: 900px)");
+const mediaQuery = window.matchMedia("(max-width: 1089px)");
 
 function handleScreenResize(e) {
     if (e.matches) {
@@ -371,17 +373,17 @@ function handleScreenResize(e) {
 
 handleScreenResize(mediaQuery);
 
-//mediaQuery.addEventListener("change", handleScreenResize);
+mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
     const grid = document.getElementById("main-im");
 
-    if (window.innerWidth <= 900 && infoTitle.parentNode !== document.body) {
+    if (window.innerWidth <= 1089 && infoTitle.parentNode !== document.body) {
         infoTitle.style.display = "block"
         infoTitle.style.marginTop = "3em"
         document.body.insertBefore(infoTitle, grid); // Move title above the grid
-    } else if (window.innerWidth > 900 && infoTitle.parentNode !== grid) {
+    } else if (window.innerWidth > 1089 && infoTitle.parentNode !== grid) {
         infoTitle.style.marginTop = "1rem"
         infoCol.prepend(infoTitle); // Move title back inside the grid
     }
