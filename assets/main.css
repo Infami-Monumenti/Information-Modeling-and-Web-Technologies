@@ -295,23 +295,6 @@ img:hover{
     transform: translateZ(20px);
     transition: transform 1s;
 }
-/* left and right shadows
-.indexslider::before,
-.indexslider::after{
-    background: linear-gradient(to right,rgb(227, 218, 208,1) 0%,
-    rgba(214, 156, 105, 0) 50%);
-    content: '';
-    height: 100%;
-    position: absolute;
-    width: 10%;
-    z-index: 2;
-}
-.indexslider::before{
-    left: 0;
-    padding-left: 0px;
-    height: 400px;
-}
-*/
 .container .text-center{
     margin: -100px;
     position: relative;
@@ -365,7 +348,6 @@ img:hover{
     border-radius: 4px;
     transition: 0.5s;
     border: 2px solid  #977060;
-    color: var(--contrast-color);
     color: antiquewhite;
     margin-left: 190px;
 }
@@ -434,6 +416,7 @@ video {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
     transition: all 0.3s ease; /* Transizione fluida per gli effetti */
     margin-bottom: 10px;
+    max-width: 100%;
 }
 .priapobtn:hover {
     background-color:white; /* Colore di sfondo quando si passa sopra (hover) */
@@ -451,10 +434,7 @@ video {
 }
 .videop{
     text-align: center;
-    margin-top: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 30px;
+    margin-top: 30px 20px 30px 20px;
     font-size: 15px;
 }
 #wyl{
@@ -601,7 +581,6 @@ footer{
 .copyright-row {
     margin: 0;
     padding: 0;
-    background-color: #977060;
     box-sizing: border-box;
     border-top: 0.5px solid rgb(227, 218, 208);
     background-color: rgb(151, 112, 96);
@@ -634,11 +613,7 @@ footer a:hover {
 /*media queries footer*/
 @media(max-width: 480px){
     .thefooter{
-        min-height: 270px;
-    }
-    .footer-col-loo{
-        width: 50%;
-        margin-bottom: 0px;
+        min-height: 275px;
     }
     .footer-col-info{
         width: 100%;
@@ -654,7 +629,7 @@ footer a:hover {
 }
 @media (min-width: 360px){
     .thefooter{
-        min-height: 245px;
+        min-height: 250px;
     }
     .indexcard-container{
         padding-bottom: 80px !important;
@@ -688,10 +663,7 @@ footer a:hover {
 }
 @media (min-width: 768px) and (max-width: 991px){
     .thefooter{
-        min-height: 240px;
-    }
-    .thefooter{
-        min-height: 160px;
+        min-height: 145px;
     }
     .indexcard-container{
         padding-bottom: 40px !important;
