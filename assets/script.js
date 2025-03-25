@@ -377,15 +377,16 @@ mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
+    const title = document.getElementById("infoTitle");
     const grid = document.getElementById("main-im");
 
-    if (window.innerWidth <= 1089 && infoTitle.parentNode !== document.body) {
-        infoTitle.style.display = "block"
-        infoTitle.style.marginTop = "3em"
-        document.body.insertBefore(infoTitle, grid); // Move title above the grid
-    } else if (window.innerWidth > 1089 && infoTitle.parentNode !== grid) {
-        infoTitle.style.marginTop = "1rem"
-        infoCol.prepend(infoTitle); // Move title back inside the grid
+    if (window.innerWidth <= 1089 && title.parentNode !== document.body) {
+        title.style.display = "block"
+        title.style.marginTop = "3em"
+        document.body.insertBefore(title, grid); // Move title above the grid
+    } else if (window.innerWidth > 1089 && title.parentNode !== grid) {
+        title.style.marginTop = "1rem"
+        infoCol.prepend(title); // Move title back inside the grid
     }
 }
 
