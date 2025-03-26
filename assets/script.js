@@ -142,7 +142,7 @@ function showText3() {
         infoContainer.scrollTo(0,0)
 
         // hide table on small screen when full text is displayed
-        if (window.matchMedia("(max-width: 1089px)") && tableCol.hasClass("visible")) {
+        if (window.matchMedia("(max-width: 1024px)") && tableCol.hasClass("visible")) {
             tableCol.removeClass("visible")
         }
     })
@@ -349,7 +349,7 @@ const infoIcon = $(".see-info-icon");
 const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
-const mediaQuery = window.matchMedia("(max-width: 1089px)");
+const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
 function handleScreenResize(e) {
     if (e.matches) {
@@ -380,11 +380,11 @@ function updateTitlePosition() {
     const title = document.getElementById("infoTitle");
     const grid = document.getElementById("main-im");
 
-    if (window.innerWidth <= 1089 && title.parentNode !== document.body) {
+    if (window.innerWidth <= 1024 && title.parentNode !== document.body) {
         title.style.display = "block"
-        title.style.marginTop = "3em"
+        title.style.marginTop = "1rem"
         document.body.insertBefore(title, grid); // Move title above the grid
-    } else if (window.innerWidth > 1089 && title.parentNode !== grid) {
+    } else if (window.innerWidth > 1024 && title.parentNode !== grid) {
         title.style.marginTop = "1rem"
         infoCol.prepend(title); // Move title back inside the grid
     }

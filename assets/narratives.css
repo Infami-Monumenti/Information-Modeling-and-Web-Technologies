@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Judson:ital,wght@0,400;0,700;1,400&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 /*media queries*/
-@media screen and (max-width: 1089px) /* and (orientation: portrait) */ {
+@media screen and (max-width: 1024px) and (orientation: portrait) {
     #padlink{
         margin-top: 8px;
     }
@@ -27,7 +27,7 @@
         gap: 0 !important;
     }
     #infoCol, #imgCol, #tableCol {
-        margin-top: 3em;
+        margin-top: 1em;
     }
     #infoCol {
         grid-column: 1 / 2;
@@ -39,6 +39,7 @@
     }
     #infoTitle {
         display: none;
+        margin-top: 1rem;
     }
     #info-wrapper {
         margin-bottom: 2rem;
@@ -97,7 +98,7 @@
         margin-right: 0 !important;
     }
 }
-@media screen and (max-width: 1089px) and (orientation: landscape) {   
+@media screen and (max-width: 1200px) and (orientation: landscape) {   
     .narr-control-nav h6 {
         font-size: x-small;
     }
@@ -123,17 +124,25 @@
         margin-top: 0.1rem !important;
         gap: 0 !important;
     }
-    #infoCol, #imgCol {
-        height: var(--grid-ls-height);
+    #tableCol, #imgCol {
+        height: 70%;
+        margin-top: 1rem;
     }
-    #info-wrapper, #img-wrapper {
+   /*  #info-wrapper, #img-wrapper {
         height: var(--grid-ls-height);
+    } */
+    #imgCol .exhibit-figure {
+        height:auto;
     }
     #imgCol figure img {
         max-height: 100% !important;
     }
     #imgCol figcaption {
         font-size: x-small !important;
+    }
+    #img {
+        width: auto;
+        padding: 0 1.5rem;
     }
     table {
         pointer-events: all;
@@ -146,6 +155,15 @@
     }
     .modal-content {
         height: 50%;
+    }
+}
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    #imgCol #img {
+        padding: 0;
+    }
+    #info-wrapper {
+        height: 100%;
+        margin-top: 2.5em;
     }
 }
 @media screen and (max-width: 550px) {
@@ -164,6 +182,9 @@
     #info-wrapper {
         height: 65% !important;
         box-sizing: border-box !important;
+    }
+    #infoTitle {
+        margin-top: 3em !important;
     }
     th, td {
         font-size: xx-small !important;
@@ -335,6 +356,10 @@ nav a {
 #img-wrapper {
     position: relative;
     height: inherit;
+}
+#img {
+    max-width: 100%;
+    height: auto;
 }
 #tableCol {
     grid-row: span 2;
