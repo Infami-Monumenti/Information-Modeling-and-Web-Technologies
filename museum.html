@@ -52,15 +52,16 @@
       </div>
       <div class="map-list-wrapper">
         <div class="map-container">
-          <img src="images/museum_map.jpg" alt="Exposition Space" id="exhibition-map">
+          <img src="images/museum.png" alt="Exposition Space" id="exhibition-map">
           <div id="markers"></div>
         </div>
         <div class="artwork-list">
+          <h2>Artwork list</h2>
           <ol>
             <li> Al-Masala Obelisk</li>
             <li>Min at Karnak</li>
             <li>Kokopelli</li>
-            <li>Khalid Nabi cemetery</li>
+            <li>Khalid Nabi Cemetery</li>
             <li>Lysistrata</li>
             <li>Poenulus</li>
             <li>Head of Priapus</li>
@@ -109,23 +110,23 @@
 
     <script>
       const artworks = [
-        { name: "Obra 1", x: 50.0, y: 91, link: "narratives.html?itemId=0", category: "arch" },
-        { name: "Obra 2", x: 72.92, y: 60.19, link: "narratives.html?itemId=1", category: "sculp" },
-        { name: "Obra 3", x: 80.12, y: 91, link: "narratives.html?itemId=2", category: "paint" },
-        { name: "Obra 4", x: 41.67, y: 65.81, link: "narratives.html?itemId=3", category: "arch" },
-        { name: "Obra 5", x: 20.20, y: 18.52, link: "narratives.html?itemId=4", category: "lit" },
-        { name: "Obra 6", x: 57.92, y: 14.52, link: "narratives.html?itemId=5", category: "lit" },
-        { name: "Obra 7", x: 90.25, y: 46.3, link: "narratives.html?itemId=6", category: "sculp" },
-        { name: "Obra 8", x: 90.25, y: 23.15, link: "narratives.html?itemId=7", category: "fresc" },
-        { name: "Obra 9", x: 78.12, y: 7.19, link: "narratives.html?itemId=8", category: "fresc" },
-        { name: "Obra 10", x: 67.71, y: 37.04, link: "narratives.html?itemId=9", category: "sculp" },
-        { name: "Obra 11", x: 49.48, y: 57.56, link: "narratives.html?itemId=10", category: "sculp" },
-        { name: "Obra 12", x: 38.88, y: 7.19, link: "narratives.html?itemId=11", category: "lit" },
-        { name: "Obra 13", x: 46.88, y: 37.04, link: "narratives.html?itemId=12", category: "sculp" },
-        { name: "Obra 14", x: 23.88, y: 37.04, link: "narratives.html?itemId=13", category: "sculp" },
-        { name: "Obra 15", x: 20.20, y: 56.03, link: "narratives.html?itemId=14", category: "sculp" },
-        { name: "Obra 16", x: 20.20, y: 74.07, link: "narratives.html?itemId=15", category: "arch" },
-        { name: "Obra 17", x: 26.04, y: 91, link: "narratives.html?itemId=16", category: "arch" }
+        { name: "Obra 1", x: 50, y: 85, link: "narratives.html?itemId=0", category: "arch" },
+        { name: "Obra 2", x: 73, y: 62, link: "narratives.html?itemId=1", category: "sculp" },
+        { name: "Obra 3", x: 77.1, y: 93.5, link: "narratives.html?itemId=2", category: "paint" },
+        { name: "Obra 4", x: 40.7, y: 67.15, link: "narratives.html?itemId=3", category: "arch" },
+        { name: "Obra 5", x: 11.5, y: 18.50, link: "narratives.html?itemId=4", category: "lit" },
+        { name: "Obra 6", x: 58, y: 14.50, link: "narratives.html?itemId=5", category: "lit" },
+        { name: "Obra 7", x: 88.25, y: 48.3, link: "narratives.html?itemId=6", category: "sculp" },
+        { name: "Obra 8", x: 88.25, y: 23.15, link: "narratives.html?itemId=7", category: "fresc" },
+        { name: "Obra 9", x: 78.1, y: 7.15, link: "narratives.html?itemId=8", category: "fresc" },
+        { name: "Obra 10", x: 65.7, y: 37, link: "narratives.html?itemId=9", category: "sculp" },
+        { name: "Obra 11", x: 40.5, y: 57.6, link: "narratives.html?itemId=10", category: "sculp" },
+        { name: "Obra 12", x: 34.9, y: 7.15, link: "narratives.html?itemId=11", category: "lit" },
+        { name: "Obra 13", x: 40.50, y: 37, link: "narratives.html?itemId=12", category: "sculp" },
+        { name: "Obra 14", x: 11.5, y: 37, link: "narratives.html?itemId=13", category: "sculp" },
+        { name: "Obra 15", x: 11.5, y: 57.6, link: "narratives.html?itemId=14", category: "sculp" },
+        { name: "Obra 16", x: 11.5, y: 74.1, link: "narratives.html?itemId=15", category: "arch" },
+        { name: "Obra 17", x: 26, y: 93.5, link: "narratives.html?itemId=16", category: "arch" }
       ];
     
       const markersContainer = document.getElementById("markers");

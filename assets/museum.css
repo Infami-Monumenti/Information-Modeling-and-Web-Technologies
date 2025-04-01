@@ -2,30 +2,20 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    min-height: auto;
 }
 
 main {
     display: block;
     padding: 0;
     margin: 0;
-    min-height: auto;
 }
 
-.title{
-    font-weight: 1000;
+.title {
+    font-weight: 900;
     margin-top: 1.5em;
-    font-family:'Judson';
+    font-family: 'Judson';
     font-size: 3.5rem;
     padding-top: 5px;
-}
-
-.container {
-    margin: 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .legend {
@@ -33,15 +23,14 @@ main {
     justify-content: right;
     gap: 15px;
     margin-right: 90px;
-    padding: 10px;
     border-radius: 8px;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    font-size: 1rem;
-    color: #333;
+    font-size: 0.7rem;
+    color: rgb(51, 51, 51);
 }
 
 .legend-color {
@@ -52,25 +41,11 @@ main {
     margin-right: 8px;
 }
 
-.legend-color.category-arch {
-    background-color: #855c75;
-}
-
-.legend-color.category-sculp {
-    background-color: #d9af6b;
-}
-
-.legend-color.category-paint {
-    background-color: #af6459;
-}
-
-.legend-color.category-lit {
-    background-color: #736f4c;
-}
-
-.legend-color.category-fresc {
-    background-color: #526a84;
-}
+.legend-color.category-arch { background-color: rgb(133, 92, 117); }
+.legend-color.category-sculp { background-color: rgb(217, 175, 107); }
+.legend-color.category-paint { background-color: rgb(175, 100, 89); }
+.legend-color.category-lit { background-color: rgb(115, 111, 76); }
+.legend-color.category-fresc { background-color: rgb(82, 106, 132); }
 
 .map-list-wrapper {
     display: flex;
@@ -79,23 +54,24 @@ main {
     align-items: flex-start;
     width: 100%;
     padding: 20px;
-    min-height: auto;
 }
 
 .map-container {
     position: relative;
-    flex: 2;
+    flex: 4;
+    min-width: 0;
     max-width: 100%;
     display: inline-block;
     text-align: center;
+    margin-top: 14px;
 }
 
 .map-container img {
-    width: 100%;
+    width: 85%;
     height: auto;
     margin: 0;
     padding: 0;
-    border: #e3dad0;
+    border: rgb(227, 219, 209);
 }
 
 .map-list-container {
@@ -108,19 +84,21 @@ main {
 
 .artwork-list {
     flex: 1;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     background: rgba(255, 255, 255, 0.5);
-    padding: 15px;
+    padding: 1em;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 350px;
-    padding-top: 1em;
-    margin-top: 30px; 
-    margin-left: 55px;
+    margin-top: 25px;
+    margin-left: 54px;
+    box-sizing: border-box;
 }
 
 .artwork-list h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
@@ -129,15 +107,16 @@ main {
 }
 
 .artwork-list li {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
+    line-height: 1.7;
 }
 
 .marker {
     position: absolute;
     width: 25px;
     height: 25px;
-    color: white;
+    color: rgb(255, 255, 255);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -148,25 +127,11 @@ main {
     box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
 
-.category-arch {
-    background-color: #855c75; 
-}
-
-.category-sculp {
-    background-color: #d9af6b; 
-}
-
-.category-paint {
-    background-color: #af6459; 
-}
-
-.category-lit {
-    background-color: #736f4c;
-}
-
-.category-fresc {
-    background-color: #526a84; 
-}
+.category-arch   { background-color: rgb(133, 92, 117); }
+.category-sculp  { background-color: rgb(217, 175, 107); }
+.category-paint  { background-color: rgb(175, 100, 89); }
+.category-lit    { background-color: rgb(115, 111, 76); }
+.category-fresc  { background-color: rgb(82, 106, 132); }
 
 .description-text {
     max-width: 90%;
@@ -178,15 +143,15 @@ main {
     font-size: 1rem;
     line-height: 1.6;
     color: #333;
+    text-align: justify;
 }
 
 .description-text p {
     margin-bottom: 15px;
-    text-align: justify;
 }
 
 .description-text a {
-    color: #977060;
+    color: rgb(151, 112, 96);
     text-decoration: none;
 }
 
@@ -194,26 +159,13 @@ main {
     text-decoration: underline;
 }
 
-#mpc{
-    color: #af6459;
-    font-weight: bold ;
-}
-#msc{
-    color: #d9af6b;
-    font-weight: bold ;
-}
-#mac{
-    color: #855c75;
-    font-weight: bold ;
-}
-#mlc{
-    color: #736f4c;
-    font-weight: bold ;
-}
-#mfc{
-   color: #526a84;
-   font-weight: bold ;
-}
+#mpc  { color: rgb(175, 100, 89); font-weight: bold; }
+#msc  { color: rgb(217, 175, 107); font-weight: bold; }
+#mac  { color: rgb(133, 92, 117); font-weight: bold; }
+#mlc  { color: rgb(115, 111, 76); font-weight: bold; }
+#mfc  { color: rgb(82, 106, 132); font-weight: bold; }
+
+/* ==== MEDIA QUERIES ==== */
 
 @media (max-width: 600px) {
     .marker {
@@ -221,53 +173,46 @@ main {
         height: 20px;
         font-size: 12px;
     }
+
     .legend-item {
-        font-size: 0.8rem; /* Reduz o tamanho da fonte */
+        font-size: 0.8rem;
     }
 
     .legend-color {
-        width: 15px; /* Reduz o tamanho do círculo de cor */
+        width: 15px;
         height: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .description-text {
-        max-width: 90%;
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Adjusting the elements in small screens*/
-@media (max-width: 768px) {
     .map-list-wrapper {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .legend {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin: 10px 0;
-        padding: 10px;
-        border-radius: 8px;
-    }
-
     .map-container {
         width: 100%;
-        text-align: center;
-        margin-left: -10%;
+        margin-left: 0;
     }
 
     .artwork-list {
         width: 90%;
         max-width: 500px;
         margin: 20px auto;
-        text-align: left;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .artwork-list li {
+        font-size: 0.85rem;
+    }
+
+    .legend {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 10px 0;
+        padding: 10px;
     }
 
     .description-text {
