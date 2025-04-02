@@ -151,8 +151,11 @@ function showText3() {
     });
 }
 
+// table body and first table header
+var table = $("#info");
+
+
 function createInfoTable(item) {
-    var table = $("#info");
     table.html("");
 
     for (let i in item.itemMeta) {
@@ -175,9 +178,6 @@ function createInfoTable(item) {
         }
     }
     // display schema property 
-    let firstHeader = table.find("th").first(); // retrieve first header for modal instructions
-    firstHeader.addClass("schema-popup");
-
     let tableHeaders = table.find("th")
     tableHeaders.each(function() {
         let header = $(this);
@@ -214,22 +214,22 @@ function prepareNavigationButtons(index) {
     if (index > 0) {
         $("#prevBtn").removeClass("disabled");
         // check use of .off
-        $("#prevBtn").off("click").click(function() {
+        $("#prevBtn").off("click").on("click", function() {
             showInfo(index - 1);
         });
         $("#prevBtn").text(currentSelection[index - 1].name)
     } else {
         $("#prevBtn").addClass("disabled");
-        $("#prevBtn").click = null;
+        $("#prevBtn").on("click", null);
         $("#prevBtn").text("no item available");
     }
     if (index < currentSelection.length - 1) {
         $("#nextBtn").removeClass("disabled");
-        $("#nextBtn").click(function() { showInfo(index + 1) });
+        $("#nextBtn").on("click", function() { showInfo(index + 1) });
         $("#nextBtn").text(currentSelection[index + 1].name);
     } else {
         $("#nextBtn").addClass("disabled");
-        $("#nextBtn").click = null;
+        $("#nextBtn").on("click", null);
         $("#nextBtn").text("no item available");
     }
     $("#narrative").text(curNarrative+": "+curVal)
@@ -351,7 +351,7 @@ const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
 const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
-function handleScreenResize(e) {
+mediaQuery.addEventListener("change", (e) => {
     if (e.matches) {
         tableCol.removeClass("visible")
         tableCol.css("pointer-events", "none");
@@ -369,11 +369,7 @@ function handleScreenResize(e) {
         tableCol.removeClass("visible");
         tableCol.css("pointer-events", "auto");
     }
-}
-
-handleScreenResize(mediaQuery);
-
-mediaQuery.addEventListener("change", handleScreenResize);
+})
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
@@ -390,7 +386,8 @@ function updateTitlePosition() {
     }
 }
 
-window.addEventListener("DOMContentLoaded", updateTitlePosition);
+// function calls
+document.addEventListener("DOMContentLoaded", updateTitlePosition);
 window.addEventListener("resize", updateTitlePosition);
 
 // function for handling modal-background interaction
@@ -404,7 +401,10 @@ let paragraphMapping = {
     "see-schema": ".schema-popup",
     "use-offcanvas": "#choose-from-offcanvas"
 }
+
 function highlightOnScroll() {
+    var firstHeader = $("th:first-child"); // retrieve first header for modal instructions
+    firstHeader.addClass("schema-popup"); // add class for mapping between modal paragraphs and elements
     if (infoModal) {
         infoModalBody.on("scroll", function() {
             let scrollTop = infoModalBody.scrollTop();
@@ -429,7 +429,7 @@ function highlightOnScroll() {
                 highlightBackground(bgElement);
 
                 if (paragraphOnScreen === "see-schema") {
-                    firstHeader.setAttribute("style", "background-color: rgba(61, 19, 2, 0.5);");
+                    firstHeader.css("background-color", "rgba(61, 19, 2, 0.5);");
                 }
 
                 // Check if the paragraph on screen corresponds to the table
@@ -453,7 +453,7 @@ function highlightBackground(element) {
     element.addClass("highlight");
 }
 
-
+// call hiighlightOnScroll function when the modal is visible
 infoModal.on("shown.bs.modal", function () {
     highlightOnScroll();
 });
@@ -463,7 +463,7 @@ infoModal.on("hidden.bs.modal", function () {
     $.each(paragraphMapping, function(key, value) {
         $(value).removeClass("highlight");  
     });
-    // Hide the table when the modal is closed (on small screens)
+    // Hide the table when the modal is closed (on smaller screens)
     if (mediaQuery.matches) {
         tableCol.removeClass("visible");
         tableCol.css("pointer-events", "none");
