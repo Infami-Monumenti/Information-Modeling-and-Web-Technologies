@@ -97,7 +97,6 @@ function showInfo(index) {
         shortInfo.html(item.info["text 1"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText2()">Read more</a>');
         figImage.attr('src', item.info.image);
         figImage.attr('alt', item.name);
-        figImage.css("aspect-ratio", item.display["aspect ratio"])
         figCaption.html(item.name);
         longerInfo.html(item.info["text 2"] + '<br>' + '<a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText1()">Back</a> <a type="button" class="btn btn-outline-dark btn-sm display-text-btn" onclick="showText3()">Read more</a>');
         
@@ -127,6 +126,8 @@ function showText2() {
     longerInfo.removeClass("d-none");
     fullText.addClass("d-none");
     infoContainer.animate({scrollTop: 0}, "fast")
+    window.scrollTo(0, 0)
+    $("body").removeClass("full-text-visible")
 }
 
 // for full html
@@ -136,10 +137,10 @@ function showText3() {
     .then(response => response.text())
     .then(data => {
         document.getElementById("fullText").innerHTML = data;
-        fullText.removeClass("d-none").fadeIn("slow");
+        fullText.removeClass("d-none");
         shortInfo.addClass("d-none");
         longerInfo.addClass("d-none");
-        infoContainer.scrollTo(0,0)
+        $("body").addClass("full-text-visible")
 
         // hide table on small screen when full text is displayed
         if (window.matchMedia("(max-width: 1024px)") && tableCol.hasClass("visible")) {
@@ -151,7 +152,7 @@ function showText3() {
     });
 }
 
-// table body and first table header
+// table body variable assignment
 var table = $("#info");
 
 
@@ -376,11 +377,11 @@ function updateTitlePosition() {
     const title = document.getElementById("infoTitle");
     const grid = document.getElementById("main-im");
 
-    if (window.innerWidth <= 1024 && title.parentNode !== document.body) {
+    if (window.innerWidth <= 976 && title.parentNode !== document.body) {
         title.style.display = "block"
         title.style.marginTop = "1rem"
         document.body.insertBefore(title, grid); // Move title above the grid
-    } else if (window.innerWidth > 1024 && title.parentNode !== grid) {
+    } else if (window.innerWidth > 976 && title.parentNode !== grid) {
         title.style.marginTop = "1rem"
         infoCol.prepend(title); // Move title back inside the grid
     }
@@ -403,8 +404,8 @@ let paragraphMapping = {
 }
 
 function highlightOnScroll() {
-    var firstHeader = $("th:first-child"); // retrieve first header for modal instructions
-    firstHeader.addClass("schema-popup"); // add class for mapping between modal paragraphs and elements
+    var headers = $("th:first-child"); // retrieve table headers for modal instructions
+    headers.addClass("schema-popup"); // add class for mapping between modal paragraphs and elements
     if (infoModal) {
         infoModalBody.on("scroll", function() {
             let scrollTop = infoModalBody.scrollTop();
@@ -429,7 +430,7 @@ function highlightOnScroll() {
                 highlightBackground(bgElement);
 
                 if (paragraphOnScreen === "see-schema") {
-                    firstHeader.css("background-color", "rgba(61, 19, 2, 0.5);");
+                    headers.css("background-color", "rgba(61, 19, 2, 0.5);");
                 }
 
                 // Check if the paragraph on screen corresponds to the table

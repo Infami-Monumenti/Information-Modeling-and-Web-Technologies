@@ -163,9 +163,6 @@
                 "authority": "http://id.loc.gov/authorities/classification/PA6568.P7",
                 "place": "Rome",
                 "artistic expression": "Literary work"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {
@@ -191,9 +188,6 @@
                 "authority": "https://viaf.org/viaf/234361186/#casa_dei_Vettii",
                 "place": "Rome",
                 "artistic expression": "Fresco"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {
@@ -219,9 +213,6 @@
                 "authority": "https://www.museobarracco.it/it/opera/testa-di-priapo",
                 "place": "Rome",
                 "artistic expression": "Sculpture"
-            },
-            "display": {
-                "aspect ratio": "3 / 4"
             }
         },
         {
@@ -247,9 +238,6 @@
                 "authority": "http://viaf.org/viaf/316429330",
                 "place": "Rome",
                 "artistic expression": "Fresco"
-            },
-            "display": {
-                "aspect ratio": "3 / 4"
             }
         },
         {
@@ -275,9 +263,6 @@
                 "authority": "https://www.wikidata.org/wiki/Q7808522",
                 "place": "Rome",
                 "artistic expression": "Sculpture"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {
@@ -303,9 +288,6 @@
                 "authority": "http://viaf.org/viaf/187145542649396641799",
                 "place": "Rome",
                 "artistic expression": "Sculpture"
-            },
-            "display": {
-                "aspect ratio": "auto"
             }
         },
         {
@@ -331,9 +313,6 @@
                 "authority": "https://www.wikidata.org/wiki/Q751867",
                 "place": "Rome",
                 "artistic expression": "Sculpture"
-            },
-            "display": {
-                "aspect ratio": "3 / 4"
             }
         },
         {
@@ -360,9 +339,6 @@
                 "authority": "https://www.wikidata.org/wiki/Q2626893",
                 "place": "France",
                 "artistic expression": "Sculpture"
-            },
-            "display": {
-                "aspect ratio": "3 / 4"
             }
         },
         {
@@ -389,9 +365,6 @@
                 "authority": "https://viaf.org/viaf/184679300/",
                 "place": "Rome",
                 "artistic expression": "Literary work"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {
@@ -418,9 +391,6 @@
                 "authority": "http://viaf.org/viaf/184049002",
                 "place": "Greece",
                 "artistic expression": "Literary work"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {
@@ -446,9 +416,6 @@
                 "authority": "https://npgallery.nps.gov/AssetDetail/NRIS/81000318",
                 "place": "USA",
                 "artistic expression": "Architecture"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         },
         {
@@ -456,7 +423,7 @@
             "iId": 16,
             "info": {
                 "text 1": "The Torre Glòries, formerly known as Torre Agbar, is a 38-story skyscraper located between Avinguda Diagonal and Carrer Badajoz, near Plaça de les Glòries Catalanes, which marks the gateway to the new technological district of Barcelona, Catalonia, Spain.\n",
-                "text 2": "The Torre Glòries was designed by French architect Jean Nouvel in association with the Spanish firm b720 Fermín Vázquez Arquitectos and built by Dragados. It is located in the Poblenou neighbourhood of Barcelona and it was originally named after its owners, the Agbar Group, a holding company whose interests include the Barcelona water company Aigües de Barcelona.\nThe tower is 144.44 m high with a diameter of 39 m. It has a total of 50,693 m2 (545,650 sq ft), of which 30,000 m2 (320,000 sq ft) are offices, 3,210 m2 (34,600 sq ft) technical facilities, 8,132 m2 (87,530 sq ft) services, including an auditorium, and 9,132 m2 (98,300 sq ft) parking space. It cost 130 million to build.\nIt opened in June 2005 and was officially opened by King Juan Carlos I on 16 September 2005. It is one in a collection of high-tech architecture examples in Barcelona.\nThe building was owned by the multinational group Agbar, which has its corporate headquarters in the building and which takes up most of the floors, leasing the remainder. The Agbar Tower was acquired in March 2010 for 165 million euros, after reaching an agreement with its former owner, the investment group Azurelau. Azurelau had previously bought the property in mid-2007. The purchase price was not disclosed.\nBy 2017 it was purchased by Merlin Properties real estate group and it was renamed as Torre Glòries after the name of the adjacent square.\n",
+                "text 2": "The Torre Glòries was designed by French architect Jean Nouvel in association with the Spanish firm b720 Fermín Vázquez Arquitectos and built by Dragados. It is located in the Poblenou neighbourhood of Barcelona and it was originally named after its owners, the Agbar Group, a holding company whose interests include the Barcelona water company Aigües de Barcelona.\nThe tower is 144.44 m high with a diameter of 39 m. It has a total of 50,693 m2 (545,650 sq ft), of which 30,000 m2 (320,000 sq ft) are offices, 3,210 m2 (34,600 sq ft) technical facilities, 8,132 m2 (87,530 sq ft) services, including an auditorium, and 9,132 m2 (98,300 sq ft) parking space. It cost &euro;130 million to build.\nIt opened in June 2005 and was officially opened by King Juan Carlos I on 16 September 2005. It is one in a collection of high-tech architecture examples in Barcelona.\nThe building was owned by the multinational group Agbar, which has its corporate headquarters in the building and which takes up most of the floors, leasing the remainder. The Agbar Tower was acquired in March 2010 for 165 million euros, after reaching an agreement with its former owner, the investment group Azurelau. Azurelau had previously bought the property in mid-2007. The purchase price was not disclosed.\nBy 2017 it was purchased by Merlin Properties real estate group and it was renamed as Torre Glòries after the name of the adjacent square.\n",
                 "text 3": "docs/torre_glories.html",
                 "image": "images/torreglories.jpg",
                 "latitude": "41.40349",
@@ -474,9 +441,6 @@
                 "authority": "http://viaf.org/viaf/245866680",
                 "place": "Spain",
                 "artistic expression": "Architecture"
-            },
-            "display": {
-                "aspect ratio": "2 / 3"
             }
         }
     ],
