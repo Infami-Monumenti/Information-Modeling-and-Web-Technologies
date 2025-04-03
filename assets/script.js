@@ -350,14 +350,16 @@ const infoIcon = $(".see-info-icon");
 const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
+// MediaQueryList object that holds the specified mdq string
 const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
-mediaQuery.addEventListener("change", (e) => {
-    if (e.matches) {
+
+function handleScreenResize(mql) {
+    if (mql.matches) {
         tableCol.removeClass("visible")
         tableCol.css("pointer-events", "none");
-        //table.css("height", item.display.height)
         infoIcon.on("click", function() {
+            //console.log("click event fired")
             tableCol.toggleClass("visible");
             if (tableCol.hasClass("visible")) {
                 tableCol.css("pointer-events", "auto");
@@ -370,7 +372,12 @@ mediaQuery.addEventListener("change", (e) => {
         tableCol.removeClass("visible");
         tableCol.css("pointer-events", "auto");
     }
-})
+}
+
+// function call for smaller screens
+handleScreenResize(mediaQuery);
+// listen to change events on MediaQueryList object to adapt layout on screen resize
+mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
 function updateTitlePosition() {
@@ -448,6 +455,7 @@ function highlightOnScroll() {
 }
 
 function highlightBackground(element) {
+    // iterate over object and execute callback function on every value
     $.each(paragraphMapping, function(key, value) {
         $(value).removeClass("highlight");
     });
