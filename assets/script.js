@@ -63,7 +63,7 @@ $(document).ready(function() {
                 curVal = valParam;
                 updateBackgroundByNarrative(curNarrative);
             
-                currentSelection = items.filter(item => item.info.narratives[curNarrative] === valParam);
+                currentSelection = items.filter(item =>item.info.narratives[curNarrative] && item.info.narratives[curNarrative].trim() === curVal).sort((a, b) => a.iId - b.iId);
             
                 if (currentSelection.length === 0) {
                     currentSelection = items; // fallback
