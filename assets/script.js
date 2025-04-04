@@ -486,6 +486,7 @@ function highlightOnScroll() {
 
 function highlightBackground(element) {
     $.each(paragraphMapping, function(key, value) {
+        modalClose.html().blur()
         $(value).removeClass("highlight");
     });
     element.addClass("highlight");
@@ -497,9 +498,9 @@ infoModal.on("shown.bs.modal", function () {
 });
 
 // remove focus from modal close button
-modalClose.on("click", function(e) {
-    e.currentTarget.blur();
-})
+/* modalClose.on("click", function(e) {
+    e.currentTarget.html().blur();
+}) */
 
 // Remove highlight when modal is hidden
 infoModal.on("hidden.bs.modal", function () {
