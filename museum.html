@@ -110,40 +110,60 @@
 
     <script>
       const artworks = [
-        { name: "Obra 1", x: 50, y: 85, link: "narratives.html?itemId=0", category: "arch" },
-        { name: "Obra 2", x: 73, y: 62, link: "narratives.html?itemId=1", category: "sculp" },
-        { name: "Obra 3", x: 77.1, y: 93.5, link: "narratives.html?itemId=2", category: "paint" },
-        { name: "Obra 4", x: 40.7, y: 67.15, link: "narratives.html?itemId=3", category: "arch" },
-        { name: "Obra 5", x: 11.5, y: 18.50, link: "narratives.html?itemId=4", category: "lit" },
-        { name: "Obra 6", x: 58, y: 14.50, link: "narratives.html?itemId=5", category: "lit" },
-        { name: "Obra 7", x: 88.25, y: 48.3, link: "narratives.html?itemId=6", category: "sculp" },
-        { name: "Obra 8", x: 88.25, y: 23.15, link: "narratives.html?itemId=7", category: "fresc" },
-        { name: "Obra 9", x: 78.1, y: 7.15, link: "narratives.html?itemId=8", category: "fresc" },
-        { name: "Obra 10", x: 65.7, y: 37, link: "narratives.html?itemId=9", category: "sculp" },
-        { name: "Obra 11", x: 40.5, y: 57.6, link: "narratives.html?itemId=10", category: "sculp" },
-        { name: "Obra 12", x: 34.9, y: 7.15, link: "narratives.html?itemId=11", category: "lit" },
-        { name: "Obra 13", x: 40.50, y: 37, link: "narratives.html?itemId=12", category: "sculp" },
-        { name: "Obra 14", x: 11.5, y: 37, link: "narratives.html?itemId=13", category: "sculp" },
-        { name: "Obra 15", x: 11.5, y: 57.6, link: "narratives.html?itemId=14", category: "sculp" },
-        { name: "Obra 16", x: 11.5, y: 74.1, link: "narratives.html?itemId=15", category: "arch" },
-        { name: "Obra 17", x: 26, y: 93.5, link: "narratives.html?itemId=16", category: "arch" }
+        { name: "Al-Masala Obelisk", x: 50, y: 85, itemId: 0, category: "arch" },
+        { name: "Min at Karnak", x: 73, y: 62, itemId: 1, category: "sculp" },
+        { name: "Kokopelli", x: 77.1, y: 93.5, itemId: 2, category: "paint" },
+        { name: "Khalid Nabi Cemetery", x: 40.7, y: 67.15, itemId: 3, category: "arch" },
+        { name: "Lysistrata", x: 11.5, y: 18.50, itemId: 4, category: "lit" },
+        { name: "Poenulus", x: 58, y: 14.50, itemId: 5, category: "lit" },
+        { name: "Head of Priapus", x: 88.25, y: 48.3, itemId: 6, category: "sculp" },
+        { name: "Fresco of Priapus - House of the Vettii", x: 88.25, y: 23.15, itemId: 7, category: "fresc" },
+        { name: "Fresco of Priapus - Regio V", x: 78.1, y: 7.15, itemId: 8, category: "fresc" },
+        { name: "Tintinnabulum", x: 65.7, y: 37, itemId: 9, category: "sculp" },
+        { name: "Venus in gold Bikini", x: 40.5, y: 57.6, itemId: 10, category: "sculp" },
+        { name: "Carmina Priapea", x: 34.9, y: 7.15, itemId: 11, category: "lit" },
+        { name: "Statue of Priapus", x: 40.50, y: 37, itemId: 12, category: "sculp" },
+        { name: "Fascinus", x: 11.5, y: 37, itemId: 13, category: "sculp" },
+        { name: "Phallic Saint", x: 11.5, y: 57.6, itemId: 14, category: "sculp" },
+        { name: "Ypslanti Water Tower", x: 11.5, y: 74.1, itemId: 15, category: "arch" },
+        { name: "Torre Glòries", x: 26, y: 93.5, itemId: 16, category: "arch" }
       ];
     
       const markersContainer = document.getElementById("markers");
+      let revisedData = {};
+    
+      function getArtisticExpressionById(itemId) {
+        const item = revisedData.items.find(i => i.iId === itemId);
+        return item?.info?.narratives?.["artistic expression"] || "Unknown";
+      }
+    
+      function generateNarrativeLink(itemId) {
+        const val = getArtisticExpressionById(itemId);
+        return `narratives.html?narrative=artistic%20expression&val=${encodeURIComponent(val)}&itemId=${itemId}`;
+      }
     
       function addMarkers() {
         artworks.forEach((art, index) => {
-          let marker = document.createElement("div");
+          const marker = document.createElement("div");
           marker.classList.add("marker", `category-${art.category}`);
           marker.innerText = index + 1;
           marker.style.left = art.x + "%";
           marker.style.top = art.y + "%";
-          marker.onclick = () => window.location.href = art.link;
+          const link = generateNarrativeLink(art.itemId);
+          marker.onclick = () => window.location.href = link;
           markersContainer.appendChild(marker);
         });
       }
     
-      addMarkers();
+      fetch("data/revised_structure.json")
+        .then(response => response.json())
+        .then(data => {
+          revisedData = data;
+          addMarkers();
+        })
+        .catch(error => {
+          console.error("Erro ao carregar o JSON:", error);
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

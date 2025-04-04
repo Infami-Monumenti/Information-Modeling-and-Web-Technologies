@@ -43,15 +43,36 @@ $(document).ready(function() {
             // Controlla se c'è un itemId nell'URL
             const urlParams = new URLSearchParams(window.location.search);
             const itemId = urlParams.get('itemId');
-
-            if (itemId) {
-                const index = items.findIndex(item => item.iId == itemId);
+            const narrativeParam = urlParams.get('narrative');
+            const valParam = urlParams.get('val');
+            
+            if (narrativeParam && valParam) {
+                curNarrative = narrativeParam;
+                curVal = valParam;
+            
+                currentSelection = items.filter(item => item.info.narratives[curNarrative] === valParam);
+            
+                if (currentSelection.length === 0) {
+                    currentSelection = items; // fallback
+                }
+            
+                let index = 0;
+                if (itemId) {
+                    const foundIndex = currentSelection.findIndex(item => String(item.iId) === itemId);
+                    if (foundIndex !== -1) index = foundIndex;
+                }
+            
+                showInfo(index);
+            } else if (itemId) {
+                const index = items.findIndex(item => String(item.iId) === itemId);
                 if (index !== -1) {
-                    currentSelection = items; // Define currentSelection as all items
+                    currentSelection = items;
                     showInfo(index);
+                } else {
+                    prepareNarratives();
                 }
             } else {
-                prepareNarratives(); // Carica l'elemento iniziale se non c'è itemId
+                prepareNarratives();
             }
         },
         error: function() {
