@@ -111,7 +111,7 @@
                 <p><strong>Date:</strong> ${item.itemMeta.time ? item.itemMeta.time : 'Not available'}</p>
                 <p>${item.info['text 1'].substring(0, 50)}...</p>
                 <p>
-                  <a href="narratives.html?itemId=${encodeURIComponent(item.iId)}" class="custom-btn-storymap">Learn More</a>
+                  <a href="narratives.html?narrative=place&val=${encodeURIComponent(item.info.narratives.place)}&itemId=${encodeURIComponent(item.iId)}" class="custom-btn-storymap">Learn More</a>
                 </p>
               </div>
             `);
