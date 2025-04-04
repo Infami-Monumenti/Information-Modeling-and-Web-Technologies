@@ -115,7 +115,7 @@
     }
     th, td {
         font-size: x-small !important;
-        white-space: wrap !important;
+        white-space: normal !important;
     }
     #main-im {
         margin-top: 0.1rem !important;
@@ -193,7 +193,7 @@
     }
     th {
         white-space: normal !important;
-        word-wrap: break-word !important;
+        word-break: break-word !important;
     }
     .modal-body p {
         font-size: smaller;
@@ -336,10 +336,10 @@ nav a {
     position: relative;
     object-fit: contain;
 }
-#img-wrapper {
+/* #img-wrapper {
     position: relative;
     height: inherit;
-}
+} */
 #img {
     max-width: 100%;
     object-fit: cover;
