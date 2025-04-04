@@ -106,7 +106,7 @@ function prepareNarratives() {
     });
     if (currentSelection.length==0)
         currentSelection = items
-    var index = currentSelection.findIndex(i => i["iId"] == curSort) 
+    var index = currentSelection.findIndex(i => i["iId"] == curSort)
     if (index == -1) index = 0
     showInfo(index)
 };
@@ -141,6 +141,7 @@ function showInfo(index) {
         if (shortInfo.hasClass("d-none")) {
             showText1();
         }
+        
         createInfoTable(item)
     
         prepareNavigationButtons(index);
@@ -189,7 +190,6 @@ function showText3() {
 // table body variable assignment
 var table = $("#info");
 
-
 function createInfoTable(item) {
     table.html("");
 
@@ -213,7 +213,7 @@ function createInfoTable(item) {
         }
     }
     // display schema property 
-    let tableHeaders = table.find("th")
+    let tableHeaders = table.find("th") // retrieves table headers
     tableHeaders.each(function() {
         let header = $(this);
         let headerText = header.text().trim();
@@ -240,14 +240,13 @@ function changeNarrative(narrative, value) {
 }
 
 function prepareNavigationButtons(index) {
-    if (index > 0) {
-        $("#prevBtn").removeClass("disabled");
-        // check use of .off
-        $("#prevBtn").off("click").on("click", function() {
+    if (index > 0) { 
+        $("#prevBtn").removeClass("disabled"); 
+        $("#prevBtn").off("click").on("click", function() { 
             showInfo(index - 1);
         });
         $("#prevBtn").text(currentSelection[index - 1].name)
-    } else {
+    } else { 
         $("#prevBtn").addClass("disabled");
         $("#prevBtn").on("click", null);
         $("#prevBtn").text("no item available");
@@ -269,12 +268,15 @@ function prepareNavigationButtons(index) {
 let offCanvasElement = document.getElementById('offcanvasExample');
 let offCanvas = new bootstrap.Offcanvas(offCanvasElement);
 let offCanvasLink = $(".open-option")
-
+// icons
 let chooseTime = $(".fa-clock")
 let choosePlace = $(".fa-earth-americas")
 let chooseGenre = $(".fa-paintbrush")
+// ul 
 let offcanvasUl = $("#narr-val-list")
+// title
 let offcanvasTitle = $("#offcanvas-narrative-title")
+// introductive paragraph
 let offcanvasText = $("#offcanvas-text")
 offCanvasLink.on("click", function() {
     //console.log("click on offcanvas event fired")
@@ -313,7 +315,7 @@ function showTimeNarrative() {
         offcanvasUl.empty()
         timeList = items.map((item) => (item.info.narratives.time.trim()))
         timeList = [... new Set(timeList)]
-        // sort array chronologically
+        // sort the unique array chronologically
         timeList.sort((a, b) => {
             return centuries_order[a] - centuries_order[b]
         })
@@ -380,8 +382,9 @@ const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
 // MediaQueryList object that holds the specified mdq string
 const mediaQuery = window.matchMedia("(max-width: 1024px)");
+//console.log("the mdq string:", mediaQuery)
 
-
+// function definition
 function handleScreenResize(mql) {
     if (mql.matches) {
         tableCol.removeClass("visible")
@@ -411,7 +414,6 @@ mediaQuery.addEventListener("change", handleScreenResize);
 function updateTitlePosition() {
     const title = document.getElementById("infoTitle");
     const grid = document.getElementById("main-im");
-
     if (window.innerWidth <= 976 && title.parentNode !== document.body) {
         title.style.display = "block"
         title.style.marginTop = "1rem"
@@ -428,11 +430,11 @@ window.addEventListener("resize", updateTitlePosition);
 
 // function for handling modal-background interaction
 let infoModal = $("#info-modal");
-let modalSpan = $("#select-narr-pos");
 let infoModalBody = $(".modal-body");
-let chooseNarrative = $("#choose-from-offcanvas");
-let title = $(".modal-body > h6");
-let paragraphMapping = {
+let modalClose = $(".modal-btn-closed"); // modal close button
+let chooseNarrative = $("#choose-from-offcanvas"); // div of offcanvas icons
+let title = $(".modal-body > h6"); // titles in modal body
+let paragraphMapping = { // maps the id of the title with the html element to highlight 
     "use-table": "#info",
     "see-schema": ".schema-popup",
     "use-offcanvas": "#choose-from-offcanvas"
@@ -450,7 +452,7 @@ function highlightOnScroll() {
             for (let t of title) {
                 titleId = t.getAttribute("id");
                 //console.log(titleId)
-                let titleOffset = t.offsetTop; 
+                let titleOffset = t.offsetTop;
                 //console.log(titleOffset)
 
                 if (scrollTop >= titleOffset) {
@@ -468,7 +470,7 @@ function highlightOnScroll() {
                     headers.css("background-color", "rgba(61, 19, 2, 0.5);");
                 }
 
-                // Check if the paragraph on screen corresponds to the table
+                // handle table display in smaller screens
                 if (paragraphOnScreen === "use-table" || paragraphOnScreen === "see-schema" && mediaQuery.matches) {
                     tableCol.addClass("visible");
                     tableCol.css("pointer-events", "auto");
@@ -483,17 +485,21 @@ function highlightOnScroll() {
 }
 
 function highlightBackground(element) {
-    // iterate over object and execute callback function on every value
     $.each(paragraphMapping, function(key, value) {
         $(value).removeClass("highlight");
     });
     element.addClass("highlight");
 }
 
-// call hiighlightOnScroll function when the modal is visible
+// call highlightOnScroll function when the modal is visible
 infoModal.on("shown.bs.modal", function () {
     highlightOnScroll();
 });
+
+// remove focus from modal close button
+modalClose.on("click", function(e) {
+    e.currentTarget.blur();
+})
 
 // Remove highlight when modal is hidden
 infoModal.on("hidden.bs.modal", function () {
