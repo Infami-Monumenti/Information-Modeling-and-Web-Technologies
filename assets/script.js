@@ -20,6 +20,18 @@ var schemaMapping = {
     "artistic expression": "genre",
 }
 
+function updateBackgroundByNarrative(narrative) {
+    if (narrative === "place") {
+        $("body").css("background-image", "url(images/prova_bg_place.png)");
+    } else if (narrative === "artistic expression") {
+        $("body").css("background-image", "url(images/prova_bg_genre.png)");
+    } else if (narrative === "time") {
+        $("body").css("background-image", "url(images/prova_bg_time.png)");
+    } else {
+        $("body").css("background-image", "none");
+    }
+}
+
 $(document).ready(function() {
     console.log("jQuery è pronto!");
 
@@ -49,6 +61,7 @@ $(document).ready(function() {
             if (narrativeParam && valParam) {
                 curNarrative = narrativeParam;
                 curVal = valParam;
+                updateBackgroundByNarrative(curNarrative);
             
                 currentSelection = items.filter(item => item.info.narratives[curNarrative] === valParam);
             
@@ -222,13 +235,7 @@ function createInfoTable(item) {
 function changeNarrative(narrative, value) {
     curNarrative = narrative;
     curVal = value;
-    if (curNarrative == "place") {
-        $("body").css("background-image", "url(images/prova_bg_place.png)");
-    } if (curNarrative == "artistic expression") {
-        $("body").css("background-image", "url(images/prova_bg_genre.png)");
-    } if (curNarrative == "time") {
-        $("body").css("background-image", "url(images/prova_bg_time.png)");
-    }
+    updateBackgroundByNarrative(curNarrative);
     prepareNarratives();
 }
 
