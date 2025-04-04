@@ -142,7 +142,7 @@
         margin-top: 0 !important;
     }
     table {
-        pointer-events: all;
+        pointer-events: auto;
     }
     .display-text-btn {
         font-size: x-small;
