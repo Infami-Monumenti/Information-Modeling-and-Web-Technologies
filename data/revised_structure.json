@@ -142,7 +142,7 @@
             },
             "itemMeta": {
                 "time": "II century BC",
-                "date of production": "XIX century BC",
+                "date of production": "XIX century",
                 "conservation location": "",
                 "author": "Plautus",
                 "authority": "http://id.loc.gov/authorities/classification/PA6568.P7",
@@ -431,7 +431,7 @@
     ],
     "meta": {
         "startItem": 1,
-        "narratives": ["XX century BC", "XIX century BC", "IX-VIII century BC", "VI century BC", "V century BC", "II century BC", "I century BC-I century AD", "I century AD", "II century AD", "XIV-XV century", "XIX century", "XXI century", "Iran", "Egypt", "USA", "Siracuse", "Rome", "France", "Greece", "Architecture", "Painting", "Sculpture", "Fresco", "Literary work"],
+        "narratives": ["XX century BC", "XIX century BC", "IX-VIII century BC", "VI century BC", "V century BC", "II century BC", "I century BC-I century AD", "I century AD", "II century AD", "XIV-XV century", "XIX century", "XXI century", "Iran", "Egypt", "USA", "Siracuse", "Rome", "France", "Greece", "Spain", "Architecture", "Painting", "Sculpture", "Fresco", "Literary work"],
         "startNarrative": "time",
         "startVal": "XX century BC"
     }

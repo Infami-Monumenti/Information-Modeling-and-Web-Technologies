@@ -253,7 +253,9 @@ function prepareNavigationButtons(index) {
     }
     if (index < currentSelection.length - 1) {
         $("#nextBtn").removeClass("disabled");
-        $("#nextBtn").on("click", function() { showInfo(index + 1) });
+        $("#nextBtn").on("click", function() { 
+            showInfo(index + 1) 
+        });
         $("#nextBtn").text(currentSelection[index + 1].name);
     } else {
         $("#nextBtn").addClass("disabled");
@@ -466,10 +468,6 @@ function highlightOnScroll() {
                 //console.log(bgElement);
                 highlightBackground(bgElement);
 
-                if (paragraphOnScreen === "see-schema") {
-                    headers.css("background-color", "rgba(61, 19, 2, 0.5);");
-                }
-
                 // handle table display in smaller screens
                 if (paragraphOnScreen === "use-table" || paragraphOnScreen === "see-schema" && mediaQuery.matches) {
                     tableCol.addClass("visible");
@@ -495,6 +493,12 @@ function highlightBackground(element) {
 infoModal.on("shown.bs.modal", function () {
     highlightOnScroll();
 });
+
+// remove focus
+modalClose.on("click", function() {
+    $(this).blur();
+})
+
 
 // Remove highlight when modal is hidden
 infoModal.on("hidden.bs.modal", function () {
