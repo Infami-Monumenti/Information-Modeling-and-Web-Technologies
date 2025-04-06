@@ -20,10 +20,7 @@
         grid-template-columns: 45% 45% !important;
         justify-content: space-evenly;
         gap: 0 !important;
-        overflow-y: hidden;
-    }
-    #infoCol, #imgCol, #tableCol {
-        margin-top: 1em;
+        padding-bottom: 1rem;
     }
     #infoCol {
         grid-column: 1 / 2;

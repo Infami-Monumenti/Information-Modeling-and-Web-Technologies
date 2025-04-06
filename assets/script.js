@@ -383,6 +383,7 @@ const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
 // MediaQueryList object that holds the specified mdq string
+/* const mediaQuery = window.matchMedia("(max-width: 1024px)"); */
 const mediaQuery = window.matchMedia("(max-width: 1024px)");
 //console.log("the mdq string:", mediaQuery)
 
@@ -407,9 +408,8 @@ function handleScreenResize(mql) {
     }
 }
 
-// function call for smaller screens
+// function calls
 handleScreenResize(mediaQuery);
-// listen to change events on MediaQueryList object to adapt layout on screen resize
 mediaQuery.addEventListener("change", handleScreenResize);
 
 // change title position in smaller screen sizes
