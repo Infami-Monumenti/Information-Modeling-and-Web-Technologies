@@ -44,14 +44,15 @@
   </header>
   <section>
     <div class="story-map-container">
+      <div class="map-toggle-buttons text-center my-3">
+        <button id="showCreation" class="btn btn-outline-dark">Show Creation Places</button>
+        <button id="showConservation" class="btn btn-outline-dark me-2">Show Conservation Places</button>
+      </div>
       <div id="map"></div>
-    </div>
-    <div class="story-map-info">
-      <p>
-        This interactive map allows you to explore the collection based on the location where each object is currently conserved.
-        Click on a marker to open the object’s page. There, you can navigate to other objects that were created in the same place,
-        discovering connections across geography and time.
-      </p>
+      <div class="story-map-info">
+        <p>This interactive map lets you explore the collection through geography. You can view each object either by its current <strong>conservation location</strong> or its original <strong>place of creation</strong>.</p>
+        <p>Use the buttons above the map to switch between these two views. Click on a marker to open the object's page, where you'll also find other objects created in the same place.</p>
+      </div>
     </div>
   </section>
   <footer class="thefooter"> 
@@ -85,68 +86,69 @@
       center: [10, 20],
       zoom: 2
     });
-
+    
+    const conservationMarkers = [];
+    const creationMarkers = [];
+    
     fetch('data/revised_structure.json')
       .then(response => response.json())
       .then(data => {
-        console.log("📌 JSON Data Loaded:", data);
-
-        if (!data.items || !Array.isArray(data.items)) {
-          console.error("❌ Error: JSON does not contain a valid 'items' list.");
-          return;
-        }
-
-        data.items.forEach((item, index) => {  
-          if (item.info.latitude && item.info.longitude) {
-            const coordinates = [parseFloat(item.info.longitude), parseFloat(item.info.latitude)];
-            console.log(`📌 Adding marker for ${item.name} at ${coordinates}`);
-
+        data.items.forEach(item => {
+          const itemId = item.iId;
+          const name = item.name;
+          const image = item.info.image;
+          const place = item.info.narratives.place;
+          const date = item.itemMeta.time || "";
+          const shortText = item.info["text 1"].substring(0, 50) + "...";
+          const url = `narratives.html?narrative=place&val=${encodeURIComponent(place)}&itemId=${encodeURIComponent(itemId)}`;
+    
+          // Function to create popup content
+          const createPopup = () => new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' }).setHTML(`
+            <div class="popup-content">
+              <h4>${name}</h4>
+              <img src="${image}" alt="${name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
+              <p><strong>Location:</strong> ${place}</p>
+              <p><strong>Date:</strong> ${date}</p>
+              <p>${shortText}</p>
+              <p><a href="${url}" class="custom-btn-storymap">Learn More</a></p>
+            </div>
+          `);
+    
+          // Conservation marker
+          const coordsCons = item.info.coordinates?.conservation;
+          if (coordsCons?.lat && coordsCons?.lng) {
             const marker = new mapboxgl.Marker({ color: '#977060' })
-              .setLngLat(coordinates)
-              .addTo(map);
-
-            const itemId = item.iId ? item.iId : index;  // Ensure itemId is always defined
-            console.log(`🔍 Assigned itemId for ${item.name}:`, itemId);
-
-            const popup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' });
-
-            popup.setHTML(`
-              <div class="popup-content">
-                <h4>${item.name}</h4>
-                <img src="${item.info.image}" alt="${item.name}" style="max-width:100px; height:auto; object-fit:cover; margin-bottom: 5px;">
-                <p><strong>Location:</strong> ${item.info.narratives.place ? item.info.narratives.place : 'Not available'}</p>
-                <p><strong>Date:</strong> ${item.itemMeta.time ? item.itemMeta.time : 'Not available'}</p>
-                <p>${item.info['text 1'].substring(0, 50)}...</p>
-                <p>
-                  <a href="narratives.html?narrative=place&val=${encodeURIComponent(item.info.narratives.place)}&itemId=${encodeURIComponent(item.iId)}" class="custom-btn-storymap">Learn More</a>
-                </p>
-              </div>
-            `);
-
-            marker.setPopup(popup);
-
-            marker.getElement().addEventListener('click', () => {
-              console.log(`📌 Clicked marker for ${item.name}, itemId: ${itemId}`);
-              map.easeTo({
-                center: [coordinates[0], map.getCenter().lat], 
-                duration: 1000
-              });
-              popup.addTo(map);
-            });
-
-            map.on('click', (e) => {
-              const features = map.queryRenderedFeatures(e.point);
-              if (!features.length) {
-                popup.remove();
-              }
-            });
-          } else {
-            console.warn(`⚠️ Missing coordinates for: ${item.name}`);
+              .setLngLat([parseFloat(coordsCons.lng), parseFloat(coordsCons.lat)])
+              .setPopup(createPopup());
+            conservationMarkers.push(marker);
           }
+    
+          // Creation marker
+          const coordsCreate = item.info.coordinates?.creation;
+          if (coordsCreate?.lat && coordsCreate?.lng) {
+            const marker = new mapboxgl.Marker({ color: '#77402e' }) 
+              .setLngLat([parseFloat(coordsCreate.lng), parseFloat(coordsCreate.lat)])
+              .setPopup(createPopup());
+            creationMarkers.push(marker);
+          }
+        });
+    
+        // Show creation markers by default
+        creationMarkers.forEach(marker => marker.addTo(map));;
+    
+        // Button listeners
+        document.getElementById('showConservation').addEventListener('click', () => {
+          creationMarkers.forEach(m => m.remove());
+          conservationMarkers.forEach(m => m.addTo(map));
+        });
+    
+        document.getElementById('showCreation').addEventListener('click', () => {
+          conservationMarkers.forEach(m => m.remove());
+          creationMarkers.forEach(m => m.addTo(map));
         });
       })
       .catch(error => console.error('❌ Error loading JSON:', error));
-  </script>  
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
