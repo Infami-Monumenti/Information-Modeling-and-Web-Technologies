@@ -494,14 +494,10 @@ infoModal.on("shown.bs.modal", function () {
     highlightOnScroll();
 });
 
-// remove focus
-modalClose.on("click", function() {
-    $(this).blur();
-})
-
 
 // Remove highlight when modal is hidden
-infoModal.on("hidden.bs.modal", function () {
+infoModal.on("hide.bs.modal", function () {
+    modalClose.blur(); // remove focus
     $.each(paragraphMapping, function(key, value) {
         $(value).removeClass("highlight");  
     });
