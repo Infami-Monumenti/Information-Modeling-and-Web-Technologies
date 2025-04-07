@@ -197,16 +197,11 @@ function createInfoTable(item) {
             let val = item.itemMeta[i];
             // display only non empty values
             if (item.itemMeta[i] !== "") {
-                if (i === "authority" || i == "sameAs") {
-                    let authorityLink = ('<a class="button" role="button" target="_blank" href=" ' + item.itemMeta[i] + ' " style="color:black;">' + item.name + '</a>');
-                    table.append("<tr><th><span>" + i + "</span></th><td>" + authorityLink + "</td></tr>"); 
-                } else {
-                    if ((i !== "authority" || i !== "sameAs") && narratives.includes(item.itemMeta[i])) {
+                if (narratives.includes(item.itemMeta[i])) {
                     val = ('<a class="button" role="button" href="#" onclick="changeNarrative(\'' + i + '\',\'' + val + '\')">' + val + '</a>');
                     }
                     table.append("<tr><th><span>" + i + "</span></th><td>" + val + "</td></tr>");
-                }
-            } else {
+                } else {
                 table.append("<tr><th><span>" + i + "</span></th><td>" + item.itemMeta[i] + "</td></tr>");
             }
         }
