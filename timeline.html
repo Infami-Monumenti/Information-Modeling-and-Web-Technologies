@@ -47,91 +47,7 @@
         <div class="timeline-container">
             <div class="timeline">
                 <a href="index.html" class="start-button">Infami Monumenti</a>
-                <div class="timeline-item" data-item-id="0" data-img="images/Obelisk-SesostrisI-Heliopolis.jpeg" data-title="Al-Masala Obelisk">
-                    <span class="century">XX Century B.C.</span>
-                    <span class="point"></span>
-                    <span class="title">Al-Masala Obelisk</span>
-                </div>
-                <div class="timeline-item" data-item-id="1" data-img="images/min_at_karnak.jpg" data-title="Min at Karnak Temple">
-                    <span class="century">XIX century B.C.</span>
-                    <span class="point"></span>
-                    <span class="title">Min at Karnak Temple</span>
-                </div>
-                <div class="timeline-item" data-item-id="2" data-img="images/Kokopelli_1.jpg" data-title="Kokopelli">
-                    <span class="century">IX-VIII Century B.C.</span>
-                    <span class="point"></span>
-                    <span class="title">Kokopelli</span>
-                </div>
-                <div class="timeline-item" data-item-id="3" data-img="images/KhalidNabiCemetery.jpg" data-title="Khalid Nabi Cemetery"">
-                    <span class="century">VI century B.C.</span>
-                    <span class="point"></span>
-                    <span class="title">Khaled Nabi Cemetery</span>
-                </div>
-                <div class="timeline-item" data-item-id="4" data-img="images/Lysistrata.jpg" data-title="Lysistrata">
-                    <span class="century">V century B.C.</span>
-                    <span class="point"></span>
-                    <span class="title">Lysistrata</span>
-                </div>
-                <div class="timeline-item" data-item-id="5" data-img="images/poenulus_geppert.jpg" data-title="Poenulus">
-                    <span class="century">II century B.C.</span>
-                    <span class="point"></span>
-                    <span class="title">Poenulus</span>
-                </div>
-                <div class="timeline-item" data-item-id="6" data-img="images/testa_di_priapo.jpg" data-title="Head of Priapus">
-                    <span class="century">I century B.C. - I century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Head of Priapus</span>
-                </div>
-                <div class="timeline-item" data-item-id="7" data-img="images/priapofresco.jpg", data-title="Fresco of Priapus">
-                    <span class="century">I century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Fresco of Priapus, House of Vettii</span>
-                </div>
-                <div class="timeline-item" data-item-id="8" data-img="images/L'affrescodiunPriapo.jpg" data-title="Fresco of Priapus, Regio V">
-                    <span class="century">I century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Fresco of Priapus, Regio V</span>
-                </div>
-                <div class="timeline-item" data-item-id="9" data-img="images/Tintinnabulum.jpg" data-title="Tintinnabulum">
-                    <span class="century">I century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Tintinnabulum</span>
-                </div>
-                <div class="timeline-item" data-item-id="10" data-img="images/venus_mann.jpg" data-title="Venus in a gold bikini">
-                    <span class="century">I century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Venus in a gold bikini</span>
-                </div>
-                <div class="timeline-item" data-item-id="11" data-img="images/literarytextboccaccio.jpg" data-title="Boccaccio, Carmina Priapea">
-                    <span class="century">I century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Carmina Priapea</span>
-                </div>
-                <div class="timeline-item" data-item-id="12" data-img="images/StatuadiPriapo.jpg" data-title="Statue of Priapus">
-                    <span class="century">II century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Statue of Priapus</span>
-                </div>
-                <div class="timeline-item" data-item-id="13" data-img="images/fascinus.jpg" data-title="Fascinus">
-                    <span class="century">II century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Fascinus</span>
-                </div>
-                <div class="timeline-item" data-item-id="14" data-img="images/PhallicSaints.jpg" data-title="Phallic Saints">
-                    <span class="century">XIV - XV century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Phallic Saints</span>
-                </div>
-                <div class="timeline-item" data-item-id="15" data-img= "images/YpsilantiWaterTower.jpeg" data-title="Ypsilanti Water Tower">
-                    <span class="century">XIX century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Ypsilanti Water Tower</span>
-                </div>
-                <div class="timeline-item" data-item-id="16" data-img="images/torreglories.jpg" data-title="Torre Glòries">
-                    <span class="century">XXI century A.D.</span>
-                    <span class="point"></span>
-                    <span class="title">Torre Glòries</span>
-                </div>
+                <!-- Timeline items are injected here -->
                 <a href="museum.html" class="end-button">Museum</a>
             </div>
         </div>
@@ -204,27 +120,37 @@
                 }
             };
             
-            // Dynamically attach click events to timeline items using data-item-id
             fetch("data/revised_structure.json")
                 .then(res => res.json())
                 .then(data => {
                     const items = data.items;
-            
-                    document.querySelectorAll('.timeline-item').forEach(el => {
-                        const itemId = parseInt(el.getAttribute("data-item-id"));
-                        const item = items.find(i => i.iId === itemId);
-                        if (!item) return;
-            
-                        const imageSrc = item.info.image;
+                    const timeline = document.querySelector('.timeline');
+                    
+                    items
+                    .sort((a, b) => a.iId - b.iId)
+                    .forEach(item => {
+                        const div = document.createElement("div");
+                        div.classList.add("timeline-item");
+                        div.setAttribute("data-item-id", item.iId);
+
+                        const century = item.info.narratives["time"];
                         const title = item.name;
-                        const timeVal = item.info.narratives["time"];
-            
-                        const encodedTime = encodeURIComponent(timeVal.trim());
-                        const linkUrl = `narratives.html?narrative=time&val=${encodedTime}&itemId=${itemId}`;
-            
-                        el.addEventListener("click", () => {
-                            openModal(imageSrc, title, linkUrl);
+
+                        div.innerHTML = `
+                        <span class="century">${century}</span>
+                        <span class="point"></span>
+                        <span class="title">${title}</span>
+                        `;
+
+                        const imageSrc = item.info.image;
+                        const encodedTime = encodeURIComponent(century.trim());
+                        const linkUrl = `narratives.html?narrative=time&val=${encodedTime}&itemId=${item.iId}`;
+
+                        div.addEventListener("click", () => {
+                        openModal(imageSrc, title, linkUrl);
                         });
+
+                        timeline.insertBefore(div, timeline.querySelector('.end-button'));
                     });
                 })
                 .catch(err => console.error("Error loading revised_structure.json:", err));
