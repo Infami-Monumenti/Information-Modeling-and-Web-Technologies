@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infami Monumenti StoryMap</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/main.css">
   <link rel="stylesheet" href="assets/storymap.css">
   <link rel="icon" type="images/xicon" href="images/testa_di_priapo.jpg"> 
@@ -45,14 +46,13 @@
   <section>
     <div class="story-map-container">
       <div class="map-toggle-buttons text-center my-3">
-        <button id="showCreation" class="btn btn-outline-dark">Show Creation Places</button>
-        <button id="showConservation" class="btn btn-outline-dark me-2">Show Conservation Places</button>
+        <button id="showCreation" class="priapobtn me-2">Show Creation Places</button>
+        <button id="showConservation" class="priapobtn">Show Conservation Places</button>
+        <button type="button" class="info-btn" data-bs-toggle="modal" data-bs-target="#infoModal" aria-label="Open information modal">
+          <i class="bi bi-info-circle"></i>
+        </button>
       </div>
       <div id="map"></div>
-      <div class="story-map-info">
-        <p>This interactive map lets you explore the collection through geography. You can view each object either by its current <strong>conservation location</strong> or its original <strong>place of creation</strong>.</p>
-        <p>Use the buttons above the map to switch between these two views. Click on a marker to open the object's page, where you'll also find other objects created in the same place.</p>
-      </div>
     </div>
   </section>
   <footer class="thefooter"> 
@@ -74,7 +74,27 @@
         </div>
       </div>
     </div>
-  </footer>               
+  </footer>
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">About the Map</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            This interactive map lets you explore the collection through geography.
+            You can view each object either by its original <strong>place of creation</strong>, or its current <strong>conservation location</strong>, meaning the place where e the object is exposed now a days.
+          </p>
+          <p>
+            Use the buttons to switch between these two views. Click on a marker to open the object's page,
+            where you'll also find other objects created in the same place.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>               
   
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
   <script>
