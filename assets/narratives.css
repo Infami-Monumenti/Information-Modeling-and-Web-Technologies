@@ -106,6 +106,7 @@
     }   
     #infoTitle {
         margin-top: 0.5rem !important;
+        font-size: x-large !important;
     }
     #infoCol p {
         font-size: x-small;
@@ -115,7 +116,6 @@
         white-space: normal !important;
     }
     #main-im {
-        margin-top: 0.1rem !important;
         gap: 0 !important;
     }
     .grid-item {

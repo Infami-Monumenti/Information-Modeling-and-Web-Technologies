@@ -383,13 +383,18 @@ const imgCol = $("#imgCol");
 const infoCol = $("#infoCol");
 const tableCol = $("#tableCol");
 // MediaQueryList object that holds the specified mdq string
-/* const mediaQuery = window.matchMedia("(max-width: 1024px)"); */
-const mediaQuery = window.matchMedia("(max-width: 1024px)");
-//console.log("the mdq string:", mediaQuery)
+var mediaQuery = window.matchMedia("(orientation: portrait)");
+//console.log("mediaQuery:", mediaQuery)
 
 // function definition
 function handleScreenResize(mql) {
+    const title = document.getElementById("infoTitle");
+    const grid = document.getElementById("main-im");
     if (mql.matches) {
+        title.style.display = "block"
+        title.style.marginTop = "1rem"
+        document.body.insertBefore(title, grid); // Move title above the grid
+
         tableCol.removeClass("visible")
         tableCol.css("pointer-events", "none");
         infoIcon.on("click", function() {
@@ -402,33 +407,19 @@ function handleScreenResize(mql) {
             }
         });
     } else {
+        title.style.marginTop = "1rem"
+        infoCol.prepend(title); // Move title back inside the grid
+
         infoIcon.off("click");
         tableCol.removeClass("visible");
         tableCol.css("pointer-events", "auto");
     }
 }
 
-// function calls
+// Run change handler
 handleScreenResize(mediaQuery);
+// Add callback function as listener to the Query List
 mediaQuery.addEventListener("change", handleScreenResize);
-
-// change title position in smaller screen sizes
-function updateTitlePosition() {
-    const title = document.getElementById("infoTitle");
-    const grid = document.getElementById("main-im");
-    if (window.innerWidth <= 976 && title.parentNode !== document.body) {
-        title.style.display = "block"
-        title.style.marginTop = "1rem"
-        document.body.insertBefore(title, grid); // Move title above the grid
-    } else if (window.innerWidth > 976 && title.parentNode !== grid) {
-        title.style.marginTop = "1rem"
-        infoCol.prepend(title); // Move title back inside the grid
-    }
-}
-
-// function calls
-document.addEventListener("DOMContentLoaded", updateTitlePosition);
-window.addEventListener("resize", updateTitlePosition);
 
 // function for handling modal-background interaction
 let infoModal = $("#info-modal");
