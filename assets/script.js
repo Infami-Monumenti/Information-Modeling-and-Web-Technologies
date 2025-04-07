@@ -11,11 +11,10 @@ var placeList = [];
 var genreList = [];
 // mapping with schema properties
 var schemaMapping = {
-    "time": "temporalCoverage",
+    "time": "temporal",
     "date of production": "dateCreated",
     "conservation location": "spatial",
     "author": "creator",
-    "authority": "sameAs",
     "place": "locationCreated",
     "artistic expression": "genre",
 }
