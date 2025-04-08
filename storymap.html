@@ -99,17 +99,19 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWVuZWdhdGNhcmxhIiwiYSI6ImNseTh0dXcyYTBmcHIya3M3OGR1bmdyaDgifQ.xJi0wSrGb1FTd0TRWt-8mQ';
-    
+  
+    // Initialize Mapbox map
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/menegatcarla/cly8vmelv00hv01pnej7s4ak0',
       center: [10, 20],
       zoom: 2
     });
-    
+  
     const conservationMarkers = [];
     const creationMarkers = [];
-    
+  
+    // Load data from revised_structure.json
     fetch('data/revised_structure.json')
       .then(response => response.json())
       .then(data => {
@@ -121,7 +123,7 @@
           const date = item.itemMeta.time || "";
           const shortText = item.info["text 1"].substring(0, 50) + "...";
           const url = `narratives.html?narrative=place&val=${encodeURIComponent(place)}&itemId=${encodeURIComponent(itemId)}`;
-    
+  
           // Function to create popup content
           const createPopup = () => new mapboxgl.Popup({ closeButton: true, closeOnClick: true, className: 'custom-popup' }).setHTML(`
             <div class="popup-content">
@@ -133,8 +135,8 @@
               <p><a href="${url}" class="custom-btn-storymap">Learn More</a></p>
             </div>
           `);
-    
-          // Conservation marker
+  
+          // Add conservation marker (if coordinates are present)
           const coordsCons = item.info.coordinates?.conservation;
           if (coordsCons?.lat && coordsCons?.lng) {
             const marker = new mapboxgl.Marker({ color: '#977060' })
@@ -142,8 +144,8 @@
               .setPopup(createPopup());
             conservationMarkers.push(marker);
           }
-    
-          // Creation marker
+  
+          // Add creation marker (if coordinates are present)
           const coordsCreate = item.info.coordinates?.creation;
           if (coordsCreate?.lat && coordsCreate?.lng) {
             const marker = new mapboxgl.Marker({ color: '#77402e' }) 
@@ -152,23 +154,31 @@
             creationMarkers.push(marker);
           }
         });
-    
+  
         // Show creation markers by default
-        creationMarkers.forEach(marker => marker.addTo(map));;
-    
-        // Button listeners
+        creationMarkers.forEach(marker => marker.addTo(map));
+  
+        // 🔁 Button listeners to switch between layers
         document.getElementById('showConservation').addEventListener('click', () => {
           creationMarkers.forEach(m => m.remove());
           conservationMarkers.forEach(m => m.addTo(map));
         });
-    
+  
         document.getElementById('showCreation').addEventListener('click', () => {
           conservationMarkers.forEach(m => m.remove());
           creationMarkers.forEach(m => m.addTo(map));
         });
+  
+        // ✅ Fix for aria-hidden warning when closing modal
+        const infoModal = document.getElementById('infoModal');
+        if (infoModal) {
+          infoModal.addEventListener('hidden.bs.modal', () => {
+            document.activeElement.blur(); // Ensure nothing inside the modal keeps focus after it's hidden
+          });
+        }
       })
       .catch(error => console.error('❌ Error loading JSON:', error));
-    </script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
