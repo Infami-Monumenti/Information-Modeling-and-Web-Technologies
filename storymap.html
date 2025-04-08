@@ -80,7 +80,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="infoModalLabel">About the Map</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" id="infoModalCloseBtn" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <p>
@@ -169,11 +169,12 @@
           creationMarkers.forEach(m => m.addTo(map));
         });
   
-        // ✅ Fix for aria-hidden warning when closing modal
-        const infoModal = document.getElementById('infoModal');
-        if (infoModal) {
-          infoModal.addEventListener('hidden.bs.modal', () => {
-            document.activeElement.blur(); // Ensure nothing inside the modal keeps focus after it's hidden
+        const infoModalCloseBtn = document.getElementById("infoModalCloseBtn");
+
+        // Remove focus from close button on click (before modal hides)
+        if (infoModalCloseBtn) {
+          infoModalCloseBtn.addEventListener("click", () => {
+            infoModalCloseBtn.blur();
           });
         }
       })
