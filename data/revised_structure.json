@@ -186,7 +186,7 @@
             },
             "itemMeta": {
                 "time": "II century BC",
-                "date of production": "XIX century",
+                "date of production": "XIX century AD",
                 "conservation location": "",
                 "author": "Plautus",
                 "place": "Rome",
@@ -444,7 +444,7 @@
             },
             "itemMeta": {
                 "time": "I century AD",
-                "date of production": "XIV century",
+                "date of production": "XIV century AD",
                 "conservation location": "Biblioteca Medici, Italy",
                 "author": "Boccaccio",
                 "place": "Rome",
@@ -477,7 +477,7 @@
             },
             "itemMeta": {
                 "time": "V century BC",
-                "date of production": "XVI century BC",
+                "date of production": "XVI century AD",
                 "conservation location": "",
                 "author": "Aristophanes",
                 "place": "Greece",
