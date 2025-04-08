@@ -48,15 +48,15 @@
       <div class="map-toggle-buttons text-center my-3">
         <!-- MOBILE -->
         <div class="button-group-mobile">
-          <button id="showCreation" class="priapobtn me-2">Show Creation Places</button>
+          <button id="showCreationMobile" class="priapobtn me-2">Show Creation Places</button>
           <button type="button" class="info-btn info-mobile" data-bs-toggle="modal" data-bs-target="#infoModal" aria-label="Open information modal">
             <i class="bi bi-info-circle"></i>
           </button>
         </div>
-      
+
         <!-- DESKTOP -->
         <div class="button-group-desktop">
-          <button id="showCreation" class="priapobtn me-2">Show Creation Places</button>
+          <button id="showCreationDesktop" class="priapobtn me-2">Show Creation Places</button>
         </div>
       
         <button id="showConservation" class="priapobtn">Show Conservation Places</button>
@@ -169,19 +169,30 @@
           }
         });
   
-        // Show creation markers by default
-        creationMarkers.forEach(marker => marker.addTo(map));
-  
-        // 🔁 Button listeners to switch between layers
-        document.getElementById('showConservation').addEventListener('click', () => {
-          creationMarkers.forEach(m => m.remove());
-          conservationMarkers.forEach(m => m.addTo(map));
-        });
-  
-        document.getElementById('showCreation').addEventListener('click', () => {
-          conservationMarkers.forEach(m => m.remove());
-          creationMarkers.forEach(m => m.addTo(map));
-        });
+        const btnCreationMobile = document.getElementById('showCreationMobile');
+        const btnCreationDesktop = document.getElementById('showCreationDesktop');
+        const btnConservation = document.getElementById('showConservation');
+        
+        if (btnCreationMobile) {
+          btnCreationMobile.addEventListener('click', () => {
+            conservationMarkers.forEach(m => m.remove());
+            creationMarkers.forEach(m => m.addTo(map));
+          });
+        }
+        
+        if (btnCreationDesktop) {
+          btnCreationDesktop.addEventListener('click', () => {
+            conservationMarkers.forEach(m => m.remove());
+            creationMarkers.forEach(m => m.addTo(map));
+          });
+        }
+        
+        if (btnConservation) {
+          btnConservation.addEventListener('click', () => {
+            creationMarkers.forEach(m => m.remove());
+            conservationMarkers.forEach(m => m.addTo(map));
+          });
+        }
   
         const infoModalCloseBtn = document.getElementById("infoModalCloseBtn");
 
