@@ -46,9 +46,23 @@
   <section>
     <div class="story-map-container">
       <div class="map-toggle-buttons text-center my-3">
-        <button id="showCreation" class="priapobtn me-2">Show Creation Places</button>
+        <!-- MOBILE -->
+        <div class="button-group-mobile">
+          <button id="showCreation" class="priapobtn me-2">Show Creation Places</button>
+          <button type="button" class="info-btn info-mobile" data-bs-toggle="modal" data-bs-target="#infoModal" aria-label="Open information modal">
+            <i class="bi bi-info-circle"></i>
+          </button>
+        </div>
+      
+        <!-- DESKTOP -->
+        <div class="button-group-desktop">
+          <button id="showCreation" class="priapobtn me-2">Show Creation Places</button>
+        </div>
+      
         <button id="showConservation" class="priapobtn">Show Conservation Places</button>
-        <button type="button" class="info-btn" data-bs-toggle="modal" data-bs-target="#infoModal" aria-label="Open information modal">
+      
+        <!-- info desktop -->
+        <button type="button" class="info-btn info-desktop ms-3" data-bs-toggle="modal" data-bs-target="#infoModal" aria-label="Open information modal">
           <i class="bi bi-info-circle"></i>
         </button>
       </div>
@@ -89,7 +103,7 @@
           </p>
           <p>
             Use the buttons to switch between these two views. Click on a marker to open the object's page,
-            where you'll also find other objects created in the same place.
+            where you'll also find other objects created or kept in the same place.
           </p>
         </div>
       </div>
